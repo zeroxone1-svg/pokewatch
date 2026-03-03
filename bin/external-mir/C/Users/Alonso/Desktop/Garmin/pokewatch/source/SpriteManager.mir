@@ -1,0 +1,3321 @@
+[ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc"; @line = 4; @symbol_importdef<0> = [Toybox,4,7,13]; @symbol_importdef<1> = [WatchUi,4,14,21]; ]
+import Toybox.WatchUi;
+[ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc"; @line = 5; @symbol_importdef<0> = [Toybox,5,7,13]; @symbol_importdef<1> = [Graphics,5,14,22]; ]
+import Toybox.Graphics;
+[ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc"; @line = 6; @symbol_importdef<0> = [Toybox,6,7,13]; @symbol_importdef<1> = [Lang,6,14,18]; ]
+import Toybox.Lang;
+[ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc"; @line = 7; @symbol_importdef<0> = [Toybox,7,7,13]; @symbol_importdef<1> = [System,7,14,20]; ]
+import Toybox.System;
+[ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc"; @line = 9; @symbol_classdef = [SpriteManager,9,6,19]; ]
+class SpriteManager {
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc"; @line = 9; ]
+    <init> {
+    }
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc"; @line = 9; ]
+    static
+    <init> {
+    }
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc"; @line = 12; @symbol_functiondef = [getSprite,12,20,29]; @symbol_param<0> = [id,12,30,32]; @symbol_param<0>_type<0> = [Lang,12,36,40]; @symbol_param<0>_type<1> = [Number,12,41,47]; @symbol_return<0> = [Object,12,52,58]; ]
+    static
+    function getSprite(id as Lang.Number) as Object or Null {
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_12_60_176_4_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 13 8 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_12_60_176_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_12_60_176_4_stop" ]
+        %spriteName.1 = local;
+        symbol [ spriteName %spriteName.1 13 12 22 ];
+        %tmp.1 = "pk";
+        %tmp.2 = self;
+        symbol [ formatId %tmp.3 13 32 40 ];
+        %tmp.3 = getv function %tmp.2 :formatId;
+        %tmp.4 = lgetv %id;
+        symbol [ id %tmp.4 13 41 43 ];
+        %tmp.5 = invoke %tmp.2 %tmp.3(%tmp.4);
+        %tmp.6 = add %tmp.1 %tmp.5;
+        lputv %spriteName.1 %tmp.6;
+        symbol [ spriteName %spriteName.1 13 12 22 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 15 8 ]
+        try @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_beginTry @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_endTry @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_catch @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_beginTry:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_12_171_8_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 18 12 ]
+        %tmp.7 = lgetv %id;
+        symbol [ id %tmp.7 18 20 22 ];
+        push %tmp.7;
+        switch %tmp.7 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_18_12_170_12_switchStmtEnd;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_18_12_170_12_switchStmtBegin:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 19 16 ]
+        %tmp.8 = dup %tmp.7;
+        %tmp.9 = 1;
+        %tmp.10 = getv function %tmp.8 :equals;
+        %tmp.11 = invoke %tmp.8 %tmp.10 (%tmp.9);
+        bt %tmp.11 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_19_16_19_72_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 20 16 ]
+        %tmp.12 = dup %tmp.7;
+        %tmp.13 = 2;
+        %tmp.14 = getv function %tmp.12 :equals;
+        %tmp.15 = invoke %tmp.12 %tmp.14 (%tmp.13);
+        bt %tmp.15 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_20_16_20_72_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 21 16 ]
+        %tmp.16 = dup %tmp.7;
+        %tmp.17 = 3;
+        %tmp.18 = getv function %tmp.16 :equals;
+        %tmp.19 = invoke %tmp.16 %tmp.18 (%tmp.17);
+        bt %tmp.19 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_21_16_21_72_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 22 16 ]
+        %tmp.20 = dup %tmp.7;
+        %tmp.21 = 4;
+        %tmp.22 = getv function %tmp.20 :equals;
+        %tmp.23 = invoke %tmp.20 %tmp.22 (%tmp.21);
+        bt %tmp.23 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_22_16_22_72_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 23 16 ]
+        %tmp.24 = dup %tmp.7;
+        %tmp.25 = 5;
+        %tmp.26 = getv function %tmp.24 :equals;
+        %tmp.27 = invoke %tmp.24 %tmp.26 (%tmp.25);
+        bt %tmp.27 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_23_16_23_72_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 24 16 ]
+        %tmp.28 = dup %tmp.7;
+        %tmp.29 = 6;
+        %tmp.30 = getv function %tmp.28 :equals;
+        %tmp.31 = invoke %tmp.28 %tmp.30 (%tmp.29);
+        bt %tmp.31 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_24_16_24_72_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 25 16 ]
+        %tmp.32 = dup %tmp.7;
+        %tmp.33 = 7;
+        %tmp.34 = getv function %tmp.32 :equals;
+        %tmp.35 = invoke %tmp.32 %tmp.34 (%tmp.33);
+        bt %tmp.35 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_25_16_25_72_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 26 16 ]
+        %tmp.36 = dup %tmp.7;
+        %tmp.37 = 8;
+        %tmp.38 = getv function %tmp.36 :equals;
+        %tmp.39 = invoke %tmp.36 %tmp.38 (%tmp.37);
+        bt %tmp.39 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_26_16_26_72_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 27 16 ]
+        %tmp.40 = dup %tmp.7;
+        %tmp.41 = 9;
+        %tmp.42 = getv function %tmp.40 :equals;
+        %tmp.43 = invoke %tmp.40 %tmp.42 (%tmp.41);
+        bt %tmp.43 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_27_16_27_72_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 28 16 ]
+        %tmp.44 = dup %tmp.7;
+        %tmp.45 = 10;
+        %tmp.46 = getv function %tmp.44 :equals;
+        %tmp.47 = invoke %tmp.44 %tmp.46 (%tmp.45);
+        bt %tmp.47 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_28_16_28_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 29 16 ]
+        %tmp.48 = dup %tmp.7;
+        %tmp.49 = 11;
+        %tmp.50 = getv function %tmp.48 :equals;
+        %tmp.51 = invoke %tmp.48 %tmp.50 (%tmp.49);
+        bt %tmp.51 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_29_16_29_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 30 16 ]
+        %tmp.52 = dup %tmp.7;
+        %tmp.53 = 12;
+        %tmp.54 = getv function %tmp.52 :equals;
+        %tmp.55 = invoke %tmp.52 %tmp.54 (%tmp.53);
+        bt %tmp.55 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_30_16_30_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 31 16 ]
+        %tmp.56 = dup %tmp.7;
+        %tmp.57 = 13;
+        %tmp.58 = getv function %tmp.56 :equals;
+        %tmp.59 = invoke %tmp.56 %tmp.58 (%tmp.57);
+        bt %tmp.59 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_31_16_31_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 32 16 ]
+        %tmp.60 = dup %tmp.7;
+        %tmp.61 = 14;
+        %tmp.62 = getv function %tmp.60 :equals;
+        %tmp.63 = invoke %tmp.60 %tmp.62 (%tmp.61);
+        bt %tmp.63 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_32_16_32_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 33 16 ]
+        %tmp.64 = dup %tmp.7;
+        %tmp.65 = 15;
+        %tmp.66 = getv function %tmp.64 :equals;
+        %tmp.67 = invoke %tmp.64 %tmp.66 (%tmp.65);
+        bt %tmp.67 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_33_16_33_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 34 16 ]
+        %tmp.68 = dup %tmp.7;
+        %tmp.69 = 16;
+        %tmp.70 = getv function %tmp.68 :equals;
+        %tmp.71 = invoke %tmp.68 %tmp.70 (%tmp.69);
+        bt %tmp.71 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_34_16_34_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 35 16 ]
+        %tmp.72 = dup %tmp.7;
+        %tmp.73 = 17;
+        %tmp.74 = getv function %tmp.72 :equals;
+        %tmp.75 = invoke %tmp.72 %tmp.74 (%tmp.73);
+        bt %tmp.75 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_35_16_35_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 36 16 ]
+        %tmp.76 = dup %tmp.7;
+        %tmp.77 = 18;
+        %tmp.78 = getv function %tmp.76 :equals;
+        %tmp.79 = invoke %tmp.76 %tmp.78 (%tmp.77);
+        bt %tmp.79 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_36_16_36_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 37 16 ]
+        %tmp.80 = dup %tmp.7;
+        %tmp.81 = 19;
+        %tmp.82 = getv function %tmp.80 :equals;
+        %tmp.83 = invoke %tmp.80 %tmp.82 (%tmp.81);
+        bt %tmp.83 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_37_16_37_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 38 16 ]
+        %tmp.84 = dup %tmp.7;
+        %tmp.85 = 20;
+        %tmp.86 = getv function %tmp.84 :equals;
+        %tmp.87 = invoke %tmp.84 %tmp.86 (%tmp.85);
+        bt %tmp.87 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_38_16_38_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 39 16 ]
+        %tmp.88 = dup %tmp.7;
+        %tmp.89 = 21;
+        %tmp.90 = getv function %tmp.88 :equals;
+        %tmp.91 = invoke %tmp.88 %tmp.90 (%tmp.89);
+        bt %tmp.91 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_39_16_39_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 40 16 ]
+        %tmp.92 = dup %tmp.7;
+        %tmp.93 = 22;
+        %tmp.94 = getv function %tmp.92 :equals;
+        %tmp.95 = invoke %tmp.92 %tmp.94 (%tmp.93);
+        bt %tmp.95 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_40_16_40_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 41 16 ]
+        %tmp.96 = dup %tmp.7;
+        %tmp.97 = 23;
+        %tmp.98 = getv function %tmp.96 :equals;
+        %tmp.99 = invoke %tmp.96 %tmp.98 (%tmp.97);
+        bt %tmp.99 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_41_16_41_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 42 16 ]
+        %tmp.100 = dup %tmp.7;
+        %tmp.101 = 24;
+        %tmp.102 = getv function %tmp.100 :equals;
+        %tmp.103 = invoke %tmp.100 %tmp.102 (%tmp.101);
+        bt %tmp.103 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_42_16_42_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 43 16 ]
+        %tmp.104 = dup %tmp.7;
+        %tmp.105 = 25;
+        %tmp.106 = getv function %tmp.104 :equals;
+        %tmp.107 = invoke %tmp.104 %tmp.106 (%tmp.105);
+        bt %tmp.107 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_43_16_43_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 44 16 ]
+        %tmp.108 = dup %tmp.7;
+        %tmp.109 = 26;
+        %tmp.110 = getv function %tmp.108 :equals;
+        %tmp.111 = invoke %tmp.108 %tmp.110 (%tmp.109);
+        bt %tmp.111 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_44_16_44_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 45 16 ]
+        %tmp.112 = dup %tmp.7;
+        %tmp.113 = 27;
+        %tmp.114 = getv function %tmp.112 :equals;
+        %tmp.115 = invoke %tmp.112 %tmp.114 (%tmp.113);
+        bt %tmp.115 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_45_16_45_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 46 16 ]
+        %tmp.116 = dup %tmp.7;
+        %tmp.117 = 28;
+        %tmp.118 = getv function %tmp.116 :equals;
+        %tmp.119 = invoke %tmp.116 %tmp.118 (%tmp.117);
+        bt %tmp.119 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_46_16_46_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 47 16 ]
+        %tmp.120 = dup %tmp.7;
+        %tmp.121 = 29;
+        %tmp.122 = getv function %tmp.120 :equals;
+        %tmp.123 = invoke %tmp.120 %tmp.122 (%tmp.121);
+        bt %tmp.123 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_47_16_47_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 48 16 ]
+        %tmp.124 = dup %tmp.7;
+        %tmp.125 = 30;
+        %tmp.126 = getv function %tmp.124 :equals;
+        %tmp.127 = invoke %tmp.124 %tmp.126 (%tmp.125);
+        bt %tmp.127 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_48_16_48_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 49 16 ]
+        %tmp.128 = dup %tmp.7;
+        %tmp.129 = 31;
+        %tmp.130 = getv function %tmp.128 :equals;
+        %tmp.131 = invoke %tmp.128 %tmp.130 (%tmp.129);
+        bt %tmp.131 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_49_16_49_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 50 16 ]
+        %tmp.132 = dup %tmp.7;
+        %tmp.133 = 32;
+        %tmp.134 = getv function %tmp.132 :equals;
+        %tmp.135 = invoke %tmp.132 %tmp.134 (%tmp.133);
+        bt %tmp.135 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_50_16_50_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 51 16 ]
+        %tmp.136 = dup %tmp.7;
+        %tmp.137 = 33;
+        %tmp.138 = getv function %tmp.136 :equals;
+        %tmp.139 = invoke %tmp.136 %tmp.138 (%tmp.137);
+        bt %tmp.139 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_51_16_51_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 52 16 ]
+        %tmp.140 = dup %tmp.7;
+        %tmp.141 = 34;
+        %tmp.142 = getv function %tmp.140 :equals;
+        %tmp.143 = invoke %tmp.140 %tmp.142 (%tmp.141);
+        bt %tmp.143 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_52_16_52_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 53 16 ]
+        %tmp.144 = dup %tmp.7;
+        %tmp.145 = 35;
+        %tmp.146 = getv function %tmp.144 :equals;
+        %tmp.147 = invoke %tmp.144 %tmp.146 (%tmp.145);
+        bt %tmp.147 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_53_16_53_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 54 16 ]
+        %tmp.148 = dup %tmp.7;
+        %tmp.149 = 36;
+        %tmp.150 = getv function %tmp.148 :equals;
+        %tmp.151 = invoke %tmp.148 %tmp.150 (%tmp.149);
+        bt %tmp.151 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_54_16_54_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 55 16 ]
+        %tmp.152 = dup %tmp.7;
+        %tmp.153 = 37;
+        %tmp.154 = getv function %tmp.152 :equals;
+        %tmp.155 = invoke %tmp.152 %tmp.154 (%tmp.153);
+        bt %tmp.155 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_55_16_55_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 56 16 ]
+        %tmp.156 = dup %tmp.7;
+        %tmp.157 = 38;
+        %tmp.158 = getv function %tmp.156 :equals;
+        %tmp.159 = invoke %tmp.156 %tmp.158 (%tmp.157);
+        bt %tmp.159 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_56_16_56_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 57 16 ]
+        %tmp.160 = dup %tmp.7;
+        %tmp.161 = 39;
+        %tmp.162 = getv function %tmp.160 :equals;
+        %tmp.163 = invoke %tmp.160 %tmp.162 (%tmp.161);
+        bt %tmp.163 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_57_16_57_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 58 16 ]
+        %tmp.164 = dup %tmp.7;
+        %tmp.165 = 40;
+        %tmp.166 = getv function %tmp.164 :equals;
+        %tmp.167 = invoke %tmp.164 %tmp.166 (%tmp.165);
+        bt %tmp.167 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_58_16_58_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 59 16 ]
+        %tmp.168 = dup %tmp.7;
+        %tmp.169 = 41;
+        %tmp.170 = getv function %tmp.168 :equals;
+        %tmp.171 = invoke %tmp.168 %tmp.170 (%tmp.169);
+        bt %tmp.171 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_59_16_59_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 60 16 ]
+        %tmp.172 = dup %tmp.7;
+        %tmp.173 = 42;
+        %tmp.174 = getv function %tmp.172 :equals;
+        %tmp.175 = invoke %tmp.172 %tmp.174 (%tmp.173);
+        bt %tmp.175 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_60_16_60_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 61 16 ]
+        %tmp.176 = dup %tmp.7;
+        %tmp.177 = 43;
+        %tmp.178 = getv function %tmp.176 :equals;
+        %tmp.179 = invoke %tmp.176 %tmp.178 (%tmp.177);
+        bt %tmp.179 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_61_16_61_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 62 16 ]
+        %tmp.180 = dup %tmp.7;
+        %tmp.181 = 44;
+        %tmp.182 = getv function %tmp.180 :equals;
+        %tmp.183 = invoke %tmp.180 %tmp.182 (%tmp.181);
+        bt %tmp.183 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_62_16_62_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 63 16 ]
+        %tmp.184 = dup %tmp.7;
+        %tmp.185 = 45;
+        %tmp.186 = getv function %tmp.184 :equals;
+        %tmp.187 = invoke %tmp.184 %tmp.186 (%tmp.185);
+        bt %tmp.187 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_63_16_63_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 64 16 ]
+        %tmp.188 = dup %tmp.7;
+        %tmp.189 = 46;
+        %tmp.190 = getv function %tmp.188 :equals;
+        %tmp.191 = invoke %tmp.188 %tmp.190 (%tmp.189);
+        bt %tmp.191 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_64_16_64_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 65 16 ]
+        %tmp.192 = dup %tmp.7;
+        %tmp.193 = 47;
+        %tmp.194 = getv function %tmp.192 :equals;
+        %tmp.195 = invoke %tmp.192 %tmp.194 (%tmp.193);
+        bt %tmp.195 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_65_16_65_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 66 16 ]
+        %tmp.196 = dup %tmp.7;
+        %tmp.197 = 48;
+        %tmp.198 = getv function %tmp.196 :equals;
+        %tmp.199 = invoke %tmp.196 %tmp.198 (%tmp.197);
+        bt %tmp.199 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_66_16_66_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 67 16 ]
+        %tmp.200 = dup %tmp.7;
+        %tmp.201 = 49;
+        %tmp.202 = getv function %tmp.200 :equals;
+        %tmp.203 = invoke %tmp.200 %tmp.202 (%tmp.201);
+        bt %tmp.203 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_67_16_67_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 68 16 ]
+        %tmp.204 = dup %tmp.7;
+        %tmp.205 = 50;
+        %tmp.206 = getv function %tmp.204 :equals;
+        %tmp.207 = invoke %tmp.204 %tmp.206 (%tmp.205);
+        bt %tmp.207 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_68_16_68_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 69 16 ]
+        %tmp.208 = dup %tmp.7;
+        %tmp.209 = 51;
+        %tmp.210 = getv function %tmp.208 :equals;
+        %tmp.211 = invoke %tmp.208 %tmp.210 (%tmp.209);
+        bt %tmp.211 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_69_16_69_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 70 16 ]
+        %tmp.212 = dup %tmp.7;
+        %tmp.213 = 52;
+        %tmp.214 = getv function %tmp.212 :equals;
+        %tmp.215 = invoke %tmp.212 %tmp.214 (%tmp.213);
+        bt %tmp.215 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_70_16_70_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 71 16 ]
+        %tmp.216 = dup %tmp.7;
+        %tmp.217 = 53;
+        %tmp.218 = getv function %tmp.216 :equals;
+        %tmp.219 = invoke %tmp.216 %tmp.218 (%tmp.217);
+        bt %tmp.219 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_71_16_71_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 72 16 ]
+        %tmp.220 = dup %tmp.7;
+        %tmp.221 = 54;
+        %tmp.222 = getv function %tmp.220 :equals;
+        %tmp.223 = invoke %tmp.220 %tmp.222 (%tmp.221);
+        bt %tmp.223 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_72_16_72_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 73 16 ]
+        %tmp.224 = dup %tmp.7;
+        %tmp.225 = 55;
+        %tmp.226 = getv function %tmp.224 :equals;
+        %tmp.227 = invoke %tmp.224 %tmp.226 (%tmp.225);
+        bt %tmp.227 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_73_16_73_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 74 16 ]
+        %tmp.228 = dup %tmp.7;
+        %tmp.229 = 56;
+        %tmp.230 = getv function %tmp.228 :equals;
+        %tmp.231 = invoke %tmp.228 %tmp.230 (%tmp.229);
+        bt %tmp.231 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_74_16_74_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 75 16 ]
+        %tmp.232 = dup %tmp.7;
+        %tmp.233 = 57;
+        %tmp.234 = getv function %tmp.232 :equals;
+        %tmp.235 = invoke %tmp.232 %tmp.234 (%tmp.233);
+        bt %tmp.235 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_75_16_75_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 76 16 ]
+        %tmp.236 = dup %tmp.7;
+        %tmp.237 = 58;
+        %tmp.238 = getv function %tmp.236 :equals;
+        %tmp.239 = invoke %tmp.236 %tmp.238 (%tmp.237);
+        bt %tmp.239 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_76_16_76_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 77 16 ]
+        %tmp.240 = dup %tmp.7;
+        %tmp.241 = 59;
+        %tmp.242 = getv function %tmp.240 :equals;
+        %tmp.243 = invoke %tmp.240 %tmp.242 (%tmp.241);
+        bt %tmp.243 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_77_16_77_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 78 16 ]
+        %tmp.244 = dup %tmp.7;
+        %tmp.245 = 60;
+        %tmp.246 = getv function %tmp.244 :equals;
+        %tmp.247 = invoke %tmp.244 %tmp.246 (%tmp.245);
+        bt %tmp.247 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_78_16_78_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 79 16 ]
+        %tmp.248 = dup %tmp.7;
+        %tmp.249 = 61;
+        %tmp.250 = getv function %tmp.248 :equals;
+        %tmp.251 = invoke %tmp.248 %tmp.250 (%tmp.249);
+        bt %tmp.251 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_79_16_79_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 80 16 ]
+        %tmp.252 = dup %tmp.7;
+        %tmp.253 = 62;
+        %tmp.254 = getv function %tmp.252 :equals;
+        %tmp.255 = invoke %tmp.252 %tmp.254 (%tmp.253);
+        bt %tmp.255 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_80_16_80_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 81 16 ]
+        %tmp.256 = dup %tmp.7;
+        %tmp.257 = 63;
+        %tmp.258 = getv function %tmp.256 :equals;
+        %tmp.259 = invoke %tmp.256 %tmp.258 (%tmp.257);
+        bt %tmp.259 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_81_16_81_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 82 16 ]
+        %tmp.260 = dup %tmp.7;
+        %tmp.261 = 64;
+        %tmp.262 = getv function %tmp.260 :equals;
+        %tmp.263 = invoke %tmp.260 %tmp.262 (%tmp.261);
+        bt %tmp.263 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_82_16_82_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 83 16 ]
+        %tmp.264 = dup %tmp.7;
+        %tmp.265 = 65;
+        %tmp.266 = getv function %tmp.264 :equals;
+        %tmp.267 = invoke %tmp.264 %tmp.266 (%tmp.265);
+        bt %tmp.267 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_83_16_83_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 84 16 ]
+        %tmp.268 = dup %tmp.7;
+        %tmp.269 = 66;
+        %tmp.270 = getv function %tmp.268 :equals;
+        %tmp.271 = invoke %tmp.268 %tmp.270 (%tmp.269);
+        bt %tmp.271 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_84_16_84_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 85 16 ]
+        %tmp.272 = dup %tmp.7;
+        %tmp.273 = 67;
+        %tmp.274 = getv function %tmp.272 :equals;
+        %tmp.275 = invoke %tmp.272 %tmp.274 (%tmp.273);
+        bt %tmp.275 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_85_16_85_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 86 16 ]
+        %tmp.276 = dup %tmp.7;
+        %tmp.277 = 68;
+        %tmp.278 = getv function %tmp.276 :equals;
+        %tmp.279 = invoke %tmp.276 %tmp.278 (%tmp.277);
+        bt %tmp.279 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_86_16_86_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 87 16 ]
+        %tmp.280 = dup %tmp.7;
+        %tmp.281 = 69;
+        %tmp.282 = getv function %tmp.280 :equals;
+        %tmp.283 = invoke %tmp.280 %tmp.282 (%tmp.281);
+        bt %tmp.283 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_87_16_87_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 88 16 ]
+        %tmp.284 = dup %tmp.7;
+        %tmp.285 = 70;
+        %tmp.286 = getv function %tmp.284 :equals;
+        %tmp.287 = invoke %tmp.284 %tmp.286 (%tmp.285);
+        bt %tmp.287 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_88_16_88_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 89 16 ]
+        %tmp.288 = dup %tmp.7;
+        %tmp.289 = 71;
+        %tmp.290 = getv function %tmp.288 :equals;
+        %tmp.291 = invoke %tmp.288 %tmp.290 (%tmp.289);
+        bt %tmp.291 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_89_16_89_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 90 16 ]
+        %tmp.292 = dup %tmp.7;
+        %tmp.293 = 72;
+        %tmp.294 = getv function %tmp.292 :equals;
+        %tmp.295 = invoke %tmp.292 %tmp.294 (%tmp.293);
+        bt %tmp.295 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_90_16_90_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 91 16 ]
+        %tmp.296 = dup %tmp.7;
+        %tmp.297 = 73;
+        %tmp.298 = getv function %tmp.296 :equals;
+        %tmp.299 = invoke %tmp.296 %tmp.298 (%tmp.297);
+        bt %tmp.299 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_91_16_91_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 92 16 ]
+        %tmp.300 = dup %tmp.7;
+        %tmp.301 = 74;
+        %tmp.302 = getv function %tmp.300 :equals;
+        %tmp.303 = invoke %tmp.300 %tmp.302 (%tmp.301);
+        bt %tmp.303 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_92_16_92_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 93 16 ]
+        %tmp.304 = dup %tmp.7;
+        %tmp.305 = 75;
+        %tmp.306 = getv function %tmp.304 :equals;
+        %tmp.307 = invoke %tmp.304 %tmp.306 (%tmp.305);
+        bt %tmp.307 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_93_16_93_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 94 16 ]
+        %tmp.308 = dup %tmp.7;
+        %tmp.309 = 76;
+        %tmp.310 = getv function %tmp.308 :equals;
+        %tmp.311 = invoke %tmp.308 %tmp.310 (%tmp.309);
+        bt %tmp.311 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_94_16_94_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 95 16 ]
+        %tmp.312 = dup %tmp.7;
+        %tmp.313 = 77;
+        %tmp.314 = getv function %tmp.312 :equals;
+        %tmp.315 = invoke %tmp.312 %tmp.314 (%tmp.313);
+        bt %tmp.315 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_95_16_95_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 96 16 ]
+        %tmp.316 = dup %tmp.7;
+        %tmp.317 = 78;
+        %tmp.318 = getv function %tmp.316 :equals;
+        %tmp.319 = invoke %tmp.316 %tmp.318 (%tmp.317);
+        bt %tmp.319 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_96_16_96_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 97 16 ]
+        %tmp.320 = dup %tmp.7;
+        %tmp.321 = 79;
+        %tmp.322 = getv function %tmp.320 :equals;
+        %tmp.323 = invoke %tmp.320 %tmp.322 (%tmp.321);
+        bt %tmp.323 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_97_16_97_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 98 16 ]
+        %tmp.324 = dup %tmp.7;
+        %tmp.325 = 80;
+        %tmp.326 = getv function %tmp.324 :equals;
+        %tmp.327 = invoke %tmp.324 %tmp.326 (%tmp.325);
+        bt %tmp.327 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_98_16_98_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 99 16 ]
+        %tmp.328 = dup %tmp.7;
+        %tmp.329 = 81;
+        %tmp.330 = getv function %tmp.328 :equals;
+        %tmp.331 = invoke %tmp.328 %tmp.330 (%tmp.329);
+        bt %tmp.331 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_99_16_99_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 100 16 ]
+        %tmp.332 = dup %tmp.7;
+        %tmp.333 = 82;
+        %tmp.334 = getv function %tmp.332 :equals;
+        %tmp.335 = invoke %tmp.332 %tmp.334 (%tmp.333);
+        bt %tmp.335 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_100_16_100_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 101 16 ]
+        %tmp.336 = dup %tmp.7;
+        %tmp.337 = 83;
+        %tmp.338 = getv function %tmp.336 :equals;
+        %tmp.339 = invoke %tmp.336 %tmp.338 (%tmp.337);
+        bt %tmp.339 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_101_16_101_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 102 16 ]
+        %tmp.340 = dup %tmp.7;
+        %tmp.341 = 84;
+        %tmp.342 = getv function %tmp.340 :equals;
+        %tmp.343 = invoke %tmp.340 %tmp.342 (%tmp.341);
+        bt %tmp.343 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_102_16_102_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 103 16 ]
+        %tmp.344 = dup %tmp.7;
+        %tmp.345 = 85;
+        %tmp.346 = getv function %tmp.344 :equals;
+        %tmp.347 = invoke %tmp.344 %tmp.346 (%tmp.345);
+        bt %tmp.347 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_103_16_103_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 104 16 ]
+        %tmp.348 = dup %tmp.7;
+        %tmp.349 = 86;
+        %tmp.350 = getv function %tmp.348 :equals;
+        %tmp.351 = invoke %tmp.348 %tmp.350 (%tmp.349);
+        bt %tmp.351 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_104_16_104_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 105 16 ]
+        %tmp.352 = dup %tmp.7;
+        %tmp.353 = 87;
+        %tmp.354 = getv function %tmp.352 :equals;
+        %tmp.355 = invoke %tmp.352 %tmp.354 (%tmp.353);
+        bt %tmp.355 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_105_16_105_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 106 16 ]
+        %tmp.356 = dup %tmp.7;
+        %tmp.357 = 88;
+        %tmp.358 = getv function %tmp.356 :equals;
+        %tmp.359 = invoke %tmp.356 %tmp.358 (%tmp.357);
+        bt %tmp.359 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_106_16_106_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 107 16 ]
+        %tmp.360 = dup %tmp.7;
+        %tmp.361 = 89;
+        %tmp.362 = getv function %tmp.360 :equals;
+        %tmp.363 = invoke %tmp.360 %tmp.362 (%tmp.361);
+        bt %tmp.363 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_107_16_107_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 108 16 ]
+        %tmp.364 = dup %tmp.7;
+        %tmp.365 = 90;
+        %tmp.366 = getv function %tmp.364 :equals;
+        %tmp.367 = invoke %tmp.364 %tmp.366 (%tmp.365);
+        bt %tmp.367 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_108_16_108_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 109 16 ]
+        %tmp.368 = dup %tmp.7;
+        %tmp.369 = 91;
+        %tmp.370 = getv function %tmp.368 :equals;
+        %tmp.371 = invoke %tmp.368 %tmp.370 (%tmp.369);
+        bt %tmp.371 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_109_16_109_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 110 16 ]
+        %tmp.372 = dup %tmp.7;
+        %tmp.373 = 92;
+        %tmp.374 = getv function %tmp.372 :equals;
+        %tmp.375 = invoke %tmp.372 %tmp.374 (%tmp.373);
+        bt %tmp.375 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_110_16_110_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 111 16 ]
+        %tmp.376 = dup %tmp.7;
+        %tmp.377 = 93;
+        %tmp.378 = getv function %tmp.376 :equals;
+        %tmp.379 = invoke %tmp.376 %tmp.378 (%tmp.377);
+        bt %tmp.379 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_111_16_111_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 112 16 ]
+        %tmp.380 = dup %tmp.7;
+        %tmp.381 = 94;
+        %tmp.382 = getv function %tmp.380 :equals;
+        %tmp.383 = invoke %tmp.380 %tmp.382 (%tmp.381);
+        bt %tmp.383 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_112_16_112_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 113 16 ]
+        %tmp.384 = dup %tmp.7;
+        %tmp.385 = 95;
+        %tmp.386 = getv function %tmp.384 :equals;
+        %tmp.387 = invoke %tmp.384 %tmp.386 (%tmp.385);
+        bt %tmp.387 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_113_16_113_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 114 16 ]
+        %tmp.388 = dup %tmp.7;
+        %tmp.389 = 96;
+        %tmp.390 = getv function %tmp.388 :equals;
+        %tmp.391 = invoke %tmp.388 %tmp.390 (%tmp.389);
+        bt %tmp.391 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_114_16_114_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 115 16 ]
+        %tmp.392 = dup %tmp.7;
+        %tmp.393 = 97;
+        %tmp.394 = getv function %tmp.392 :equals;
+        %tmp.395 = invoke %tmp.392 %tmp.394 (%tmp.393);
+        bt %tmp.395 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_115_16_115_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 116 16 ]
+        %tmp.396 = dup %tmp.7;
+        %tmp.397 = 98;
+        %tmp.398 = getv function %tmp.396 :equals;
+        %tmp.399 = invoke %tmp.396 %tmp.398 (%tmp.397);
+        bt %tmp.399 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_116_16_116_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 117 16 ]
+        %tmp.400 = dup %tmp.7;
+        %tmp.401 = 99;
+        %tmp.402 = getv function %tmp.400 :equals;
+        %tmp.403 = invoke %tmp.400 %tmp.402 (%tmp.401);
+        bt %tmp.403 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_117_16_117_73_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 118 16 ]
+        %tmp.404 = dup %tmp.7;
+        %tmp.405 = 100;
+        %tmp.406 = getv function %tmp.404 :equals;
+        %tmp.407 = invoke %tmp.404 %tmp.406 (%tmp.405);
+        bt %tmp.407 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_118_16_118_74_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 119 16 ]
+        %tmp.408 = dup %tmp.7;
+        %tmp.409 = 101;
+        %tmp.410 = getv function %tmp.408 :equals;
+        %tmp.411 = invoke %tmp.408 %tmp.410 (%tmp.409);
+        bt %tmp.411 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_119_16_119_74_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 120 16 ]
+        %tmp.412 = dup %tmp.7;
+        %tmp.413 = 102;
+        %tmp.414 = getv function %tmp.412 :equals;
+        %tmp.415 = invoke %tmp.412 %tmp.414 (%tmp.413);
+        bt %tmp.415 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_120_16_120_74_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 121 16 ]
+        %tmp.416 = dup %tmp.7;
+        %tmp.417 = 103;
+        %tmp.418 = getv function %tmp.416 :equals;
+        %tmp.419 = invoke %tmp.416 %tmp.418 (%tmp.417);
+        bt %tmp.419 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_121_16_121_74_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 122 16 ]
+        %tmp.420 = dup %tmp.7;
+        %tmp.421 = 104;
+        %tmp.422 = getv function %tmp.420 :equals;
+        %tmp.423 = invoke %tmp.420 %tmp.422 (%tmp.421);
+        bt %tmp.423 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_122_16_122_74_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 123 16 ]
+        %tmp.424 = dup %tmp.7;
+        %tmp.425 = 105;
+        %tmp.426 = getv function %tmp.424 :equals;
+        %tmp.427 = invoke %tmp.424 %tmp.426 (%tmp.425);
+        bt %tmp.427 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_123_16_123_74_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 124 16 ]
+        %tmp.428 = dup %tmp.7;
+        %tmp.429 = 106;
+        %tmp.430 = getv function %tmp.428 :equals;
+        %tmp.431 = invoke %tmp.428 %tmp.430 (%tmp.429);
+        bt %tmp.431 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_124_16_124_74_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 125 16 ]
+        %tmp.432 = dup %tmp.7;
+        %tmp.433 = 107;
+        %tmp.434 = getv function %tmp.432 :equals;
+        %tmp.435 = invoke %tmp.432 %tmp.434 (%tmp.433);
+        bt %tmp.435 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_125_16_125_74_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 126 16 ]
+        %tmp.436 = dup %tmp.7;
+        %tmp.437 = 108;
+        %tmp.438 = getv function %tmp.436 :equals;
+        %tmp.439 = invoke %tmp.436 %tmp.438 (%tmp.437);
+        bt %tmp.439 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_126_16_126_74_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 127 16 ]
+        %tmp.440 = dup %tmp.7;
+        %tmp.441 = 109;
+        %tmp.442 = getv function %tmp.440 :equals;
+        %tmp.443 = invoke %tmp.440 %tmp.442 (%tmp.441);
+        bt %tmp.443 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_127_16_127_74_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 128 16 ]
+        %tmp.444 = dup %tmp.7;
+        %tmp.445 = 110;
+        %tmp.446 = getv function %tmp.444 :equals;
+        %tmp.447 = invoke %tmp.444 %tmp.446 (%tmp.445);
+        bt %tmp.447 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_128_16_128_74_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 129 16 ]
+        %tmp.448 = dup %tmp.7;
+        %tmp.449 = 111;
+        %tmp.450 = getv function %tmp.448 :equals;
+        %tmp.451 = invoke %tmp.448 %tmp.450 (%tmp.449);
+        bt %tmp.451 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_129_16_129_74_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 130 16 ]
+        %tmp.452 = dup %tmp.7;
+        %tmp.453 = 112;
+        %tmp.454 = getv function %tmp.452 :equals;
+        %tmp.455 = invoke %tmp.452 %tmp.454 (%tmp.453);
+        bt %tmp.455 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_130_16_130_74_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 131 16 ]
+        %tmp.456 = dup %tmp.7;
+        %tmp.457 = 113;
+        %tmp.458 = getv function %tmp.456 :equals;
+        %tmp.459 = invoke %tmp.456 %tmp.458 (%tmp.457);
+        bt %tmp.459 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_131_16_131_74_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 132 16 ]
+        %tmp.460 = dup %tmp.7;
+        %tmp.461 = 114;
+        %tmp.462 = getv function %tmp.460 :equals;
+        %tmp.463 = invoke %tmp.460 %tmp.462 (%tmp.461);
+        bt %tmp.463 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_132_16_132_74_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 133 16 ]
+        %tmp.464 = dup %tmp.7;
+        %tmp.465 = 115;
+        %tmp.466 = getv function %tmp.464 :equals;
+        %tmp.467 = invoke %tmp.464 %tmp.466 (%tmp.465);
+        bt %tmp.467 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_133_16_133_74_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 134 16 ]
+        %tmp.468 = dup %tmp.7;
+        %tmp.469 = 116;
+        %tmp.470 = getv function %tmp.468 :equals;
+        %tmp.471 = invoke %tmp.468 %tmp.470 (%tmp.469);
+        bt %tmp.471 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_134_16_134_74_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 135 16 ]
+        %tmp.472 = dup %tmp.7;
+        %tmp.473 = 117;
+        %tmp.474 = getv function %tmp.472 :equals;
+        %tmp.475 = invoke %tmp.472 %tmp.474 (%tmp.473);
+        bt %tmp.475 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_135_16_135_74_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 136 16 ]
+        %tmp.476 = dup %tmp.7;
+        %tmp.477 = 118;
+        %tmp.478 = getv function %tmp.476 :equals;
+        %tmp.479 = invoke %tmp.476 %tmp.478 (%tmp.477);
+        bt %tmp.479 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_136_16_136_74_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 137 16 ]
+        %tmp.480 = dup %tmp.7;
+        %tmp.481 = 119;
+        %tmp.482 = getv function %tmp.480 :equals;
+        %tmp.483 = invoke %tmp.480 %tmp.482 (%tmp.481);
+        bt %tmp.483 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_137_16_137_74_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 138 16 ]
+        %tmp.484 = dup %tmp.7;
+        %tmp.485 = 120;
+        %tmp.486 = getv function %tmp.484 :equals;
+        %tmp.487 = invoke %tmp.484 %tmp.486 (%tmp.485);
+        bt %tmp.487 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_138_16_138_74_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 139 16 ]
+        %tmp.488 = dup %tmp.7;
+        %tmp.489 = 121;
+        %tmp.490 = getv function %tmp.488 :equals;
+        %tmp.491 = invoke %tmp.488 %tmp.490 (%tmp.489);
+        bt %tmp.491 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_139_16_139_74_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 140 16 ]
+        %tmp.492 = dup %tmp.7;
+        %tmp.493 = 122;
+        %tmp.494 = getv function %tmp.492 :equals;
+        %tmp.495 = invoke %tmp.492 %tmp.494 (%tmp.493);
+        bt %tmp.495 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_140_16_140_74_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 141 16 ]
+        %tmp.496 = dup %tmp.7;
+        %tmp.497 = 123;
+        %tmp.498 = getv function %tmp.496 :equals;
+        %tmp.499 = invoke %tmp.496 %tmp.498 (%tmp.497);
+        bt %tmp.499 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_141_16_141_74_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 142 16 ]
+        %tmp.500 = dup %tmp.7;
+        %tmp.501 = 124;
+        %tmp.502 = getv function %tmp.500 :equals;
+        %tmp.503 = invoke %tmp.500 %tmp.502 (%tmp.501);
+        bt %tmp.503 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_142_16_142_74_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 143 16 ]
+        %tmp.504 = dup %tmp.7;
+        %tmp.505 = 125;
+        %tmp.506 = getv function %tmp.504 :equals;
+        %tmp.507 = invoke %tmp.504 %tmp.506 (%tmp.505);
+        bt %tmp.507 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_143_16_143_74_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 144 16 ]
+        %tmp.508 = dup %tmp.7;
+        %tmp.509 = 126;
+        %tmp.510 = getv function %tmp.508 :equals;
+        %tmp.511 = invoke %tmp.508 %tmp.510 (%tmp.509);
+        bt %tmp.511 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_144_16_144_74_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 145 16 ]
+        %tmp.512 = dup %tmp.7;
+        %tmp.513 = 127;
+        %tmp.514 = getv function %tmp.512 :equals;
+        %tmp.515 = invoke %tmp.512 %tmp.514 (%tmp.513);
+        bt %tmp.515 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_145_16_145_74_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 146 16 ]
+        %tmp.516 = dup %tmp.7;
+        %tmp.517 = 128;
+        %tmp.518 = getv function %tmp.516 :equals;
+        %tmp.519 = invoke %tmp.516 %tmp.518 (%tmp.517);
+        bt %tmp.519 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_146_16_146_74_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 147 16 ]
+        %tmp.520 = dup %tmp.7;
+        %tmp.521 = 129;
+        %tmp.522 = getv function %tmp.520 :equals;
+        %tmp.523 = invoke %tmp.520 %tmp.522 (%tmp.521);
+        bt %tmp.523 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_147_16_147_74_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 148 16 ]
+        %tmp.524 = dup %tmp.7;
+        %tmp.525 = 130;
+        %tmp.526 = getv function %tmp.524 :equals;
+        %tmp.527 = invoke %tmp.524 %tmp.526 (%tmp.525);
+        bt %tmp.527 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_148_16_148_74_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 149 16 ]
+        %tmp.528 = dup %tmp.7;
+        %tmp.529 = 131;
+        %tmp.530 = getv function %tmp.528 :equals;
+        %tmp.531 = invoke %tmp.528 %tmp.530 (%tmp.529);
+        bt %tmp.531 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_149_16_149_74_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 150 16 ]
+        %tmp.532 = dup %tmp.7;
+        %tmp.533 = 132;
+        %tmp.534 = getv function %tmp.532 :equals;
+        %tmp.535 = invoke %tmp.532 %tmp.534 (%tmp.533);
+        bt %tmp.535 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_150_16_150_74_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 151 16 ]
+        %tmp.536 = dup %tmp.7;
+        %tmp.537 = 133;
+        %tmp.538 = getv function %tmp.536 :equals;
+        %tmp.539 = invoke %tmp.536 %tmp.538 (%tmp.537);
+        bt %tmp.539 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_151_16_151_74_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 152 16 ]
+        %tmp.540 = dup %tmp.7;
+        %tmp.541 = 134;
+        %tmp.542 = getv function %tmp.540 :equals;
+        %tmp.543 = invoke %tmp.540 %tmp.542 (%tmp.541);
+        bt %tmp.543 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_152_16_152_74_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 153 16 ]
+        %tmp.544 = dup %tmp.7;
+        %tmp.545 = 135;
+        %tmp.546 = getv function %tmp.544 :equals;
+        %tmp.547 = invoke %tmp.544 %tmp.546 (%tmp.545);
+        bt %tmp.547 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_153_16_153_74_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 154 16 ]
+        %tmp.548 = dup %tmp.7;
+        %tmp.549 = 136;
+        %tmp.550 = getv function %tmp.548 :equals;
+        %tmp.551 = invoke %tmp.548 %tmp.550 (%tmp.549);
+        bt %tmp.551 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_154_16_154_74_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 155 16 ]
+        %tmp.552 = dup %tmp.7;
+        %tmp.553 = 137;
+        %tmp.554 = getv function %tmp.552 :equals;
+        %tmp.555 = invoke %tmp.552 %tmp.554 (%tmp.553);
+        bt %tmp.555 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_155_16_155_74_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 156 16 ]
+        %tmp.556 = dup %tmp.7;
+        %tmp.557 = 138;
+        %tmp.558 = getv function %tmp.556 :equals;
+        %tmp.559 = invoke %tmp.556 %tmp.558 (%tmp.557);
+        bt %tmp.559 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_156_16_156_74_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 157 16 ]
+        %tmp.560 = dup %tmp.7;
+        %tmp.561 = 139;
+        %tmp.562 = getv function %tmp.560 :equals;
+        %tmp.563 = invoke %tmp.560 %tmp.562 (%tmp.561);
+        bt %tmp.563 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_157_16_157_74_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 158 16 ]
+        %tmp.564 = dup %tmp.7;
+        %tmp.565 = 140;
+        %tmp.566 = getv function %tmp.564 :equals;
+        %tmp.567 = invoke %tmp.564 %tmp.566 (%tmp.565);
+        bt %tmp.567 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_158_16_158_74_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 159 16 ]
+        %tmp.568 = dup %tmp.7;
+        %tmp.569 = 141;
+        %tmp.570 = getv function %tmp.568 :equals;
+        %tmp.571 = invoke %tmp.568 %tmp.570 (%tmp.569);
+        bt %tmp.571 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_159_16_159_74_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 160 16 ]
+        %tmp.572 = dup %tmp.7;
+        %tmp.573 = 142;
+        %tmp.574 = getv function %tmp.572 :equals;
+        %tmp.575 = invoke %tmp.572 %tmp.574 (%tmp.573);
+        bt %tmp.575 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_160_16_160_74_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 161 16 ]
+        %tmp.576 = dup %tmp.7;
+        %tmp.577 = 143;
+        %tmp.578 = getv function %tmp.576 :equals;
+        %tmp.579 = invoke %tmp.576 %tmp.578 (%tmp.577);
+        bt %tmp.579 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_161_16_161_74_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 162 16 ]
+        %tmp.580 = dup %tmp.7;
+        %tmp.581 = 144;
+        %tmp.582 = getv function %tmp.580 :equals;
+        %tmp.583 = invoke %tmp.580 %tmp.582 (%tmp.581);
+        bt %tmp.583 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_162_16_162_74_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 163 16 ]
+        %tmp.584 = dup %tmp.7;
+        %tmp.585 = 145;
+        %tmp.586 = getv function %tmp.584 :equals;
+        %tmp.587 = invoke %tmp.584 %tmp.586 (%tmp.585);
+        bt %tmp.587 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_163_16_163_74_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 164 16 ]
+        %tmp.588 = dup %tmp.7;
+        %tmp.589 = 146;
+        %tmp.590 = getv function %tmp.588 :equals;
+        %tmp.591 = invoke %tmp.588 %tmp.590 (%tmp.589);
+        bt %tmp.591 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_164_16_164_74_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 165 16 ]
+        %tmp.592 = dup %tmp.7;
+        %tmp.593 = 147;
+        %tmp.594 = getv function %tmp.592 :equals;
+        %tmp.595 = invoke %tmp.592 %tmp.594 (%tmp.593);
+        bt %tmp.595 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_165_16_165_74_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 166 16 ]
+        %tmp.596 = dup %tmp.7;
+        %tmp.597 = 148;
+        %tmp.598 = getv function %tmp.596 :equals;
+        %tmp.599 = invoke %tmp.596 %tmp.598 (%tmp.597);
+        bt %tmp.599 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_166_16_166_74_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 167 16 ]
+        %tmp.600 = dup %tmp.7;
+        %tmp.601 = 149;
+        %tmp.602 = getv function %tmp.600 :equals;
+        %tmp.603 = invoke %tmp.600 %tmp.602 (%tmp.601);
+        bt %tmp.603 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_167_16_167_74_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 168 16 ]
+        %tmp.604 = dup %tmp.7;
+        %tmp.605 = 150;
+        %tmp.606 = getv function %tmp.604 :equals;
+        %tmp.607 = invoke %tmp.604 %tmp.606 (%tmp.605);
+        bt %tmp.607 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_168_16_168_74_switchCase;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 169 16 ]
+        %tmp.608 = dup %tmp.7;
+        %tmp.609 = 151;
+        %tmp.610 = getv function %tmp.608 :equals;
+        %tmp.611 = invoke %tmp.608 %tmp.610 (%tmp.609);
+        bt %tmp.611 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_169_16_169_74_switchCase;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_18_12_170_12_switchStmtDefault:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_18_12_170_12_defaultCodeBegin;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_19_16_19_72_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 19 24 ]
+        symbol [ WatchUi %tmp.612 19 31 38 ];
+        %tmp.612 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.613 19 39 51 ];
+        %tmp.613 = getv function %tmp.612 :loadResource;
+        symbol [ Rez %tmp.615 19 52 55 ];
+        %tmp.615 = getv ? :Rez;
+        symbol [ Drawables %tmp.616 19 56 65 ];
+        %tmp.616 = getv %tmp.615 :Drawables;
+        symbol [ pk001 %tmp.617 19 66 71 ];
+        %tmp.617 = getv %tmp.616 :pk001;
+        %tmp.618 = invoke %tmp.612 %tmp.613(%tmp.617);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.618;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_20_16_20_72_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 20 24 ]
+        symbol [ WatchUi %tmp.619 20 31 38 ];
+        %tmp.619 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.620 20 39 51 ];
+        %tmp.620 = getv function %tmp.619 :loadResource;
+        symbol [ Rez %tmp.622 20 52 55 ];
+        %tmp.622 = getv ? :Rez;
+        symbol [ Drawables %tmp.623 20 56 65 ];
+        %tmp.623 = getv %tmp.622 :Drawables;
+        symbol [ pk002 %tmp.624 20 66 71 ];
+        %tmp.624 = getv %tmp.623 :pk002;
+        %tmp.625 = invoke %tmp.619 %tmp.620(%tmp.624);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.625;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_21_16_21_72_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 21 24 ]
+        symbol [ WatchUi %tmp.626 21 31 38 ];
+        %tmp.626 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.627 21 39 51 ];
+        %tmp.627 = getv function %tmp.626 :loadResource;
+        symbol [ Rez %tmp.629 21 52 55 ];
+        %tmp.629 = getv ? :Rez;
+        symbol [ Drawables %tmp.630 21 56 65 ];
+        %tmp.630 = getv %tmp.629 :Drawables;
+        symbol [ pk003 %tmp.631 21 66 71 ];
+        %tmp.631 = getv %tmp.630 :pk003;
+        %tmp.632 = invoke %tmp.626 %tmp.627(%tmp.631);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.632;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_22_16_22_72_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 22 24 ]
+        symbol [ WatchUi %tmp.633 22 31 38 ];
+        %tmp.633 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.634 22 39 51 ];
+        %tmp.634 = getv function %tmp.633 :loadResource;
+        symbol [ Rez %tmp.636 22 52 55 ];
+        %tmp.636 = getv ? :Rez;
+        symbol [ Drawables %tmp.637 22 56 65 ];
+        %tmp.637 = getv %tmp.636 :Drawables;
+        symbol [ pk004 %tmp.638 22 66 71 ];
+        %tmp.638 = getv %tmp.637 :pk004;
+        %tmp.639 = invoke %tmp.633 %tmp.634(%tmp.638);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.639;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_23_16_23_72_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 23 24 ]
+        symbol [ WatchUi %tmp.640 23 31 38 ];
+        %tmp.640 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.641 23 39 51 ];
+        %tmp.641 = getv function %tmp.640 :loadResource;
+        symbol [ Rez %tmp.643 23 52 55 ];
+        %tmp.643 = getv ? :Rez;
+        symbol [ Drawables %tmp.644 23 56 65 ];
+        %tmp.644 = getv %tmp.643 :Drawables;
+        symbol [ pk005 %tmp.645 23 66 71 ];
+        %tmp.645 = getv %tmp.644 :pk005;
+        %tmp.646 = invoke %tmp.640 %tmp.641(%tmp.645);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.646;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_24_16_24_72_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 24 24 ]
+        symbol [ WatchUi %tmp.647 24 31 38 ];
+        %tmp.647 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.648 24 39 51 ];
+        %tmp.648 = getv function %tmp.647 :loadResource;
+        symbol [ Rez %tmp.650 24 52 55 ];
+        %tmp.650 = getv ? :Rez;
+        symbol [ Drawables %tmp.651 24 56 65 ];
+        %tmp.651 = getv %tmp.650 :Drawables;
+        symbol [ pk006 %tmp.652 24 66 71 ];
+        %tmp.652 = getv %tmp.651 :pk006;
+        %tmp.653 = invoke %tmp.647 %tmp.648(%tmp.652);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.653;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_25_16_25_72_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 25 24 ]
+        symbol [ WatchUi %tmp.654 25 31 38 ];
+        %tmp.654 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.655 25 39 51 ];
+        %tmp.655 = getv function %tmp.654 :loadResource;
+        symbol [ Rez %tmp.657 25 52 55 ];
+        %tmp.657 = getv ? :Rez;
+        symbol [ Drawables %tmp.658 25 56 65 ];
+        %tmp.658 = getv %tmp.657 :Drawables;
+        symbol [ pk007 %tmp.659 25 66 71 ];
+        %tmp.659 = getv %tmp.658 :pk007;
+        %tmp.660 = invoke %tmp.654 %tmp.655(%tmp.659);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.660;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_26_16_26_72_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 26 24 ]
+        symbol [ WatchUi %tmp.661 26 31 38 ];
+        %tmp.661 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.662 26 39 51 ];
+        %tmp.662 = getv function %tmp.661 :loadResource;
+        symbol [ Rez %tmp.664 26 52 55 ];
+        %tmp.664 = getv ? :Rez;
+        symbol [ Drawables %tmp.665 26 56 65 ];
+        %tmp.665 = getv %tmp.664 :Drawables;
+        symbol [ pk008 %tmp.666 26 66 71 ];
+        %tmp.666 = getv %tmp.665 :pk008;
+        %tmp.667 = invoke %tmp.661 %tmp.662(%tmp.666);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.667;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_27_16_27_72_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 27 24 ]
+        symbol [ WatchUi %tmp.668 27 31 38 ];
+        %tmp.668 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.669 27 39 51 ];
+        %tmp.669 = getv function %tmp.668 :loadResource;
+        symbol [ Rez %tmp.671 27 52 55 ];
+        %tmp.671 = getv ? :Rez;
+        symbol [ Drawables %tmp.672 27 56 65 ];
+        %tmp.672 = getv %tmp.671 :Drawables;
+        symbol [ pk009 %tmp.673 27 66 71 ];
+        %tmp.673 = getv %tmp.672 :pk009;
+        %tmp.674 = invoke %tmp.668 %tmp.669(%tmp.673);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.674;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_28_16_28_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 28 25 ]
+        symbol [ WatchUi %tmp.675 28 32 39 ];
+        %tmp.675 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.676 28 40 52 ];
+        %tmp.676 = getv function %tmp.675 :loadResource;
+        symbol [ Rez %tmp.678 28 53 56 ];
+        %tmp.678 = getv ? :Rez;
+        symbol [ Drawables %tmp.679 28 57 66 ];
+        %tmp.679 = getv %tmp.678 :Drawables;
+        symbol [ pk010 %tmp.680 28 67 72 ];
+        %tmp.680 = getv %tmp.679 :pk010;
+        %tmp.681 = invoke %tmp.675 %tmp.676(%tmp.680);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.681;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_29_16_29_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 29 25 ]
+        symbol [ WatchUi %tmp.682 29 32 39 ];
+        %tmp.682 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.683 29 40 52 ];
+        %tmp.683 = getv function %tmp.682 :loadResource;
+        symbol [ Rez %tmp.685 29 53 56 ];
+        %tmp.685 = getv ? :Rez;
+        symbol [ Drawables %tmp.686 29 57 66 ];
+        %tmp.686 = getv %tmp.685 :Drawables;
+        symbol [ pk011 %tmp.687 29 67 72 ];
+        %tmp.687 = getv %tmp.686 :pk011;
+        %tmp.688 = invoke %tmp.682 %tmp.683(%tmp.687);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.688;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_30_16_30_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 30 25 ]
+        symbol [ WatchUi %tmp.689 30 32 39 ];
+        %tmp.689 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.690 30 40 52 ];
+        %tmp.690 = getv function %tmp.689 :loadResource;
+        symbol [ Rez %tmp.692 30 53 56 ];
+        %tmp.692 = getv ? :Rez;
+        symbol [ Drawables %tmp.693 30 57 66 ];
+        %tmp.693 = getv %tmp.692 :Drawables;
+        symbol [ pk012 %tmp.694 30 67 72 ];
+        %tmp.694 = getv %tmp.693 :pk012;
+        %tmp.695 = invoke %tmp.689 %tmp.690(%tmp.694);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.695;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_31_16_31_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 31 25 ]
+        symbol [ WatchUi %tmp.696 31 32 39 ];
+        %tmp.696 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.697 31 40 52 ];
+        %tmp.697 = getv function %tmp.696 :loadResource;
+        symbol [ Rez %tmp.699 31 53 56 ];
+        %tmp.699 = getv ? :Rez;
+        symbol [ Drawables %tmp.700 31 57 66 ];
+        %tmp.700 = getv %tmp.699 :Drawables;
+        symbol [ pk013 %tmp.701 31 67 72 ];
+        %tmp.701 = getv %tmp.700 :pk013;
+        %tmp.702 = invoke %tmp.696 %tmp.697(%tmp.701);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.702;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_32_16_32_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 32 25 ]
+        symbol [ WatchUi %tmp.703 32 32 39 ];
+        %tmp.703 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.704 32 40 52 ];
+        %tmp.704 = getv function %tmp.703 :loadResource;
+        symbol [ Rez %tmp.706 32 53 56 ];
+        %tmp.706 = getv ? :Rez;
+        symbol [ Drawables %tmp.707 32 57 66 ];
+        %tmp.707 = getv %tmp.706 :Drawables;
+        symbol [ pk014 %tmp.708 32 67 72 ];
+        %tmp.708 = getv %tmp.707 :pk014;
+        %tmp.709 = invoke %tmp.703 %tmp.704(%tmp.708);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.709;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_33_16_33_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 33 25 ]
+        symbol [ WatchUi %tmp.710 33 32 39 ];
+        %tmp.710 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.711 33 40 52 ];
+        %tmp.711 = getv function %tmp.710 :loadResource;
+        symbol [ Rez %tmp.713 33 53 56 ];
+        %tmp.713 = getv ? :Rez;
+        symbol [ Drawables %tmp.714 33 57 66 ];
+        %tmp.714 = getv %tmp.713 :Drawables;
+        symbol [ pk015 %tmp.715 33 67 72 ];
+        %tmp.715 = getv %tmp.714 :pk015;
+        %tmp.716 = invoke %tmp.710 %tmp.711(%tmp.715);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.716;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_34_16_34_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 34 25 ]
+        symbol [ WatchUi %tmp.717 34 32 39 ];
+        %tmp.717 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.718 34 40 52 ];
+        %tmp.718 = getv function %tmp.717 :loadResource;
+        symbol [ Rez %tmp.720 34 53 56 ];
+        %tmp.720 = getv ? :Rez;
+        symbol [ Drawables %tmp.721 34 57 66 ];
+        %tmp.721 = getv %tmp.720 :Drawables;
+        symbol [ pk016 %tmp.722 34 67 72 ];
+        %tmp.722 = getv %tmp.721 :pk016;
+        %tmp.723 = invoke %tmp.717 %tmp.718(%tmp.722);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.723;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_35_16_35_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 35 25 ]
+        symbol [ WatchUi %tmp.724 35 32 39 ];
+        %tmp.724 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.725 35 40 52 ];
+        %tmp.725 = getv function %tmp.724 :loadResource;
+        symbol [ Rez %tmp.727 35 53 56 ];
+        %tmp.727 = getv ? :Rez;
+        symbol [ Drawables %tmp.728 35 57 66 ];
+        %tmp.728 = getv %tmp.727 :Drawables;
+        symbol [ pk017 %tmp.729 35 67 72 ];
+        %tmp.729 = getv %tmp.728 :pk017;
+        %tmp.730 = invoke %tmp.724 %tmp.725(%tmp.729);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.730;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_36_16_36_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 36 25 ]
+        symbol [ WatchUi %tmp.731 36 32 39 ];
+        %tmp.731 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.732 36 40 52 ];
+        %tmp.732 = getv function %tmp.731 :loadResource;
+        symbol [ Rez %tmp.734 36 53 56 ];
+        %tmp.734 = getv ? :Rez;
+        symbol [ Drawables %tmp.735 36 57 66 ];
+        %tmp.735 = getv %tmp.734 :Drawables;
+        symbol [ pk018 %tmp.736 36 67 72 ];
+        %tmp.736 = getv %tmp.735 :pk018;
+        %tmp.737 = invoke %tmp.731 %tmp.732(%tmp.736);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.737;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_37_16_37_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 37 25 ]
+        symbol [ WatchUi %tmp.738 37 32 39 ];
+        %tmp.738 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.739 37 40 52 ];
+        %tmp.739 = getv function %tmp.738 :loadResource;
+        symbol [ Rez %tmp.741 37 53 56 ];
+        %tmp.741 = getv ? :Rez;
+        symbol [ Drawables %tmp.742 37 57 66 ];
+        %tmp.742 = getv %tmp.741 :Drawables;
+        symbol [ pk019 %tmp.743 37 67 72 ];
+        %tmp.743 = getv %tmp.742 :pk019;
+        %tmp.744 = invoke %tmp.738 %tmp.739(%tmp.743);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.744;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_38_16_38_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 38 25 ]
+        symbol [ WatchUi %tmp.745 38 32 39 ];
+        %tmp.745 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.746 38 40 52 ];
+        %tmp.746 = getv function %tmp.745 :loadResource;
+        symbol [ Rez %tmp.748 38 53 56 ];
+        %tmp.748 = getv ? :Rez;
+        symbol [ Drawables %tmp.749 38 57 66 ];
+        %tmp.749 = getv %tmp.748 :Drawables;
+        symbol [ pk020 %tmp.750 38 67 72 ];
+        %tmp.750 = getv %tmp.749 :pk020;
+        %tmp.751 = invoke %tmp.745 %tmp.746(%tmp.750);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.751;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_39_16_39_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 39 25 ]
+        symbol [ WatchUi %tmp.752 39 32 39 ];
+        %tmp.752 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.753 39 40 52 ];
+        %tmp.753 = getv function %tmp.752 :loadResource;
+        symbol [ Rez %tmp.755 39 53 56 ];
+        %tmp.755 = getv ? :Rez;
+        symbol [ Drawables %tmp.756 39 57 66 ];
+        %tmp.756 = getv %tmp.755 :Drawables;
+        symbol [ pk021 %tmp.757 39 67 72 ];
+        %tmp.757 = getv %tmp.756 :pk021;
+        %tmp.758 = invoke %tmp.752 %tmp.753(%tmp.757);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.758;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_40_16_40_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 40 25 ]
+        symbol [ WatchUi %tmp.759 40 32 39 ];
+        %tmp.759 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.760 40 40 52 ];
+        %tmp.760 = getv function %tmp.759 :loadResource;
+        symbol [ Rez %tmp.762 40 53 56 ];
+        %tmp.762 = getv ? :Rez;
+        symbol [ Drawables %tmp.763 40 57 66 ];
+        %tmp.763 = getv %tmp.762 :Drawables;
+        symbol [ pk022 %tmp.764 40 67 72 ];
+        %tmp.764 = getv %tmp.763 :pk022;
+        %tmp.765 = invoke %tmp.759 %tmp.760(%tmp.764);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.765;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_41_16_41_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 41 25 ]
+        symbol [ WatchUi %tmp.766 41 32 39 ];
+        %tmp.766 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.767 41 40 52 ];
+        %tmp.767 = getv function %tmp.766 :loadResource;
+        symbol [ Rez %tmp.769 41 53 56 ];
+        %tmp.769 = getv ? :Rez;
+        symbol [ Drawables %tmp.770 41 57 66 ];
+        %tmp.770 = getv %tmp.769 :Drawables;
+        symbol [ pk023 %tmp.771 41 67 72 ];
+        %tmp.771 = getv %tmp.770 :pk023;
+        %tmp.772 = invoke %tmp.766 %tmp.767(%tmp.771);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.772;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_42_16_42_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 42 25 ]
+        symbol [ WatchUi %tmp.773 42 32 39 ];
+        %tmp.773 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.774 42 40 52 ];
+        %tmp.774 = getv function %tmp.773 :loadResource;
+        symbol [ Rez %tmp.776 42 53 56 ];
+        %tmp.776 = getv ? :Rez;
+        symbol [ Drawables %tmp.777 42 57 66 ];
+        %tmp.777 = getv %tmp.776 :Drawables;
+        symbol [ pk024 %tmp.778 42 67 72 ];
+        %tmp.778 = getv %tmp.777 :pk024;
+        %tmp.779 = invoke %tmp.773 %tmp.774(%tmp.778);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.779;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_43_16_43_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 43 25 ]
+        symbol [ WatchUi %tmp.780 43 32 39 ];
+        %tmp.780 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.781 43 40 52 ];
+        %tmp.781 = getv function %tmp.780 :loadResource;
+        symbol [ Rez %tmp.783 43 53 56 ];
+        %tmp.783 = getv ? :Rez;
+        symbol [ Drawables %tmp.784 43 57 66 ];
+        %tmp.784 = getv %tmp.783 :Drawables;
+        symbol [ pk025 %tmp.785 43 67 72 ];
+        %tmp.785 = getv %tmp.784 :pk025;
+        %tmp.786 = invoke %tmp.780 %tmp.781(%tmp.785);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.786;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_44_16_44_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 44 25 ]
+        symbol [ WatchUi %tmp.787 44 32 39 ];
+        %tmp.787 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.788 44 40 52 ];
+        %tmp.788 = getv function %tmp.787 :loadResource;
+        symbol [ Rez %tmp.790 44 53 56 ];
+        %tmp.790 = getv ? :Rez;
+        symbol [ Drawables %tmp.791 44 57 66 ];
+        %tmp.791 = getv %tmp.790 :Drawables;
+        symbol [ pk026 %tmp.792 44 67 72 ];
+        %tmp.792 = getv %tmp.791 :pk026;
+        %tmp.793 = invoke %tmp.787 %tmp.788(%tmp.792);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.793;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_45_16_45_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 45 25 ]
+        symbol [ WatchUi %tmp.794 45 32 39 ];
+        %tmp.794 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.795 45 40 52 ];
+        %tmp.795 = getv function %tmp.794 :loadResource;
+        symbol [ Rez %tmp.797 45 53 56 ];
+        %tmp.797 = getv ? :Rez;
+        symbol [ Drawables %tmp.798 45 57 66 ];
+        %tmp.798 = getv %tmp.797 :Drawables;
+        symbol [ pk027 %tmp.799 45 67 72 ];
+        %tmp.799 = getv %tmp.798 :pk027;
+        %tmp.800 = invoke %tmp.794 %tmp.795(%tmp.799);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.800;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_46_16_46_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 46 25 ]
+        symbol [ WatchUi %tmp.801 46 32 39 ];
+        %tmp.801 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.802 46 40 52 ];
+        %tmp.802 = getv function %tmp.801 :loadResource;
+        symbol [ Rez %tmp.804 46 53 56 ];
+        %tmp.804 = getv ? :Rez;
+        symbol [ Drawables %tmp.805 46 57 66 ];
+        %tmp.805 = getv %tmp.804 :Drawables;
+        symbol [ pk028 %tmp.806 46 67 72 ];
+        %tmp.806 = getv %tmp.805 :pk028;
+        %tmp.807 = invoke %tmp.801 %tmp.802(%tmp.806);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.807;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_47_16_47_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 47 25 ]
+        symbol [ WatchUi %tmp.808 47 32 39 ];
+        %tmp.808 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.809 47 40 52 ];
+        %tmp.809 = getv function %tmp.808 :loadResource;
+        symbol [ Rez %tmp.811 47 53 56 ];
+        %tmp.811 = getv ? :Rez;
+        symbol [ Drawables %tmp.812 47 57 66 ];
+        %tmp.812 = getv %tmp.811 :Drawables;
+        symbol [ pk029 %tmp.813 47 67 72 ];
+        %tmp.813 = getv %tmp.812 :pk029;
+        %tmp.814 = invoke %tmp.808 %tmp.809(%tmp.813);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.814;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_48_16_48_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 48 25 ]
+        symbol [ WatchUi %tmp.815 48 32 39 ];
+        %tmp.815 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.816 48 40 52 ];
+        %tmp.816 = getv function %tmp.815 :loadResource;
+        symbol [ Rez %tmp.818 48 53 56 ];
+        %tmp.818 = getv ? :Rez;
+        symbol [ Drawables %tmp.819 48 57 66 ];
+        %tmp.819 = getv %tmp.818 :Drawables;
+        symbol [ pk030 %tmp.820 48 67 72 ];
+        %tmp.820 = getv %tmp.819 :pk030;
+        %tmp.821 = invoke %tmp.815 %tmp.816(%tmp.820);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.821;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_49_16_49_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 49 25 ]
+        symbol [ WatchUi %tmp.822 49 32 39 ];
+        %tmp.822 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.823 49 40 52 ];
+        %tmp.823 = getv function %tmp.822 :loadResource;
+        symbol [ Rez %tmp.825 49 53 56 ];
+        %tmp.825 = getv ? :Rez;
+        symbol [ Drawables %tmp.826 49 57 66 ];
+        %tmp.826 = getv %tmp.825 :Drawables;
+        symbol [ pk031 %tmp.827 49 67 72 ];
+        %tmp.827 = getv %tmp.826 :pk031;
+        %tmp.828 = invoke %tmp.822 %tmp.823(%tmp.827);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.828;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_50_16_50_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 50 25 ]
+        symbol [ WatchUi %tmp.829 50 32 39 ];
+        %tmp.829 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.830 50 40 52 ];
+        %tmp.830 = getv function %tmp.829 :loadResource;
+        symbol [ Rez %tmp.832 50 53 56 ];
+        %tmp.832 = getv ? :Rez;
+        symbol [ Drawables %tmp.833 50 57 66 ];
+        %tmp.833 = getv %tmp.832 :Drawables;
+        symbol [ pk032 %tmp.834 50 67 72 ];
+        %tmp.834 = getv %tmp.833 :pk032;
+        %tmp.835 = invoke %tmp.829 %tmp.830(%tmp.834);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.835;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_51_16_51_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 51 25 ]
+        symbol [ WatchUi %tmp.836 51 32 39 ];
+        %tmp.836 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.837 51 40 52 ];
+        %tmp.837 = getv function %tmp.836 :loadResource;
+        symbol [ Rez %tmp.839 51 53 56 ];
+        %tmp.839 = getv ? :Rez;
+        symbol [ Drawables %tmp.840 51 57 66 ];
+        %tmp.840 = getv %tmp.839 :Drawables;
+        symbol [ pk033 %tmp.841 51 67 72 ];
+        %tmp.841 = getv %tmp.840 :pk033;
+        %tmp.842 = invoke %tmp.836 %tmp.837(%tmp.841);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.842;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_52_16_52_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 52 25 ]
+        symbol [ WatchUi %tmp.843 52 32 39 ];
+        %tmp.843 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.844 52 40 52 ];
+        %tmp.844 = getv function %tmp.843 :loadResource;
+        symbol [ Rez %tmp.846 52 53 56 ];
+        %tmp.846 = getv ? :Rez;
+        symbol [ Drawables %tmp.847 52 57 66 ];
+        %tmp.847 = getv %tmp.846 :Drawables;
+        symbol [ pk034 %tmp.848 52 67 72 ];
+        %tmp.848 = getv %tmp.847 :pk034;
+        %tmp.849 = invoke %tmp.843 %tmp.844(%tmp.848);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.849;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_53_16_53_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 53 25 ]
+        symbol [ WatchUi %tmp.850 53 32 39 ];
+        %tmp.850 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.851 53 40 52 ];
+        %tmp.851 = getv function %tmp.850 :loadResource;
+        symbol [ Rez %tmp.853 53 53 56 ];
+        %tmp.853 = getv ? :Rez;
+        symbol [ Drawables %tmp.854 53 57 66 ];
+        %tmp.854 = getv %tmp.853 :Drawables;
+        symbol [ pk035 %tmp.855 53 67 72 ];
+        %tmp.855 = getv %tmp.854 :pk035;
+        %tmp.856 = invoke %tmp.850 %tmp.851(%tmp.855);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.856;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_54_16_54_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 54 25 ]
+        symbol [ WatchUi %tmp.857 54 32 39 ];
+        %tmp.857 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.858 54 40 52 ];
+        %tmp.858 = getv function %tmp.857 :loadResource;
+        symbol [ Rez %tmp.860 54 53 56 ];
+        %tmp.860 = getv ? :Rez;
+        symbol [ Drawables %tmp.861 54 57 66 ];
+        %tmp.861 = getv %tmp.860 :Drawables;
+        symbol [ pk036 %tmp.862 54 67 72 ];
+        %tmp.862 = getv %tmp.861 :pk036;
+        %tmp.863 = invoke %tmp.857 %tmp.858(%tmp.862);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.863;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_55_16_55_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 55 25 ]
+        symbol [ WatchUi %tmp.864 55 32 39 ];
+        %tmp.864 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.865 55 40 52 ];
+        %tmp.865 = getv function %tmp.864 :loadResource;
+        symbol [ Rez %tmp.867 55 53 56 ];
+        %tmp.867 = getv ? :Rez;
+        symbol [ Drawables %tmp.868 55 57 66 ];
+        %tmp.868 = getv %tmp.867 :Drawables;
+        symbol [ pk037 %tmp.869 55 67 72 ];
+        %tmp.869 = getv %tmp.868 :pk037;
+        %tmp.870 = invoke %tmp.864 %tmp.865(%tmp.869);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.870;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_56_16_56_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 56 25 ]
+        symbol [ WatchUi %tmp.871 56 32 39 ];
+        %tmp.871 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.872 56 40 52 ];
+        %tmp.872 = getv function %tmp.871 :loadResource;
+        symbol [ Rez %tmp.874 56 53 56 ];
+        %tmp.874 = getv ? :Rez;
+        symbol [ Drawables %tmp.875 56 57 66 ];
+        %tmp.875 = getv %tmp.874 :Drawables;
+        symbol [ pk038 %tmp.876 56 67 72 ];
+        %tmp.876 = getv %tmp.875 :pk038;
+        %tmp.877 = invoke %tmp.871 %tmp.872(%tmp.876);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.877;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_57_16_57_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 57 25 ]
+        symbol [ WatchUi %tmp.878 57 32 39 ];
+        %tmp.878 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.879 57 40 52 ];
+        %tmp.879 = getv function %tmp.878 :loadResource;
+        symbol [ Rez %tmp.881 57 53 56 ];
+        %tmp.881 = getv ? :Rez;
+        symbol [ Drawables %tmp.882 57 57 66 ];
+        %tmp.882 = getv %tmp.881 :Drawables;
+        symbol [ pk039 %tmp.883 57 67 72 ];
+        %tmp.883 = getv %tmp.882 :pk039;
+        %tmp.884 = invoke %tmp.878 %tmp.879(%tmp.883);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.884;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_58_16_58_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 58 25 ]
+        symbol [ WatchUi %tmp.885 58 32 39 ];
+        %tmp.885 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.886 58 40 52 ];
+        %tmp.886 = getv function %tmp.885 :loadResource;
+        symbol [ Rez %tmp.888 58 53 56 ];
+        %tmp.888 = getv ? :Rez;
+        symbol [ Drawables %tmp.889 58 57 66 ];
+        %tmp.889 = getv %tmp.888 :Drawables;
+        symbol [ pk040 %tmp.890 58 67 72 ];
+        %tmp.890 = getv %tmp.889 :pk040;
+        %tmp.891 = invoke %tmp.885 %tmp.886(%tmp.890);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.891;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_59_16_59_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 59 25 ]
+        symbol [ WatchUi %tmp.892 59 32 39 ];
+        %tmp.892 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.893 59 40 52 ];
+        %tmp.893 = getv function %tmp.892 :loadResource;
+        symbol [ Rez %tmp.895 59 53 56 ];
+        %tmp.895 = getv ? :Rez;
+        symbol [ Drawables %tmp.896 59 57 66 ];
+        %tmp.896 = getv %tmp.895 :Drawables;
+        symbol [ pk041 %tmp.897 59 67 72 ];
+        %tmp.897 = getv %tmp.896 :pk041;
+        %tmp.898 = invoke %tmp.892 %tmp.893(%tmp.897);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.898;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_60_16_60_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 60 25 ]
+        symbol [ WatchUi %tmp.899 60 32 39 ];
+        %tmp.899 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.900 60 40 52 ];
+        %tmp.900 = getv function %tmp.899 :loadResource;
+        symbol [ Rez %tmp.902 60 53 56 ];
+        %tmp.902 = getv ? :Rez;
+        symbol [ Drawables %tmp.903 60 57 66 ];
+        %tmp.903 = getv %tmp.902 :Drawables;
+        symbol [ pk042 %tmp.904 60 67 72 ];
+        %tmp.904 = getv %tmp.903 :pk042;
+        %tmp.905 = invoke %tmp.899 %tmp.900(%tmp.904);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.905;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_61_16_61_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 61 25 ]
+        symbol [ WatchUi %tmp.906 61 32 39 ];
+        %tmp.906 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.907 61 40 52 ];
+        %tmp.907 = getv function %tmp.906 :loadResource;
+        symbol [ Rez %tmp.909 61 53 56 ];
+        %tmp.909 = getv ? :Rez;
+        symbol [ Drawables %tmp.910 61 57 66 ];
+        %tmp.910 = getv %tmp.909 :Drawables;
+        symbol [ pk043 %tmp.911 61 67 72 ];
+        %tmp.911 = getv %tmp.910 :pk043;
+        %tmp.912 = invoke %tmp.906 %tmp.907(%tmp.911);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.912;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_62_16_62_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 62 25 ]
+        symbol [ WatchUi %tmp.913 62 32 39 ];
+        %tmp.913 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.914 62 40 52 ];
+        %tmp.914 = getv function %tmp.913 :loadResource;
+        symbol [ Rez %tmp.916 62 53 56 ];
+        %tmp.916 = getv ? :Rez;
+        symbol [ Drawables %tmp.917 62 57 66 ];
+        %tmp.917 = getv %tmp.916 :Drawables;
+        symbol [ pk044 %tmp.918 62 67 72 ];
+        %tmp.918 = getv %tmp.917 :pk044;
+        %tmp.919 = invoke %tmp.913 %tmp.914(%tmp.918);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.919;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_63_16_63_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 63 25 ]
+        symbol [ WatchUi %tmp.920 63 32 39 ];
+        %tmp.920 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.921 63 40 52 ];
+        %tmp.921 = getv function %tmp.920 :loadResource;
+        symbol [ Rez %tmp.923 63 53 56 ];
+        %tmp.923 = getv ? :Rez;
+        symbol [ Drawables %tmp.924 63 57 66 ];
+        %tmp.924 = getv %tmp.923 :Drawables;
+        symbol [ pk045 %tmp.925 63 67 72 ];
+        %tmp.925 = getv %tmp.924 :pk045;
+        %tmp.926 = invoke %tmp.920 %tmp.921(%tmp.925);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.926;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_64_16_64_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 64 25 ]
+        symbol [ WatchUi %tmp.927 64 32 39 ];
+        %tmp.927 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.928 64 40 52 ];
+        %tmp.928 = getv function %tmp.927 :loadResource;
+        symbol [ Rez %tmp.930 64 53 56 ];
+        %tmp.930 = getv ? :Rez;
+        symbol [ Drawables %tmp.931 64 57 66 ];
+        %tmp.931 = getv %tmp.930 :Drawables;
+        symbol [ pk046 %tmp.932 64 67 72 ];
+        %tmp.932 = getv %tmp.931 :pk046;
+        %tmp.933 = invoke %tmp.927 %tmp.928(%tmp.932);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.933;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_65_16_65_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 65 25 ]
+        symbol [ WatchUi %tmp.934 65 32 39 ];
+        %tmp.934 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.935 65 40 52 ];
+        %tmp.935 = getv function %tmp.934 :loadResource;
+        symbol [ Rez %tmp.937 65 53 56 ];
+        %tmp.937 = getv ? :Rez;
+        symbol [ Drawables %tmp.938 65 57 66 ];
+        %tmp.938 = getv %tmp.937 :Drawables;
+        symbol [ pk047 %tmp.939 65 67 72 ];
+        %tmp.939 = getv %tmp.938 :pk047;
+        %tmp.940 = invoke %tmp.934 %tmp.935(%tmp.939);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.940;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_66_16_66_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 66 25 ]
+        symbol [ WatchUi %tmp.941 66 32 39 ];
+        %tmp.941 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.942 66 40 52 ];
+        %tmp.942 = getv function %tmp.941 :loadResource;
+        symbol [ Rez %tmp.944 66 53 56 ];
+        %tmp.944 = getv ? :Rez;
+        symbol [ Drawables %tmp.945 66 57 66 ];
+        %tmp.945 = getv %tmp.944 :Drawables;
+        symbol [ pk048 %tmp.946 66 67 72 ];
+        %tmp.946 = getv %tmp.945 :pk048;
+        %tmp.947 = invoke %tmp.941 %tmp.942(%tmp.946);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.947;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_67_16_67_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 67 25 ]
+        symbol [ WatchUi %tmp.948 67 32 39 ];
+        %tmp.948 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.949 67 40 52 ];
+        %tmp.949 = getv function %tmp.948 :loadResource;
+        symbol [ Rez %tmp.951 67 53 56 ];
+        %tmp.951 = getv ? :Rez;
+        symbol [ Drawables %tmp.952 67 57 66 ];
+        %tmp.952 = getv %tmp.951 :Drawables;
+        symbol [ pk049 %tmp.953 67 67 72 ];
+        %tmp.953 = getv %tmp.952 :pk049;
+        %tmp.954 = invoke %tmp.948 %tmp.949(%tmp.953);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.954;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_68_16_68_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 68 25 ]
+        symbol [ WatchUi %tmp.955 68 32 39 ];
+        %tmp.955 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.956 68 40 52 ];
+        %tmp.956 = getv function %tmp.955 :loadResource;
+        symbol [ Rez %tmp.958 68 53 56 ];
+        %tmp.958 = getv ? :Rez;
+        symbol [ Drawables %tmp.959 68 57 66 ];
+        %tmp.959 = getv %tmp.958 :Drawables;
+        symbol [ pk050 %tmp.960 68 67 72 ];
+        %tmp.960 = getv %tmp.959 :pk050;
+        %tmp.961 = invoke %tmp.955 %tmp.956(%tmp.960);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.961;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_69_16_69_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 69 25 ]
+        symbol [ WatchUi %tmp.962 69 32 39 ];
+        %tmp.962 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.963 69 40 52 ];
+        %tmp.963 = getv function %tmp.962 :loadResource;
+        symbol [ Rez %tmp.965 69 53 56 ];
+        %tmp.965 = getv ? :Rez;
+        symbol [ Drawables %tmp.966 69 57 66 ];
+        %tmp.966 = getv %tmp.965 :Drawables;
+        symbol [ pk051 %tmp.967 69 67 72 ];
+        %tmp.967 = getv %tmp.966 :pk051;
+        %tmp.968 = invoke %tmp.962 %tmp.963(%tmp.967);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.968;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_70_16_70_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 70 25 ]
+        symbol [ WatchUi %tmp.969 70 32 39 ];
+        %tmp.969 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.970 70 40 52 ];
+        %tmp.970 = getv function %tmp.969 :loadResource;
+        symbol [ Rez %tmp.972 70 53 56 ];
+        %tmp.972 = getv ? :Rez;
+        symbol [ Drawables %tmp.973 70 57 66 ];
+        %tmp.973 = getv %tmp.972 :Drawables;
+        symbol [ pk052 %tmp.974 70 67 72 ];
+        %tmp.974 = getv %tmp.973 :pk052;
+        %tmp.975 = invoke %tmp.969 %tmp.970(%tmp.974);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.975;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_71_16_71_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 71 25 ]
+        symbol [ WatchUi %tmp.976 71 32 39 ];
+        %tmp.976 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.977 71 40 52 ];
+        %tmp.977 = getv function %tmp.976 :loadResource;
+        symbol [ Rez %tmp.979 71 53 56 ];
+        %tmp.979 = getv ? :Rez;
+        symbol [ Drawables %tmp.980 71 57 66 ];
+        %tmp.980 = getv %tmp.979 :Drawables;
+        symbol [ pk053 %tmp.981 71 67 72 ];
+        %tmp.981 = getv %tmp.980 :pk053;
+        %tmp.982 = invoke %tmp.976 %tmp.977(%tmp.981);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.982;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_72_16_72_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 72 25 ]
+        symbol [ WatchUi %tmp.983 72 32 39 ];
+        %tmp.983 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.984 72 40 52 ];
+        %tmp.984 = getv function %tmp.983 :loadResource;
+        symbol [ Rez %tmp.986 72 53 56 ];
+        %tmp.986 = getv ? :Rez;
+        symbol [ Drawables %tmp.987 72 57 66 ];
+        %tmp.987 = getv %tmp.986 :Drawables;
+        symbol [ pk054 %tmp.988 72 67 72 ];
+        %tmp.988 = getv %tmp.987 :pk054;
+        %tmp.989 = invoke %tmp.983 %tmp.984(%tmp.988);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.989;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_73_16_73_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 73 25 ]
+        symbol [ WatchUi %tmp.990 73 32 39 ];
+        %tmp.990 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.991 73 40 52 ];
+        %tmp.991 = getv function %tmp.990 :loadResource;
+        symbol [ Rez %tmp.993 73 53 56 ];
+        %tmp.993 = getv ? :Rez;
+        symbol [ Drawables %tmp.994 73 57 66 ];
+        %tmp.994 = getv %tmp.993 :Drawables;
+        symbol [ pk055 %tmp.995 73 67 72 ];
+        %tmp.995 = getv %tmp.994 :pk055;
+        %tmp.996 = invoke %tmp.990 %tmp.991(%tmp.995);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.996;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_74_16_74_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 74 25 ]
+        symbol [ WatchUi %tmp.997 74 32 39 ];
+        %tmp.997 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.998 74 40 52 ];
+        %tmp.998 = getv function %tmp.997 :loadResource;
+        symbol [ Rez %tmp.1000 74 53 56 ];
+        %tmp.1000 = getv ? :Rez;
+        symbol [ Drawables %tmp.1001 74 57 66 ];
+        %tmp.1001 = getv %tmp.1000 :Drawables;
+        symbol [ pk056 %tmp.1002 74 67 72 ];
+        %tmp.1002 = getv %tmp.1001 :pk056;
+        %tmp.1003 = invoke %tmp.997 %tmp.998(%tmp.1002);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1003;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_75_16_75_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 75 25 ]
+        symbol [ WatchUi %tmp.1004 75 32 39 ];
+        %tmp.1004 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1005 75 40 52 ];
+        %tmp.1005 = getv function %tmp.1004 :loadResource;
+        symbol [ Rez %tmp.1007 75 53 56 ];
+        %tmp.1007 = getv ? :Rez;
+        symbol [ Drawables %tmp.1008 75 57 66 ];
+        %tmp.1008 = getv %tmp.1007 :Drawables;
+        symbol [ pk057 %tmp.1009 75 67 72 ];
+        %tmp.1009 = getv %tmp.1008 :pk057;
+        %tmp.1010 = invoke %tmp.1004 %tmp.1005(%tmp.1009);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1010;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_76_16_76_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 76 25 ]
+        symbol [ WatchUi %tmp.1011 76 32 39 ];
+        %tmp.1011 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1012 76 40 52 ];
+        %tmp.1012 = getv function %tmp.1011 :loadResource;
+        symbol [ Rez %tmp.1014 76 53 56 ];
+        %tmp.1014 = getv ? :Rez;
+        symbol [ Drawables %tmp.1015 76 57 66 ];
+        %tmp.1015 = getv %tmp.1014 :Drawables;
+        symbol [ pk058 %tmp.1016 76 67 72 ];
+        %tmp.1016 = getv %tmp.1015 :pk058;
+        %tmp.1017 = invoke %tmp.1011 %tmp.1012(%tmp.1016);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1017;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_77_16_77_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 77 25 ]
+        symbol [ WatchUi %tmp.1018 77 32 39 ];
+        %tmp.1018 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1019 77 40 52 ];
+        %tmp.1019 = getv function %tmp.1018 :loadResource;
+        symbol [ Rez %tmp.1021 77 53 56 ];
+        %tmp.1021 = getv ? :Rez;
+        symbol [ Drawables %tmp.1022 77 57 66 ];
+        %tmp.1022 = getv %tmp.1021 :Drawables;
+        symbol [ pk059 %tmp.1023 77 67 72 ];
+        %tmp.1023 = getv %tmp.1022 :pk059;
+        %tmp.1024 = invoke %tmp.1018 %tmp.1019(%tmp.1023);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1024;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_78_16_78_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 78 25 ]
+        symbol [ WatchUi %tmp.1025 78 32 39 ];
+        %tmp.1025 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1026 78 40 52 ];
+        %tmp.1026 = getv function %tmp.1025 :loadResource;
+        symbol [ Rez %tmp.1028 78 53 56 ];
+        %tmp.1028 = getv ? :Rez;
+        symbol [ Drawables %tmp.1029 78 57 66 ];
+        %tmp.1029 = getv %tmp.1028 :Drawables;
+        symbol [ pk060 %tmp.1030 78 67 72 ];
+        %tmp.1030 = getv %tmp.1029 :pk060;
+        %tmp.1031 = invoke %tmp.1025 %tmp.1026(%tmp.1030);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1031;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_79_16_79_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 79 25 ]
+        symbol [ WatchUi %tmp.1032 79 32 39 ];
+        %tmp.1032 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1033 79 40 52 ];
+        %tmp.1033 = getv function %tmp.1032 :loadResource;
+        symbol [ Rez %tmp.1035 79 53 56 ];
+        %tmp.1035 = getv ? :Rez;
+        symbol [ Drawables %tmp.1036 79 57 66 ];
+        %tmp.1036 = getv %tmp.1035 :Drawables;
+        symbol [ pk061 %tmp.1037 79 67 72 ];
+        %tmp.1037 = getv %tmp.1036 :pk061;
+        %tmp.1038 = invoke %tmp.1032 %tmp.1033(%tmp.1037);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1038;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_80_16_80_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 80 25 ]
+        symbol [ WatchUi %tmp.1039 80 32 39 ];
+        %tmp.1039 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1040 80 40 52 ];
+        %tmp.1040 = getv function %tmp.1039 :loadResource;
+        symbol [ Rez %tmp.1042 80 53 56 ];
+        %tmp.1042 = getv ? :Rez;
+        symbol [ Drawables %tmp.1043 80 57 66 ];
+        %tmp.1043 = getv %tmp.1042 :Drawables;
+        symbol [ pk062 %tmp.1044 80 67 72 ];
+        %tmp.1044 = getv %tmp.1043 :pk062;
+        %tmp.1045 = invoke %tmp.1039 %tmp.1040(%tmp.1044);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1045;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_81_16_81_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 81 25 ]
+        symbol [ WatchUi %tmp.1046 81 32 39 ];
+        %tmp.1046 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1047 81 40 52 ];
+        %tmp.1047 = getv function %tmp.1046 :loadResource;
+        symbol [ Rez %tmp.1049 81 53 56 ];
+        %tmp.1049 = getv ? :Rez;
+        symbol [ Drawables %tmp.1050 81 57 66 ];
+        %tmp.1050 = getv %tmp.1049 :Drawables;
+        symbol [ pk063 %tmp.1051 81 67 72 ];
+        %tmp.1051 = getv %tmp.1050 :pk063;
+        %tmp.1052 = invoke %tmp.1046 %tmp.1047(%tmp.1051);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1052;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_82_16_82_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 82 25 ]
+        symbol [ WatchUi %tmp.1053 82 32 39 ];
+        %tmp.1053 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1054 82 40 52 ];
+        %tmp.1054 = getv function %tmp.1053 :loadResource;
+        symbol [ Rez %tmp.1056 82 53 56 ];
+        %tmp.1056 = getv ? :Rez;
+        symbol [ Drawables %tmp.1057 82 57 66 ];
+        %tmp.1057 = getv %tmp.1056 :Drawables;
+        symbol [ pk064 %tmp.1058 82 67 72 ];
+        %tmp.1058 = getv %tmp.1057 :pk064;
+        %tmp.1059 = invoke %tmp.1053 %tmp.1054(%tmp.1058);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1059;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_83_16_83_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 83 25 ]
+        symbol [ WatchUi %tmp.1060 83 32 39 ];
+        %tmp.1060 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1061 83 40 52 ];
+        %tmp.1061 = getv function %tmp.1060 :loadResource;
+        symbol [ Rez %tmp.1063 83 53 56 ];
+        %tmp.1063 = getv ? :Rez;
+        symbol [ Drawables %tmp.1064 83 57 66 ];
+        %tmp.1064 = getv %tmp.1063 :Drawables;
+        symbol [ pk065 %tmp.1065 83 67 72 ];
+        %tmp.1065 = getv %tmp.1064 :pk065;
+        %tmp.1066 = invoke %tmp.1060 %tmp.1061(%tmp.1065);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1066;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_84_16_84_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 84 25 ]
+        symbol [ WatchUi %tmp.1067 84 32 39 ];
+        %tmp.1067 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1068 84 40 52 ];
+        %tmp.1068 = getv function %tmp.1067 :loadResource;
+        symbol [ Rez %tmp.1070 84 53 56 ];
+        %tmp.1070 = getv ? :Rez;
+        symbol [ Drawables %tmp.1071 84 57 66 ];
+        %tmp.1071 = getv %tmp.1070 :Drawables;
+        symbol [ pk066 %tmp.1072 84 67 72 ];
+        %tmp.1072 = getv %tmp.1071 :pk066;
+        %tmp.1073 = invoke %tmp.1067 %tmp.1068(%tmp.1072);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1073;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_85_16_85_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 85 25 ]
+        symbol [ WatchUi %tmp.1074 85 32 39 ];
+        %tmp.1074 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1075 85 40 52 ];
+        %tmp.1075 = getv function %tmp.1074 :loadResource;
+        symbol [ Rez %tmp.1077 85 53 56 ];
+        %tmp.1077 = getv ? :Rez;
+        symbol [ Drawables %tmp.1078 85 57 66 ];
+        %tmp.1078 = getv %tmp.1077 :Drawables;
+        symbol [ pk067 %tmp.1079 85 67 72 ];
+        %tmp.1079 = getv %tmp.1078 :pk067;
+        %tmp.1080 = invoke %tmp.1074 %tmp.1075(%tmp.1079);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1080;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_86_16_86_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 86 25 ]
+        symbol [ WatchUi %tmp.1081 86 32 39 ];
+        %tmp.1081 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1082 86 40 52 ];
+        %tmp.1082 = getv function %tmp.1081 :loadResource;
+        symbol [ Rez %tmp.1084 86 53 56 ];
+        %tmp.1084 = getv ? :Rez;
+        symbol [ Drawables %tmp.1085 86 57 66 ];
+        %tmp.1085 = getv %tmp.1084 :Drawables;
+        symbol [ pk068 %tmp.1086 86 67 72 ];
+        %tmp.1086 = getv %tmp.1085 :pk068;
+        %tmp.1087 = invoke %tmp.1081 %tmp.1082(%tmp.1086);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1087;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_87_16_87_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 87 25 ]
+        symbol [ WatchUi %tmp.1088 87 32 39 ];
+        %tmp.1088 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1089 87 40 52 ];
+        %tmp.1089 = getv function %tmp.1088 :loadResource;
+        symbol [ Rez %tmp.1091 87 53 56 ];
+        %tmp.1091 = getv ? :Rez;
+        symbol [ Drawables %tmp.1092 87 57 66 ];
+        %tmp.1092 = getv %tmp.1091 :Drawables;
+        symbol [ pk069 %tmp.1093 87 67 72 ];
+        %tmp.1093 = getv %tmp.1092 :pk069;
+        %tmp.1094 = invoke %tmp.1088 %tmp.1089(%tmp.1093);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1094;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_88_16_88_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 88 25 ]
+        symbol [ WatchUi %tmp.1095 88 32 39 ];
+        %tmp.1095 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1096 88 40 52 ];
+        %tmp.1096 = getv function %tmp.1095 :loadResource;
+        symbol [ Rez %tmp.1098 88 53 56 ];
+        %tmp.1098 = getv ? :Rez;
+        symbol [ Drawables %tmp.1099 88 57 66 ];
+        %tmp.1099 = getv %tmp.1098 :Drawables;
+        symbol [ pk070 %tmp.1100 88 67 72 ];
+        %tmp.1100 = getv %tmp.1099 :pk070;
+        %tmp.1101 = invoke %tmp.1095 %tmp.1096(%tmp.1100);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1101;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_89_16_89_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 89 25 ]
+        symbol [ WatchUi %tmp.1102 89 32 39 ];
+        %tmp.1102 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1103 89 40 52 ];
+        %tmp.1103 = getv function %tmp.1102 :loadResource;
+        symbol [ Rez %tmp.1105 89 53 56 ];
+        %tmp.1105 = getv ? :Rez;
+        symbol [ Drawables %tmp.1106 89 57 66 ];
+        %tmp.1106 = getv %tmp.1105 :Drawables;
+        symbol [ pk071 %tmp.1107 89 67 72 ];
+        %tmp.1107 = getv %tmp.1106 :pk071;
+        %tmp.1108 = invoke %tmp.1102 %tmp.1103(%tmp.1107);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1108;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_90_16_90_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 90 25 ]
+        symbol [ WatchUi %tmp.1109 90 32 39 ];
+        %tmp.1109 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1110 90 40 52 ];
+        %tmp.1110 = getv function %tmp.1109 :loadResource;
+        symbol [ Rez %tmp.1112 90 53 56 ];
+        %tmp.1112 = getv ? :Rez;
+        symbol [ Drawables %tmp.1113 90 57 66 ];
+        %tmp.1113 = getv %tmp.1112 :Drawables;
+        symbol [ pk072 %tmp.1114 90 67 72 ];
+        %tmp.1114 = getv %tmp.1113 :pk072;
+        %tmp.1115 = invoke %tmp.1109 %tmp.1110(%tmp.1114);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1115;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_91_16_91_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 91 25 ]
+        symbol [ WatchUi %tmp.1116 91 32 39 ];
+        %tmp.1116 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1117 91 40 52 ];
+        %tmp.1117 = getv function %tmp.1116 :loadResource;
+        symbol [ Rez %tmp.1119 91 53 56 ];
+        %tmp.1119 = getv ? :Rez;
+        symbol [ Drawables %tmp.1120 91 57 66 ];
+        %tmp.1120 = getv %tmp.1119 :Drawables;
+        symbol [ pk073 %tmp.1121 91 67 72 ];
+        %tmp.1121 = getv %tmp.1120 :pk073;
+        %tmp.1122 = invoke %tmp.1116 %tmp.1117(%tmp.1121);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1122;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_92_16_92_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 92 25 ]
+        symbol [ WatchUi %tmp.1123 92 32 39 ];
+        %tmp.1123 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1124 92 40 52 ];
+        %tmp.1124 = getv function %tmp.1123 :loadResource;
+        symbol [ Rez %tmp.1126 92 53 56 ];
+        %tmp.1126 = getv ? :Rez;
+        symbol [ Drawables %tmp.1127 92 57 66 ];
+        %tmp.1127 = getv %tmp.1126 :Drawables;
+        symbol [ pk074 %tmp.1128 92 67 72 ];
+        %tmp.1128 = getv %tmp.1127 :pk074;
+        %tmp.1129 = invoke %tmp.1123 %tmp.1124(%tmp.1128);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1129;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_93_16_93_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 93 25 ]
+        symbol [ WatchUi %tmp.1130 93 32 39 ];
+        %tmp.1130 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1131 93 40 52 ];
+        %tmp.1131 = getv function %tmp.1130 :loadResource;
+        symbol [ Rez %tmp.1133 93 53 56 ];
+        %tmp.1133 = getv ? :Rez;
+        symbol [ Drawables %tmp.1134 93 57 66 ];
+        %tmp.1134 = getv %tmp.1133 :Drawables;
+        symbol [ pk075 %tmp.1135 93 67 72 ];
+        %tmp.1135 = getv %tmp.1134 :pk075;
+        %tmp.1136 = invoke %tmp.1130 %tmp.1131(%tmp.1135);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1136;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_94_16_94_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 94 25 ]
+        symbol [ WatchUi %tmp.1137 94 32 39 ];
+        %tmp.1137 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1138 94 40 52 ];
+        %tmp.1138 = getv function %tmp.1137 :loadResource;
+        symbol [ Rez %tmp.1140 94 53 56 ];
+        %tmp.1140 = getv ? :Rez;
+        symbol [ Drawables %tmp.1141 94 57 66 ];
+        %tmp.1141 = getv %tmp.1140 :Drawables;
+        symbol [ pk076 %tmp.1142 94 67 72 ];
+        %tmp.1142 = getv %tmp.1141 :pk076;
+        %tmp.1143 = invoke %tmp.1137 %tmp.1138(%tmp.1142);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1143;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_95_16_95_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 95 25 ]
+        symbol [ WatchUi %tmp.1144 95 32 39 ];
+        %tmp.1144 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1145 95 40 52 ];
+        %tmp.1145 = getv function %tmp.1144 :loadResource;
+        symbol [ Rez %tmp.1147 95 53 56 ];
+        %tmp.1147 = getv ? :Rez;
+        symbol [ Drawables %tmp.1148 95 57 66 ];
+        %tmp.1148 = getv %tmp.1147 :Drawables;
+        symbol [ pk077 %tmp.1149 95 67 72 ];
+        %tmp.1149 = getv %tmp.1148 :pk077;
+        %tmp.1150 = invoke %tmp.1144 %tmp.1145(%tmp.1149);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1150;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_96_16_96_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 96 25 ]
+        symbol [ WatchUi %tmp.1151 96 32 39 ];
+        %tmp.1151 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1152 96 40 52 ];
+        %tmp.1152 = getv function %tmp.1151 :loadResource;
+        symbol [ Rez %tmp.1154 96 53 56 ];
+        %tmp.1154 = getv ? :Rez;
+        symbol [ Drawables %tmp.1155 96 57 66 ];
+        %tmp.1155 = getv %tmp.1154 :Drawables;
+        symbol [ pk078 %tmp.1156 96 67 72 ];
+        %tmp.1156 = getv %tmp.1155 :pk078;
+        %tmp.1157 = invoke %tmp.1151 %tmp.1152(%tmp.1156);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1157;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_97_16_97_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 97 25 ]
+        symbol [ WatchUi %tmp.1158 97 32 39 ];
+        %tmp.1158 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1159 97 40 52 ];
+        %tmp.1159 = getv function %tmp.1158 :loadResource;
+        symbol [ Rez %tmp.1161 97 53 56 ];
+        %tmp.1161 = getv ? :Rez;
+        symbol [ Drawables %tmp.1162 97 57 66 ];
+        %tmp.1162 = getv %tmp.1161 :Drawables;
+        symbol [ pk079 %tmp.1163 97 67 72 ];
+        %tmp.1163 = getv %tmp.1162 :pk079;
+        %tmp.1164 = invoke %tmp.1158 %tmp.1159(%tmp.1163);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1164;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_98_16_98_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 98 25 ]
+        symbol [ WatchUi %tmp.1165 98 32 39 ];
+        %tmp.1165 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1166 98 40 52 ];
+        %tmp.1166 = getv function %tmp.1165 :loadResource;
+        symbol [ Rez %tmp.1168 98 53 56 ];
+        %tmp.1168 = getv ? :Rez;
+        symbol [ Drawables %tmp.1169 98 57 66 ];
+        %tmp.1169 = getv %tmp.1168 :Drawables;
+        symbol [ pk080 %tmp.1170 98 67 72 ];
+        %tmp.1170 = getv %tmp.1169 :pk080;
+        %tmp.1171 = invoke %tmp.1165 %tmp.1166(%tmp.1170);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1171;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_99_16_99_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 99 25 ]
+        symbol [ WatchUi %tmp.1172 99 32 39 ];
+        %tmp.1172 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1173 99 40 52 ];
+        %tmp.1173 = getv function %tmp.1172 :loadResource;
+        symbol [ Rez %tmp.1175 99 53 56 ];
+        %tmp.1175 = getv ? :Rez;
+        symbol [ Drawables %tmp.1176 99 57 66 ];
+        %tmp.1176 = getv %tmp.1175 :Drawables;
+        symbol [ pk081 %tmp.1177 99 67 72 ];
+        %tmp.1177 = getv %tmp.1176 :pk081;
+        %tmp.1178 = invoke %tmp.1172 %tmp.1173(%tmp.1177);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1178;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_100_16_100_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 100 25 ]
+        symbol [ WatchUi %tmp.1179 100 32 39 ];
+        %tmp.1179 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1180 100 40 52 ];
+        %tmp.1180 = getv function %tmp.1179 :loadResource;
+        symbol [ Rez %tmp.1182 100 53 56 ];
+        %tmp.1182 = getv ? :Rez;
+        symbol [ Drawables %tmp.1183 100 57 66 ];
+        %tmp.1183 = getv %tmp.1182 :Drawables;
+        symbol [ pk082 %tmp.1184 100 67 72 ];
+        %tmp.1184 = getv %tmp.1183 :pk082;
+        %tmp.1185 = invoke %tmp.1179 %tmp.1180(%tmp.1184);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1185;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_101_16_101_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 101 25 ]
+        symbol [ WatchUi %tmp.1186 101 32 39 ];
+        %tmp.1186 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1187 101 40 52 ];
+        %tmp.1187 = getv function %tmp.1186 :loadResource;
+        symbol [ Rez %tmp.1189 101 53 56 ];
+        %tmp.1189 = getv ? :Rez;
+        symbol [ Drawables %tmp.1190 101 57 66 ];
+        %tmp.1190 = getv %tmp.1189 :Drawables;
+        symbol [ pk083 %tmp.1191 101 67 72 ];
+        %tmp.1191 = getv %tmp.1190 :pk083;
+        %tmp.1192 = invoke %tmp.1186 %tmp.1187(%tmp.1191);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1192;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_102_16_102_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 102 25 ]
+        symbol [ WatchUi %tmp.1193 102 32 39 ];
+        %tmp.1193 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1194 102 40 52 ];
+        %tmp.1194 = getv function %tmp.1193 :loadResource;
+        symbol [ Rez %tmp.1196 102 53 56 ];
+        %tmp.1196 = getv ? :Rez;
+        symbol [ Drawables %tmp.1197 102 57 66 ];
+        %tmp.1197 = getv %tmp.1196 :Drawables;
+        symbol [ pk084 %tmp.1198 102 67 72 ];
+        %tmp.1198 = getv %tmp.1197 :pk084;
+        %tmp.1199 = invoke %tmp.1193 %tmp.1194(%tmp.1198);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1199;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_103_16_103_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 103 25 ]
+        symbol [ WatchUi %tmp.1200 103 32 39 ];
+        %tmp.1200 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1201 103 40 52 ];
+        %tmp.1201 = getv function %tmp.1200 :loadResource;
+        symbol [ Rez %tmp.1203 103 53 56 ];
+        %tmp.1203 = getv ? :Rez;
+        symbol [ Drawables %tmp.1204 103 57 66 ];
+        %tmp.1204 = getv %tmp.1203 :Drawables;
+        symbol [ pk085 %tmp.1205 103 67 72 ];
+        %tmp.1205 = getv %tmp.1204 :pk085;
+        %tmp.1206 = invoke %tmp.1200 %tmp.1201(%tmp.1205);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1206;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_104_16_104_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 104 25 ]
+        symbol [ WatchUi %tmp.1207 104 32 39 ];
+        %tmp.1207 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1208 104 40 52 ];
+        %tmp.1208 = getv function %tmp.1207 :loadResource;
+        symbol [ Rez %tmp.1210 104 53 56 ];
+        %tmp.1210 = getv ? :Rez;
+        symbol [ Drawables %tmp.1211 104 57 66 ];
+        %tmp.1211 = getv %tmp.1210 :Drawables;
+        symbol [ pk086 %tmp.1212 104 67 72 ];
+        %tmp.1212 = getv %tmp.1211 :pk086;
+        %tmp.1213 = invoke %tmp.1207 %tmp.1208(%tmp.1212);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1213;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_105_16_105_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 105 25 ]
+        symbol [ WatchUi %tmp.1214 105 32 39 ];
+        %tmp.1214 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1215 105 40 52 ];
+        %tmp.1215 = getv function %tmp.1214 :loadResource;
+        symbol [ Rez %tmp.1217 105 53 56 ];
+        %tmp.1217 = getv ? :Rez;
+        symbol [ Drawables %tmp.1218 105 57 66 ];
+        %tmp.1218 = getv %tmp.1217 :Drawables;
+        symbol [ pk087 %tmp.1219 105 67 72 ];
+        %tmp.1219 = getv %tmp.1218 :pk087;
+        %tmp.1220 = invoke %tmp.1214 %tmp.1215(%tmp.1219);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1220;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_106_16_106_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 106 25 ]
+        symbol [ WatchUi %tmp.1221 106 32 39 ];
+        %tmp.1221 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1222 106 40 52 ];
+        %tmp.1222 = getv function %tmp.1221 :loadResource;
+        symbol [ Rez %tmp.1224 106 53 56 ];
+        %tmp.1224 = getv ? :Rez;
+        symbol [ Drawables %tmp.1225 106 57 66 ];
+        %tmp.1225 = getv %tmp.1224 :Drawables;
+        symbol [ pk088 %tmp.1226 106 67 72 ];
+        %tmp.1226 = getv %tmp.1225 :pk088;
+        %tmp.1227 = invoke %tmp.1221 %tmp.1222(%tmp.1226);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1227;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_107_16_107_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 107 25 ]
+        symbol [ WatchUi %tmp.1228 107 32 39 ];
+        %tmp.1228 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1229 107 40 52 ];
+        %tmp.1229 = getv function %tmp.1228 :loadResource;
+        symbol [ Rez %tmp.1231 107 53 56 ];
+        %tmp.1231 = getv ? :Rez;
+        symbol [ Drawables %tmp.1232 107 57 66 ];
+        %tmp.1232 = getv %tmp.1231 :Drawables;
+        symbol [ pk089 %tmp.1233 107 67 72 ];
+        %tmp.1233 = getv %tmp.1232 :pk089;
+        %tmp.1234 = invoke %tmp.1228 %tmp.1229(%tmp.1233);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1234;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_108_16_108_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 108 25 ]
+        symbol [ WatchUi %tmp.1235 108 32 39 ];
+        %tmp.1235 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1236 108 40 52 ];
+        %tmp.1236 = getv function %tmp.1235 :loadResource;
+        symbol [ Rez %tmp.1238 108 53 56 ];
+        %tmp.1238 = getv ? :Rez;
+        symbol [ Drawables %tmp.1239 108 57 66 ];
+        %tmp.1239 = getv %tmp.1238 :Drawables;
+        symbol [ pk090 %tmp.1240 108 67 72 ];
+        %tmp.1240 = getv %tmp.1239 :pk090;
+        %tmp.1241 = invoke %tmp.1235 %tmp.1236(%tmp.1240);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1241;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_109_16_109_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 109 25 ]
+        symbol [ WatchUi %tmp.1242 109 32 39 ];
+        %tmp.1242 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1243 109 40 52 ];
+        %tmp.1243 = getv function %tmp.1242 :loadResource;
+        symbol [ Rez %tmp.1245 109 53 56 ];
+        %tmp.1245 = getv ? :Rez;
+        symbol [ Drawables %tmp.1246 109 57 66 ];
+        %tmp.1246 = getv %tmp.1245 :Drawables;
+        symbol [ pk091 %tmp.1247 109 67 72 ];
+        %tmp.1247 = getv %tmp.1246 :pk091;
+        %tmp.1248 = invoke %tmp.1242 %tmp.1243(%tmp.1247);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1248;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_110_16_110_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 110 25 ]
+        symbol [ WatchUi %tmp.1249 110 32 39 ];
+        %tmp.1249 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1250 110 40 52 ];
+        %tmp.1250 = getv function %tmp.1249 :loadResource;
+        symbol [ Rez %tmp.1252 110 53 56 ];
+        %tmp.1252 = getv ? :Rez;
+        symbol [ Drawables %tmp.1253 110 57 66 ];
+        %tmp.1253 = getv %tmp.1252 :Drawables;
+        symbol [ pk092 %tmp.1254 110 67 72 ];
+        %tmp.1254 = getv %tmp.1253 :pk092;
+        %tmp.1255 = invoke %tmp.1249 %tmp.1250(%tmp.1254);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1255;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_111_16_111_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 111 25 ]
+        symbol [ WatchUi %tmp.1256 111 32 39 ];
+        %tmp.1256 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1257 111 40 52 ];
+        %tmp.1257 = getv function %tmp.1256 :loadResource;
+        symbol [ Rez %tmp.1259 111 53 56 ];
+        %tmp.1259 = getv ? :Rez;
+        symbol [ Drawables %tmp.1260 111 57 66 ];
+        %tmp.1260 = getv %tmp.1259 :Drawables;
+        symbol [ pk093 %tmp.1261 111 67 72 ];
+        %tmp.1261 = getv %tmp.1260 :pk093;
+        %tmp.1262 = invoke %tmp.1256 %tmp.1257(%tmp.1261);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1262;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_112_16_112_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 112 25 ]
+        symbol [ WatchUi %tmp.1263 112 32 39 ];
+        %tmp.1263 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1264 112 40 52 ];
+        %tmp.1264 = getv function %tmp.1263 :loadResource;
+        symbol [ Rez %tmp.1266 112 53 56 ];
+        %tmp.1266 = getv ? :Rez;
+        symbol [ Drawables %tmp.1267 112 57 66 ];
+        %tmp.1267 = getv %tmp.1266 :Drawables;
+        symbol [ pk094 %tmp.1268 112 67 72 ];
+        %tmp.1268 = getv %tmp.1267 :pk094;
+        %tmp.1269 = invoke %tmp.1263 %tmp.1264(%tmp.1268);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1269;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_113_16_113_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 113 25 ]
+        symbol [ WatchUi %tmp.1270 113 32 39 ];
+        %tmp.1270 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1271 113 40 52 ];
+        %tmp.1271 = getv function %tmp.1270 :loadResource;
+        symbol [ Rez %tmp.1273 113 53 56 ];
+        %tmp.1273 = getv ? :Rez;
+        symbol [ Drawables %tmp.1274 113 57 66 ];
+        %tmp.1274 = getv %tmp.1273 :Drawables;
+        symbol [ pk095 %tmp.1275 113 67 72 ];
+        %tmp.1275 = getv %tmp.1274 :pk095;
+        %tmp.1276 = invoke %tmp.1270 %tmp.1271(%tmp.1275);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1276;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_114_16_114_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 114 25 ]
+        symbol [ WatchUi %tmp.1277 114 32 39 ];
+        %tmp.1277 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1278 114 40 52 ];
+        %tmp.1278 = getv function %tmp.1277 :loadResource;
+        symbol [ Rez %tmp.1280 114 53 56 ];
+        %tmp.1280 = getv ? :Rez;
+        symbol [ Drawables %tmp.1281 114 57 66 ];
+        %tmp.1281 = getv %tmp.1280 :Drawables;
+        symbol [ pk096 %tmp.1282 114 67 72 ];
+        %tmp.1282 = getv %tmp.1281 :pk096;
+        %tmp.1283 = invoke %tmp.1277 %tmp.1278(%tmp.1282);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1283;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_115_16_115_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 115 25 ]
+        symbol [ WatchUi %tmp.1284 115 32 39 ];
+        %tmp.1284 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1285 115 40 52 ];
+        %tmp.1285 = getv function %tmp.1284 :loadResource;
+        symbol [ Rez %tmp.1287 115 53 56 ];
+        %tmp.1287 = getv ? :Rez;
+        symbol [ Drawables %tmp.1288 115 57 66 ];
+        %tmp.1288 = getv %tmp.1287 :Drawables;
+        symbol [ pk097 %tmp.1289 115 67 72 ];
+        %tmp.1289 = getv %tmp.1288 :pk097;
+        %tmp.1290 = invoke %tmp.1284 %tmp.1285(%tmp.1289);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1290;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_116_16_116_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 116 25 ]
+        symbol [ WatchUi %tmp.1291 116 32 39 ];
+        %tmp.1291 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1292 116 40 52 ];
+        %tmp.1292 = getv function %tmp.1291 :loadResource;
+        symbol [ Rez %tmp.1294 116 53 56 ];
+        %tmp.1294 = getv ? :Rez;
+        symbol [ Drawables %tmp.1295 116 57 66 ];
+        %tmp.1295 = getv %tmp.1294 :Drawables;
+        symbol [ pk098 %tmp.1296 116 67 72 ];
+        %tmp.1296 = getv %tmp.1295 :pk098;
+        %tmp.1297 = invoke %tmp.1291 %tmp.1292(%tmp.1296);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1297;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_117_16_117_73_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 117 25 ]
+        symbol [ WatchUi %tmp.1298 117 32 39 ];
+        %tmp.1298 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1299 117 40 52 ];
+        %tmp.1299 = getv function %tmp.1298 :loadResource;
+        symbol [ Rez %tmp.1301 117 53 56 ];
+        %tmp.1301 = getv ? :Rez;
+        symbol [ Drawables %tmp.1302 117 57 66 ];
+        %tmp.1302 = getv %tmp.1301 :Drawables;
+        symbol [ pk099 %tmp.1303 117 67 72 ];
+        %tmp.1303 = getv %tmp.1302 :pk099;
+        %tmp.1304 = invoke %tmp.1298 %tmp.1299(%tmp.1303);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1304;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_118_16_118_74_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 118 26 ]
+        symbol [ WatchUi %tmp.1305 118 33 40 ];
+        %tmp.1305 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1306 118 41 53 ];
+        %tmp.1306 = getv function %tmp.1305 :loadResource;
+        symbol [ Rez %tmp.1308 118 54 57 ];
+        %tmp.1308 = getv ? :Rez;
+        symbol [ Drawables %tmp.1309 118 58 67 ];
+        %tmp.1309 = getv %tmp.1308 :Drawables;
+        symbol [ pk100 %tmp.1310 118 68 73 ];
+        %tmp.1310 = getv %tmp.1309 :pk100;
+        %tmp.1311 = invoke %tmp.1305 %tmp.1306(%tmp.1310);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1311;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_119_16_119_74_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 119 26 ]
+        symbol [ WatchUi %tmp.1312 119 33 40 ];
+        %tmp.1312 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1313 119 41 53 ];
+        %tmp.1313 = getv function %tmp.1312 :loadResource;
+        symbol [ Rez %tmp.1315 119 54 57 ];
+        %tmp.1315 = getv ? :Rez;
+        symbol [ Drawables %tmp.1316 119 58 67 ];
+        %tmp.1316 = getv %tmp.1315 :Drawables;
+        symbol [ pk101 %tmp.1317 119 68 73 ];
+        %tmp.1317 = getv %tmp.1316 :pk101;
+        %tmp.1318 = invoke %tmp.1312 %tmp.1313(%tmp.1317);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1318;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_120_16_120_74_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 120 26 ]
+        symbol [ WatchUi %tmp.1319 120 33 40 ];
+        %tmp.1319 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1320 120 41 53 ];
+        %tmp.1320 = getv function %tmp.1319 :loadResource;
+        symbol [ Rez %tmp.1322 120 54 57 ];
+        %tmp.1322 = getv ? :Rez;
+        symbol [ Drawables %tmp.1323 120 58 67 ];
+        %tmp.1323 = getv %tmp.1322 :Drawables;
+        symbol [ pk102 %tmp.1324 120 68 73 ];
+        %tmp.1324 = getv %tmp.1323 :pk102;
+        %tmp.1325 = invoke %tmp.1319 %tmp.1320(%tmp.1324);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1325;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_121_16_121_74_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 121 26 ]
+        symbol [ WatchUi %tmp.1326 121 33 40 ];
+        %tmp.1326 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1327 121 41 53 ];
+        %tmp.1327 = getv function %tmp.1326 :loadResource;
+        symbol [ Rez %tmp.1329 121 54 57 ];
+        %tmp.1329 = getv ? :Rez;
+        symbol [ Drawables %tmp.1330 121 58 67 ];
+        %tmp.1330 = getv %tmp.1329 :Drawables;
+        symbol [ pk103 %tmp.1331 121 68 73 ];
+        %tmp.1331 = getv %tmp.1330 :pk103;
+        %tmp.1332 = invoke %tmp.1326 %tmp.1327(%tmp.1331);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1332;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_122_16_122_74_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 122 26 ]
+        symbol [ WatchUi %tmp.1333 122 33 40 ];
+        %tmp.1333 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1334 122 41 53 ];
+        %tmp.1334 = getv function %tmp.1333 :loadResource;
+        symbol [ Rez %tmp.1336 122 54 57 ];
+        %tmp.1336 = getv ? :Rez;
+        symbol [ Drawables %tmp.1337 122 58 67 ];
+        %tmp.1337 = getv %tmp.1336 :Drawables;
+        symbol [ pk104 %tmp.1338 122 68 73 ];
+        %tmp.1338 = getv %tmp.1337 :pk104;
+        %tmp.1339 = invoke %tmp.1333 %tmp.1334(%tmp.1338);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1339;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_123_16_123_74_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 123 26 ]
+        symbol [ WatchUi %tmp.1340 123 33 40 ];
+        %tmp.1340 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1341 123 41 53 ];
+        %tmp.1341 = getv function %tmp.1340 :loadResource;
+        symbol [ Rez %tmp.1343 123 54 57 ];
+        %tmp.1343 = getv ? :Rez;
+        symbol [ Drawables %tmp.1344 123 58 67 ];
+        %tmp.1344 = getv %tmp.1343 :Drawables;
+        symbol [ pk105 %tmp.1345 123 68 73 ];
+        %tmp.1345 = getv %tmp.1344 :pk105;
+        %tmp.1346 = invoke %tmp.1340 %tmp.1341(%tmp.1345);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1346;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_124_16_124_74_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 124 26 ]
+        symbol [ WatchUi %tmp.1347 124 33 40 ];
+        %tmp.1347 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1348 124 41 53 ];
+        %tmp.1348 = getv function %tmp.1347 :loadResource;
+        symbol [ Rez %tmp.1350 124 54 57 ];
+        %tmp.1350 = getv ? :Rez;
+        symbol [ Drawables %tmp.1351 124 58 67 ];
+        %tmp.1351 = getv %tmp.1350 :Drawables;
+        symbol [ pk106 %tmp.1352 124 68 73 ];
+        %tmp.1352 = getv %tmp.1351 :pk106;
+        %tmp.1353 = invoke %tmp.1347 %tmp.1348(%tmp.1352);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1353;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_125_16_125_74_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 125 26 ]
+        symbol [ WatchUi %tmp.1354 125 33 40 ];
+        %tmp.1354 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1355 125 41 53 ];
+        %tmp.1355 = getv function %tmp.1354 :loadResource;
+        symbol [ Rez %tmp.1357 125 54 57 ];
+        %tmp.1357 = getv ? :Rez;
+        symbol [ Drawables %tmp.1358 125 58 67 ];
+        %tmp.1358 = getv %tmp.1357 :Drawables;
+        symbol [ pk107 %tmp.1359 125 68 73 ];
+        %tmp.1359 = getv %tmp.1358 :pk107;
+        %tmp.1360 = invoke %tmp.1354 %tmp.1355(%tmp.1359);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1360;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_126_16_126_74_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 126 26 ]
+        symbol [ WatchUi %tmp.1361 126 33 40 ];
+        %tmp.1361 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1362 126 41 53 ];
+        %tmp.1362 = getv function %tmp.1361 :loadResource;
+        symbol [ Rez %tmp.1364 126 54 57 ];
+        %tmp.1364 = getv ? :Rez;
+        symbol [ Drawables %tmp.1365 126 58 67 ];
+        %tmp.1365 = getv %tmp.1364 :Drawables;
+        symbol [ pk108 %tmp.1366 126 68 73 ];
+        %tmp.1366 = getv %tmp.1365 :pk108;
+        %tmp.1367 = invoke %tmp.1361 %tmp.1362(%tmp.1366);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1367;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_127_16_127_74_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 127 26 ]
+        symbol [ WatchUi %tmp.1368 127 33 40 ];
+        %tmp.1368 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1369 127 41 53 ];
+        %tmp.1369 = getv function %tmp.1368 :loadResource;
+        symbol [ Rez %tmp.1371 127 54 57 ];
+        %tmp.1371 = getv ? :Rez;
+        symbol [ Drawables %tmp.1372 127 58 67 ];
+        %tmp.1372 = getv %tmp.1371 :Drawables;
+        symbol [ pk109 %tmp.1373 127 68 73 ];
+        %tmp.1373 = getv %tmp.1372 :pk109;
+        %tmp.1374 = invoke %tmp.1368 %tmp.1369(%tmp.1373);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1374;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_128_16_128_74_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 128 26 ]
+        symbol [ WatchUi %tmp.1375 128 33 40 ];
+        %tmp.1375 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1376 128 41 53 ];
+        %tmp.1376 = getv function %tmp.1375 :loadResource;
+        symbol [ Rez %tmp.1378 128 54 57 ];
+        %tmp.1378 = getv ? :Rez;
+        symbol [ Drawables %tmp.1379 128 58 67 ];
+        %tmp.1379 = getv %tmp.1378 :Drawables;
+        symbol [ pk110 %tmp.1380 128 68 73 ];
+        %tmp.1380 = getv %tmp.1379 :pk110;
+        %tmp.1381 = invoke %tmp.1375 %tmp.1376(%tmp.1380);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1381;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_129_16_129_74_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 129 26 ]
+        symbol [ WatchUi %tmp.1382 129 33 40 ];
+        %tmp.1382 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1383 129 41 53 ];
+        %tmp.1383 = getv function %tmp.1382 :loadResource;
+        symbol [ Rez %tmp.1385 129 54 57 ];
+        %tmp.1385 = getv ? :Rez;
+        symbol [ Drawables %tmp.1386 129 58 67 ];
+        %tmp.1386 = getv %tmp.1385 :Drawables;
+        symbol [ pk111 %tmp.1387 129 68 73 ];
+        %tmp.1387 = getv %tmp.1386 :pk111;
+        %tmp.1388 = invoke %tmp.1382 %tmp.1383(%tmp.1387);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1388;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_130_16_130_74_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 130 26 ]
+        symbol [ WatchUi %tmp.1389 130 33 40 ];
+        %tmp.1389 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1390 130 41 53 ];
+        %tmp.1390 = getv function %tmp.1389 :loadResource;
+        symbol [ Rez %tmp.1392 130 54 57 ];
+        %tmp.1392 = getv ? :Rez;
+        symbol [ Drawables %tmp.1393 130 58 67 ];
+        %tmp.1393 = getv %tmp.1392 :Drawables;
+        symbol [ pk112 %tmp.1394 130 68 73 ];
+        %tmp.1394 = getv %tmp.1393 :pk112;
+        %tmp.1395 = invoke %tmp.1389 %tmp.1390(%tmp.1394);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1395;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_131_16_131_74_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 131 26 ]
+        symbol [ WatchUi %tmp.1396 131 33 40 ];
+        %tmp.1396 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1397 131 41 53 ];
+        %tmp.1397 = getv function %tmp.1396 :loadResource;
+        symbol [ Rez %tmp.1399 131 54 57 ];
+        %tmp.1399 = getv ? :Rez;
+        symbol [ Drawables %tmp.1400 131 58 67 ];
+        %tmp.1400 = getv %tmp.1399 :Drawables;
+        symbol [ pk113 %tmp.1401 131 68 73 ];
+        %tmp.1401 = getv %tmp.1400 :pk113;
+        %tmp.1402 = invoke %tmp.1396 %tmp.1397(%tmp.1401);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1402;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_132_16_132_74_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 132 26 ]
+        symbol [ WatchUi %tmp.1403 132 33 40 ];
+        %tmp.1403 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1404 132 41 53 ];
+        %tmp.1404 = getv function %tmp.1403 :loadResource;
+        symbol [ Rez %tmp.1406 132 54 57 ];
+        %tmp.1406 = getv ? :Rez;
+        symbol [ Drawables %tmp.1407 132 58 67 ];
+        %tmp.1407 = getv %tmp.1406 :Drawables;
+        symbol [ pk114 %tmp.1408 132 68 73 ];
+        %tmp.1408 = getv %tmp.1407 :pk114;
+        %tmp.1409 = invoke %tmp.1403 %tmp.1404(%tmp.1408);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1409;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_133_16_133_74_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 133 26 ]
+        symbol [ WatchUi %tmp.1410 133 33 40 ];
+        %tmp.1410 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1411 133 41 53 ];
+        %tmp.1411 = getv function %tmp.1410 :loadResource;
+        symbol [ Rez %tmp.1413 133 54 57 ];
+        %tmp.1413 = getv ? :Rez;
+        symbol [ Drawables %tmp.1414 133 58 67 ];
+        %tmp.1414 = getv %tmp.1413 :Drawables;
+        symbol [ pk115 %tmp.1415 133 68 73 ];
+        %tmp.1415 = getv %tmp.1414 :pk115;
+        %tmp.1416 = invoke %tmp.1410 %tmp.1411(%tmp.1415);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1416;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_134_16_134_74_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 134 26 ]
+        symbol [ WatchUi %tmp.1417 134 33 40 ];
+        %tmp.1417 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1418 134 41 53 ];
+        %tmp.1418 = getv function %tmp.1417 :loadResource;
+        symbol [ Rez %tmp.1420 134 54 57 ];
+        %tmp.1420 = getv ? :Rez;
+        symbol [ Drawables %tmp.1421 134 58 67 ];
+        %tmp.1421 = getv %tmp.1420 :Drawables;
+        symbol [ pk116 %tmp.1422 134 68 73 ];
+        %tmp.1422 = getv %tmp.1421 :pk116;
+        %tmp.1423 = invoke %tmp.1417 %tmp.1418(%tmp.1422);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1423;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_135_16_135_74_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 135 26 ]
+        symbol [ WatchUi %tmp.1424 135 33 40 ];
+        %tmp.1424 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1425 135 41 53 ];
+        %tmp.1425 = getv function %tmp.1424 :loadResource;
+        symbol [ Rez %tmp.1427 135 54 57 ];
+        %tmp.1427 = getv ? :Rez;
+        symbol [ Drawables %tmp.1428 135 58 67 ];
+        %tmp.1428 = getv %tmp.1427 :Drawables;
+        symbol [ pk117 %tmp.1429 135 68 73 ];
+        %tmp.1429 = getv %tmp.1428 :pk117;
+        %tmp.1430 = invoke %tmp.1424 %tmp.1425(%tmp.1429);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1430;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_136_16_136_74_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 136 26 ]
+        symbol [ WatchUi %tmp.1431 136 33 40 ];
+        %tmp.1431 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1432 136 41 53 ];
+        %tmp.1432 = getv function %tmp.1431 :loadResource;
+        symbol [ Rez %tmp.1434 136 54 57 ];
+        %tmp.1434 = getv ? :Rez;
+        symbol [ Drawables %tmp.1435 136 58 67 ];
+        %tmp.1435 = getv %tmp.1434 :Drawables;
+        symbol [ pk118 %tmp.1436 136 68 73 ];
+        %tmp.1436 = getv %tmp.1435 :pk118;
+        %tmp.1437 = invoke %tmp.1431 %tmp.1432(%tmp.1436);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1437;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_137_16_137_74_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 137 26 ]
+        symbol [ WatchUi %tmp.1438 137 33 40 ];
+        %tmp.1438 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1439 137 41 53 ];
+        %tmp.1439 = getv function %tmp.1438 :loadResource;
+        symbol [ Rez %tmp.1441 137 54 57 ];
+        %tmp.1441 = getv ? :Rez;
+        symbol [ Drawables %tmp.1442 137 58 67 ];
+        %tmp.1442 = getv %tmp.1441 :Drawables;
+        symbol [ pk119 %tmp.1443 137 68 73 ];
+        %tmp.1443 = getv %tmp.1442 :pk119;
+        %tmp.1444 = invoke %tmp.1438 %tmp.1439(%tmp.1443);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1444;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_138_16_138_74_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 138 26 ]
+        symbol [ WatchUi %tmp.1445 138 33 40 ];
+        %tmp.1445 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1446 138 41 53 ];
+        %tmp.1446 = getv function %tmp.1445 :loadResource;
+        symbol [ Rez %tmp.1448 138 54 57 ];
+        %tmp.1448 = getv ? :Rez;
+        symbol [ Drawables %tmp.1449 138 58 67 ];
+        %tmp.1449 = getv %tmp.1448 :Drawables;
+        symbol [ pk120 %tmp.1450 138 68 73 ];
+        %tmp.1450 = getv %tmp.1449 :pk120;
+        %tmp.1451 = invoke %tmp.1445 %tmp.1446(%tmp.1450);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1451;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_139_16_139_74_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 139 26 ]
+        symbol [ WatchUi %tmp.1452 139 33 40 ];
+        %tmp.1452 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1453 139 41 53 ];
+        %tmp.1453 = getv function %tmp.1452 :loadResource;
+        symbol [ Rez %tmp.1455 139 54 57 ];
+        %tmp.1455 = getv ? :Rez;
+        symbol [ Drawables %tmp.1456 139 58 67 ];
+        %tmp.1456 = getv %tmp.1455 :Drawables;
+        symbol [ pk121 %tmp.1457 139 68 73 ];
+        %tmp.1457 = getv %tmp.1456 :pk121;
+        %tmp.1458 = invoke %tmp.1452 %tmp.1453(%tmp.1457);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1458;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_140_16_140_74_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 140 26 ]
+        symbol [ WatchUi %tmp.1459 140 33 40 ];
+        %tmp.1459 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1460 140 41 53 ];
+        %tmp.1460 = getv function %tmp.1459 :loadResource;
+        symbol [ Rez %tmp.1462 140 54 57 ];
+        %tmp.1462 = getv ? :Rez;
+        symbol [ Drawables %tmp.1463 140 58 67 ];
+        %tmp.1463 = getv %tmp.1462 :Drawables;
+        symbol [ pk122 %tmp.1464 140 68 73 ];
+        %tmp.1464 = getv %tmp.1463 :pk122;
+        %tmp.1465 = invoke %tmp.1459 %tmp.1460(%tmp.1464);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1465;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_141_16_141_74_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 141 26 ]
+        symbol [ WatchUi %tmp.1466 141 33 40 ];
+        %tmp.1466 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1467 141 41 53 ];
+        %tmp.1467 = getv function %tmp.1466 :loadResource;
+        symbol [ Rez %tmp.1469 141 54 57 ];
+        %tmp.1469 = getv ? :Rez;
+        symbol [ Drawables %tmp.1470 141 58 67 ];
+        %tmp.1470 = getv %tmp.1469 :Drawables;
+        symbol [ pk123 %tmp.1471 141 68 73 ];
+        %tmp.1471 = getv %tmp.1470 :pk123;
+        %tmp.1472 = invoke %tmp.1466 %tmp.1467(%tmp.1471);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1472;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_142_16_142_74_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 142 26 ]
+        symbol [ WatchUi %tmp.1473 142 33 40 ];
+        %tmp.1473 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1474 142 41 53 ];
+        %tmp.1474 = getv function %tmp.1473 :loadResource;
+        symbol [ Rez %tmp.1476 142 54 57 ];
+        %tmp.1476 = getv ? :Rez;
+        symbol [ Drawables %tmp.1477 142 58 67 ];
+        %tmp.1477 = getv %tmp.1476 :Drawables;
+        symbol [ pk124 %tmp.1478 142 68 73 ];
+        %tmp.1478 = getv %tmp.1477 :pk124;
+        %tmp.1479 = invoke %tmp.1473 %tmp.1474(%tmp.1478);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1479;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_143_16_143_74_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 143 26 ]
+        symbol [ WatchUi %tmp.1480 143 33 40 ];
+        %tmp.1480 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1481 143 41 53 ];
+        %tmp.1481 = getv function %tmp.1480 :loadResource;
+        symbol [ Rez %tmp.1483 143 54 57 ];
+        %tmp.1483 = getv ? :Rez;
+        symbol [ Drawables %tmp.1484 143 58 67 ];
+        %tmp.1484 = getv %tmp.1483 :Drawables;
+        symbol [ pk125 %tmp.1485 143 68 73 ];
+        %tmp.1485 = getv %tmp.1484 :pk125;
+        %tmp.1486 = invoke %tmp.1480 %tmp.1481(%tmp.1485);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1486;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_144_16_144_74_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 144 26 ]
+        symbol [ WatchUi %tmp.1487 144 33 40 ];
+        %tmp.1487 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1488 144 41 53 ];
+        %tmp.1488 = getv function %tmp.1487 :loadResource;
+        symbol [ Rez %tmp.1490 144 54 57 ];
+        %tmp.1490 = getv ? :Rez;
+        symbol [ Drawables %tmp.1491 144 58 67 ];
+        %tmp.1491 = getv %tmp.1490 :Drawables;
+        symbol [ pk126 %tmp.1492 144 68 73 ];
+        %tmp.1492 = getv %tmp.1491 :pk126;
+        %tmp.1493 = invoke %tmp.1487 %tmp.1488(%tmp.1492);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1493;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_145_16_145_74_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 145 26 ]
+        symbol [ WatchUi %tmp.1494 145 33 40 ];
+        %tmp.1494 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1495 145 41 53 ];
+        %tmp.1495 = getv function %tmp.1494 :loadResource;
+        symbol [ Rez %tmp.1497 145 54 57 ];
+        %tmp.1497 = getv ? :Rez;
+        symbol [ Drawables %tmp.1498 145 58 67 ];
+        %tmp.1498 = getv %tmp.1497 :Drawables;
+        symbol [ pk127 %tmp.1499 145 68 73 ];
+        %tmp.1499 = getv %tmp.1498 :pk127;
+        %tmp.1500 = invoke %tmp.1494 %tmp.1495(%tmp.1499);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1500;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_146_16_146_74_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 146 26 ]
+        symbol [ WatchUi %tmp.1501 146 33 40 ];
+        %tmp.1501 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1502 146 41 53 ];
+        %tmp.1502 = getv function %tmp.1501 :loadResource;
+        symbol [ Rez %tmp.1504 146 54 57 ];
+        %tmp.1504 = getv ? :Rez;
+        symbol [ Drawables %tmp.1505 146 58 67 ];
+        %tmp.1505 = getv %tmp.1504 :Drawables;
+        symbol [ pk128 %tmp.1506 146 68 73 ];
+        %tmp.1506 = getv %tmp.1505 :pk128;
+        %tmp.1507 = invoke %tmp.1501 %tmp.1502(%tmp.1506);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1507;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_147_16_147_74_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 147 26 ]
+        symbol [ WatchUi %tmp.1508 147 33 40 ];
+        %tmp.1508 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1509 147 41 53 ];
+        %tmp.1509 = getv function %tmp.1508 :loadResource;
+        symbol [ Rez %tmp.1511 147 54 57 ];
+        %tmp.1511 = getv ? :Rez;
+        symbol [ Drawables %tmp.1512 147 58 67 ];
+        %tmp.1512 = getv %tmp.1511 :Drawables;
+        symbol [ pk129 %tmp.1513 147 68 73 ];
+        %tmp.1513 = getv %tmp.1512 :pk129;
+        %tmp.1514 = invoke %tmp.1508 %tmp.1509(%tmp.1513);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1514;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_148_16_148_74_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 148 26 ]
+        symbol [ WatchUi %tmp.1515 148 33 40 ];
+        %tmp.1515 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1516 148 41 53 ];
+        %tmp.1516 = getv function %tmp.1515 :loadResource;
+        symbol [ Rez %tmp.1518 148 54 57 ];
+        %tmp.1518 = getv ? :Rez;
+        symbol [ Drawables %tmp.1519 148 58 67 ];
+        %tmp.1519 = getv %tmp.1518 :Drawables;
+        symbol [ pk130 %tmp.1520 148 68 73 ];
+        %tmp.1520 = getv %tmp.1519 :pk130;
+        %tmp.1521 = invoke %tmp.1515 %tmp.1516(%tmp.1520);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1521;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_149_16_149_74_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 149 26 ]
+        symbol [ WatchUi %tmp.1522 149 33 40 ];
+        %tmp.1522 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1523 149 41 53 ];
+        %tmp.1523 = getv function %tmp.1522 :loadResource;
+        symbol [ Rez %tmp.1525 149 54 57 ];
+        %tmp.1525 = getv ? :Rez;
+        symbol [ Drawables %tmp.1526 149 58 67 ];
+        %tmp.1526 = getv %tmp.1525 :Drawables;
+        symbol [ pk131 %tmp.1527 149 68 73 ];
+        %tmp.1527 = getv %tmp.1526 :pk131;
+        %tmp.1528 = invoke %tmp.1522 %tmp.1523(%tmp.1527);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1528;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_150_16_150_74_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 150 26 ]
+        symbol [ WatchUi %tmp.1529 150 33 40 ];
+        %tmp.1529 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1530 150 41 53 ];
+        %tmp.1530 = getv function %tmp.1529 :loadResource;
+        symbol [ Rez %tmp.1532 150 54 57 ];
+        %tmp.1532 = getv ? :Rez;
+        symbol [ Drawables %tmp.1533 150 58 67 ];
+        %tmp.1533 = getv %tmp.1532 :Drawables;
+        symbol [ pk132 %tmp.1534 150 68 73 ];
+        %tmp.1534 = getv %tmp.1533 :pk132;
+        %tmp.1535 = invoke %tmp.1529 %tmp.1530(%tmp.1534);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1535;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_151_16_151_74_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 151 26 ]
+        symbol [ WatchUi %tmp.1536 151 33 40 ];
+        %tmp.1536 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1537 151 41 53 ];
+        %tmp.1537 = getv function %tmp.1536 :loadResource;
+        symbol [ Rez %tmp.1539 151 54 57 ];
+        %tmp.1539 = getv ? :Rez;
+        symbol [ Drawables %tmp.1540 151 58 67 ];
+        %tmp.1540 = getv %tmp.1539 :Drawables;
+        symbol [ pk133 %tmp.1541 151 68 73 ];
+        %tmp.1541 = getv %tmp.1540 :pk133;
+        %tmp.1542 = invoke %tmp.1536 %tmp.1537(%tmp.1541);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1542;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_152_16_152_74_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 152 26 ]
+        symbol [ WatchUi %tmp.1543 152 33 40 ];
+        %tmp.1543 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1544 152 41 53 ];
+        %tmp.1544 = getv function %tmp.1543 :loadResource;
+        symbol [ Rez %tmp.1546 152 54 57 ];
+        %tmp.1546 = getv ? :Rez;
+        symbol [ Drawables %tmp.1547 152 58 67 ];
+        %tmp.1547 = getv %tmp.1546 :Drawables;
+        symbol [ pk134 %tmp.1548 152 68 73 ];
+        %tmp.1548 = getv %tmp.1547 :pk134;
+        %tmp.1549 = invoke %tmp.1543 %tmp.1544(%tmp.1548);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1549;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_153_16_153_74_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 153 26 ]
+        symbol [ WatchUi %tmp.1550 153 33 40 ];
+        %tmp.1550 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1551 153 41 53 ];
+        %tmp.1551 = getv function %tmp.1550 :loadResource;
+        symbol [ Rez %tmp.1553 153 54 57 ];
+        %tmp.1553 = getv ? :Rez;
+        symbol [ Drawables %tmp.1554 153 58 67 ];
+        %tmp.1554 = getv %tmp.1553 :Drawables;
+        symbol [ pk135 %tmp.1555 153 68 73 ];
+        %tmp.1555 = getv %tmp.1554 :pk135;
+        %tmp.1556 = invoke %tmp.1550 %tmp.1551(%tmp.1555);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1556;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_154_16_154_74_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 154 26 ]
+        symbol [ WatchUi %tmp.1557 154 33 40 ];
+        %tmp.1557 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1558 154 41 53 ];
+        %tmp.1558 = getv function %tmp.1557 :loadResource;
+        symbol [ Rez %tmp.1560 154 54 57 ];
+        %tmp.1560 = getv ? :Rez;
+        symbol [ Drawables %tmp.1561 154 58 67 ];
+        %tmp.1561 = getv %tmp.1560 :Drawables;
+        symbol [ pk136 %tmp.1562 154 68 73 ];
+        %tmp.1562 = getv %tmp.1561 :pk136;
+        %tmp.1563 = invoke %tmp.1557 %tmp.1558(%tmp.1562);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1563;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_155_16_155_74_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 155 26 ]
+        symbol [ WatchUi %tmp.1564 155 33 40 ];
+        %tmp.1564 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1565 155 41 53 ];
+        %tmp.1565 = getv function %tmp.1564 :loadResource;
+        symbol [ Rez %tmp.1567 155 54 57 ];
+        %tmp.1567 = getv ? :Rez;
+        symbol [ Drawables %tmp.1568 155 58 67 ];
+        %tmp.1568 = getv %tmp.1567 :Drawables;
+        symbol [ pk137 %tmp.1569 155 68 73 ];
+        %tmp.1569 = getv %tmp.1568 :pk137;
+        %tmp.1570 = invoke %tmp.1564 %tmp.1565(%tmp.1569);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1570;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_156_16_156_74_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 156 26 ]
+        symbol [ WatchUi %tmp.1571 156 33 40 ];
+        %tmp.1571 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1572 156 41 53 ];
+        %tmp.1572 = getv function %tmp.1571 :loadResource;
+        symbol [ Rez %tmp.1574 156 54 57 ];
+        %tmp.1574 = getv ? :Rez;
+        symbol [ Drawables %tmp.1575 156 58 67 ];
+        %tmp.1575 = getv %tmp.1574 :Drawables;
+        symbol [ pk138 %tmp.1576 156 68 73 ];
+        %tmp.1576 = getv %tmp.1575 :pk138;
+        %tmp.1577 = invoke %tmp.1571 %tmp.1572(%tmp.1576);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1577;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_157_16_157_74_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 157 26 ]
+        symbol [ WatchUi %tmp.1578 157 33 40 ];
+        %tmp.1578 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1579 157 41 53 ];
+        %tmp.1579 = getv function %tmp.1578 :loadResource;
+        symbol [ Rez %tmp.1581 157 54 57 ];
+        %tmp.1581 = getv ? :Rez;
+        symbol [ Drawables %tmp.1582 157 58 67 ];
+        %tmp.1582 = getv %tmp.1581 :Drawables;
+        symbol [ pk139 %tmp.1583 157 68 73 ];
+        %tmp.1583 = getv %tmp.1582 :pk139;
+        %tmp.1584 = invoke %tmp.1578 %tmp.1579(%tmp.1583);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1584;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_158_16_158_74_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 158 26 ]
+        symbol [ WatchUi %tmp.1585 158 33 40 ];
+        %tmp.1585 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1586 158 41 53 ];
+        %tmp.1586 = getv function %tmp.1585 :loadResource;
+        symbol [ Rez %tmp.1588 158 54 57 ];
+        %tmp.1588 = getv ? :Rez;
+        symbol [ Drawables %tmp.1589 158 58 67 ];
+        %tmp.1589 = getv %tmp.1588 :Drawables;
+        symbol [ pk140 %tmp.1590 158 68 73 ];
+        %tmp.1590 = getv %tmp.1589 :pk140;
+        %tmp.1591 = invoke %tmp.1585 %tmp.1586(%tmp.1590);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1591;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_159_16_159_74_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 159 26 ]
+        symbol [ WatchUi %tmp.1592 159 33 40 ];
+        %tmp.1592 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1593 159 41 53 ];
+        %tmp.1593 = getv function %tmp.1592 :loadResource;
+        symbol [ Rez %tmp.1595 159 54 57 ];
+        %tmp.1595 = getv ? :Rez;
+        symbol [ Drawables %tmp.1596 159 58 67 ];
+        %tmp.1596 = getv %tmp.1595 :Drawables;
+        symbol [ pk141 %tmp.1597 159 68 73 ];
+        %tmp.1597 = getv %tmp.1596 :pk141;
+        %tmp.1598 = invoke %tmp.1592 %tmp.1593(%tmp.1597);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1598;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_160_16_160_74_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 160 26 ]
+        symbol [ WatchUi %tmp.1599 160 33 40 ];
+        %tmp.1599 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1600 160 41 53 ];
+        %tmp.1600 = getv function %tmp.1599 :loadResource;
+        symbol [ Rez %tmp.1602 160 54 57 ];
+        %tmp.1602 = getv ? :Rez;
+        symbol [ Drawables %tmp.1603 160 58 67 ];
+        %tmp.1603 = getv %tmp.1602 :Drawables;
+        symbol [ pk142 %tmp.1604 160 68 73 ];
+        %tmp.1604 = getv %tmp.1603 :pk142;
+        %tmp.1605 = invoke %tmp.1599 %tmp.1600(%tmp.1604);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1605;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_161_16_161_74_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 161 26 ]
+        symbol [ WatchUi %tmp.1606 161 33 40 ];
+        %tmp.1606 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1607 161 41 53 ];
+        %tmp.1607 = getv function %tmp.1606 :loadResource;
+        symbol [ Rez %tmp.1609 161 54 57 ];
+        %tmp.1609 = getv ? :Rez;
+        symbol [ Drawables %tmp.1610 161 58 67 ];
+        %tmp.1610 = getv %tmp.1609 :Drawables;
+        symbol [ pk143 %tmp.1611 161 68 73 ];
+        %tmp.1611 = getv %tmp.1610 :pk143;
+        %tmp.1612 = invoke %tmp.1606 %tmp.1607(%tmp.1611);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1612;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_162_16_162_74_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 162 26 ]
+        symbol [ WatchUi %tmp.1613 162 33 40 ];
+        %tmp.1613 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1614 162 41 53 ];
+        %tmp.1614 = getv function %tmp.1613 :loadResource;
+        symbol [ Rez %tmp.1616 162 54 57 ];
+        %tmp.1616 = getv ? :Rez;
+        symbol [ Drawables %tmp.1617 162 58 67 ];
+        %tmp.1617 = getv %tmp.1616 :Drawables;
+        symbol [ pk144 %tmp.1618 162 68 73 ];
+        %tmp.1618 = getv %tmp.1617 :pk144;
+        %tmp.1619 = invoke %tmp.1613 %tmp.1614(%tmp.1618);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1619;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_163_16_163_74_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 163 26 ]
+        symbol [ WatchUi %tmp.1620 163 33 40 ];
+        %tmp.1620 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1621 163 41 53 ];
+        %tmp.1621 = getv function %tmp.1620 :loadResource;
+        symbol [ Rez %tmp.1623 163 54 57 ];
+        %tmp.1623 = getv ? :Rez;
+        symbol [ Drawables %tmp.1624 163 58 67 ];
+        %tmp.1624 = getv %tmp.1623 :Drawables;
+        symbol [ pk145 %tmp.1625 163 68 73 ];
+        %tmp.1625 = getv %tmp.1624 :pk145;
+        %tmp.1626 = invoke %tmp.1620 %tmp.1621(%tmp.1625);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1626;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_164_16_164_74_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 164 26 ]
+        symbol [ WatchUi %tmp.1627 164 33 40 ];
+        %tmp.1627 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1628 164 41 53 ];
+        %tmp.1628 = getv function %tmp.1627 :loadResource;
+        symbol [ Rez %tmp.1630 164 54 57 ];
+        %tmp.1630 = getv ? :Rez;
+        symbol [ Drawables %tmp.1631 164 58 67 ];
+        %tmp.1631 = getv %tmp.1630 :Drawables;
+        symbol [ pk146 %tmp.1632 164 68 73 ];
+        %tmp.1632 = getv %tmp.1631 :pk146;
+        %tmp.1633 = invoke %tmp.1627 %tmp.1628(%tmp.1632);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1633;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_165_16_165_74_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 165 26 ]
+        symbol [ WatchUi %tmp.1634 165 33 40 ];
+        %tmp.1634 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1635 165 41 53 ];
+        %tmp.1635 = getv function %tmp.1634 :loadResource;
+        symbol [ Rez %tmp.1637 165 54 57 ];
+        %tmp.1637 = getv ? :Rez;
+        symbol [ Drawables %tmp.1638 165 58 67 ];
+        %tmp.1638 = getv %tmp.1637 :Drawables;
+        symbol [ pk147 %tmp.1639 165 68 73 ];
+        %tmp.1639 = getv %tmp.1638 :pk147;
+        %tmp.1640 = invoke %tmp.1634 %tmp.1635(%tmp.1639);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1640;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_166_16_166_74_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 166 26 ]
+        symbol [ WatchUi %tmp.1641 166 33 40 ];
+        %tmp.1641 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1642 166 41 53 ];
+        %tmp.1642 = getv function %tmp.1641 :loadResource;
+        symbol [ Rez %tmp.1644 166 54 57 ];
+        %tmp.1644 = getv ? :Rez;
+        symbol [ Drawables %tmp.1645 166 58 67 ];
+        %tmp.1645 = getv %tmp.1644 :Drawables;
+        symbol [ pk148 %tmp.1646 166 68 73 ];
+        %tmp.1646 = getv %tmp.1645 :pk148;
+        %tmp.1647 = invoke %tmp.1641 %tmp.1642(%tmp.1646);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1647;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_167_16_167_74_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 167 26 ]
+        symbol [ WatchUi %tmp.1648 167 33 40 ];
+        %tmp.1648 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1649 167 41 53 ];
+        %tmp.1649 = getv function %tmp.1648 :loadResource;
+        symbol [ Rez %tmp.1651 167 54 57 ];
+        %tmp.1651 = getv ? :Rez;
+        symbol [ Drawables %tmp.1652 167 58 67 ];
+        %tmp.1652 = getv %tmp.1651 :Drawables;
+        symbol [ pk149 %tmp.1653 167 68 73 ];
+        %tmp.1653 = getv %tmp.1652 :pk149;
+        %tmp.1654 = invoke %tmp.1648 %tmp.1649(%tmp.1653);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1654;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_168_16_168_74_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 168 26 ]
+        symbol [ WatchUi %tmp.1655 168 33 40 ];
+        %tmp.1655 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1656 168 41 53 ];
+        %tmp.1656 = getv function %tmp.1655 :loadResource;
+        symbol [ Rez %tmp.1658 168 54 57 ];
+        %tmp.1658 = getv ? :Rez;
+        symbol [ Drawables %tmp.1659 168 58 67 ];
+        %tmp.1659 = getv %tmp.1658 :Drawables;
+        symbol [ pk150 %tmp.1660 168 68 73 ];
+        %tmp.1660 = getv %tmp.1659 :pk150;
+        %tmp.1661 = invoke %tmp.1655 %tmp.1656(%tmp.1660);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1661;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_169_16_169_74_switchCase:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 169 26 ]
+        symbol [ WatchUi %tmp.1662 169 33 40 ];
+        %tmp.1662 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.1663 169 41 53 ];
+        %tmp.1663 = getv function %tmp.1662 :loadResource;
+        symbol [ Rez %tmp.1665 169 54 57 ];
+        %tmp.1665 = getv ? :Rez;
+        symbol [ Drawables %tmp.1666 169 58 67 ];
+        %tmp.1666 = getv %tmp.1665 :Drawables;
+        symbol [ pk151 %tmp.1667 169 68 73 ];
+        %tmp.1667 = getv %tmp.1666 :pk151;
+        %tmp.1668 = invoke %tmp.1662 %tmp.1663(%tmp.1667);
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        ret %tmp.1668;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_18_12_170_12_defaultCodeBegin:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_18_12_170_12_switchStmtEnd:
+        pop;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_12_171_8_stop:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_endTry:
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_catch:
+        %tmp.1669 = exception;
+        push %tmp.1669;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 171 10 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_catch" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_171_10_173_8_end" ]
+        %e.2 = local;
+        symbol [ e %e.2 171 17 18 ];
+        %tmp.1670 = dup %tmp.1669;
+        lputv %e.2 %tmp.1670;
+        symbol [ e %e.2 171 17 18 ];
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_171_20_173_8_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 172 12 ]
+        symbol [ System %tmp.1671 172 12 18 ];
+        %tmp.1671 = getm $.Toybox.System;
+        symbol [ println %tmp.1672 172 19 26 ];
+        %tmp.1672 = getv function %tmp.1671 :println;
+        %tmp.1673 = "Error cargando sprite ";
+        %tmp.1674 = lgetv %spriteName.1;
+        symbol [ spriteName %tmp.1674 172 54 64 ];
+        %tmp.1675 = add %tmp.1673 %tmp.1674;
+        invoke %tmp.1671 %tmp.1672(%tmp.1675);
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_171_20_173_8_stop:
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        pop;
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_171_10_173_8_end:
+        try @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_catch @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_171_10_173_8_end @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_171_10_173_8_end @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally;
+        throw %tmp.1669;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_finally:
+        jsrret;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_15_8_173_8_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 175 8 ]
+        %tmp.1676 = null;
+        ret %tmp.1676;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_12_60_176_4_stop:
+    }
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc"; @line = 178; @symbol_functiondef = [formatId,178,20,28]; @symbol_param<0> = [id,178,29,31]; @symbol_param<0>_type<0> = [Lang,178,35,39]; @symbol_param<0>_type<1> = [Number,178,40,46]; @symbol_return<0> = [Lang,178,51,55]; @symbol_return<1> = [String,178,56,62]; ]
+    static
+    function formatId(id as Lang.Number) as Lang.String {
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_178_63_182_4_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 179 8 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_179_8_179_52_if_stmt:
+        %tmp.1 = lgetv %id;
+        symbol [ id %tmp.1 179 12 14 ];
+        %tmp.2 = 10;
+        %tmp.3 = lt %tmp.1 %tmp.2;
+        bf %tmp.3 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_179_8_179_52_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_179_8_179_52_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_179_21_179_52_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 179 23 ]
+        %tmp.4 = "00";
+        %tmp.5 = lgetv %id;
+        symbol [ id %tmp.5 179 37 39 ];
+        symbol [ toString %tmp.6 179 40 48 ];
+        %tmp.6 = getv function %tmp.5 :toString;
+        %tmp.7 = invoke %tmp.5 %tmp.6();
+        %tmp.8 = add %tmp.4 %tmp.7;
+        ret %tmp.8;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_179_21_179_52_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_179_8_179_52_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_179_8_179_52_if_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 180 8 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_180_8_180_52_if_stmt:
+        %tmp.9 = lgetv %id;
+        symbol [ id %tmp.9 180 12 14 ];
+        %tmp.10 = 100;
+        %tmp.11 = lt %tmp.9 %tmp.10;
+        bf %tmp.11 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_180_8_180_52_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_180_8_180_52_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_180_22_180_52_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 180 24 ]
+        %tmp.12 = "0";
+        %tmp.13 = lgetv %id;
+        symbol [ id %tmp.13 180 37 39 ];
+        symbol [ toString %tmp.14 180 40 48 ];
+        %tmp.14 = getv function %tmp.13 :toString;
+        %tmp.15 = invoke %tmp.13 %tmp.14();
+        %tmp.16 = add %tmp.12 %tmp.15;
+        ret %tmp.16;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_180_22_180_52_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_180_8_180_52_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_180_8_180_52_if_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc" 181 8 ]
+        %tmp.17 = lgetv %id;
+        symbol [ id %tmp.17 181 15 17 ];
+        symbol [ toString %tmp.18 181 18 26 ];
+        %tmp.18 = getv function %tmp.17 :toString;
+        %tmp.19 = invoke %tmp.17 %tmp.18();
+        ret %tmp.19;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpriteManager_mc_178_63_182_4_stop:
+    }
+}
+[ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpriteManager.mc"; @line = 4; ]
+<init> {
+}

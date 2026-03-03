@@ -1,0 +1,1941 @@
+[ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 1; @symbol_importdef<0> = [Toybox,1,7,13]; @symbol_importdef<1> = [Lang,1,14,18]; ]
+import Toybox.Lang;
+[ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 2; @symbol_usingdef<0> = [Toybox,2,6,12]; @symbol_usingdef<1> = [WatchUi,2,13,20]; ]
+using Toybox.WatchUi;
+[ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 3; @symbol_usingdef<0> = [Toybox,3,6,12]; @symbol_usingdef<1> = [WatchUi,3,13,20]; @symbol_usingAlias = [Ui,3,24,26]; ]
+using Toybox.WatchUi as :Ui;
+[ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 4; @symbol_usingdef<0> = [Toybox,4,6,12]; @symbol_usingdef<1> = [Graphics,4,13,21]; ]
+using Toybox.Graphics;
+[ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 5; @symbol_usingdef<0> = [Toybox,5,6,12]; @symbol_usingdef<1> = [Graphics,5,13,21]; @symbol_usingAlias = [Gfx,5,25,28]; ]
+using Toybox.Graphics as :Gfx;
+[ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 7; @symbol_moduledef = [Rez,7,7,10]; ]
+module Rez {
+    [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 7; ]
+    <init> {
+    }
+    [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 8; @symbol_moduledef = [Drawables,8,11,20]; ]
+    module Drawables {
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 8; ]
+        <init> {
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 9; @position = 27; initialized = true; @symbol_vardef = [pk001,9,27,32]; @symbol_type<0> = [ResourceId,9,36,46]; ]
+        var pk001 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 10; @position = 27; initialized = true; @symbol_vardef = [pk002,10,27,32]; @symbol_type<0> = [ResourceId,10,36,46]; ]
+        var pk002 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 11; @position = 27; initialized = true; @symbol_vardef = [pk003,11,27,32]; @symbol_type<0> = [ResourceId,11,36,46]; ]
+        var pk003 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 12; @position = 27; initialized = true; @symbol_vardef = [pk004,12,27,32]; @symbol_type<0> = [ResourceId,12,36,46]; ]
+        var pk004 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 13; @position = 27; initialized = true; @symbol_vardef = [pk005,13,27,32]; @symbol_type<0> = [ResourceId,13,36,46]; ]
+        var pk005 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 14; @position = 27; initialized = true; @symbol_vardef = [pk006,14,27,32]; @symbol_type<0> = [ResourceId,14,36,46]; ]
+        var pk006 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 15; @position = 27; initialized = true; @symbol_vardef = [pk007,15,27,32]; @symbol_type<0> = [ResourceId,15,36,46]; ]
+        var pk007 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 16; @position = 27; initialized = true; @symbol_vardef = [pk008,16,27,32]; @symbol_type<0> = [ResourceId,16,36,46]; ]
+        var pk008 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 17; @position = 27; initialized = true; @symbol_vardef = [pk009,17,27,32]; @symbol_type<0> = [ResourceId,17,36,46]; ]
+        var pk009 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 18; @position = 27; initialized = true; @symbol_vardef = [pk010,18,27,32]; @symbol_type<0> = [ResourceId,18,36,46]; ]
+        var pk010 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 19; @position = 27; initialized = true; @symbol_vardef = [pk011,19,27,32]; @symbol_type<0> = [ResourceId,19,36,46]; ]
+        var pk011 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 20; @position = 27; initialized = true; @symbol_vardef = [pk012,20,27,32]; @symbol_type<0> = [ResourceId,20,36,46]; ]
+        var pk012 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 21; @position = 27; initialized = true; @symbol_vardef = [pk013,21,27,32]; @symbol_type<0> = [ResourceId,21,36,46]; ]
+        var pk013 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 22; @position = 27; initialized = true; @symbol_vardef = [pk014,22,27,32]; @symbol_type<0> = [ResourceId,22,36,46]; ]
+        var pk014 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 23; @position = 27; initialized = true; @symbol_vardef = [pk015,23,27,32]; @symbol_type<0> = [ResourceId,23,36,46]; ]
+        var pk015 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 24; @position = 27; initialized = true; @symbol_vardef = [pk016,24,27,32]; @symbol_type<0> = [ResourceId,24,36,46]; ]
+        var pk016 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 25; @position = 27; initialized = true; @symbol_vardef = [pk017,25,27,32]; @symbol_type<0> = [ResourceId,25,36,46]; ]
+        var pk017 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 26; @position = 27; initialized = true; @symbol_vardef = [pk018,26,27,32]; @symbol_type<0> = [ResourceId,26,36,46]; ]
+        var pk018 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 27; @position = 27; initialized = true; @symbol_vardef = [pk019,27,27,32]; @symbol_type<0> = [ResourceId,27,36,46]; ]
+        var pk019 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 28; @position = 27; initialized = true; @symbol_vardef = [pk020,28,27,32]; @symbol_type<0> = [ResourceId,28,36,46]; ]
+        var pk020 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 29; @position = 27; initialized = true; @symbol_vardef = [pk021,29,27,32]; @symbol_type<0> = [ResourceId,29,36,46]; ]
+        var pk021 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 30; @position = 27; initialized = true; @symbol_vardef = [pk022,30,27,32]; @symbol_type<0> = [ResourceId,30,36,46]; ]
+        var pk022 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 31; @position = 27; initialized = true; @symbol_vardef = [pk023,31,27,32]; @symbol_type<0> = [ResourceId,31,36,46]; ]
+        var pk023 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 32; @position = 27; initialized = true; @symbol_vardef = [pk024,32,27,32]; @symbol_type<0> = [ResourceId,32,36,46]; ]
+        var pk024 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 33; @position = 27; initialized = true; @symbol_vardef = [pk025,33,27,32]; @symbol_type<0> = [ResourceId,33,36,46]; ]
+        var pk025 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 34; @position = 27; initialized = true; @symbol_vardef = [pk026,34,27,32]; @symbol_type<0> = [ResourceId,34,36,46]; ]
+        var pk026 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 35; @position = 27; initialized = true; @symbol_vardef = [pk027,35,27,32]; @symbol_type<0> = [ResourceId,35,36,46]; ]
+        var pk027 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 36; @position = 27; initialized = true; @symbol_vardef = [pk028,36,27,32]; @symbol_type<0> = [ResourceId,36,36,46]; ]
+        var pk028 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 37; @position = 27; initialized = true; @symbol_vardef = [pk029,37,27,32]; @symbol_type<0> = [ResourceId,37,36,46]; ]
+        var pk029 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 38; @position = 27; initialized = true; @symbol_vardef = [pk030,38,27,32]; @symbol_type<0> = [ResourceId,38,36,46]; ]
+        var pk030 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 39; @position = 27; initialized = true; @symbol_vardef = [pk031,39,27,32]; @symbol_type<0> = [ResourceId,39,36,46]; ]
+        var pk031 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 40; @position = 27; initialized = true; @symbol_vardef = [pk032,40,27,32]; @symbol_type<0> = [ResourceId,40,36,46]; ]
+        var pk032 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 41; @position = 27; initialized = true; @symbol_vardef = [pk033,41,27,32]; @symbol_type<0> = [ResourceId,41,36,46]; ]
+        var pk033 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 42; @position = 27; initialized = true; @symbol_vardef = [pk034,42,27,32]; @symbol_type<0> = [ResourceId,42,36,46]; ]
+        var pk034 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 43; @position = 27; initialized = true; @symbol_vardef = [pk035,43,27,32]; @symbol_type<0> = [ResourceId,43,36,46]; ]
+        var pk035 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 44; @position = 27; initialized = true; @symbol_vardef = [pk036,44,27,32]; @symbol_type<0> = [ResourceId,44,36,46]; ]
+        var pk036 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 45; @position = 27; initialized = true; @symbol_vardef = [pk037,45,27,32]; @symbol_type<0> = [ResourceId,45,36,46]; ]
+        var pk037 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 46; @position = 27; initialized = true; @symbol_vardef = [pk038,46,27,32]; @symbol_type<0> = [ResourceId,46,36,46]; ]
+        var pk038 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 47; @position = 27; initialized = true; @symbol_vardef = [pk039,47,27,32]; @symbol_type<0> = [ResourceId,47,36,46]; ]
+        var pk039 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 48; @position = 27; initialized = true; @symbol_vardef = [pk040,48,27,32]; @symbol_type<0> = [ResourceId,48,36,46]; ]
+        var pk040 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 49; @position = 27; initialized = true; @symbol_vardef = [pk041,49,27,32]; @symbol_type<0> = [ResourceId,49,36,46]; ]
+        var pk041 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 50; @position = 27; initialized = true; @symbol_vardef = [pk042,50,27,32]; @symbol_type<0> = [ResourceId,50,36,46]; ]
+        var pk042 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 51; @position = 27; initialized = true; @symbol_vardef = [pk043,51,27,32]; @symbol_type<0> = [ResourceId,51,36,46]; ]
+        var pk043 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 52; @position = 27; initialized = true; @symbol_vardef = [pk044,52,27,32]; @symbol_type<0> = [ResourceId,52,36,46]; ]
+        var pk044 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 53; @position = 27; initialized = true; @symbol_vardef = [pk045,53,27,32]; @symbol_type<0> = [ResourceId,53,36,46]; ]
+        var pk045 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 54; @position = 27; initialized = true; @symbol_vardef = [pk046,54,27,32]; @symbol_type<0> = [ResourceId,54,36,46]; ]
+        var pk046 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 55; @position = 27; initialized = true; @symbol_vardef = [pk047,55,27,32]; @symbol_type<0> = [ResourceId,55,36,46]; ]
+        var pk047 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 56; @position = 27; initialized = true; @symbol_vardef = [pk048,56,27,32]; @symbol_type<0> = [ResourceId,56,36,46]; ]
+        var pk048 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 57; @position = 27; initialized = true; @symbol_vardef = [pk049,57,27,32]; @symbol_type<0> = [ResourceId,57,36,46]; ]
+        var pk049 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 58; @position = 27; initialized = true; @symbol_vardef = [pk050,58,27,32]; @symbol_type<0> = [ResourceId,58,36,46]; ]
+        var pk050 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 59; @position = 27; initialized = true; @symbol_vardef = [pk051,59,27,32]; @symbol_type<0> = [ResourceId,59,36,46]; ]
+        var pk051 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 60; @position = 27; initialized = true; @symbol_vardef = [pk052,60,27,32]; @symbol_type<0> = [ResourceId,60,36,46]; ]
+        var pk052 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 61; @position = 27; initialized = true; @symbol_vardef = [pk053,61,27,32]; @symbol_type<0> = [ResourceId,61,36,46]; ]
+        var pk053 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 62; @position = 27; initialized = true; @symbol_vardef = [pk054,62,27,32]; @symbol_type<0> = [ResourceId,62,36,46]; ]
+        var pk054 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 63; @position = 27; initialized = true; @symbol_vardef = [pk055,63,27,32]; @symbol_type<0> = [ResourceId,63,36,46]; ]
+        var pk055 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 64; @position = 27; initialized = true; @symbol_vardef = [pk056,64,27,32]; @symbol_type<0> = [ResourceId,64,36,46]; ]
+        var pk056 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 65; @position = 27; initialized = true; @symbol_vardef = [pk057,65,27,32]; @symbol_type<0> = [ResourceId,65,36,46]; ]
+        var pk057 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 66; @position = 27; initialized = true; @symbol_vardef = [pk058,66,27,32]; @symbol_type<0> = [ResourceId,66,36,46]; ]
+        var pk058 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 67; @position = 27; initialized = true; @symbol_vardef = [pk059,67,27,32]; @symbol_type<0> = [ResourceId,67,36,46]; ]
+        var pk059 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 68; @position = 27; initialized = true; @symbol_vardef = [pk060,68,27,32]; @symbol_type<0> = [ResourceId,68,36,46]; ]
+        var pk060 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 69; @position = 27; initialized = true; @symbol_vardef = [pk061,69,27,32]; @symbol_type<0> = [ResourceId,69,36,46]; ]
+        var pk061 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 70; @position = 27; initialized = true; @symbol_vardef = [pk062,70,27,32]; @symbol_type<0> = [ResourceId,70,36,46]; ]
+        var pk062 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 71; @position = 27; initialized = true; @symbol_vardef = [pk063,71,27,32]; @symbol_type<0> = [ResourceId,71,36,46]; ]
+        var pk063 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 72; @position = 27; initialized = true; @symbol_vardef = [pk064,72,27,32]; @symbol_type<0> = [ResourceId,72,36,46]; ]
+        var pk064 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 73; @position = 27; initialized = true; @symbol_vardef = [pk065,73,27,32]; @symbol_type<0> = [ResourceId,73,36,46]; ]
+        var pk065 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 74; @position = 27; initialized = true; @symbol_vardef = [pk066,74,27,32]; @symbol_type<0> = [ResourceId,74,36,46]; ]
+        var pk066 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 75; @position = 27; initialized = true; @symbol_vardef = [pk067,75,27,32]; @symbol_type<0> = [ResourceId,75,36,46]; ]
+        var pk067 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 76; @position = 27; initialized = true; @symbol_vardef = [pk068,76,27,32]; @symbol_type<0> = [ResourceId,76,36,46]; ]
+        var pk068 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 77; @position = 27; initialized = true; @symbol_vardef = [pk069,77,27,32]; @symbol_type<0> = [ResourceId,77,36,46]; ]
+        var pk069 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 78; @position = 27; initialized = true; @symbol_vardef = [pk070,78,27,32]; @symbol_type<0> = [ResourceId,78,36,46]; ]
+        var pk070 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 79; @position = 27; initialized = true; @symbol_vardef = [pk071,79,27,32]; @symbol_type<0> = [ResourceId,79,36,46]; ]
+        var pk071 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 80; @position = 27; initialized = true; @symbol_vardef = [pk072,80,27,32]; @symbol_type<0> = [ResourceId,80,36,46]; ]
+        var pk072 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 81; @position = 27; initialized = true; @symbol_vardef = [pk073,81,27,32]; @symbol_type<0> = [ResourceId,81,36,46]; ]
+        var pk073 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 82; @position = 27; initialized = true; @symbol_vardef = [pk074,82,27,32]; @symbol_type<0> = [ResourceId,82,36,46]; ]
+        var pk074 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 83; @position = 27; initialized = true; @symbol_vardef = [pk075,83,27,32]; @symbol_type<0> = [ResourceId,83,36,46]; ]
+        var pk075 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 84; @position = 27; initialized = true; @symbol_vardef = [pk076,84,27,32]; @symbol_type<0> = [ResourceId,84,36,46]; ]
+        var pk076 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 85; @position = 27; initialized = true; @symbol_vardef = [pk077,85,27,32]; @symbol_type<0> = [ResourceId,85,36,46]; ]
+        var pk077 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 86; @position = 27; initialized = true; @symbol_vardef = [pk078,86,27,32]; @symbol_type<0> = [ResourceId,86,36,46]; ]
+        var pk078 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 87; @position = 27; initialized = true; @symbol_vardef = [pk079,87,27,32]; @symbol_type<0> = [ResourceId,87,36,46]; ]
+        var pk079 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 88; @position = 27; initialized = true; @symbol_vardef = [pk080,88,27,32]; @symbol_type<0> = [ResourceId,88,36,46]; ]
+        var pk080 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 89; @position = 27; initialized = true; @symbol_vardef = [pk081,89,27,32]; @symbol_type<0> = [ResourceId,89,36,46]; ]
+        var pk081 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 90; @position = 27; initialized = true; @symbol_vardef = [pk082,90,27,32]; @symbol_type<0> = [ResourceId,90,36,46]; ]
+        var pk082 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 91; @position = 27; initialized = true; @symbol_vardef = [pk083,91,27,32]; @symbol_type<0> = [ResourceId,91,36,46]; ]
+        var pk083 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 92; @position = 27; initialized = true; @symbol_vardef = [pk084,92,27,32]; @symbol_type<0> = [ResourceId,92,36,46]; ]
+        var pk084 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 93; @position = 27; initialized = true; @symbol_vardef = [pk085,93,27,32]; @symbol_type<0> = [ResourceId,93,36,46]; ]
+        var pk085 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 94; @position = 27; initialized = true; @symbol_vardef = [pk086,94,27,32]; @symbol_type<0> = [ResourceId,94,36,46]; ]
+        var pk086 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 95; @position = 27; initialized = true; @symbol_vardef = [pk087,95,27,32]; @symbol_type<0> = [ResourceId,95,36,46]; ]
+        var pk087 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 96; @position = 27; initialized = true; @symbol_vardef = [pk088,96,27,32]; @symbol_type<0> = [ResourceId,96,36,46]; ]
+        var pk088 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 97; @position = 27; initialized = true; @symbol_vardef = [pk089,97,27,32]; @symbol_type<0> = [ResourceId,97,36,46]; ]
+        var pk089 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 98; @position = 27; initialized = true; @symbol_vardef = [pk090,98,27,32]; @symbol_type<0> = [ResourceId,98,36,46]; ]
+        var pk090 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 99; @position = 27; initialized = true; @symbol_vardef = [pk091,99,27,32]; @symbol_type<0> = [ResourceId,99,36,46]; ]
+        var pk091 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 100; @position = 27; initialized = true; @symbol_vardef = [pk092,100,27,32]; @symbol_type<0> = [ResourceId,100,36,46]; ]
+        var pk092 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 101; @position = 27; initialized = true; @symbol_vardef = [pk093,101,27,32]; @symbol_type<0> = [ResourceId,101,36,46]; ]
+        var pk093 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 102; @position = 27; initialized = true; @symbol_vardef = [pk094,102,27,32]; @symbol_type<0> = [ResourceId,102,36,46]; ]
+        var pk094 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 103; @position = 27; initialized = true; @symbol_vardef = [pk095,103,27,32]; @symbol_type<0> = [ResourceId,103,36,46]; ]
+        var pk095 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 104; @position = 27; initialized = true; @symbol_vardef = [pk096,104,27,32]; @symbol_type<0> = [ResourceId,104,36,46]; ]
+        var pk096 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 105; @position = 27; initialized = true; @symbol_vardef = [pk097,105,27,32]; @symbol_type<0> = [ResourceId,105,36,46]; ]
+        var pk097 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 106; @position = 27; initialized = true; @symbol_vardef = [pk098,106,27,32]; @symbol_type<0> = [ResourceId,106,36,46]; ]
+        var pk098 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 107; @position = 27; initialized = true; @symbol_vardef = [pk099,107,27,32]; @symbol_type<0> = [ResourceId,107,36,46]; ]
+        var pk099 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 108; @position = 27; initialized = true; @symbol_vardef = [pk100,108,27,32]; @symbol_type<0> = [ResourceId,108,36,46]; ]
+        var pk100 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 109; @position = 27; initialized = true; @symbol_vardef = [pk101,109,27,32]; @symbol_type<0> = [ResourceId,109,36,46]; ]
+        var pk101 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 110; @position = 27; initialized = true; @symbol_vardef = [pk102,110,27,32]; @symbol_type<0> = [ResourceId,110,36,46]; ]
+        var pk102 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 111; @position = 27; initialized = true; @symbol_vardef = [pk103,111,27,32]; @symbol_type<0> = [ResourceId,111,36,46]; ]
+        var pk103 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 112; @position = 27; initialized = true; @symbol_vardef = [pk104,112,27,32]; @symbol_type<0> = [ResourceId,112,36,46]; ]
+        var pk104 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 113; @position = 27; initialized = true; @symbol_vardef = [pk105,113,27,32]; @symbol_type<0> = [ResourceId,113,36,46]; ]
+        var pk105 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 114; @position = 27; initialized = true; @symbol_vardef = [pk106,114,27,32]; @symbol_type<0> = [ResourceId,114,36,46]; ]
+        var pk106 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 115; @position = 27; initialized = true; @symbol_vardef = [pk107,115,27,32]; @symbol_type<0> = [ResourceId,115,36,46]; ]
+        var pk107 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 116; @position = 27; initialized = true; @symbol_vardef = [pk108,116,27,32]; @symbol_type<0> = [ResourceId,116,36,46]; ]
+        var pk108 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 117; @position = 27; initialized = true; @symbol_vardef = [pk109,117,27,32]; @symbol_type<0> = [ResourceId,117,36,46]; ]
+        var pk109 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 118; @position = 27; initialized = true; @symbol_vardef = [pk110,118,27,32]; @symbol_type<0> = [ResourceId,118,36,46]; ]
+        var pk110 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 119; @position = 27; initialized = true; @symbol_vardef = [pk111,119,27,32]; @symbol_type<0> = [ResourceId,119,36,46]; ]
+        var pk111 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 120; @position = 27; initialized = true; @symbol_vardef = [pk112,120,27,32]; @symbol_type<0> = [ResourceId,120,36,46]; ]
+        var pk112 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 121; @position = 27; initialized = true; @symbol_vardef = [pk113,121,27,32]; @symbol_type<0> = [ResourceId,121,36,46]; ]
+        var pk113 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 122; @position = 27; initialized = true; @symbol_vardef = [pk114,122,27,32]; @symbol_type<0> = [ResourceId,122,36,46]; ]
+        var pk114 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 123; @position = 27; initialized = true; @symbol_vardef = [pk115,123,27,32]; @symbol_type<0> = [ResourceId,123,36,46]; ]
+        var pk115 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 124; @position = 27; initialized = true; @symbol_vardef = [pk116,124,27,32]; @symbol_type<0> = [ResourceId,124,36,46]; ]
+        var pk116 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 125; @position = 27; initialized = true; @symbol_vardef = [pk117,125,27,32]; @symbol_type<0> = [ResourceId,125,36,46]; ]
+        var pk117 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 126; @position = 27; initialized = true; @symbol_vardef = [pk118,126,27,32]; @symbol_type<0> = [ResourceId,126,36,46]; ]
+        var pk118 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 127; @position = 27; initialized = true; @symbol_vardef = [pk119,127,27,32]; @symbol_type<0> = [ResourceId,127,36,46]; ]
+        var pk119 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 128; @position = 27; initialized = true; @symbol_vardef = [pk120,128,27,32]; @symbol_type<0> = [ResourceId,128,36,46]; ]
+        var pk120 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 129; @position = 27; initialized = true; @symbol_vardef = [pk121,129,27,32]; @symbol_type<0> = [ResourceId,129,36,46]; ]
+        var pk121 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 130; @position = 27; initialized = true; @symbol_vardef = [pk122,130,27,32]; @symbol_type<0> = [ResourceId,130,36,46]; ]
+        var pk122 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 131; @position = 27; initialized = true; @symbol_vardef = [pk123,131,27,32]; @symbol_type<0> = [ResourceId,131,36,46]; ]
+        var pk123 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 132; @position = 27; initialized = true; @symbol_vardef = [pk124,132,27,32]; @symbol_type<0> = [ResourceId,132,36,46]; ]
+        var pk124 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 133; @position = 27; initialized = true; @symbol_vardef = [pk125,133,27,32]; @symbol_type<0> = [ResourceId,133,36,46]; ]
+        var pk125 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 134; @position = 27; initialized = true; @symbol_vardef = [pk126,134,27,32]; @symbol_type<0> = [ResourceId,134,36,46]; ]
+        var pk126 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 135; @position = 27; initialized = true; @symbol_vardef = [pk127,135,27,32]; @symbol_type<0> = [ResourceId,135,36,46]; ]
+        var pk127 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 136; @position = 27; initialized = true; @symbol_vardef = [pk128,136,27,32]; @symbol_type<0> = [ResourceId,136,36,46]; ]
+        var pk128 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 137; @position = 27; initialized = true; @symbol_vardef = [pk129,137,27,32]; @symbol_type<0> = [ResourceId,137,36,46]; ]
+        var pk129 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 138; @position = 27; initialized = true; @symbol_vardef = [pk130,138,27,32]; @symbol_type<0> = [ResourceId,138,36,46]; ]
+        var pk130 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 139; @position = 27; initialized = true; @symbol_vardef = [pk131,139,27,32]; @symbol_type<0> = [ResourceId,139,36,46]; ]
+        var pk131 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 140; @position = 27; initialized = true; @symbol_vardef = [pk132,140,27,32]; @symbol_type<0> = [ResourceId,140,36,46]; ]
+        var pk132 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 141; @position = 27; initialized = true; @symbol_vardef = [pk133,141,27,32]; @symbol_type<0> = [ResourceId,141,36,46]; ]
+        var pk133 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 142; @position = 27; initialized = true; @symbol_vardef = [pk134,142,27,32]; @symbol_type<0> = [ResourceId,142,36,46]; ]
+        var pk134 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 143; @position = 27; initialized = true; @symbol_vardef = [pk135,143,27,32]; @symbol_type<0> = [ResourceId,143,36,46]; ]
+        var pk135 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 144; @position = 27; initialized = true; @symbol_vardef = [pk136,144,27,32]; @symbol_type<0> = [ResourceId,144,36,46]; ]
+        var pk136 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 145; @position = 27; initialized = true; @symbol_vardef = [pk137,145,27,32]; @symbol_type<0> = [ResourceId,145,36,46]; ]
+        var pk137 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 146; @position = 27; initialized = true; @symbol_vardef = [pk138,146,27,32]; @symbol_type<0> = [ResourceId,146,36,46]; ]
+        var pk138 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 147; @position = 27; initialized = true; @symbol_vardef = [pk139,147,27,32]; @symbol_type<0> = [ResourceId,147,36,46]; ]
+        var pk139 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 148; @position = 27; initialized = true; @symbol_vardef = [pk140,148,27,32]; @symbol_type<0> = [ResourceId,148,36,46]; ]
+        var pk140 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 149; @position = 27; initialized = true; @symbol_vardef = [pk141,149,27,32]; @symbol_type<0> = [ResourceId,149,36,46]; ]
+        var pk141 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 150; @position = 27; initialized = true; @symbol_vardef = [pk142,150,27,32]; @symbol_type<0> = [ResourceId,150,36,46]; ]
+        var pk142 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 151; @position = 27; initialized = true; @symbol_vardef = [pk143,151,27,32]; @symbol_type<0> = [ResourceId,151,36,46]; ]
+        var pk143 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 152; @position = 27; initialized = true; @symbol_vardef = [pk144,152,27,32]; @symbol_type<0> = [ResourceId,152,36,46]; ]
+        var pk144 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 153; @position = 27; initialized = true; @symbol_vardef = [pk145,153,27,32]; @symbol_type<0> = [ResourceId,153,36,46]; ]
+        var pk145 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 154; @position = 27; initialized = true; @symbol_vardef = [pk146,154,27,32]; @symbol_type<0> = [ResourceId,154,36,46]; ]
+        var pk146 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 155; @position = 27; initialized = true; @symbol_vardef = [pk147,155,27,32]; @symbol_type<0> = [ResourceId,155,36,46]; ]
+        var pk147 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 156; @position = 27; initialized = true; @symbol_vardef = [pk148,156,27,32]; @symbol_type<0> = [ResourceId,156,36,46]; ]
+        var pk148 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 157; @position = 27; initialized = true; @symbol_vardef = [pk149,157,27,32]; @symbol_type<0> = [ResourceId,157,36,46]; ]
+        var pk149 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 158; @position = 27; initialized = true; @symbol_vardef = [pk150,158,27,32]; @symbol_type<0> = [ResourceId,158,36,46]; ]
+        var pk150 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 159; @position = 27; initialized = true; @symbol_vardef = [pk151,159,27,32]; @symbol_type<0> = [ResourceId,159,36,46]; ]
+        var pk151 as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 160; @position = 27; initialized = true; @symbol_vardef = [LauncherIcon,160,27,39]; @symbol_type<0> = [ResourceId,160,43,53]; ]
+        var LauncherIcon as ResourceId;
+    }
+    [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 163; @symbol_moduledef = [Strings,163,11,18]; ]
+    module Strings {
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 163; ]
+        <init> {
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 164; @position = 27; initialized = true; @symbol_vardef = [EncounterSteps,164,27,41]; @symbol_type<0> = [ResourceId,164,45,55]; ]
+        var EncounterSteps as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 165; @position = 27; initialized = true; @symbol_vardef = [LabelMissing,165,27,39]; @symbol_type<0> = [ResourceId,165,43,53]; ]
+        var LabelMissing as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 166; @position = 27; initialized = true; @symbol_vardef = [CaughtTitle,166,27,38]; @symbol_type<0> = [ResourceId,166,42,52]; ]
+        var CaughtTitle as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 167; @position = 27; initialized = true; @symbol_vardef = [ShiniesShort,167,27,39]; @symbol_type<0> = [ResourceId,167,43,53]; ]
+        var ShiniesShort as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 168; @position = 27; initialized = true; @symbol_vardef = [FinalSteps,168,27,37]; @symbol_type<0> = [ResourceId,168,41,51]; ]
+        var FinalSteps as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 169; @position = 27; initialized = true; @symbol_vardef = [TierVeryRare,169,27,39]; @symbol_type<0> = [ResourceId,169,43,53]; ]
+        var TierVeryRare as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 170; @position = 27; initialized = true; @symbol_vardef = [TapToContinue,170,27,40]; @symbol_type<0> = [ResourceId,170,44,54]; ]
+        var TapToContinue as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 171; @position = 27; initialized = true; @symbol_vardef = [TitleActive,171,27,38]; @symbol_type<0> = [ResourceId,171,42,52]; ]
+        var TitleActive as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 172; @position = 27; initialized = true; @symbol_vardef = [CaughtShort,172,27,38]; @symbol_type<0> = [ResourceId,172,42,52]; ]
+        var CaughtShort as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 173; @position = 27; initialized = true; @symbol_vardef = [AppName,173,27,34]; @symbol_type<0> = [ResourceId,173,38,48]; ]
+        var AppName as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 174; @position = 27; initialized = true; @symbol_vardef = [RareBonusHint,174,27,40]; @symbol_type<0> = [ResourceId,174,44,54]; ]
+        var RareBonusHint as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 175; @position = 27; initialized = true; @symbol_vardef = [ProfileTitle,175,27,39]; @symbol_type<0> = [ResourceId,175,43,53]; ]
+        var ProfileTitle as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 176; @position = 27; initialized = true; @symbol_vardef = [EncounterReady,176,27,41]; @symbol_type<0> = [ResourceId,176,45,55]; ]
+        var EncounterReady as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 177; @position = 27; initialized = true; @symbol_vardef = [LabelBlocks,177,27,38]; @symbol_type<0> = [ResourceId,177,42,52]; ]
+        var LabelBlocks as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 178; @position = 27; initialized = true; @symbol_vardef = [TierRare,178,27,35]; @symbol_type<0> = [ResourceId,178,39,49]; ]
+        var TierRare as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 179; @position = 27; initialized = true; @symbol_vardef = [LabelStepsToday,179,27,42]; @symbol_type<0> = [ResourceId,179,46,56]; ]
+        var LabelStepsToday as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 180; @position = 27; initialized = true; @symbol_vardef = [LabelSeen,180,27,36]; @symbol_type<0> = [ResourceId,180,40,50]; ]
+        var LabelSeen as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 181; @position = 27; initialized = true; @symbol_vardef = [Evolution,181,27,36]; @symbol_type<0> = [ResourceId,181,40,50]; ]
+        var Evolution as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 182; @position = 27; initialized = true; @symbol_vardef = [TapToEnter,182,27,37]; @symbol_type<0> = [ResourceId,182,41,51]; ]
+        var TapToEnter as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 183; @position = 27; initialized = true; @symbol_vardef = [TierUncommon,183,27,39]; @symbol_type<0> = [ResourceId,183,43,53]; ]
+        var TierUncommon as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 184; @position = 27; initialized = true; @symbol_vardef = [Shiny,184,27,32]; @symbol_type<0> = [ResourceId,184,36,46]; ]
+        var Shiny as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 185; @position = 27; initialized = true; @symbol_vardef = [LabelBlocksToday,185,27,43]; @symbol_type<0> = [ResourceId,185,47,57]; ]
+        var LabelBlocksToday as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 186; @position = 27; initialized = true; @symbol_vardef = [ActiveProgress,186,27,41]; @symbol_type<0> = [ResourceId,186,45,55]; ]
+        var ActiveProgress as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 187; @position = 27; initialized = true; @symbol_vardef = [LabelSteps,187,27,37]; @symbol_type<0> = [ResourceId,187,41,51]; ]
+        var LabelSteps as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 188; @position = 27; initialized = true; @symbol_vardef = [KantoTitle,188,27,37]; @symbol_type<0> = [ResourceId,188,41,51]; ]
+        var KantoTitle as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 189; @position = 27; initialized = true; @symbol_vardef = [BackNoExit,189,27,37]; @symbol_type<0> = [ResourceId,189,41,51]; ]
+        var BackNoExit as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 190; @position = 27; initialized = true; @symbol_vardef = [TierCommon,190,27,37]; @symbol_type<0> = [ResourceId,190,41,51]; ]
+        var TierCommon as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 191; @position = 27; initialized = true; @symbol_vardef = [LabelTier,191,27,36]; @symbol_type<0> = [ResourceId,191,40,50]; ]
+        var LabelTier as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 192; @position = 27; initialized = true; @symbol_vardef = [SpawnRate,192,27,36]; @symbol_type<0> = [ResourceId,192,40,50]; ]
+        var SpawnRate as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 193; @position = 27; initialized = true; @symbol_vardef = [InYourPokedex,193,27,40]; @symbol_type<0> = [ResourceId,193,44,54]; ]
+        var InYourPokedex as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 194; @position = 27; initialized = true; @symbol_vardef = [LabelStreak,194,27,38]; @symbol_type<0> = [ResourceId,194,42,52]; ]
+        var LabelStreak as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 195; @position = 27; initialized = true; @symbol_vardef = [LabelShinies,195,27,39]; @symbol_type<0> = [ResourceId,195,43,53]; ]
+        var LabelShinies as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 196; @position = 27; initialized = true; @symbol_vardef = [TierLegendary,196,27,40]; @symbol_type<0> = [ResourceId,196,44,54]; ]
+        var TierLegendary as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 197; @position = 27; initialized = true; @symbol_vardef = [KeepWalking,197,27,38]; @symbol_type<0> = [ResourceId,197,42,52]; ]
+        var KeepWalking as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 198; @position = 27; initialized = true; @symbol_vardef = [SeenShort,198,27,36]; @symbol_type<0> = [ResourceId,198,40,50]; ]
+        var SeenShort as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 199; @position = 27; initialized = true; @symbol_vardef = [AlmostThere,199,27,38]; @symbol_type<0> = [ResourceId,199,42,52]; ]
+        var AlmostThere as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 200; @position = 27; initialized = true; @symbol_vardef = [LabelCaught,200,27,38]; @symbol_type<0> = [ResourceId,200,42,52]; ]
+        var LabelCaught as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 201; @position = 27; initialized = true; @symbol_vardef = [LabelStreakDays,201,27,42]; @symbol_type<0> = [ResourceId,201,46,56]; ]
+        var LabelStreakDays as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 202; @position = 27; initialized = true; @symbol_vardef = [NextIn,202,27,33]; @symbol_type<0> = [ResourceId,202,37,47]; ]
+        var NextIn as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 203; @position = 27; initialized = true; @symbol_vardef = [SwipeLeftFlee,203,27,40]; @symbol_type<0> = [ResourceId,203,44,54]; ]
+        var SwipeLeftFlee as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 204; @position = 27; initialized = true; @symbol_vardef = [LabelDays,204,27,36]; @symbol_type<0> = [ResourceId,204,40,50]; ]
+        var LabelDays as ResourceId;
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 205; @position = 27; initialized = true; @symbol_vardef = [LabelMedal,205,27,37]; @symbol_type<0> = [ResourceId,205,41,51]; ]
+        var LabelMedal as ResourceId;
+    }
+    [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 208; @symbol_moduledef = [Styles,208,11,17]; ]
+    module Styles {
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 208; ]
+        <init> {
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 209; @symbol_moduledef = [prompt_font_enhanced_readability__body_with_title,209,15,64]; ]
+        module prompt_font_enhanced_readability__body_with_title {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 209; ]
+            <init> {
+[ "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen" 210 18 ]
+                symbol [ Graphics %tmp.1 210 34 42 ];
+                %tmp.1 = getm $.Toybox.Graphics;
+                symbol [ TEXT_JUSTIFY_CENTER %tmp.2 210 43 62 ];
+                %tmp.2 = getv %tmp.1 :TEXT_JUSTIFY_CENTER;
+                putv self :justification %tmp.2;
+[ "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen" 211 18 ]
+                symbol [ Graphics %tmp.3 211 25 33 ];
+                %tmp.3 = getm $.Toybox.Graphics;
+                symbol [ FONT_SMALL %tmp.4 211 34 44 ];
+                %tmp.4 = getv %tmp.3 :FONT_SMALL;
+                putv self :font %tmp.4;
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 210; @position = 18; @symbol_constdef = [justification,210,18,31]; ]
+            const justification;
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 211; @position = 18; @symbol_constdef = [font,211,18,22]; ]
+            const font;
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 214; @symbol_moduledef = [system_size__menu_header,214,15,39]; ]
+        module system_size__menu_header {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 214; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 215; @position = 18; @symbol_constdef = [width,215,18,23]; @symbol_type<0> = [Number,215,27,33]; ]
+            const width as Number = 390;
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 216; @position = 18; @symbol_constdef = [height,216,18,24]; @symbol_type<0> = [Number,216,28,34]; ]
+            const height as Number = 90;
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 219; @symbol_moduledef = [system_loc__hint_button_left_bottom,219,15,50]; ]
+        module system_loc__hint_button_left_bottom {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 219; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 220; @position = 18; @symbol_constdef = [exclude,220,18,25]; @symbol_type<0> = [Boolean,220,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 223; @symbol_moduledef = [prompt_font_enhanced_readability__body_no_title,223,15,62]; ]
+        module prompt_font_enhanced_readability__body_no_title {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 223; ]
+            <init> {
+[ "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen" 224 18 ]
+                symbol [ Graphics %tmp.5 224 34 42 ];
+                %tmp.5 = getm $.Toybox.Graphics;
+                symbol [ TEXT_JUSTIFY_CENTER %tmp.6 224 43 62 ];
+                %tmp.6 = getv %tmp.5 :TEXT_JUSTIFY_CENTER;
+                symbol [ Graphics %tmp.7 224 63 71 ];
+                %tmp.7 = getm $.Toybox.Graphics;
+                symbol [ TEXT_JUSTIFY_VCENTER %tmp.8 224 72 92 ];
+                %tmp.8 = getv %tmp.7 :TEXT_JUSTIFY_VCENTER;
+                %tmp.9 = bitor %tmp.6 %tmp.8;
+                putv self :justification %tmp.9;
+[ "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen" 225 18 ]
+                symbol [ Graphics %tmp.10 225 25 33 ];
+                %tmp.10 = getm $.Toybox.Graphics;
+                symbol [ FONT_SMALL %tmp.11 225 34 44 ];
+                %tmp.11 = getv %tmp.10 :FONT_SMALL;
+                putv self :font %tmp.11;
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 224; @position = 18; @symbol_constdef = [justification,224,18,31]; ]
+            const justification;
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 225; @position = 18; @symbol_constdef = [font,225,18,22]; ]
+            const font;
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 228; @symbol_moduledef = [prompt_loc__body_no_title,228,15,40]; ]
+        module prompt_loc__body_no_title {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 228; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 229; @position = 18; @symbol_constdef = [x,229,18,19]; @symbol_type<0> = [Number,229,23,29]; ]
+            const x as Number = 39;
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 230; @position = 18; @symbol_constdef = [y,230,18,19]; @symbol_type<0> = [Number,230,23,29]; ]
+            const y as Number = 58;
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 233; @symbol_moduledef = [system_icon_dark__about,233,15,38]; ]
+        module system_icon_dark__about {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 233; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 234; @position = 18; @symbol_constdef = [filename,234,18,26]; @symbol_type<0> = [String,234,30,36]; ]
+            const filename as String = "C:\\Users\\Alonso\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\vivoactive6\\system_icon_dark__about.svg";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 235; @position = 18; @symbol_constdef = [compress,235,18,26]; @symbol_type<0> = [String,235,30,36]; ]
+            const compress as String = "true";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 236; @position = 18; @symbol_constdef = [dithering,236,18,27]; @symbol_type<0> = [String,236,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 237; @position = 18; @symbol_constdef = [automaticPalette,237,18,34]; @symbol_type<0> = [String,237,38,44]; ]
+            const automaticPalette as String = "true";
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 240; @symbol_moduledef = [system_icon_light__question,240,15,42]; ]
+        module system_icon_light__question {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 240; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 241; @position = 18; @symbol_constdef = [filename,241,18,26]; @symbol_type<0> = [String,241,30,36]; ]
+            const filename as String = "C:\\Users\\Alonso\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\vivoactive6\\system_icon_light__question.svg";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 242; @position = 18; @symbol_constdef = [compress,242,18,26]; @symbol_type<0> = [String,242,30,36]; ]
+            const compress as String = "true";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 243; @position = 18; @symbol_constdef = [dithering,243,18,27]; @symbol_type<0> = [String,243,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 244; @position = 18; @symbol_constdef = [automaticPalette,244,18,34]; @symbol_type<0> = [String,244,38,44]; ]
+            const automaticPalette as String = "true";
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 247; @symbol_moduledef = [system_loc__hint_button_left_top,247,15,47]; ]
+        module system_loc__hint_button_left_top {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 247; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 248; @position = 18; @symbol_constdef = [exclude,248,18,25]; @symbol_type<0> = [Boolean,248,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 251; @symbol_moduledef = [prompt_font__title,251,15,33]; ]
+        module prompt_font__title {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 251; ]
+            <init> {
+[ "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen" 252 18 ]
+                symbol [ Graphics %tmp.12 252 34 42 ];
+                %tmp.12 = getm $.Toybox.Graphics;
+                symbol [ TEXT_JUSTIFY_CENTER %tmp.13 252 43 62 ];
+                %tmp.13 = getv %tmp.12 :TEXT_JUSTIFY_CENTER;
+                symbol [ Graphics %tmp.14 252 63 71 ];
+                %tmp.14 = getm $.Toybox.Graphics;
+                symbol [ TEXT_JUSTIFY_VCENTER %tmp.15 252 72 92 ];
+                %tmp.15 = getv %tmp.14 :TEXT_JUSTIFY_VCENTER;
+                %tmp.16 = bitor %tmp.13 %tmp.15;
+                putv self :justification %tmp.16;
+[ "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen" 253 18 ]
+                symbol [ Graphics %tmp.17 253 25 33 ];
+                %tmp.17 = getm $.Toybox.Graphics;
+                symbol [ FONT_XTINY %tmp.18 253 34 44 ];
+                %tmp.18 = getv %tmp.17 :FONT_XTINY;
+                putv self :font %tmp.18;
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 252; @position = 18; @symbol_constdef = [justification,252,18,31]; ]
+            const justification;
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 253; @position = 18; @symbol_constdef = [font,253,18,22]; ]
+            const font;
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 256; @symbol_moduledef = [system_icon_dark__discard,256,15,40]; ]
+        module system_icon_dark__discard {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 256; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 257; @position = 18; @symbol_constdef = [filename,257,18,26]; @symbol_type<0> = [String,257,30,36]; ]
+            const filename as String = "C:\\Users\\Alonso\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\vivoactive6\\system_icon_dark__discard.svg";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 258; @position = 18; @symbol_constdef = [compress,258,18,26]; @symbol_type<0> = [String,258,30,36]; ]
+            const compress as String = "true";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 259; @position = 18; @symbol_constdef = [dithering,259,18,27]; @symbol_type<0> = [String,259,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 260; @position = 18; @symbol_constdef = [automaticPalette,260,18,34]; @symbol_type<0> = [String,260,38,44]; ]
+            const automaticPalette as String = "true";
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 263; @symbol_moduledef = [system_size__menu_item,263,15,37]; ]
+        module system_size__menu_item {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 263; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 264; @position = 18; @symbol_constdef = [width,264,18,23]; @symbol_type<0> = [Number,264,27,33]; ]
+            const width as Number = 390;
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 265; @position = 18; @symbol_constdef = [height,265,18,24]; @symbol_type<0> = [Number,265,28,34]; ]
+            const height as Number = 100;
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 268; @symbol_moduledef = [system_color_dark__text,268,15,38]; ]
+        module system_color_dark__text {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 268; ]
+            <init> {
+[ "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen" 270 18 ]
+                symbol [ Graphics %tmp.19 270 31 39 ];
+                %tmp.19 = getm $.Toybox.Graphics;
+                symbol [ COLOR_TRANSPARENT %tmp.20 270 40 57 ];
+                %tmp.20 = getv %tmp.19 :COLOR_TRANSPARENT;
+                putv self :background %tmp.20;
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 269; @position = 18; @symbol_constdef = [color,269,18,23]; @symbol_type<0> = [Number,269,27,33]; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 270; @position = 18; @symbol_constdef = [background,270,18,28]; ]
+            const background;
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 273; @symbol_moduledef = [system_icon_destructive__discard,273,15,47]; ]
+        module system_icon_destructive__discard {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 273; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 274; @position = 18; @symbol_constdef = [filename,274,18,26]; @symbol_type<0> = [String,274,30,36]; ]
+            const filename as String = "C:\\Users\\Alonso\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\vivoactive6\\system_icon_destructive__discard.svg";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 275; @position = 18; @symbol_constdef = [dithering,275,18,27]; @symbol_type<0> = [String,275,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 276; @position = 18; @symbol_constdef = [packingFormat,276,18,31]; @symbol_type<0> = [String,276,35,41]; ]
+            const packingFormat as String = "png";
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 279; @symbol_moduledef = [system_icon_dark__hint_action_menu,279,15,49]; ]
+        module system_icon_dark__hint_action_menu {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 279; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 280; @position = 18; @symbol_constdef = [exclude,280,18,25]; @symbol_type<0> = [Boolean,280,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 283; @symbol_moduledef = [prompt_size__title,283,15,33]; ]
+        module prompt_size__title {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 283; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 284; @position = 18; @symbol_constdef = [width,284,18,23]; @symbol_type<0> = [Number,284,27,33]; ]
+            const width as Number = 165;
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 285; @position = 18; @symbol_constdef = [height,285,18,24]; @symbol_type<0> = [Number,285,28,34]; ]
+            const height as Number = 70;
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 288; @symbol_moduledef = [confirmation_font__body,288,15,38]; ]
+        module confirmation_font__body {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 288; ]
+            <init> {
+[ "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen" 289 18 ]
+                symbol [ Graphics %tmp.21 289 34 42 ];
+                %tmp.21 = getm $.Toybox.Graphics;
+                symbol [ TEXT_JUSTIFY_CENTER %tmp.22 289 43 62 ];
+                %tmp.22 = getv %tmp.21 :TEXT_JUSTIFY_CENTER;
+                symbol [ Graphics %tmp.23 289 63 71 ];
+                %tmp.23 = getm $.Toybox.Graphics;
+                symbol [ TEXT_JUSTIFY_VCENTER %tmp.24 289 72 92 ];
+                %tmp.24 = getv %tmp.23 :TEXT_JUSTIFY_VCENTER;
+                %tmp.25 = bitor %tmp.22 %tmp.24;
+                putv self :justification %tmp.25;
+[ "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen" 290 18 ]
+                symbol [ Graphics %tmp.26 290 25 33 ];
+                %tmp.26 = getm $.Toybox.Graphics;
+                symbol [ FONT_TINY %tmp.27 290 34 43 ];
+                %tmp.27 = getv %tmp.26 :FONT_TINY;
+                putv self :font %tmp.27;
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 289; @position = 18; @symbol_constdef = [justification,289,18,31]; ]
+            const justification;
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 290; @position = 18; @symbol_constdef = [font,290,18,22]; ]
+            const font;
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 293; @symbol_moduledef = [system_color_dark__background,293,15,44]; ]
+        module system_color_dark__background {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 293; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 294; @position = 18; @symbol_constdef = [color,294,18,23]; @symbol_type<0> = [Number,294,27,33]; ]
+            const color as Number = 0x000000;
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 295; @position = 18; @symbol_constdef = [background,295,18,28]; @symbol_type<0> = [Number,295,32,38]; ]
+            const background as Number = 0x000000;
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 298; @symbol_moduledef = [system_icon_destructive__hint_button_left_top,298,15,60]; ]
+        module system_icon_destructive__hint_button_left_top {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 298; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 299; @position = 18; @symbol_constdef = [exclude,299,18,25]; @symbol_type<0> = [Boolean,299,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 302; @symbol_moduledef = [system_size__launch_icon,302,15,39]; ]
+        module system_size__launch_icon {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 302; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 303; @position = 18; @symbol_constdef = [scaleX,303,18,24]; @symbol_type<0> = [Number,303,28,34]; ]
+            const scaleX as Number = 54;
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 304; @position = 18; @symbol_constdef = [scaleY,304,18,24]; @symbol_type<0> = [Number,304,28,34]; ]
+            const scaleY as Number = 54;
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 305; @position = 18; @symbol_constdef = [scaleRelativeTo,305,18,33]; @symbol_type<0> = [String,305,37,43]; ]
+            const scaleRelativeTo as String = "screen";
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 308; @symbol_moduledef = [confirmation_input__confirm,308,15,42]; ]
+        module confirmation_input__confirm {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 308; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 309; @position = 18; @symbol_constdef = [y1,309,18,20]; @symbol_type<0> = [Number,309,24,30]; ]
+            const y1 as Number = 297;
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 310; @position = 18; @symbol_constdef = [x1,310,18,20]; @symbol_type<0> = [Number,310,24,30]; ]
+            const x1 as Number = 72;
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 311; @position = 18; @symbol_constdef = [y2,311,18,20]; @symbol_type<0> = [Number,311,24,30]; ]
+            const y2 as Number = 390;
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 312; @position = 18; @symbol_constdef = [x2,312,18,20]; @symbol_type<0> = [Number,312,24,30]; ]
+            const x2 as Number = 318;
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 315; @symbol_moduledef = [prompt_font__body_with_title,315,15,43]; ]
+        module prompt_font__body_with_title {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 315; ]
+            <init> {
+[ "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen" 316 18 ]
+                symbol [ Graphics %tmp.28 316 34 42 ];
+                %tmp.28 = getm $.Toybox.Graphics;
+                symbol [ TEXT_JUSTIFY_CENTER %tmp.29 316 43 62 ];
+                %tmp.29 = getv %tmp.28 :TEXT_JUSTIFY_CENTER;
+                putv self :justification %tmp.29;
+[ "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen" 317 18 ]
+                symbol [ Graphics %tmp.30 317 25 33 ];
+                %tmp.30 = getm $.Toybox.Graphics;
+                symbol [ FONT_TINY %tmp.31 317 34 43 ];
+                %tmp.31 = getv %tmp.30 :FONT_TINY;
+                putv self :font %tmp.31;
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 316; @position = 18; @symbol_constdef = [justification,316,18,31]; ]
+            const justification;
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 317; @position = 18; @symbol_constdef = [font,317,18,22]; ]
+            const font;
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 320; @symbol_moduledef = [confirmation_loc__body,320,15,37]; ]
+        module confirmation_loc__body {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 320; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 321; @position = 18; @symbol_constdef = [x,321,18,19]; @symbol_type<0> = [Number,321,23,29]; ]
+            const x as Number = 80;
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 322; @position = 18; @symbol_constdef = [y,322,18,19]; @symbol_type<0> = [Number,322,23,29]; ]
+            const y as Number = 78;
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 325; @symbol_moduledef = [system_icon_destructive__hint_button_left_bottom,325,15,63]; ]
+        module system_icon_destructive__hint_button_left_bottom {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 325; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 326; @position = 18; @symbol_constdef = [exclude,326,18,25]; @symbol_type<0> = [Boolean,326,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 329; @symbol_moduledef = [prompt_color_dark__background,329,15,44]; ]
+        module prompt_color_dark__background {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 329; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 330; @position = 18; @symbol_constdef = [color,330,18,23]; @symbol_type<0> = [Number,330,27,33]; ]
+            const color as Number = 0x000000;
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 331; @position = 18; @symbol_constdef = [background,331,18,28]; @symbol_type<0> = [Number,331,32,38]; ]
+            const background as Number = 0x000000;
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 334; @symbol_moduledef = [system_icon_destructive__hint_action_menu,334,15,56]; ]
+        module system_icon_destructive__hint_action_menu {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 334; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 335; @position = 18; @symbol_constdef = [exclude,335,18,25]; @symbol_type<0> = [Boolean,335,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 338; @symbol_moduledef = [system_loc__hint_action_menu,338,15,43]; ]
+        module system_loc__hint_action_menu {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 338; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 339; @position = 18; @symbol_constdef = [x,339,18,19]; @symbol_type<0> = [Number,339,23,29]; ]
+            const x as Number = 361;
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 340; @position = 18; @symbol_constdef = [y,340,18,19]; @symbol_type<0> = [Number,340,23,29]; ]
+            const y as Number = 156;
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 343; @symbol_moduledef = [confirmation_icon__hint_confirm,343,15,46]; ]
+        module confirmation_icon__hint_confirm {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 343; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 344; @position = 18; @symbol_constdef = [filename,344,18,26]; @symbol_type<0> = [String,344,30,36]; ]
+            const filename as String = "C:\\Users\\Alonso\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\vivoactive6\\confirmation_icon__hint_completion.svg";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 345; @position = 18; @symbol_constdef = [dithering,345,18,27]; @symbol_type<0> = [String,345,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 346; @position = 18; @symbol_constdef = [packingFormat,346,18,31]; @symbol_type<0> = [String,346,35,41]; ]
+            const packingFormat as String = "png";
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 349; @symbol_moduledef = [system_loc__hint_button_left_middle,349,15,50]; ]
+        module system_loc__hint_button_left_middle {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 349; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 350; @position = 18; @symbol_constdef = [exclude,350,18,25]; @symbol_type<0> = [Boolean,350,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 353; @symbol_moduledef = [prompt_size__body_no_title,353,15,41]; ]
+        module prompt_size__body_no_title {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 353; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 354; @position = 18; @symbol_constdef = [width,354,18,23]; @symbol_type<0> = [Number,354,27,33]; ]
+            const width as Number = 312;
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 355; @position = 18; @symbol_constdef = [height,355,18,24]; @symbol_type<0> = [Number,355,28,34]; ]
+            const height as Number = 253;
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 358; @symbol_moduledef = [system_icon_light__hint_button_left_top,358,15,54]; ]
+        module system_icon_light__hint_button_left_top {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 358; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 359; @position = 18; @symbol_constdef = [exclude,359,18,25]; @symbol_type<0> = [Boolean,359,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 362; @symbol_moduledef = [prompt_color_light__background,362,15,45]; ]
+        module prompt_color_light__background {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 362; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 363; @position = 18; @symbol_constdef = [color,363,18,23]; @symbol_type<0> = [Number,363,27,33]; ]
+            const color as Number = 0x000000;
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 364; @position = 18; @symbol_constdef = [background,364,18,28]; @symbol_type<0> = [Number,364,32,38]; ]
+            const background as Number = 0x000000;
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 367; @symbol_moduledef = [confirmation_input__delete,367,15,41]; ]
+        module confirmation_input__delete {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 367; ]
+            <init> {
+[ "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen" 368 18 ]
+                symbol [ WatchUi %tmp.32 368 27 34 ];
+                %tmp.32 = getm $.Toybox.WatchUi;
+                symbol [ KEY_ENTER %tmp.33 368 35 44 ];
+                %tmp.33 = getv %tmp.32 :KEY_ENTER;
+                putv self :button %tmp.33;
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 368; @position = 18; @symbol_constdef = [button,368,18,24]; ]
+            const button;
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 371; @symbol_moduledef = [system_icon_dark__hint_button_left_top,371,15,53]; ]
+        module system_icon_dark__hint_button_left_top {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 371; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 372; @position = 18; @symbol_constdef = [exclude,372,18,25]; @symbol_type<0> = [Boolean,372,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 375; @symbol_moduledef = [system_input__action_menu,375,15,40]; ]
+        module system_input__action_menu {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 375; ]
+            <init> {
+[ "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen" 376 18 ]
+                symbol [ WatchUi %tmp.34 376 27 34 ];
+                %tmp.34 = getm $.Toybox.WatchUi;
+                symbol [ KEY_ACTION_MENU %tmp.35 376 35 50 ];
+                %tmp.35 = getv %tmp.34 :KEY_ACTION_MENU;
+                putv self :button %tmp.35;
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 376; @position = 18; @symbol_constdef = [button,376,18,24]; ]
+            const button;
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 379; @symbol_moduledef = [system_icon_light__save,379,15,38]; ]
+        module system_icon_light__save {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 379; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 380; @position = 18; @symbol_constdef = [filename,380,18,26]; @symbol_type<0> = [String,380,30,36]; ]
+            const filename as String = "C:\\Users\\Alonso\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\vivoactive6\\system_icon_light__save.svg";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 381; @position = 18; @symbol_constdef = [compress,381,18,26]; @symbol_type<0> = [String,381,30,36]; ]
+            const compress as String = "true";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 382; @position = 18; @symbol_constdef = [dithering,382,18,27]; @symbol_type<0> = [String,382,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 383; @position = 18; @symbol_constdef = [automaticPalette,383,18,34]; @symbol_type<0> = [String,383,38,44]; ]
+            const automaticPalette as String = "true";
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 386; @symbol_moduledef = [prompt_color_light__body,386,15,39]; ]
+        module prompt_color_light__body {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 386; ]
+            <init> {
+[ "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen" 388 18 ]
+                symbol [ Graphics %tmp.36 388 31 39 ];
+                %tmp.36 = getm $.Toybox.Graphics;
+                symbol [ COLOR_TRANSPARENT %tmp.37 388 40 57 ];
+                %tmp.37 = getv %tmp.36 :COLOR_TRANSPARENT;
+                putv self :background %tmp.37;
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 387; @position = 18; @symbol_constdef = [color,387,18,23]; @symbol_type<0> = [Number,387,27,33]; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 388; @position = 18; @symbol_constdef = [background,388,18,28]; ]
+            const background;
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 391; @symbol_moduledef = [system_loc__subwindow,391,15,36]; ]
+        module system_loc__subwindow {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 391; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 392; @position = 18; @symbol_constdef = [exclude,392,18,25]; @symbol_type<0> = [Boolean,392,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 395; @symbol_moduledef = [system_icon_light__warning,395,15,41]; ]
+        module system_icon_light__warning {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 395; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 396; @position = 18; @symbol_constdef = [filename,396,18,26]; @symbol_type<0> = [String,396,30,36]; ]
+            const filename as String = "C:\\Users\\Alonso\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\vivoactive6\\system_icon_light__warning.svg";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 397; @position = 18; @symbol_constdef = [compress,397,18,26]; @symbol_type<0> = [String,397,30,36]; ]
+            const compress as String = "true";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 398; @position = 18; @symbol_constdef = [dithering,398,18,27]; @symbol_type<0> = [String,398,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 399; @position = 18; @symbol_constdef = [automaticPalette,399,18,34]; @symbol_type<0> = [String,399,38,44]; ]
+            const automaticPalette as String = "true";
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 402; @symbol_moduledef = [confirmation_color_light__body,402,15,45]; ]
+        module confirmation_color_light__body {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 402; ]
+            <init> {
+[ "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen" 404 18 ]
+                symbol [ Graphics %tmp.38 404 31 39 ];
+                %tmp.38 = getm $.Toybox.Graphics;
+                symbol [ COLOR_TRANSPARENT %tmp.39 404 40 57 ];
+                %tmp.39 = getv %tmp.38 :COLOR_TRANSPARENT;
+                putv self :background %tmp.39;
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 403; @position = 18; @symbol_constdef = [color,403,18,23]; @symbol_type<0> = [Number,403,27,33]; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 404; @position = 18; @symbol_constdef = [background,404,18,28]; ]
+            const background;
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 407; @symbol_moduledef = [confirmation_icon_light__hint_keep,407,15,49]; ]
+        module confirmation_icon_light__hint_keep {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 407; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 408; @position = 18; @symbol_constdef = [filename,408,18,26]; @symbol_type<0> = [String,408,30,36]; ]
+            const filename as String = "C:\\Users\\Alonso\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\vivoactive6\\confirmation_icon__hint_keep.svg";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 409; @position = 18; @symbol_constdef = [dithering,409,18,27]; @symbol_type<0> = [String,409,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 410; @position = 18; @symbol_constdef = [packingFormat,410,18,31]; @symbol_type<0> = [String,410,35,41]; ]
+            const packingFormat as String = "png";
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 413; @symbol_moduledef = [activity_color_light__background,413,15,47]; ]
+        module activity_color_light__background {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 413; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 414; @position = 18; @symbol_constdef = [color,414,18,23]; @symbol_type<0> = [Number,414,27,33]; ]
+            const color as Number = 0x000000;
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 415; @position = 18; @symbol_constdef = [background,415,18,28]; @symbol_type<0> = [Number,415,32,38]; ]
+            const background as Number = 0x000000;
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 418; @symbol_moduledef = [system_icon_positive__hint_button_right_top,418,15,58]; ]
+        module system_icon_positive__hint_button_right_top {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 418; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 419; @position = 18; @symbol_constdef = [filename,419,18,26]; @symbol_type<0> = [String,419,30,36]; ]
+            const filename as String = "C:\\Users\\Alonso\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\vivoactive6\\system_icon_positive__hint_button_right_top.svg";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 420; @position = 18; @symbol_constdef = [dithering,420,18,27]; @symbol_type<0> = [String,420,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 421; @position = 18; @symbol_constdef = [packingFormat,421,18,31]; @symbol_type<0> = [String,421,35,41]; ]
+            const packingFormat as String = "png";
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 424; @symbol_moduledef = [system_size__screen,424,15,34]; ]
+        module system_size__screen {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 424; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 425; @position = 18; @symbol_constdef = [width,425,18,23]; @symbol_type<0> = [Number,425,27,33]; ]
+            const width as Number = 390;
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 426; @position = 18; @symbol_constdef = [height,426,18,24]; @symbol_type<0> = [Number,426,28,34]; ]
+            const height as Number = 390;
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 429; @symbol_moduledef = [system_icon_destructive__hint_button_right_bottom,429,15,64]; ]
+        module system_icon_destructive__hint_button_right_bottom {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 429; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 430; @position = 18; @symbol_constdef = [filename,430,18,26]; @symbol_type<0> = [String,430,30,36]; ]
+            const filename as String = "C:\\Users\\Alonso\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\vivoactive6\\system_icon_light__hint_button_right_bottom.svg";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 431; @position = 18; @symbol_constdef = [dithering,431,18,27]; @symbol_type<0> = [String,431,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 432; @position = 18; @symbol_constdef = [packingFormat,432,18,31]; @symbol_type<0> = [String,432,35,41]; ]
+            const packingFormat as String = "png";
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 435; @symbol_moduledef = [system_color_light__background,435,15,45]; ]
+        module system_color_light__background {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 435; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 436; @position = 18; @symbol_constdef = [color,436,18,23]; @symbol_type<0> = [Number,436,27,33]; ]
+            const color as Number = 0x000000;
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 437; @position = 18; @symbol_constdef = [background,437,18,28]; @symbol_type<0> = [Number,437,32,38]; ]
+            const background as Number = 0x000000;
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 440; @symbol_moduledef = [system_icon_destructive__hint_button_right_top,440,15,61]; ]
+        module system_icon_destructive__hint_button_right_top {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 440; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 441; @position = 18; @symbol_constdef = [filename,441,18,26]; @symbol_type<0> = [String,441,30,36]; ]
+            const filename as String = "C:\\Users\\Alonso\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\vivoactive6\\system_icon_destructive__hint_button_right_top.svg";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 442; @position = 18; @symbol_constdef = [dithering,442,18,27]; @symbol_type<0> = [String,442,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 443; @position = 18; @symbol_constdef = [packingFormat,443,18,31]; @symbol_type<0> = [String,443,35,41]; ]
+            const packingFormat as String = "png";
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 446; @symbol_moduledef = [confirmation_loc__hint_confirm,446,15,45]; ]
+        module confirmation_loc__hint_confirm {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 446; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 447; @position = 18; @symbol_constdef = [x,447,18,19]; @symbol_type<0> = [Number,447,23,29]; ]
+            const x as Number = 195;
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 448; @position = 18; @symbol_constdef = [horizontalJustification,448,18,41]; @symbol_type<0> = [String,448,45,51]; ]
+            const horizontalJustification as String = "center";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 449; @position = 18; @symbol_constdef = [y,449,18,19]; @symbol_type<0> = [Number,449,23,29]; ]
+            const y as Number = 147;
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 452; @symbol_moduledef = [activity_color_dark__text,452,15,40]; ]
+        module activity_color_dark__text {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 452; ]
+            <init> {
+[ "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen" 454 18 ]
+                symbol [ Graphics %tmp.40 454 31 39 ];
+                %tmp.40 = getm $.Toybox.Graphics;
+                symbol [ COLOR_TRANSPARENT %tmp.41 454 40 57 ];
+                %tmp.41 = getv %tmp.40 :COLOR_TRANSPARENT;
+                putv self :background %tmp.41;
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 453; @position = 18; @symbol_constdef = [color,453,18,23]; @symbol_type<0> = [Number,453,27,33]; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 454; @position = 18; @symbol_constdef = [background,454,18,28]; ]
+            const background;
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 457; @symbol_moduledef = [confirmation_input__keep,457,15,39]; ]
+        module confirmation_input__keep {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 457; ]
+            <init> {
+[ "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen" 458 18 ]
+                symbol [ WatchUi %tmp.42 458 27 34 ];
+                %tmp.42 = getm $.Toybox.WatchUi;
+                symbol [ KEY_ESC %tmp.43 458 35 42 ];
+                %tmp.43 = getv %tmp.42 :KEY_ESC;
+                putv self :button %tmp.43;
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 458; @position = 18; @symbol_constdef = [button,458,18,24]; ]
+            const button;
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 461; @symbol_moduledef = [prompt_loc__body_with_title,461,15,42]; ]
+        module prompt_loc__body_with_title {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 461; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 462; @position = 18; @symbol_constdef = [x,462,18,19]; @symbol_type<0> = [Number,462,23,29]; ]
+            const x as Number = 39;
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 463; @position = 18; @symbol_constdef = [y,463,18,19]; @symbol_type<0> = [Number,463,23,29]; ]
+            const y as Number = 98;
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 466; @symbol_moduledef = [system_icon_dark__search,466,15,39]; ]
+        module system_icon_dark__search {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 466; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 467; @position = 18; @symbol_constdef = [filename,467,18,26]; @symbol_type<0> = [String,467,30,36]; ]
+            const filename as String = "C:\\Users\\Alonso\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\vivoactive6\\system_icon_dark__search.svg";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 468; @position = 18; @symbol_constdef = [compress,468,18,26]; @symbol_type<0> = [String,468,30,36]; ]
+            const compress as String = "true";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 469; @position = 18; @symbol_constdef = [dithering,469,18,27]; @symbol_type<0> = [String,469,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 470; @position = 18; @symbol_constdef = [automaticPalette,470,18,34]; @symbol_type<0> = [String,470,38,44]; ]
+            const automaticPalette as String = "true";
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 473; @symbol_moduledef = [activity_color_light__text,473,15,41]; ]
+        module activity_color_light__text {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 473; ]
+            <init> {
+[ "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen" 475 18 ]
+                symbol [ Graphics %tmp.44 475 31 39 ];
+                %tmp.44 = getm $.Toybox.Graphics;
+                symbol [ COLOR_TRANSPARENT %tmp.45 475 40 57 ];
+                %tmp.45 = getv %tmp.44 :COLOR_TRANSPARENT;
+                putv self :background %tmp.45;
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 474; @position = 18; @symbol_constdef = [color,474,18,23]; @symbol_type<0> = [Number,474,27,33]; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 475; @position = 18; @symbol_constdef = [background,475,18,28]; ]
+            const background;
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 478; @symbol_moduledef = [confirmation_icon__hint_keep,478,15,43]; ]
+        module confirmation_icon__hint_keep {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 478; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 479; @position = 18; @symbol_constdef = [filename,479,18,26]; @symbol_type<0> = [String,479,30,36]; ]
+            const filename as String = "C:\\Users\\Alonso\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\vivoactive6\\confirmation_icon__hint_keep.svg";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 480; @position = 18; @symbol_constdef = [dithering,480,18,27]; @symbol_type<0> = [String,480,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 481; @position = 18; @symbol_constdef = [packingFormat,481,18,31]; @symbol_type<0> = [String,481,35,41]; ]
+            const packingFormat as String = "png";
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 484; @symbol_moduledef = [system_icon_dark__save,484,15,37]; ]
+        module system_icon_dark__save {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 484; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 485; @position = 18; @symbol_constdef = [filename,485,18,26]; @symbol_type<0> = [String,485,30,36]; ]
+            const filename as String = "C:\\Users\\Alonso\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\vivoactive6\\system_icon_dark__save.svg";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 486; @position = 18; @symbol_constdef = [compress,486,18,26]; @symbol_type<0> = [String,486,30,36]; ]
+            const compress as String = "true";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 487; @position = 18; @symbol_constdef = [dithering,487,18,27]; @symbol_type<0> = [String,487,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 488; @position = 18; @symbol_constdef = [automaticPalette,488,18,34]; @symbol_type<0> = [String,488,38,44]; ]
+            const automaticPalette as String = "true";
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 491; @symbol_moduledef = [system_icon_destructive__hint_button_left_middle,491,15,63]; ]
+        module system_icon_destructive__hint_button_left_middle {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 491; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 492; @position = 18; @symbol_constdef = [exclude,492,18,25]; @symbol_type<0> = [Boolean,492,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 495; @symbol_moduledef = [system_icon_light__search,495,15,40]; ]
+        module system_icon_light__search {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 495; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 496; @position = 18; @symbol_constdef = [filename,496,18,26]; @symbol_type<0> = [String,496,30,36]; ]
+            const filename as String = "C:\\Users\\Alonso\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\vivoactive6\\system_icon_light__search.svg";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 497; @position = 18; @symbol_constdef = [compress,497,18,26]; @symbol_type<0> = [String,497,30,36]; ]
+            const compress as String = "true";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 498; @position = 18; @symbol_constdef = [dithering,498,18,27]; @symbol_type<0> = [String,498,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 499; @position = 18; @symbol_constdef = [automaticPalette,499,18,34]; @symbol_type<0> = [String,499,38,44]; ]
+            const automaticPalette as String = "true";
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 502; @symbol_moduledef = [system_icon_dark__hint_button_left_bottom,502,15,56]; ]
+        module system_icon_dark__hint_button_left_bottom {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 502; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 503; @position = 18; @symbol_constdef = [exclude,503,18,25]; @symbol_type<0> = [Boolean,503,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 506; @symbol_moduledef = [system_icon_positive__hint_button_left_top,506,15,57]; ]
+        module system_icon_positive__hint_button_left_top {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 506; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 507; @position = 18; @symbol_constdef = [exclude,507,18,25]; @symbol_type<0> = [Boolean,507,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 510; @symbol_moduledef = [system_loc__hint_button_right_bottom,510,15,51]; ]
+        module system_loc__hint_button_right_bottom {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 510; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 511; @position = 18; @symbol_constdef = [x,511,18,19]; @symbol_type<0> = [Number,511,23,29]; ]
+            const x as Number = 322;
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 512; @position = 18; @symbol_constdef = [y,512,18,19]; @symbol_type<0> = [Number,512,23,29]; ]
+            const y as Number = 258;
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 515; @symbol_moduledef = [confirmation_icon_dark__hint_reject,515,15,50]; ]
+        module confirmation_icon_dark__hint_reject {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 515; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 516; @position = 18; @symbol_constdef = [filename,516,18,26]; @symbol_type<0> = [String,516,30,36]; ]
+            const filename as String = "C:\\Users\\Alonso\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\vivoactive6\\confirmation_icon__hint_reject.svg";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 517; @position = 18; @symbol_constdef = [dithering,517,18,27]; @symbol_type<0> = [String,517,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 518; @position = 18; @symbol_constdef = [packingFormat,518,18,31]; @symbol_type<0> = [String,518,35,41]; ]
+            const packingFormat as String = "png";
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 521; @symbol_moduledef = [confirmation_color_dark__body,521,15,44]; ]
+        module confirmation_color_dark__body {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 521; ]
+            <init> {
+[ "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen" 523 18 ]
+                symbol [ Graphics %tmp.46 523 31 39 ];
+                %tmp.46 = getm $.Toybox.Graphics;
+                symbol [ COLOR_TRANSPARENT %tmp.47 523 40 57 ];
+                %tmp.47 = getv %tmp.46 :COLOR_TRANSPARENT;
+                putv self :background %tmp.47;
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 522; @position = 18; @symbol_constdef = [color,522,18,23]; @symbol_type<0> = [Number,522,27,33]; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 523; @position = 18; @symbol_constdef = [background,523,18,28]; ]
+            const background;
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 526; @symbol_moduledef = [confirmation_icon_light__hint_confirm,526,15,52]; ]
+        module confirmation_icon_light__hint_confirm {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 526; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 527; @position = 18; @symbol_constdef = [filename,527,18,26]; @symbol_type<0> = [String,527,30,36]; ]
+            const filename as String = "C:\\Users\\Alonso\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\vivoactive6\\confirmation_icon__hint_completion.svg";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 528; @position = 18; @symbol_constdef = [dithering,528,18,27]; @symbol_type<0> = [String,528,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 529; @position = 18; @symbol_constdef = [packingFormat,529,18,31]; @symbol_type<0> = [String,529,35,41]; ]
+            const packingFormat as String = "png";
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 532; @symbol_moduledef = [prompt_color_dark__title,532,15,39]; ]
+        module prompt_color_dark__title {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 532; ]
+            <init> {
+[ "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen" 534 18 ]
+                symbol [ Graphics %tmp.48 534 31 39 ];
+                %tmp.48 = getm $.Toybox.Graphics;
+                symbol [ COLOR_TRANSPARENT %tmp.49 534 40 57 ];
+                %tmp.49 = getv %tmp.48 :COLOR_TRANSPARENT;
+                putv self :background %tmp.49;
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 533; @position = 18; @symbol_constdef = [color,533,18,23]; @symbol_type<0> = [Number,533,27,33]; ]
+            const color as Number = 0xB3B3B3;
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 534; @position = 18; @symbol_constdef = [background,534,18,28]; ]
+            const background;
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 537; @symbol_moduledef = [system_icon_destructive__cancel,537,15,46]; ]
+        module system_icon_destructive__cancel {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 537; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 538; @position = 18; @symbol_constdef = [filename,538,18,26]; @symbol_type<0> = [String,538,30,36]; ]
+            const filename as String = "C:\\Users\\Alonso\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\vivoactive6\\system_icon_destructive__cancel.svg";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 539; @position = 18; @symbol_constdef = [dithering,539,18,27]; @symbol_type<0> = [String,539,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 540; @position = 18; @symbol_constdef = [packingFormat,540,18,31]; @symbol_type<0> = [String,540,35,41]; ]
+            const packingFormat as String = "png";
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 543; @symbol_moduledef = [system_icon_light__hint_button_right_bottom,543,15,58]; ]
+        module system_icon_light__hint_button_right_bottom {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 543; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 544; @position = 18; @symbol_constdef = [filename,544,18,26]; @symbol_type<0> = [String,544,30,36]; ]
+            const filename as String = "C:\\Users\\Alonso\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\vivoactive6\\system_icon_light__hint_button_right_bottom.svg";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 545; @position = 18; @symbol_constdef = [dithering,545,18,27]; @symbol_type<0> = [String,545,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 546; @position = 18; @symbol_constdef = [packingFormat,546,18,31]; @symbol_type<0> = [String,546,35,41]; ]
+            const packingFormat as String = "png";
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 549; @symbol_moduledef = [prompt_loc__title,549,15,32]; ]
+        module prompt_loc__title {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 549; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 550; @position = 18; @symbol_constdef = [x,550,18,19]; @symbol_type<0> = [Number,550,23,29]; ]
+            const x as Number = 113;
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 551; @position = 18; @symbol_constdef = [y,551,18,19]; @symbol_type<0> = [Number,551,23,29]; ]
+            const y as Number = 19;
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 554; @symbol_moduledef = [confirmation_font_enhanced_readability__body,554,15,59]; ]
+        module confirmation_font_enhanced_readability__body {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 554; ]
+            <init> {
+[ "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen" 555 18 ]
+                symbol [ Graphics %tmp.50 555 34 42 ];
+                %tmp.50 = getm $.Toybox.Graphics;
+                symbol [ TEXT_JUSTIFY_CENTER %tmp.51 555 43 62 ];
+                %tmp.51 = getv %tmp.50 :TEXT_JUSTIFY_CENTER;
+                symbol [ Graphics %tmp.52 555 63 71 ];
+                %tmp.52 = getm $.Toybox.Graphics;
+                symbol [ TEXT_JUSTIFY_VCENTER %tmp.53 555 72 92 ];
+                %tmp.53 = getv %tmp.52 :TEXT_JUSTIFY_VCENTER;
+                %tmp.54 = bitor %tmp.51 %tmp.53;
+                putv self :justification %tmp.54;
+[ "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen" 556 18 ]
+                symbol [ Graphics %tmp.55 556 25 33 ];
+                %tmp.55 = getm $.Toybox.Graphics;
+                symbol [ FONT_SMALL %tmp.56 556 34 44 ];
+                %tmp.56 = getv %tmp.55 :FONT_SMALL;
+                putv self :font %tmp.56;
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 555; @position = 18; @symbol_constdef = [justification,555,18,31]; ]
+            const justification;
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 556; @position = 18; @symbol_constdef = [font,556,18,22]; ]
+            const font;
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 559; @symbol_moduledef = [prompt_color_light__title,559,15,40]; ]
+        module prompt_color_light__title {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 559; ]
+            <init> {
+[ "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen" 561 18 ]
+                symbol [ Graphics %tmp.57 561 31 39 ];
+                %tmp.57 = getm $.Toybox.Graphics;
+                symbol [ COLOR_TRANSPARENT %tmp.58 561 40 57 ];
+                %tmp.58 = getv %tmp.57 :COLOR_TRANSPARENT;
+                putv self :background %tmp.58;
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 560; @position = 18; @symbol_constdef = [color,560,18,23]; @symbol_type<0> = [Number,560,27,33]; ]
+            const color as Number = 0xB3B3B3;
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 561; @position = 18; @symbol_constdef = [background,561,18,28]; ]
+            const background;
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 564; @symbol_moduledef = [system_icon_dark__hint_button_right_top,564,15,54]; ]
+        module system_icon_dark__hint_button_right_top {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 564; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 565; @position = 18; @symbol_constdef = [filename,565,18,26]; @symbol_type<0> = [String,565,30,36]; ]
+            const filename as String = "C:\\Users\\Alonso\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\vivoactive6\\system_icon_dark__hint_button_right_top.svg";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 566; @position = 18; @symbol_constdef = [dithering,566,18,27]; @symbol_type<0> = [String,566,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 567; @position = 18; @symbol_constdef = [packingFormat,567,18,31]; @symbol_type<0> = [String,567,35,41]; ]
+            const packingFormat as String = "png";
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 570; @symbol_moduledef = [system_icon_dark__hint_button_left_middle,570,15,56]; ]
+        module system_icon_dark__hint_button_left_middle {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 570; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 571; @position = 18; @symbol_constdef = [exclude,571,18,25]; @symbol_type<0> = [Boolean,571,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 574; @symbol_moduledef = [confirmation_icon_dark__hint_keep,574,15,48]; ]
+        module confirmation_icon_dark__hint_keep {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 574; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 575; @position = 18; @symbol_constdef = [filename,575,18,26]; @symbol_type<0> = [String,575,30,36]; ]
+            const filename as String = "C:\\Users\\Alonso\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\vivoactive6\\confirmation_icon__hint_keep.svg";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 576; @position = 18; @symbol_constdef = [dithering,576,18,27]; @symbol_type<0> = [String,576,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 577; @position = 18; @symbol_constdef = [packingFormat,577,18,31]; @symbol_type<0> = [String,577,35,41]; ]
+            const packingFormat as String = "png";
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 580; @symbol_moduledef = [system_icon_light__cancel,580,15,40]; ]
+        module system_icon_light__cancel {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 580; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 581; @position = 18; @symbol_constdef = [filename,581,18,26]; @symbol_type<0> = [String,581,30,36]; ]
+            const filename as String = "C:\\Users\\Alonso\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\vivoactive6\\system_icon_light__cancel.svg";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 582; @position = 18; @symbol_constdef = [compress,582,18,26]; @symbol_type<0> = [String,582,30,36]; ]
+            const compress as String = "true";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 583; @position = 18; @symbol_constdef = [dithering,583,18,27]; @symbol_type<0> = [String,583,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 584; @position = 18; @symbol_constdef = [automaticPalette,584,18,34]; @symbol_type<0> = [String,584,38,44]; ]
+            const automaticPalette as String = "true";
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 587; @symbol_moduledef = [confirmation_icon_light__hint_reject,587,15,51]; ]
+        module confirmation_icon_light__hint_reject {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 587; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 588; @position = 18; @symbol_constdef = [filename,588,18,26]; @symbol_type<0> = [String,588,30,36]; ]
+            const filename as String = "C:\\Users\\Alonso\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\vivoactive6\\confirmation_icon__hint_reject.svg";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 589; @position = 18; @symbol_constdef = [dithering,589,18,27]; @symbol_type<0> = [String,589,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 590; @position = 18; @symbol_constdef = [packingFormat,590,18,31]; @symbol_type<0> = [String,590,35,41]; ]
+            const packingFormat as String = "png";
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 593; @symbol_moduledef = [system_icon_light__about,593,15,39]; ]
+        module system_icon_light__about {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 593; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 594; @position = 18; @symbol_constdef = [filename,594,18,26]; @symbol_type<0> = [String,594,30,36]; ]
+            const filename as String = "C:\\Users\\Alonso\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\vivoactive6\\system_icon_light__about.svg";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 595; @position = 18; @symbol_constdef = [compress,595,18,26]; @symbol_type<0> = [String,595,30,36]; ]
+            const compress as String = "true";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 596; @position = 18; @symbol_constdef = [dithering,596,18,27]; @symbol_type<0> = [String,596,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 597; @position = 18; @symbol_constdef = [automaticPalette,597,18,34]; @symbol_type<0> = [String,597,38,44]; ]
+            const automaticPalette as String = "true";
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 600; @symbol_moduledef = [system_size__toast_icon,600,15,38]; ]
+        module system_size__toast_icon {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 600; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 601; @position = 18; @symbol_constdef = [scaleX,601,18,24]; @symbol_type<0> = [Number,601,28,34]; ]
+            const scaleX as Number = 40;
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 602; @position = 18; @symbol_constdef = [scaleY,602,18,24]; @symbol_type<0> = [Number,602,28,34]; ]
+            const scaleY as Number = 40;
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 603; @position = 18; @symbol_constdef = [scaleRelativeTo,603,18,33]; @symbol_type<0> = [String,603,37,43]; ]
+            const scaleRelativeTo as String = "screen";
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 606; @symbol_moduledef = [system_icon_dark__hint_button_right_middle,606,15,57]; ]
+        module system_icon_dark__hint_button_right_middle {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 606; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 607; @position = 18; @symbol_constdef = [exclude,607,18,25]; @symbol_type<0> = [Boolean,607,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 610; @symbol_moduledef = [confirmation_icon__hint_reject,610,15,45]; ]
+        module confirmation_icon__hint_reject {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 610; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 611; @position = 18; @symbol_constdef = [filename,611,18,26]; @symbol_type<0> = [String,611,30,36]; ]
+            const filename as String = "C:\\Users\\Alonso\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\vivoactive6\\confirmation_icon__hint_reject.svg";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 612; @position = 18; @symbol_constdef = [dithering,612,18,27]; @symbol_type<0> = [String,612,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 613; @position = 18; @symbol_constdef = [packingFormat,613,18,31]; @symbol_type<0> = [String,613,35,41]; ]
+            const packingFormat as String = "png";
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 616; @symbol_moduledef = [system_icon_light__hint_action_menu,616,15,50]; ]
+        module system_icon_light__hint_action_menu {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 616; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 617; @position = 18; @symbol_constdef = [exclude,617,18,25]; @symbol_type<0> = [Boolean,617,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 620; @symbol_moduledef = [system_icon_light__hint_button_right_middle,620,15,58]; ]
+        module system_icon_light__hint_button_right_middle {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 620; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 621; @position = 18; @symbol_constdef = [exclude,621,18,25]; @symbol_type<0> = [Boolean,621,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 624; @symbol_moduledef = [system_icon_destructive__hint_button_right_middle,624,15,64]; ]
+        module system_icon_destructive__hint_button_right_middle {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 624; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 625; @position = 18; @symbol_constdef = [exclude,625,18,25]; @symbol_type<0> = [Boolean,625,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 628; @symbol_moduledef = [confirmation_loc__hint_reject,628,15,44]; ]
+        module confirmation_loc__hint_reject {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 628; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 629; @position = 18; @symbol_constdef = [x,629,18,19]; @symbol_type<0> = [Number,629,23,29]; ]
+            const x as Number = 195;
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 630; @position = 18; @symbol_constdef = [horizontalJustification,630,18,41]; @symbol_type<0> = [String,630,45,51]; ]
+            const horizontalJustification as String = "center";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 631; @position = 18; @symbol_constdef = [y,631,18,19]; @symbol_type<0> = [Number,631,23,29]; ]
+            const y as Number = 1;
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 634; @symbol_moduledef = [confirmation_icon_dark__hint_delete,634,15,50]; ]
+        module confirmation_icon_dark__hint_delete {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 634; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 635; @position = 18; @symbol_constdef = [filename,635,18,26]; @symbol_type<0> = [String,635,30,36]; ]
+            const filename as String = "C:\\Users\\Alonso\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\vivoactive6\\confirmation_icon__hint_delete.svg";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 636; @position = 18; @symbol_constdef = [dithering,636,18,27]; @symbol_type<0> = [String,636,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 637; @position = 18; @symbol_constdef = [packingFormat,637,18,31]; @symbol_type<0> = [String,637,35,41]; ]
+            const packingFormat as String = "png";
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 640; @symbol_moduledef = [activity_color_dark__background,640,15,46]; ]
+        module activity_color_dark__background {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 640; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 641; @position = 18; @symbol_constdef = [color,641,18,23]; @symbol_type<0> = [Number,641,27,33]; ]
+            const color as Number = 0x000000;
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 642; @position = 18; @symbol_constdef = [background,642,18,28]; @symbol_type<0> = [Number,642,32,38]; ]
+            const background as Number = 0x000000;
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 645; @symbol_moduledef = [system_icon_light__hint_button_left_bottom,645,15,57]; ]
+        module system_icon_light__hint_button_left_bottom {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 645; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 646; @position = 18; @symbol_constdef = [exclude,646,18,25]; @symbol_type<0> = [Boolean,646,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 649; @symbol_moduledef = [system_icon_positive__hint_button_left_middle,649,15,60]; ]
+        module system_icon_positive__hint_button_left_middle {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 649; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 650; @position = 18; @symbol_constdef = [exclude,650,18,25]; @symbol_type<0> = [Boolean,650,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 653; @symbol_moduledef = [system_size__menu_icon,653,15,37]; ]
+        module system_size__menu_icon {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 653; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 654; @position = 18; @symbol_constdef = [scaleX,654,18,24]; @symbol_type<0> = [Number,654,28,34]; ]
+            const scaleX as Number = 45;
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 655; @position = 18; @symbol_constdef = [scaleY,655,18,24]; @symbol_type<0> = [Number,655,28,34]; ]
+            const scaleY as Number = 45;
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 656; @position = 18; @symbol_constdef = [scaleRelativeTo,656,18,33]; @symbol_type<0> = [String,656,37,43]; ]
+            const scaleRelativeTo as String = "screen";
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 659; @symbol_moduledef = [system_icon_destructive__warning,659,15,47]; ]
+        module system_icon_destructive__warning {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 659; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 660; @position = 18; @symbol_constdef = [filename,660,18,26]; @symbol_type<0> = [String,660,30,36]; ]
+            const filename as String = "C:\\Users\\Alonso\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\vivoactive6\\system_icon_destructive__warning.svg";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 661; @position = 18; @symbol_constdef = [dithering,661,18,27]; @symbol_type<0> = [String,661,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 662; @position = 18; @symbol_constdef = [packingFormat,662,18,31]; @symbol_type<0> = [String,662,35,41]; ]
+            const packingFormat as String = "png";
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 665; @symbol_moduledef = [system_loc__hint_button_right_middle,665,15,51]; ]
+        module system_loc__hint_button_right_middle {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 665; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 666; @position = 18; @symbol_constdef = [exclude,666,18,25]; @symbol_type<0> = [Boolean,666,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 669; @symbol_moduledef = [system_icon_dark__cancel,669,15,39]; ]
+        module system_icon_dark__cancel {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 669; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 670; @position = 18; @symbol_constdef = [filename,670,18,26]; @symbol_type<0> = [String,670,30,36]; ]
+            const filename as String = "C:\\Users\\Alonso\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\vivoactive6\\system_icon_dark__cancel.svg";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 671; @position = 18; @symbol_constdef = [compress,671,18,26]; @symbol_type<0> = [String,671,30,36]; ]
+            const compress as String = "true";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 672; @position = 18; @symbol_constdef = [dithering,672,18,27]; @symbol_type<0> = [String,672,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 673; @position = 18; @symbol_constdef = [automaticPalette,673,18,34]; @symbol_type<0> = [String,673,38,44]; ]
+            const automaticPalette as String = "true";
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 676; @symbol_moduledef = [prompt_size__body_with_title,676,15,43]; ]
+        module prompt_size__body_with_title {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 676; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 677; @position = 18; @symbol_constdef = [width,677,18,23]; @symbol_type<0> = [Number,677,27,33]; ]
+            const width as Number = 312;
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 678; @position = 18; @symbol_constdef = [height,678,18,24]; @symbol_type<0> = [Number,678,28,34]; ]
+            const height as Number = 215;
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 681; @symbol_moduledef = [system_loc__hint_button_right_top,681,15,48]; ]
+        module system_loc__hint_button_right_top {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 681; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 682; @position = 18; @symbol_constdef = [x,682,18,19]; @symbol_type<0> = [Number,682,23,29]; ]
+            const x as Number = 319;
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 683; @position = 18; @symbol_constdef = [y,683,18,19]; @symbol_type<0> = [Number,683,23,29]; ]
+            const y as Number = 72;
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 686; @symbol_moduledef = [system_color_light__text,686,15,39]; ]
+        module system_color_light__text {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 686; ]
+            <init> {
+[ "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen" 688 18 ]
+                symbol [ Graphics %tmp.59 688 31 39 ];
+                %tmp.59 = getm $.Toybox.Graphics;
+                symbol [ COLOR_TRANSPARENT %tmp.60 688 40 57 ];
+                %tmp.60 = getv %tmp.59 :COLOR_TRANSPARENT;
+                putv self :background %tmp.60;
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 687; @position = 18; @symbol_constdef = [color,687,18,23]; @symbol_type<0> = [Number,687,27,33]; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 688; @position = 18; @symbol_constdef = [background,688,18,28]; ]
+            const background;
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 691; @symbol_moduledef = [system_icon_light__check,691,15,39]; ]
+        module system_icon_light__check {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 691; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 692; @position = 18; @symbol_constdef = [filename,692,18,26]; @symbol_type<0> = [String,692,30,36]; ]
+            const filename as String = "C:\\Users\\Alonso\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\vivoactive6\\system_icon_light__check.svg";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 693; @position = 18; @symbol_constdef = [compress,693,18,26]; @symbol_type<0> = [String,693,30,36]; ]
+            const compress as String = "true";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 694; @position = 18; @symbol_constdef = [dithering,694,18,27]; @symbol_type<0> = [String,694,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 695; @position = 18; @symbol_constdef = [automaticPalette,695,18,34]; @symbol_type<0> = [String,695,38,44]; ]
+            const automaticPalette as String = "true";
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 698; @symbol_moduledef = [confirmation_input__reject,698,15,41]; ]
+        module confirmation_input__reject {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 698; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 699; @position = 18; @symbol_constdef = [y1,699,18,20]; @symbol_type<0> = [Number,699,24,30]; ]
+            const y1 as Number = 0;
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 700; @position = 18; @symbol_constdef = [x1,700,18,20]; @symbol_type<0> = [Number,700,24,30]; ]
+            const x1 as Number = 97;
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 701; @position = 18; @symbol_constdef = [y2,701,18,20]; @symbol_type<0> = [Number,701,24,30]; ]
+            const y2 as Number = 76;
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 702; @position = 18; @symbol_constdef = [x2,702,18,20]; @symbol_type<0> = [Number,702,24,30]; ]
+            const x2 as Number = 293;
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 705; @symbol_moduledef = [system_icon_light__revert,705,15,40]; ]
+        module system_icon_light__revert {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 705; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 706; @position = 18; @symbol_constdef = [filename,706,18,26]; @symbol_type<0> = [String,706,30,36]; ]
+            const filename as String = "C:\\Users\\Alonso\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\vivoactive6\\system_icon_light__revert.svg";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 707; @position = 18; @symbol_constdef = [compress,707,18,26]; @symbol_type<0> = [String,707,30,36]; ]
+            const compress as String = "true";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 708; @position = 18; @symbol_constdef = [dithering,708,18,27]; @symbol_type<0> = [String,708,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 709; @position = 18; @symbol_constdef = [automaticPalette,709,18,34]; @symbol_type<0> = [String,709,38,44]; ]
+            const automaticPalette as String = "true";
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 712; @symbol_moduledef = [system_size__subwindow,712,15,37]; ]
+        module system_size__subwindow {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 712; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 713; @position = 18; @symbol_constdef = [exclude,713,18,25]; @symbol_type<0> = [Boolean,713,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 716; @symbol_moduledef = [system_icon_positive__hint_button_left_bottom,716,15,60]; ]
+        module system_icon_positive__hint_button_left_bottom {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 716; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 717; @position = 18; @symbol_constdef = [exclude,717,18,25]; @symbol_type<0> = [Boolean,717,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 720; @symbol_moduledef = [system_icon_dark__check,720,15,38]; ]
+        module system_icon_dark__check {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 720; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 721; @position = 18; @symbol_constdef = [filename,721,18,26]; @symbol_type<0> = [String,721,30,36]; ]
+            const filename as String = "C:\\Users\\Alonso\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\vivoactive6\\system_icon_dark__check.svg";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 722; @position = 18; @symbol_constdef = [compress,722,18,26]; @symbol_type<0> = [String,722,30,36]; ]
+            const compress as String = "true";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 723; @position = 18; @symbol_constdef = [dithering,723,18,27]; @symbol_type<0> = [String,723,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 724; @position = 18; @symbol_constdef = [automaticPalette,724,18,34]; @symbol_type<0> = [String,724,38,44]; ]
+            const automaticPalette as String = "true";
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 727; @symbol_moduledef = [confirmation_loc__hint_keep,727,15,42]; ]
+        module confirmation_loc__hint_keep {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 727; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 728; @position = 18; @symbol_constdef = [x,728,18,19]; @symbol_type<0> = [Number,728,23,29]; ]
+            const x as Number = 322;
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 729; @position = 18; @symbol_constdef = [y,729,18,19]; @symbol_type<0> = [Number,729,23,29]; ]
+            const y as Number = 258;
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 732; @symbol_moduledef = [confirmation_loc__hint_delete,732,15,44]; ]
+        module confirmation_loc__hint_delete {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 732; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 733; @position = 18; @symbol_constdef = [x,733,18,19]; @symbol_type<0> = [Number,733,23,29]; ]
+            const x as Number = 319;
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 734; @position = 18; @symbol_constdef = [y,734,18,19]; @symbol_type<0> = [Number,734,23,29]; ]
+            const y as Number = 72;
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 737; @symbol_moduledef = [system_icon_positive__hint_action_menu,737,15,53]; ]
+        module system_icon_positive__hint_action_menu {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 737; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 738; @position = 18; @symbol_constdef = [exclude,738,18,25]; @symbol_type<0> = [Boolean,738,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 741; @symbol_moduledef = [system_icon_positive__hint_button_right_middle,741,15,61]; ]
+        module system_icon_positive__hint_button_right_middle {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 741; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 742; @position = 18; @symbol_constdef = [exclude,742,18,25]; @symbol_type<0> = [Boolean,742,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 745; @symbol_moduledef = [system_icon_light__hint_button_left_middle,745,15,57]; ]
+        module system_icon_light__hint_button_left_middle {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 745; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 746; @position = 18; @symbol_constdef = [exclude,746,18,25]; @symbol_type<0> = [Boolean,746,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 749; @symbol_moduledef = [system_icon_dark__hint_button_right_bottom,749,15,57]; ]
+        module system_icon_dark__hint_button_right_bottom {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 749; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 750; @position = 18; @symbol_constdef = [filename,750,18,26]; @symbol_type<0> = [String,750,30,36]; ]
+            const filename as String = "C:\\Users\\Alonso\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\vivoactive6\\system_icon_dark__hint_button_right_bottom.svg";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 751; @position = 18; @symbol_constdef = [dithering,751,18,27]; @symbol_type<0> = [String,751,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 752; @position = 18; @symbol_constdef = [packingFormat,752,18,31]; @symbol_type<0> = [String,752,35,41]; ]
+            const packingFormat as String = "png";
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 755; @symbol_moduledef = [system_icon_positive__hint_button_right_bottom,755,15,61]; ]
+        module system_icon_positive__hint_button_right_bottom {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 755; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 756; @position = 18; @symbol_constdef = [filename,756,18,26]; @symbol_type<0> = [String,756,30,36]; ]
+            const filename as String = "C:\\Users\\Alonso\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\vivoactive6\\system_icon_positive__hint_button_right_bottom.svg";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 757; @position = 18; @symbol_constdef = [dithering,757,18,27]; @symbol_type<0> = [String,757,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 758; @position = 18; @symbol_constdef = [packingFormat,758,18,31]; @symbol_type<0> = [String,758,35,41]; ]
+            const packingFormat as String = "png";
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 761; @symbol_moduledef = [system_icon_dark__revert,761,15,39]; ]
+        module system_icon_dark__revert {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 761; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 762; @position = 18; @symbol_constdef = [filename,762,18,26]; @symbol_type<0> = [String,762,30,36]; ]
+            const filename as String = "C:\\Users\\Alonso\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\vivoactive6\\system_icon_dark__revert.svg";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 763; @position = 18; @symbol_constdef = [compress,763,18,26]; @symbol_type<0> = [String,763,30,36]; ]
+            const compress as String = "true";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 764; @position = 18; @symbol_constdef = [dithering,764,18,27]; @symbol_type<0> = [String,764,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 765; @position = 18; @symbol_constdef = [automaticPalette,765,18,34]; @symbol_type<0> = [String,765,38,44]; ]
+            const automaticPalette as String = "true";
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 768; @symbol_moduledef = [confirmation_icon_light__hint_delete,768,15,51]; ]
+        module confirmation_icon_light__hint_delete {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 768; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 769; @position = 18; @symbol_constdef = [filename,769,18,26]; @symbol_type<0> = [String,769,30,36]; ]
+            const filename as String = "C:\\Users\\Alonso\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\vivoactive6\\confirmation_icon__hint_delete.svg";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 770; @position = 18; @symbol_constdef = [dithering,770,18,27]; @symbol_type<0> = [String,770,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 771; @position = 18; @symbol_constdef = [packingFormat,771,18,31]; @symbol_type<0> = [String,771,35,41]; ]
+            const packingFormat as String = "png";
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 774; @symbol_moduledef = [system_icon_dark__question,774,15,41]; ]
+        module system_icon_dark__question {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 774; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 775; @position = 18; @symbol_constdef = [filename,775,18,26]; @symbol_type<0> = [String,775,30,36]; ]
+            const filename as String = "C:\\Users\\Alonso\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\vivoactive6\\system_icon_dark__question.svg";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 776; @position = 18; @symbol_constdef = [compress,776,18,26]; @symbol_type<0> = [String,776,30,36]; ]
+            const compress as String = "true";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 777; @position = 18; @symbol_constdef = [dithering,777,18,27]; @symbol_type<0> = [String,777,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 778; @position = 18; @symbol_constdef = [automaticPalette,778,18,34]; @symbol_type<0> = [String,778,38,44]; ]
+            const automaticPalette as String = "true";
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 781; @symbol_moduledef = [system_icon_light__discard,781,15,41]; ]
+        module system_icon_light__discard {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 781; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 782; @position = 18; @symbol_constdef = [filename,782,18,26]; @symbol_type<0> = [String,782,30,36]; ]
+            const filename as String = "C:\\Users\\Alonso\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\vivoactive6\\system_icon_light__discard.svg";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 783; @position = 18; @symbol_constdef = [compress,783,18,26]; @symbol_type<0> = [String,783,30,36]; ]
+            const compress as String = "true";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 784; @position = 18; @symbol_constdef = [dithering,784,18,27]; @symbol_type<0> = [String,784,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 785; @position = 18; @symbol_constdef = [automaticPalette,785,18,34]; @symbol_type<0> = [String,785,38,44]; ]
+            const automaticPalette as String = "true";
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 788; @symbol_moduledef = [device_info,788,15,26]; ]
+        module device_info {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 788; ]
+            <init> {
+[ "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen" 790 18 ]
+                symbol [ Toybox %tmp.62 790 32 38 ];
+                %tmp.62 = getv ? :Toybox;
+                symbol [ System %tmp.63 790 39 45 ];
+                %tmp.63 = getv %tmp.62 :System;
+                symbol [ SCREEN_SHAPE_ROUND %tmp.64 790 46 64 ];
+                %tmp.64 = getv %tmp.63 :SCREEN_SHAPE_ROUND;
+                putv self :screenShape %tmp.64;
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 789; @position = 18; @symbol_constdef = [screenWidth,789,18,29]; @symbol_type<0> = [Number,789,33,39]; ]
+            const screenWidth as Number = 390;
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 790; @position = 18; @symbol_constdef = [screenShape,790,18,29]; ]
+            const screenShape;
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 791; @position = 18; @symbol_constdef = [hasNightMode,791,18,30]; @symbol_type<0> = [Boolean,791,34,41]; ]
+            const hasNightMode as Boolean = false;
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 792; @position = 18; @symbol_constdef = [hasGpu,792,18,24]; @symbol_type<0> = [Boolean,792,28,35]; ]
+            const hasGpu as Boolean = true;
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 793; @position = 18; @symbol_constdef = [screenHeight,793,18,30]; @symbol_type<0> = [Number,793,34,40]; ]
+            const screenHeight as Number = 390;
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 794; @position = 18; @symbol_constdef = [hasTouchScreen,794,18,32]; @symbol_type<0> = [Boolean,794,36,43]; ]
+            const hasTouchScreen as Boolean = true;
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 795; @position = 18; @symbol_constdef = [hasEnhancedReadabilityMode,795,18,44]; @symbol_type<0> = [Boolean,795,48,55]; ]
+            const hasEnhancedReadabilityMode as Boolean = true;
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 798; @symbol_moduledef = [confirmation_icon_dark__hint_confirm,798,15,51]; ]
+        module confirmation_icon_dark__hint_confirm {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 798; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 799; @position = 18; @symbol_constdef = [filename,799,18,26]; @symbol_type<0> = [String,799,30,36]; ]
+            const filename as String = "C:\\Users\\Alonso\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\vivoactive6\\confirmation_icon__hint_completion.svg";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 800; @position = 18; @symbol_constdef = [dithering,800,18,27]; @symbol_type<0> = [String,800,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 801; @position = 18; @symbol_constdef = [packingFormat,801,18,31]; @symbol_type<0> = [String,801,35,41]; ]
+            const packingFormat as String = "png";
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 804; @symbol_moduledef = [prompt_font__body_no_title,804,15,41]; ]
+        module prompt_font__body_no_title {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 804; ]
+            <init> {
+[ "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen" 805 18 ]
+                symbol [ Graphics %tmp.65 805 34 42 ];
+                %tmp.65 = getm $.Toybox.Graphics;
+                symbol [ TEXT_JUSTIFY_CENTER %tmp.66 805 43 62 ];
+                %tmp.66 = getv %tmp.65 :TEXT_JUSTIFY_CENTER;
+                symbol [ Graphics %tmp.67 805 63 71 ];
+                %tmp.67 = getm $.Toybox.Graphics;
+                symbol [ TEXT_JUSTIFY_VCENTER %tmp.68 805 72 92 ];
+                %tmp.68 = getv %tmp.67 :TEXT_JUSTIFY_VCENTER;
+                %tmp.69 = bitor %tmp.66 %tmp.68;
+                putv self :justification %tmp.69;
+[ "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen" 806 18 ]
+                symbol [ Graphics %tmp.70 806 25 33 ];
+                %tmp.70 = getm $.Toybox.Graphics;
+                symbol [ FONT_TINY %tmp.71 806 34 43 ];
+                %tmp.71 = getv %tmp.70 :FONT_TINY;
+                putv self :font %tmp.71;
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 805; @position = 18; @symbol_constdef = [justification,805,18,31]; ]
+            const justification;
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 806; @position = 18; @symbol_constdef = [font,806,18,22]; ]
+            const font;
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 809; @symbol_moduledef = [prompt_size__title_icon,809,15,38]; ]
+        module prompt_size__title_icon {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 809; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 810; @position = 18; @symbol_constdef = [scaleX,810,18,24]; @symbol_type<0> = [Float,810,28,33]; ]
+            const scaleX as Float = 0.12;
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 811; @position = 18; @symbol_constdef = [scaleRelativeTo,811,18,33]; @symbol_type<0> = [String,811,37,43]; ]
+            const scaleRelativeTo as String = "screen";
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 814; @symbol_moduledef = [system_icon_dark__warning,814,15,40]; ]
+        module system_icon_dark__warning {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 814; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 815; @position = 18; @symbol_constdef = [filename,815,18,26]; @symbol_type<0> = [String,815,30,36]; ]
+            const filename as String = "C:\\Users\\Alonso\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\vivoactive6\\system_icon_dark__warning.svg";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 816; @position = 18; @symbol_constdef = [compress,816,18,26]; @symbol_type<0> = [String,816,30,36]; ]
+            const compress as String = "true";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 817; @position = 18; @symbol_constdef = [dithering,817,18,27]; @symbol_type<0> = [String,817,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 818; @position = 18; @symbol_constdef = [automaticPalette,818,18,34]; @symbol_type<0> = [String,818,38,44]; ]
+            const automaticPalette as String = "true";
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 821; @symbol_moduledef = [prompt_loc__title_icon,821,15,37]; ]
+        module prompt_loc__title_icon {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 821; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 822; @position = 18; @symbol_constdef = [x,822,18,19]; @symbol_type<0> = [Number,822,23,29]; ]
+            const x as Number = 195;
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 823; @position = 18; @symbol_constdef = [y,823,18,19]; @symbol_type<0> = [Number,823,23,29]; ]
+            const y as Number = 39;
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 824; @position = 18; @symbol_constdef = [horizontalJustification,824,18,41]; @symbol_type<0> = [String,824,45,51]; ]
+            const horizontalJustification as String = "center";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 825; @position = 18; @symbol_constdef = [verticalJustification,825,18,39]; @symbol_type<0> = [String,825,43,49]; ]
+            const verticalJustification as String = "center";
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 828; @symbol_moduledef = [prompt_font_enhanced_readability__title,828,15,54]; ]
+        module prompt_font_enhanced_readability__title {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 828; ]
+            <init> {
+[ "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen" 829 18 ]
+                symbol [ Graphics %tmp.72 829 34 42 ];
+                %tmp.72 = getm $.Toybox.Graphics;
+                symbol [ TEXT_JUSTIFY_CENTER %tmp.73 829 43 62 ];
+                %tmp.73 = getv %tmp.72 :TEXT_JUSTIFY_CENTER;
+                symbol [ Graphics %tmp.74 829 63 71 ];
+                %tmp.74 = getm $.Toybox.Graphics;
+                symbol [ TEXT_JUSTIFY_VCENTER %tmp.75 829 72 92 ];
+                %tmp.75 = getv %tmp.74 :TEXT_JUSTIFY_VCENTER;
+                %tmp.76 = bitor %tmp.73 %tmp.75;
+                putv self :justification %tmp.76;
+[ "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen" 830 18 ]
+                symbol [ Graphics %tmp.77 830 25 33 ];
+                %tmp.77 = getm $.Toybox.Graphics;
+                symbol [ FONT_TINY %tmp.78 830 34 43 ];
+                %tmp.78 = getv %tmp.77 :FONT_TINY;
+                putv self :font %tmp.78;
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 829; @position = 18; @symbol_constdef = [justification,829,18,31]; ]
+            const justification;
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 830; @position = 18; @symbol_constdef = [font,830,18,22]; ]
+            const font;
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 833; @symbol_moduledef = [prompt_color_dark__body,833,15,38]; ]
+        module prompt_color_dark__body {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 833; ]
+            <init> {
+[ "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen" 835 18 ]
+                symbol [ Graphics %tmp.79 835 31 39 ];
+                %tmp.79 = getm $.Toybox.Graphics;
+                symbol [ COLOR_TRANSPARENT %tmp.80 835 40 57 ];
+                %tmp.80 = getv %tmp.79 :COLOR_TRANSPARENT;
+                putv self :background %tmp.80;
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 834; @position = 18; @symbol_constdef = [color,834,18,23]; @symbol_type<0> = [Number,834,27,33]; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 835; @position = 18; @symbol_constdef = [background,835,18,28]; ]
+            const background;
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 838; @symbol_moduledef = [confirmation_icon__hint_delete,838,15,45]; ]
+        module confirmation_icon__hint_delete {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 838; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 839; @position = 18; @symbol_constdef = [filename,839,18,26]; @symbol_type<0> = [String,839,30,36]; ]
+            const filename as String = "C:\\Users\\Alonso\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\vivoactive6\\confirmation_icon__hint_delete.svg";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 840; @position = 18; @symbol_constdef = [dithering,840,18,27]; @symbol_type<0> = [String,840,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 841; @position = 18; @symbol_constdef = [packingFormat,841,18,31]; @symbol_type<0> = [String,841,35,41]; ]
+            const packingFormat as String = "png";
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 844; @symbol_moduledef = [system_icon_light__hint_button_right_top,844,15,55]; ]
+        module system_icon_light__hint_button_right_top {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 844; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 845; @position = 18; @symbol_constdef = [filename,845,18,26]; @symbol_type<0> = [String,845,30,36]; ]
+            const filename as String = "C:\\Users\\Alonso\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\vivoactive6\\system_icon_light__hint_button_right_top.svg";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 846; @position = 18; @symbol_constdef = [dithering,846,18,27]; @symbol_type<0> = [String,846,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 847; @position = 18; @symbol_constdef = [packingFormat,847,18,31]; @symbol_type<0> = [String,847,35,41]; ]
+            const packingFormat as String = "png";
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 850; @symbol_moduledef = [confirmation_size__body,850,15,38]; ]
+        module confirmation_size__body {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 850; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 851; @position = 18; @symbol_constdef = [width,851,18,23]; @symbol_type<0> = [Number,851,27,33]; ]
+            const width as Number = 231;
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 852; @position = 18; @symbol_constdef = [height,852,18,24]; @symbol_type<0> = [Number,852,28,34]; ]
+            const height as Number = 234;
+        }
+        [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 855; @symbol_moduledef = [system_icon_positive__check,855,15,42]; ]
+        module system_icon_positive__check {
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 855; ]
+            <init> {
+            }
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 856; @position = 18; @symbol_constdef = [filename,856,18,26]; @symbol_type<0> = [String,856,30,36]; ]
+            const filename as String = "C:\\Users\\Alonso\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\vivoactive6\\system_icon_positive__check.svg";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 857; @position = 18; @symbol_constdef = [dithering,857,18,27]; @symbol_type<0> = [String,857,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 858; @position = 18; @symbol_constdef = [packingFormat,858,18,31]; @symbol_type<0> = [String,858,35,41]; ]
+            const packingFormat as String = "png";
+        }
+    }
+}
+[ @file = "c:\Users\Alonso\Desktop\Garmin\pokewatch\bin\gen\006-B4625-00\source\Rez.mcgen"; @line = 1; ]
+<init> {
+}

@@ -1,0 +1,72 @@
+[ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\PokeWatchApp.mc"; @line = 5; @symbol_importdef<0> = [Toybox,5,7,13]; @symbol_importdef<1> = [Application,5,14,25]; ]
+import Toybox.Application;
+[ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\PokeWatchApp.mc"; @line = 6; @symbol_importdef<0> = [Toybox,6,7,13]; @symbol_importdef<1> = [Lang,6,14,18]; ]
+import Toybox.Lang;
+[ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\PokeWatchApp.mc"; @line = 7; @symbol_importdef<0> = [Toybox,7,7,13]; @symbol_importdef<1> = [WatchUi,7,14,21]; ]
+import Toybox.WatchUi;
+[ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\PokeWatchApp.mc"; @line = 8; @symbol_importdef<0> = [Toybox,8,7,13]; @symbol_importdef<1> = [ActivityMonitor,8,14,29]; ]
+import Toybox.ActivityMonitor;
+[ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\PokeWatchApp.mc"; @line = 10; @symbol_classdef = [PokeWatchApp,10,6,18]; @symbol_extends<0> = [Application,10,27,38]; @symbol_extends<1> = [AppBase,10,39,46]; ]
+class PokeWatchApp extends Application.AppBase {
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\PokeWatchApp.mc"; @line = 10; ]
+    <init> {
+    }
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\PokeWatchApp.mc"; @line = 10; ]
+    static
+    <init> {
+    }
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\PokeWatchApp.mc"; @line = 12; @symbol_functiondef = [initialize,12,13,23]; ]
+    function initialize() as Void {
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_12_26_14_4_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\PokeWatchApp.mc" 13 8 ]
+        symbol [ AppBase %tmp.2 13 8 15 ];
+        %tmp.2 = getv ? :AppBase;
+        symbol [ initialize %tmp.3 13 16 26 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_12_26_14_4_stop:
+    }
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\PokeWatchApp.mc"; @line = 16; @symbol_functiondef = [onStart,16,13,20]; @symbol_param<0> = [state,16,21,26]; @symbol_param<0>_type<0> = [Lang,16,30,34]; @symbol_param<0>_type<1> = [Dictionary,16,35,45]; ]
+    function onStart(state as Lang.Dictionary or Null) as Void {
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_16_56_19_4_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\PokeWatchApp.mc" 18 8 ]
+        symbol [ GameState %tmp.2 18 8 17 ];
+        %tmp.2 = getv ? :GameState;
+        symbol [ load %tmp.3 18 18 22 ];
+        %tmp.3 = getv function %tmp.2 :load;
+        invoke %tmp.2 %tmp.3();
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_16_56_19_4_stop:
+    }
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\PokeWatchApp.mc"; @line = 21; @symbol_functiondef = [onStop,21,13,19]; @symbol_param<0> = [state,21,20,25]; @symbol_param<0>_type<0> = [Lang,21,29,33]; @symbol_param<0>_type<1> = [Dictionary,21,34,44]; ]
+    function onStop(state as Lang.Dictionary or Null) as Void {
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_21_55_24_4_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\PokeWatchApp.mc" 23 8 ]
+        symbol [ GameState %tmp.2 23 8 17 ];
+        %tmp.2 = getv ? :GameState;
+        symbol [ save %tmp.3 23 18 22 ];
+        %tmp.3 = getv function %tmp.2 :save;
+        invoke %tmp.2 %tmp.3();
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_21_55_24_4_stop:
+    }
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\PokeWatchApp.mc"; @line = 26; @symbol_functiondef = [getInitialView,26,13,27]; @symbol_return<0> = [WatchUi,26,35,42]; @symbol_return<1> = [Views,26,43,48]; @symbol_return<2> = [WatchUi,26,56,63]; @symbol_return<3> = [Views,26,64,69]; @symbol_return<4> = [WatchUi,26,71,78]; @symbol_return<5> = [InputDelegates,26,79,93]; ]
+    function getInitialView() as [WatchUi.Views] or [WatchUi.Views, WatchUi.InputDelegates] {
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_26_96_28_4_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\PokeWatchApp.mc" 27 8 ]
+        %tmp.1 = newa 2;
+        symbol [ MainView %tmp.5 27 21 29 ];
+        %tmp.5 = getv ? :MainView;
+        %tmp.2 = newc %tmp.5 ();
+        %tmp.6 = dup %tmp.1;
+        %tmp.7 = aputv %tmp.6 0 %tmp.2;
+        symbol [ MainDelegate %tmp.11 27 37 49 ];
+        %tmp.11 = getv ? :MainDelegate;
+        %tmp.8 = newc %tmp.11 ();
+        %tmp.12 = dup %tmp.7;
+        %tmp.13 = aputv %tmp.12 1 %tmp.8;
+        ret %tmp.13;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_26_96_28_4_stop:
+    }
+}
+[ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\PokeWatchApp.mc"; @line = 5; ]
+<init> {
+}
