@@ -371,400 +371,582 @@ C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_53_8_59_8_for_end
         ret %tmp.58;
 C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_42_44_61_4_stop:
     }
-    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc"; @line = 64; @symbol_functiondef = [buildPool,64,20,29]; @symbol_return<0> = [Lang,64,35,39]; @symbol_return<1> = [Array,64,40,45]; ]
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc"; @line = 66; @symbol_functiondef = [buildPool,66,20,29]; @symbol_return<0> = [Lang,66,35,39]; @symbol_return<1> = [Array,66,40,45]; ]
     static
     function buildPool() as Lang.Array {
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_64_46_91_4_start:
-[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 65 8 ]
-        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_64_46_91_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_64_46_91_4_stop" ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_66_46_113_4_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 67 8 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_66_46_113_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_66_46_113_4_stop" ]
         %pool.1 = local;
-        symbol [ pool %pool.1 65 12 16 ];
+        symbol [ pool %pool.1 67 12 16 ];
         %tmp.1 = newa 0;
         lputv %pool.1 %tmp.1;
-        symbol [ pool %pool.1 65 12 16 ];
-[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 66 8 ]
-        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_64_46_91_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_64_46_91_4_stop" ]
+        symbol [ pool %pool.1 67 12 16 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 68 8 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_66_46_113_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_66_46_113_4_stop" ]
         %podId.2 = local;
-        symbol [ podId %podId.2 66 12 17 ];
-        symbol [ GameState %tmp.3 66 20 29 ];
+        symbol [ podId %podId.2 68 12 17 ];
+        symbol [ GameState %tmp.3 68 20 29 ];
         %tmp.3 = getv ? :GameState;
-        symbol [ pokemonOfDay %tmp.4 66 30 42 ];
+        symbol [ pokemonOfDay %tmp.4 68 30 42 ];
         %tmp.4 = getv %tmp.3 :pokemonOfDay;
         lputv %podId.2 %tmp.4;
-        symbol [ podId %podId.2 66 12 17 ];
-[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 67 8 ]
-        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_64_46_91_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_64_46_91_4_stop" ]
+        symbol [ podId %podId.2 68 12 17 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 69 8 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_66_46_113_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_66_46_113_4_stop" ]
         %tierWeights.3 = local;
-        symbol [ tierWeights %tierWeights.3 67 12 23 ];
-        symbol [ BalanceConfig %tmp.6 67 26 39 ];
+        symbol [ tierWeights %tierWeights.3 69 12 23 ];
+        symbol [ BalanceConfig %tmp.6 69 26 39 ];
         %tmp.6 = getv ? :BalanceConfig;
-        symbol [ getTierWeights %tmp.7 67 40 54 ];
+        symbol [ getTierWeights %tmp.7 69 40 54 ];
         %tmp.7 = getv function %tmp.6 :getTierWeights;
         %tmp.8 = invoke %tmp.6 %tmp.7();
         lputv %tierWeights.3 %tmp.8;
-        symbol [ tierWeights %tierWeights.3 67 12 23 ];
-[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 68 8 ]
-        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_64_46_91_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_64_46_91_4_stop" ]
+        symbol [ tierWeights %tierWeights.3 69 12 23 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 70 8 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_66_46_113_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_66_46_113_4_stop" ]
         %activityBlocks.4 = local;
-        symbol [ activityBlocks %activityBlocks.4 68 12 26 ];
-        symbol [ GameState %tmp.10 68 29 38 ];
+        symbol [ activityBlocks %activityBlocks.4 70 12 26 ];
+        symbol [ GameState %tmp.10 70 29 38 ];
         %tmp.10 = getv ? :GameState;
-        symbol [ getActivityBlocksToday %tmp.11 68 39 61 ];
+        symbol [ getActivityBlocksToday %tmp.11 70 39 61 ];
         %tmp.11 = getv function %tmp.10 :getActivityBlocksToday;
         %tmp.12 = invoke %tmp.10 %tmp.11();
         lputv %activityBlocks.4 %tmp.12;
-        symbol [ activityBlocks %activityBlocks.4 68 12 26 ];
-[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 69 8 ]
-        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_64_46_91_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_64_46_91_4_stop" ]
+        symbol [ activityBlocks %activityBlocks.4 70 12 26 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 71 8 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_66_46_113_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_66_46_113_4_stop" ]
         %hasActivityBonus.5 = local;
-        symbol [ hasActivityBonus %hasActivityBonus.5 69 12 28 ];
-        symbol [ BalanceConfig %tmp.14 69 31 44 ];
+        symbol [ hasActivityBonus %hasActivityBonus.5 71 12 28 ];
+        symbol [ BalanceConfig %tmp.14 71 31 44 ];
         %tmp.14 = getv ? :BalanceConfig;
-        symbol [ hasRareBonus %tmp.15 69 45 57 ];
+        symbol [ hasRareBonus %tmp.15 71 45 57 ];
         %tmp.15 = getv function %tmp.14 :hasRareBonus;
         %tmp.16 = lgetv %activityBlocks.4;
-        symbol [ activityBlocks %tmp.16 69 58 72 ];
+        symbol [ activityBlocks %tmp.16 71 58 72 ];
         %tmp.17 = invoke %tmp.14 %tmp.15(%tmp.16);
         lputv %hasActivityBonus.5 %tmp.17;
-        symbol [ hasActivityBonus %hasActivityBonus.5 69 12 28 ];
-[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 71 8 ]
-        for @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_71_8_89_8_for_test @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_71_8_89_8_for_incr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_71_8_89_8_for_end;
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_71_8_89_8_for_init:
-        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_71_8_89_8_for_begin" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_71_8_89_8_for_end" ]
-        %i.6 = local;
-        symbol [ i %i.6 71 17 18 ];
-        %tmp.18 = 1;
-        lputv %i.6 %tmp.18;
-        symbol [ i %i.6 71 17 18 ];
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_71_8_89_8_for_test:
-        %tmp.19 = lgetv %i.6;
-        symbol [ i %tmp.19 71 24 25 ];
-        %tmp.20 = 151;
-        %tmp.21 = lte %tmp.19 %tmp.20;
-        bf %tmp.21 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_71_8_89_8_for_end;
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_71_8_89_8_for_begin:
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_71_39_89_8_start:
-[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 72 12 ]
-        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_71_39_89_8_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_71_39_89_8_stop" ]
-        %data.7 = local;
-        symbol [ data %data.7 72 16 20 ];
-        symbol [ PokemonData %tmp.23 72 23 34 ];
-        %tmp.23 = getv ? :PokemonData;
-        symbol [ get %tmp.24 72 35 38 ];
-        %tmp.24 = getv function %tmp.23 :get;
-        %tmp.25 = lgetv %i.6;
-        symbol [ i %tmp.25 72 39 40 ];
-        %tmp.26 = invoke %tmp.23 %tmp.24(%tmp.25);
-        lputv %data.7 %tmp.26;
-        symbol [ data %data.7 72 16 20 ];
-[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 73 12 ]
-        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_71_39_89_8_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_71_39_89_8_stop" ]
-        %tier.8 = local;
-        symbol [ tier %tier.8 73 16 20 ];
-        %tmp.27 = lgetv %data.7;
-        symbol [ data %tmp.27 73 23 27 ];
-        %tmp.29 = const :tier;
-        symbol [ tier %tmp.29 73 29 33 const ];
-        %tmp.30 = agetv %tmp.27 %tmp.29;
-        lputv %tier.8 %tmp.30;
-        symbol [ tier %tier.8 73 16 20 ];
-[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 74 12 ]
-        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_71_39_89_8_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_71_39_89_8_stop" ]
-        %weight.9 = local;
-        symbol [ weight %weight.9 74 16 22 ];
-        %tmp.31 = lgetv %tierWeights.3;
-        symbol [ tierWeights %tmp.31 74 25 36 ];
-        %tmp.32 = lgetv %tier.8;
-        symbol [ tier %tmp.32 74 37 41 ];
-        %tmp.33 = agetv %tmp.31 %tmp.32;
-        lputv %weight.9 %tmp.33;
-        symbol [ weight %weight.9 74 16 22 ];
+        symbol [ hasActivityBonus %hasActivityBonus.5 71 12 28 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 74 8 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_66_46_113_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_66_46_113_4_stop" ]
+        %evoTargets.6 = local;
+        symbol [ evoTargets %evoTargets.6 74 12 22 ];
+        %tmp.18 = newd 0;
+        lputv %evoTargets.6 %tmp.18;
+        symbol [ evoTargets %evoTargets.6 74 12 22 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 75 8 ]
+        for @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_75_8_86_8_for_test @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_75_8_86_8_for_incr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_75_8_86_8_for_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_75_8_86_8_for_init:
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_75_8_86_8_for_begin" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_75_8_86_8_for_end" ]
+        %j.7 = local;
+        symbol [ j %j.7 75 17 18 ];
+        %tmp.19 = 1;
+        lputv %j.7 %tmp.19;
+        symbol [ j %j.7 75 17 18 ];
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_75_8_86_8_for_test:
+        %tmp.20 = lgetv %j.7;
+        symbol [ j %tmp.20 75 24 25 ];
+        %tmp.21 = 151;
+        %tmp.22 = lte %tmp.20 %tmp.21;
+        bf %tmp.22 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_75_8_86_8_for_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_75_8_86_8_for_begin:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_75_39_86_8_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 76 12 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_75_39_86_8_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_75_39_86_8_stop" ]
+        %d.8 = local;
+        symbol [ d %d.8 76 16 17 ];
+        symbol [ PokemonData %tmp.24 76 20 31 ];
+        %tmp.24 = getv ? :PokemonData;
+        symbol [ get %tmp.25 76 32 35 ];
+        %tmp.25 = getv function %tmp.24 :get;
+        %tmp.26 = lgetv %j.7;
+        symbol [ j %tmp.26 76 36 37 ];
+        %tmp.27 = invoke %tmp.24 %tmp.25(%tmp.26);
+        lputv %d.8 %tmp.27;
+        symbol [ d %d.8 76 16 17 ];
 [ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 77 12 ]
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_77_12_79_12_if_stmt:
-        %tmp.34 = lgetv %i.6;
-        symbol [ i %tmp.34 77 16 17 ];
-        %tmp.35 = lgetv %podId.2;
-        symbol [ podId %tmp.35 77 21 26 ];
-        %tmp.36 = eq %tmp.34 %tmp.35;
-        bf %tmp.36 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_77_12_79_12_if_end;
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_77_12_79_12_if_true:
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_77_28_79_12_start:
-[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 78 16 ]
-        %tmp.37 = lgetv %weight.9;
-        symbol [ weight %tmp.37 78 25 31 ];
-        symbol [ BalanceConfig %tmp.39 78 34 47 ];
-        %tmp.39 = getv ? :BalanceConfig;
-        symbol [ getPokemonOfDayWeightMultiplier %tmp.40 78 48 79 ];
-        %tmp.40 = getv function %tmp.39 :getPokemonOfDayWeightMultiplier;
-        %tmp.41 = invoke %tmp.39 %tmp.40();
-        %tmp.42 = mul %tmp.37 %tmp.41;
-        lputv %weight.9 %tmp.42;
-        symbol [ weight %weight.9 78 16 22 ];
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_77_28_79_12_stop:
-        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_77_12_79_12_if_end;
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_77_12_79_12_if_end:
-[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 82 12 ]
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_82_12_84_12_if_stmt:
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_82_16_82_70_begin:
-        %tmp.43 = lgetv %hasActivityBonus.5;
-        symbol [ hasActivityBonus %tmp.43 82 16 32 ];
-        bf %tmp.43 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_82_12_84_12_if_end;
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_82_36_82_70_true:
-        symbol [ BalanceConfig %tmp.45 82 36 49 ];
-        %tmp.45 = getv ? :BalanceConfig;
-        symbol [ isRareBonusTier %tmp.46 82 50 65 ];
-        %tmp.46 = getv function %tmp.45 :isRareBonusTier;
-        %tmp.47 = lgetv %tier.8;
-        symbol [ tier %tmp.47 82 66 70 ];
-        %tmp.48 = invoke %tmp.45 %tmp.46(%tmp.47);
-        push %tmp.48;
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_82_36_82_70_end:
-        %tmp.49 = phi [%tmp.43 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_82_16_82_70_begin] [%tmp.48 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_82_36_82_70_true] [%tmp.49 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_82_36_82_70_end];
-        bf %tmp.49 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_82_12_84_12_if_end;
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_82_12_84_12_if_true:
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_82_73_84_12_start:
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_75_39_86_8_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_75_39_86_8_stop" ]
+        %target.9 = local;
+        symbol [ target %target.9 77 16 22 ];
+        %tmp.28 = lgetv %d.8;
+        symbol [ d %tmp.28 77 25 26 ];
+        %tmp.30 = const :evoTo;
+        symbol [ evoTo %tmp.30 77 28 33 const ];
+        %tmp.31 = agetv %tmp.28 %tmp.30;
+        lputv %target.9 %tmp.31;
+        symbol [ target %target.9 77 16 22 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 78 12 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_78_12_85_12_if_stmt:
+        %tmp.32 = lgetv %target.9;
+        symbol [ target %tmp.32 78 16 22 ];
+        %tmp.33 = 0;
+        %tmp.34 = gt %tmp.32 %tmp.33;
+        bf %tmp.34 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_78_12_85_12_if_false;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_78_12_85_12_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_78_28_80_12_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 79 16 ]
+        %tmp.35 = lgetv %evoTargets.6;
+        symbol [ evoTargets %tmp.35 79 16 26 ];
+        %tmp.36 = true;
+        %tmp.37 = lgetv %target.9;
+        symbol [ target %tmp.37 79 27 33 ];
+        aputv %tmp.35 %tmp.37 %tmp.36;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_78_28_80_12_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_78_12_85_12_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_78_12_85_12_if_false:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 80 19 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_80_19_85_12_if_stmt:
+        %tmp.38 = lgetv %target.9;
+        symbol [ target %tmp.38 80 23 29 ];
+        %tmp.39 = -1;
+        %tmp.40 = eq %tmp.38 %tmp.39;
+        bf %tmp.40 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_80_19_85_12_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_80_19_85_12_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_80_37_85_12_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 82 16 ]
+        %tmp.41 = lgetv %evoTargets.6;
+        symbol [ evoTargets %tmp.41 82 16 26 ];
+        %tmp.42 = true;
+        %tmp.43 = 134;
+        aputv %tmp.41 %tmp.43 %tmp.42;
 [ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 83 16 ]
-        symbol [ BalanceConfig %tmp.51 83 25 38 ];
-        %tmp.51 = getv ? :BalanceConfig;
-        symbol [ applyPercentBonus %tmp.52 83 39 56 ];
-        %tmp.52 = getv function %tmp.51 :applyPercentBonus;
-        %tmp.53 = lgetv %weight.9;
-        symbol [ weight %tmp.53 83 57 63 ];
-        symbol [ BalanceConfig %tmp.55 83 65 78 ];
-        %tmp.55 = getv ? :BalanceConfig;
-        symbol [ getActivityBonusPercent %tmp.56 83 79 102 ];
-        %tmp.56 = getv function %tmp.55 :getActivityBonusPercent;
-        %tmp.57 = invoke %tmp.55 %tmp.56();
-        %tmp.58 = invoke %tmp.51 %tmp.52(%tmp.53, %tmp.57);
-        lputv %weight.9 %tmp.58;
-        symbol [ weight %weight.9 83 16 22 ];
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_82_73_84_12_stop:
-        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_82_12_84_12_if_end;
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_82_12_84_12_if_end:
-[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 86 12 ]
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_86_12_88_12_if_stmt:
-        %tmp.59 = lgetv %weight.9;
-        symbol [ weight %tmp.59 86 16 22 ];
-        %tmp.60 = 0;
-        %tmp.61 = gt %tmp.59 %tmp.60;
-        bf %tmp.61 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_86_12_88_12_if_end;
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_86_12_88_12_if_true:
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_86_28_88_12_start:
-[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 87 16 ]
-        %tmp.62 = lgetv %pool.1;
-        symbol [ pool %tmp.62 87 16 20 ];
-        symbol [ add %tmp.63 87 21 24 ];
-        %tmp.63 = getv function %tmp.62 :add;
-        %tmp.64 = newd 2;
-        %tmp.66 = const :id;
-        symbol [ id %tmp.66 87 27 29 const ];
-        %tmp.67 = lgetv %i.6;
-        symbol [ i %tmp.67 87 33 34 ];
-        %tmp.68 = dup %tmp.64;
-        %tmp.69 = aputv %tmp.68 %tmp.66 %tmp.67;
-        %tmp.71 = const :weight;
-        symbol [ weight %tmp.71 87 37 43 const ];
-        %tmp.72 = lgetv %weight.9;
-        symbol [ weight %tmp.72 87 47 53 ];
-        %tmp.73 = dup %tmp.69;
-        %tmp.74 = aputv %tmp.73 %tmp.71 %tmp.72;
-        invoke %tmp.62 %tmp.63(%tmp.74);
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_86_28_88_12_stop:
-        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_86_12_88_12_if_end;
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_86_12_88_12_if_end:
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_71_39_89_8_stop:
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_71_8_89_8_for_incr:
-[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 71 ]
-        %tmp.77 = lgetv %i.6;
-        symbol [ i %tmp.77 71 34 35 ];
-        %tmp.78 = add %tmp.77 1;
-        lputv %i.6 %tmp.78;
-        symbol [ i %i.6 71 34 35 ];
-        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_71_8_89_8_for_test;
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_71_8_89_8_for_end:
-[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 90 8 ]
-        %tmp.79 = lgetv %pool.1;
-        symbol [ pool %tmp.79 90 15 19 ];
-        ret %tmp.79;
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_64_46_91_4_stop:
+        %tmp.44 = lgetv %evoTargets.6;
+        symbol [ evoTargets %tmp.44 83 16 26 ];
+        %tmp.45 = true;
+        %tmp.46 = 135;
+        aputv %tmp.44 %tmp.46 %tmp.45;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 84 16 ]
+        %tmp.47 = lgetv %evoTargets.6;
+        symbol [ evoTargets %tmp.47 84 16 26 ];
+        %tmp.48 = true;
+        %tmp.49 = 136;
+        aputv %tmp.47 %tmp.49 %tmp.48;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_80_37_85_12_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_80_19_85_12_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_80_19_85_12_if_end:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_78_12_85_12_if_end:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_75_39_86_8_stop:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_75_8_86_8_for_incr:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 75 ]
+        %tmp.52 = lgetv %j.7;
+        symbol [ j %tmp.52 75 34 35 ];
+        %tmp.53 = add %tmp.52 1;
+        lputv %j.7 %tmp.53;
+        symbol [ j %j.7 75 34 35 ];
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_75_8_86_8_for_test;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_75_8_86_8_for_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 88 8 ]
+        for @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_88_8_111_8_for_test @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_88_8_111_8_for_incr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_88_8_111_8_for_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_88_8_111_8_for_init:
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_88_8_111_8_for_begin" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_88_8_111_8_for_end" ]
+        %i.10 = local;
+        symbol [ i %i.10 88 17 18 ];
+        %tmp.54 = 1;
+        lputv %i.10 %tmp.54;
+        symbol [ i %i.10 88 17 18 ];
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_88_8_111_8_for_test:
+        %tmp.55 = lgetv %i.10;
+        symbol [ i %tmp.55 88 24 25 ];
+        %tmp.56 = 151;
+        %tmp.57 = lte %tmp.55 %tmp.56;
+        bf %tmp.57 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_88_8_111_8_for_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_88_8_111_8_for_begin:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_88_39_111_8_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 90 12 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_90_12_90_50_if_stmt:
+        %tmp.58 = lgetv %evoTargets.6;
+        symbol [ evoTargets %tmp.58 90 16 26 ];
+        symbol [ hasKey %tmp.59 90 27 33 ];
+        %tmp.59 = getv function %tmp.58 :hasKey;
+        %tmp.60 = lgetv %i.10;
+        symbol [ i %tmp.60 90 34 35 ];
+        %tmp.61 = invoke %tmp.58 %tmp.59(%tmp.60);
+        bf %tmp.61 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_90_12_90_50_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_90_12_90_50_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_90_38_90_50_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 90 40 ]
+        goto break @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_88_8_111_8_for_incr;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_90_38_90_50_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_90_12_90_50_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_90_12_90_50_if_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 92 12 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_92_12_92_71_if_stmt:
+        symbol [ LegendaryQuestManager %tmp.63 92 16 37 ];
+        %tmp.63 = getv ? :LegendaryQuestManager;
+        symbol [ isQuestLegendary %tmp.64 92 38 54 ];
+        %tmp.64 = getv function %tmp.63 :isQuestLegendary;
+        %tmp.65 = lgetv %i.10;
+        symbol [ i %tmp.65 92 55 56 ];
+        %tmp.66 = invoke %tmp.63 %tmp.64(%tmp.65);
+        bf %tmp.66 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_92_12_92_71_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_92_12_92_71_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_92_59_92_71_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 92 61 ]
+        goto break @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_88_8_111_8_for_incr;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_92_59_92_71_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_92_12_92_71_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_92_12_92_71_if_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 94 12 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_88_39_111_8_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_88_39_111_8_stop" ]
+        %data.11 = local;
+        symbol [ data %data.11 94 16 20 ];
+        symbol [ PokemonData %tmp.68 94 23 34 ];
+        %tmp.68 = getv ? :PokemonData;
+        symbol [ get %tmp.69 94 35 38 ];
+        %tmp.69 = getv function %tmp.68 :get;
+        %tmp.70 = lgetv %i.10;
+        symbol [ i %tmp.70 94 39 40 ];
+        %tmp.71 = invoke %tmp.68 %tmp.69(%tmp.70);
+        lputv %data.11 %tmp.71;
+        symbol [ data %data.11 94 16 20 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 95 12 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_88_39_111_8_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_88_39_111_8_stop" ]
+        %tier.12 = local;
+        symbol [ tier %tier.12 95 16 20 ];
+        %tmp.72 = lgetv %data.11;
+        symbol [ data %tmp.72 95 23 27 ];
+        %tmp.74 = const :tier;
+        symbol [ tier %tmp.74 95 29 33 const ];
+        %tmp.75 = agetv %tmp.72 %tmp.74;
+        lputv %tier.12 %tmp.75;
+        symbol [ tier %tier.12 95 16 20 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 96 12 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_88_39_111_8_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_88_39_111_8_stop" ]
+        %weight.13 = local;
+        symbol [ weight %weight.13 96 16 22 ];
+        %tmp.76 = lgetv %tierWeights.3;
+        symbol [ tierWeights %tmp.76 96 25 36 ];
+        %tmp.77 = lgetv %tier.12;
+        symbol [ tier %tmp.77 96 37 41 ];
+        %tmp.78 = agetv %tmp.76 %tmp.77;
+        lputv %weight.13 %tmp.78;
+        symbol [ weight %weight.13 96 16 22 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 99 12 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_99_12_101_12_if_stmt:
+        %tmp.79 = lgetv %i.10;
+        symbol [ i %tmp.79 99 16 17 ];
+        %tmp.80 = lgetv %podId.2;
+        symbol [ podId %tmp.80 99 21 26 ];
+        %tmp.81 = eq %tmp.79 %tmp.80;
+        bf %tmp.81 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_99_12_101_12_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_99_12_101_12_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_99_28_101_12_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 100 16 ]
+        %tmp.82 = lgetv %weight.13;
+        symbol [ weight %tmp.82 100 25 31 ];
+        symbol [ BalanceConfig %tmp.84 100 34 47 ];
+        %tmp.84 = getv ? :BalanceConfig;
+        symbol [ getPokemonOfDayWeightMultiplier %tmp.85 100 48 79 ];
+        %tmp.85 = getv function %tmp.84 :getPokemonOfDayWeightMultiplier;
+        %tmp.86 = invoke %tmp.84 %tmp.85();
+        %tmp.87 = mul %tmp.82 %tmp.86;
+        lputv %weight.13 %tmp.87;
+        symbol [ weight %weight.13 100 16 22 ];
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_99_28_101_12_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_99_12_101_12_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_99_12_101_12_if_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 104 12 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_104_12_106_12_if_stmt:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_104_16_104_70_begin:
+        %tmp.88 = lgetv %hasActivityBonus.5;
+        symbol [ hasActivityBonus %tmp.88 104 16 32 ];
+        bf %tmp.88 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_104_12_106_12_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_104_36_104_70_true:
+        symbol [ BalanceConfig %tmp.90 104 36 49 ];
+        %tmp.90 = getv ? :BalanceConfig;
+        symbol [ isRareBonusTier %tmp.91 104 50 65 ];
+        %tmp.91 = getv function %tmp.90 :isRareBonusTier;
+        %tmp.92 = lgetv %tier.12;
+        symbol [ tier %tmp.92 104 66 70 ];
+        %tmp.93 = invoke %tmp.90 %tmp.91(%tmp.92);
+        push %tmp.93;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_104_36_104_70_end:
+        %tmp.94 = phi [%tmp.88 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_104_16_104_70_begin] [%tmp.93 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_104_36_104_70_true] [%tmp.94 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_104_36_104_70_end];
+        bf %tmp.94 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_104_12_106_12_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_104_12_106_12_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_104_73_106_12_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 105 16 ]
+        symbol [ BalanceConfig %tmp.96 105 25 38 ];
+        %tmp.96 = getv ? :BalanceConfig;
+        symbol [ applyPercentBonus %tmp.97 105 39 56 ];
+        %tmp.97 = getv function %tmp.96 :applyPercentBonus;
+        %tmp.98 = lgetv %weight.13;
+        symbol [ weight %tmp.98 105 57 63 ];
+        symbol [ BalanceConfig %tmp.100 105 65 78 ];
+        %tmp.100 = getv ? :BalanceConfig;
+        symbol [ getActivityBonusPercent %tmp.101 105 79 102 ];
+        %tmp.101 = getv function %tmp.100 :getActivityBonusPercent;
+        %tmp.102 = invoke %tmp.100 %tmp.101();
+        %tmp.103 = invoke %tmp.96 %tmp.97(%tmp.98, %tmp.102);
+        lputv %weight.13 %tmp.103;
+        symbol [ weight %weight.13 105 16 22 ];
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_104_73_106_12_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_104_12_106_12_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_104_12_106_12_if_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 108 12 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_108_12_110_12_if_stmt:
+        %tmp.104 = lgetv %weight.13;
+        symbol [ weight %tmp.104 108 16 22 ];
+        %tmp.105 = 0;
+        %tmp.106 = gt %tmp.104 %tmp.105;
+        bf %tmp.106 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_108_12_110_12_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_108_12_110_12_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_108_28_110_12_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 109 16 ]
+        %tmp.107 = lgetv %pool.1;
+        symbol [ pool %tmp.107 109 16 20 ];
+        symbol [ add %tmp.108 109 21 24 ];
+        %tmp.108 = getv function %tmp.107 :add;
+        %tmp.109 = newd 2;
+        %tmp.111 = const :id;
+        symbol [ id %tmp.111 109 27 29 const ];
+        %tmp.112 = lgetv %i.10;
+        symbol [ i %tmp.112 109 33 34 ];
+        %tmp.113 = dup %tmp.109;
+        %tmp.114 = aputv %tmp.113 %tmp.111 %tmp.112;
+        %tmp.116 = const :weight;
+        symbol [ weight %tmp.116 109 37 43 const ];
+        %tmp.117 = lgetv %weight.13;
+        symbol [ weight %tmp.117 109 47 53 ];
+        %tmp.118 = dup %tmp.114;
+        %tmp.119 = aputv %tmp.118 %tmp.116 %tmp.117;
+        invoke %tmp.107 %tmp.108(%tmp.119);
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_108_28_110_12_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_108_12_110_12_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_108_12_110_12_if_end:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_88_39_111_8_stop:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_88_8_111_8_for_incr:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 88 ]
+        %tmp.122 = lgetv %i.10;
+        symbol [ i %tmp.122 88 34 35 ];
+        %tmp.123 = add %tmp.122 1;
+        lputv %i.10 %tmp.123;
+        symbol [ i %i.10 88 34 35 ];
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_88_8_111_8_for_test;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_88_8_111_8_for_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 112 8 ]
+        %tmp.124 = lgetv %pool.1;
+        symbol [ pool %tmp.124 112 15 19 ];
+        ret %tmp.124;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_66_46_113_4_stop:
     }
-    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc"; @line = 96; @symbol_functiondef = [applyStepDamage,96,20,35]; @symbol_param<0> = [encounter,96,36,45]; @symbol_param<0>_type<0> = [Lang,96,49,53]; @symbol_param<0>_type<1> = [Dictionary,96,54,64]; @symbol_return<0> = [Lang,96,69,73]; @symbol_return<1> = [Dictionary,96,74,84]; ]
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc"; @line = 118; @symbol_functiondef = [applyStepDamage,118,20,35]; @symbol_param<0> = [encounter,118,36,45]; @symbol_param<0>_type<0> = [Lang,118,49,53]; @symbol_param<0>_type<1> = [Dictionary,118,54,64]; @symbol_return<0> = [Lang,118,69,73]; @symbol_return<1> = [Dictionary,118,74,84]; ]
     static
     function applyStepDamage(encounter as Lang.Dictionary) as Lang.Dictionary {
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_96_85_113_4_start:
-[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 97 8 ]
-        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_96_85_113_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_96_85_113_4_stop" ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_118_85_137_4_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 119 8 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_118_85_137_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_118_85_137_4_stop" ]
         %stepsNow.1 = local;
-        symbol [ stepsNow %stepsNow.1 97 12 20 ];
-        symbol [ GameState %tmp.2 97 25 34 ];
+        symbol [ stepsNow %stepsNow.1 119 12 20 ];
+        symbol [ GameState %tmp.2 119 25 34 ];
         %tmp.2 = getv ? :GameState;
-        symbol [ getStepsToday %tmp.3 97 35 48 ];
+        symbol [ getStepsToday %tmp.3 119 35 48 ];
         %tmp.3 = getv function %tmp.2 :getStepsToday;
         %tmp.4 = invoke %tmp.2 %tmp.3();
         lputv %stepsNow.1 %tmp.4;
-        symbol [ stepsNow %stepsNow.1 97 12 20 ];
-[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 98 8 ]
-        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_96_85_113_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_96_85_113_4_stop" ]
+        symbol [ stepsNow %stepsNow.1 119 12 20 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 120 8 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_118_85_137_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_118_85_137_4_stop" ]
         %stepsStart.2 = local;
-        symbol [ stepsStart %stepsStart.2 98 12 22 ];
+        symbol [ stepsStart %stepsStart.2 120 12 22 ];
         %tmp.5 = lgetv %encounter;
-        symbol [ encounter %tmp.5 98 25 34 ];
+        symbol [ encounter %tmp.5 120 25 34 ];
         %tmp.7 = const :stepsAtStart;
-        symbol [ stepsAtStart %tmp.7 98 36 48 const ];
+        symbol [ stepsAtStart %tmp.7 120 36 48 const ];
         %tmp.8 = agetv %tmp.5 %tmp.7;
         lputv %stepsStart.2 %tmp.8;
-        symbol [ stepsStart %stepsStart.2 98 12 22 ];
-[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 99 8 ]
-        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_96_85_113_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_96_85_113_4_stop" ]
+        symbol [ stepsStart %stepsStart.2 120 12 22 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 121 8 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_118_85_137_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_118_85_137_4_stop" ]
         %stepsDone.3 = local;
-        symbol [ stepsDone %stepsDone.3 99 12 21 ];
+        symbol [ stepsDone %stepsDone.3 121 12 21 ];
         %tmp.9 = lgetv %stepsNow.1;
-        symbol [ stepsNow %tmp.9 99 25 33 ];
+        symbol [ stepsNow %tmp.9 121 25 33 ];
         %tmp.10 = lgetv %stepsStart.2;
-        symbol [ stepsStart %tmp.10 99 36 46 ];
+        symbol [ stepsStart %tmp.10 121 36 46 ];
         %tmp.11 = sub %tmp.9 %tmp.10;
         lputv %stepsDone.3 %tmp.11;
-        symbol [ stepsDone %stepsDone.3 99 12 21 ];
-[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 100 8 ]
-        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_96_85_113_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_96_85_113_4_stop" ]
+        symbol [ stepsDone %stepsDone.3 121 12 21 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 122 8 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_122_8_122_44_if_stmt:
+        %tmp.12 = lgetv %stepsDone.3;
+        symbol [ stepsDone %tmp.12 122 12 21 ];
+        %tmp.13 = 0;
+        %tmp.14 = lt %tmp.12 %tmp.13;
+        bf %tmp.14 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_122_8_122_44_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_122_8_122_44_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_122_27_122_44_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 122 29 ]
+        %tmp.15 = 0;
+        lputv %stepsDone.3 %tmp.15;
+        symbol [ stepsDone %stepsDone.3 122 29 38 ];
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_122_27_122_44_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_122_8_122_44_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_122_8_122_44_if_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 123 8 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_118_85_137_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_118_85_137_4_stop" ]
         %stepPowerPercent.4 = local;
-        symbol [ stepPowerPercent %stepPowerPercent.4 100 12 28 ];
-        %tmp.12 = 100;
-        lputv %stepPowerPercent.4 %tmp.12;
-        symbol [ stepPowerPercent %stepPowerPercent.4 100 12 28 ];
-[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 101 8 ]
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_101_8_103_8_if_stmt:
-        %tmp.13 = lgetv %encounter;
-        symbol [ encounter %tmp.13 101 12 21 ];
-        symbol [ hasKey %tmp.14 101 22 28 ];
-        %tmp.14 = getv function %tmp.13 :hasKey;
-        %tmp.16 = const :stepPowerPercent;
-        symbol [ stepPowerPercent %tmp.16 101 30 46 const ];
-        %tmp.17 = invoke %tmp.13 %tmp.14(%tmp.16);
-        bf %tmp.17 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_101_8_103_8_if_end;
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_101_8_103_8_if_true:
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_101_49_103_8_start:
-[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 102 12 ]
-        %tmp.18 = lgetv %encounter;
-        symbol [ encounter %tmp.18 102 31 40 ];
+        symbol [ stepPowerPercent %stepPowerPercent.4 123 12 28 ];
+        %tmp.16 = 100;
+        lputv %stepPowerPercent.4 %tmp.16;
+        symbol [ stepPowerPercent %stepPowerPercent.4 123 12 28 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 124 8 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_124_8_126_8_if_stmt:
+        %tmp.17 = lgetv %encounter;
+        symbol [ encounter %tmp.17 124 12 21 ];
+        symbol [ hasKey %tmp.18 124 22 28 ];
+        %tmp.18 = getv function %tmp.17 :hasKey;
         %tmp.20 = const :stepPowerPercent;
-        symbol [ stepPowerPercent %tmp.20 102 42 58 const ];
-        %tmp.21 = agetv %tmp.18 %tmp.20;
-        lputv %stepPowerPercent.4 %tmp.21;
-        symbol [ stepPowerPercent %stepPowerPercent.4 102 12 28 ];
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_101_49_103_8_stop:
-        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_101_8_103_8_if_end;
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_101_8_103_8_if_end:
-[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 107 8 ]
-        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_96_85_113_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_96_85_113_4_stop" ]
+        symbol [ stepPowerPercent %tmp.20 124 30 46 const ];
+        %tmp.21 = invoke %tmp.17 %tmp.18(%tmp.20);
+        bf %tmp.21 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_124_8_126_8_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_124_8_126_8_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_124_49_126_8_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 125 12 ]
+        %tmp.22 = lgetv %encounter;
+        symbol [ encounter %tmp.22 125 31 40 ];
+        %tmp.24 = const :stepPowerPercent;
+        symbol [ stepPowerPercent %tmp.24 125 42 58 const ];
+        %tmp.25 = agetv %tmp.22 %tmp.24;
+        lputv %stepPowerPercent.4 %tmp.25;
+        symbol [ stepPowerPercent %stepPowerPercent.4 125 12 28 ];
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_124_49_126_8_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_124_8_126_8_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_124_8_126_8_if_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 130 8 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_118_85_137_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_118_85_137_4_stop" ]
         %totalDamage.5 = local;
-        symbol [ totalDamage %totalDamage.5 107 12 23 ];
-        %tmp.22 = lgetv %stepsDone.3;
-        symbol [ stepsDone %tmp.22 107 27 36 ];
-        %tmp.23 = lgetv %stepPowerPercent.4;
-        symbol [ stepPowerPercent %tmp.23 107 39 55 ];
-        %tmp.24 = mul %tmp.22 %tmp.23;
-        %tmp.25 = 100;
-        %tmp.26 = div %tmp.24 %tmp.25;
-        lputv %totalDamage.5 %tmp.26;
-        symbol [ totalDamage %totalDamage.5 107 12 23 ];
-[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 108 8 ]
-        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_96_85_113_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_96_85_113_4_stop" ]
+        symbol [ totalDamage %totalDamage.5 130 12 23 ];
+        %tmp.26 = lgetv %stepsDone.3;
+        symbol [ stepsDone %tmp.26 130 27 36 ];
+        %tmp.27 = lgetv %stepPowerPercent.4;
+        symbol [ stepPowerPercent %tmp.27 130 39 55 ];
+        %tmp.28 = mul %tmp.26 %tmp.27;
+        %tmp.29 = 100;
+        %tmp.30 = div %tmp.28 %tmp.29;
+        lputv %totalDamage.5 %tmp.30;
+        symbol [ totalDamage %totalDamage.5 130 12 23 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 131 8 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_118_85_137_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_118_85_137_4_stop" ]
         %newHp.6 = local;
-        symbol [ newHp %newHp.6 108 12 17 ];
-        %tmp.27 = lgetv %encounter;
-        symbol [ encounter %tmp.27 108 20 29 ];
-        %tmp.29 = const :hpMax;
-        symbol [ hpMax %tmp.29 108 31 36 const ];
-        %tmp.30 = agetv %tmp.27 %tmp.29;
-        %tmp.31 = lgetv %totalDamage.5;
-        symbol [ totalDamage %tmp.31 108 40 51 ];
-        %tmp.32 = sub %tmp.30 %tmp.31;
-        lputv %newHp.6 %tmp.32;
-        symbol [ newHp %newHp.6 108 12 17 ];
-[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 109 8 ]
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_109_8_109_36_if_stmt:
-        %tmp.33 = lgetv %newHp.6;
-        symbol [ newHp %tmp.33 109 12 17 ];
-        %tmp.34 = 0;
-        %tmp.35 = lt %tmp.33 %tmp.34;
-        bf %tmp.35 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_109_8_109_36_if_end;
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_109_8_109_36_if_true:
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_109_23_109_36_start:
-[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 109 25 ]
-        %tmp.36 = 0;
+        symbol [ newHp %newHp.6 131 12 17 ];
+        %tmp.31 = lgetv %encounter;
+        symbol [ encounter %tmp.31 131 20 29 ];
+        %tmp.33 = const :hpMax;
+        symbol [ hpMax %tmp.33 131 31 36 const ];
+        %tmp.34 = agetv %tmp.31 %tmp.33;
+        %tmp.35 = lgetv %totalDamage.5;
+        symbol [ totalDamage %tmp.35 131 40 51 ];
+        %tmp.36 = sub %tmp.34 %tmp.35;
         lputv %newHp.6 %tmp.36;
-        symbol [ newHp %newHp.6 109 25 30 ];
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_109_23_109_36_stop:
-        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_109_8_109_36_if_end;
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_109_8_109_36_if_end:
-[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 111 8 ]
-        %tmp.37 = lgetv %encounter;
-        symbol [ encounter %tmp.37 111 8 17 ];
-        %tmp.38 = lgetv %newHp.6;
-        symbol [ newHp %tmp.38 111 29 34 ];
-        %tmp.40 = const :hpCurr;
-        symbol [ hpCurr %tmp.40 111 19 25 const ];
-        aputv %tmp.37 %tmp.40 %tmp.38;
-[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 112 8 ]
-        %tmp.41 = lgetv %encounter;
-        symbol [ encounter %tmp.41 112 15 24 ];
-        ret %tmp.41;
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_96_85_113_4_stop:
+        symbol [ newHp %newHp.6 131 12 17 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 132 8 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_132_8_132_36_if_stmt:
+        %tmp.37 = lgetv %newHp.6;
+        symbol [ newHp %tmp.37 132 12 17 ];
+        %tmp.38 = 0;
+        %tmp.39 = lt %tmp.37 %tmp.38;
+        bf %tmp.39 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_132_8_132_36_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_132_8_132_36_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_132_23_132_36_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 132 25 ]
+        %tmp.40 = 0;
+        lputv %newHp.6 %tmp.40;
+        symbol [ newHp %newHp.6 132 25 30 ];
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_132_23_132_36_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_132_8_132_36_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_132_8_132_36_if_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 133 8 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_133_8_133_68_if_stmt:
+        %tmp.41 = lgetv %newHp.6;
+        symbol [ newHp %tmp.41 133 12 17 ];
+        %tmp.42 = lgetv %encounter;
+        symbol [ encounter %tmp.42 133 20 29 ];
+        %tmp.44 = const :hpMax;
+        symbol [ hpMax %tmp.44 133 31 36 const ];
+        %tmp.45 = agetv %tmp.42 %tmp.44;
+        %tmp.46 = gt %tmp.41 %tmp.45;
+        bf %tmp.46 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_133_8_133_68_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_133_8_133_68_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_133_39_133_68_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 133 41 ]
+        %tmp.47 = lgetv %encounter;
+        symbol [ encounter %tmp.47 133 49 58 ];
+        %tmp.49 = const :hpMax;
+        symbol [ hpMax %tmp.49 133 60 65 const ];
+        %tmp.50 = agetv %tmp.47 %tmp.49;
+        lputv %newHp.6 %tmp.50;
+        symbol [ newHp %newHp.6 133 41 46 ];
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_133_39_133_68_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_133_8_133_68_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_133_8_133_68_if_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 135 8 ]
+        %tmp.51 = lgetv %encounter;
+        symbol [ encounter %tmp.51 135 8 17 ];
+        %tmp.52 = lgetv %newHp.6;
+        symbol [ newHp %tmp.52 135 29 34 ];
+        %tmp.54 = const :hpCurr;
+        symbol [ hpCurr %tmp.54 135 19 25 const ];
+        aputv %tmp.51 %tmp.54 %tmp.52;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 136 8 ]
+        %tmp.55 = lgetv %encounter;
+        symbol [ encounter %tmp.55 136 15 24 ];
+        ret %tmp.55;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_118_85_137_4_stop:
     }
-    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc"; @line = 116; @symbol_functiondef = [isDefeated,116,20,30]; @symbol_param<0> = [encounter,116,31,40]; @symbol_param<0>_type<0> = [Lang,116,44,48]; @symbol_param<0>_type<1> = [Dictionary,116,49,59]; @symbol_return<0> = [Lang,116,64,68]; @symbol_return<1> = [Boolean,116,69,76]; ]
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc"; @line = 140; @symbol_functiondef = [isDefeated,140,20,30]; @symbol_param<0> = [encounter,140,31,40]; @symbol_param<0>_type<0> = [Lang,140,44,48]; @symbol_param<0>_type<1> = [Dictionary,140,49,59]; @symbol_return<0> = [Lang,140,64,68]; @symbol_return<1> = [Boolean,140,69,76]; ]
     static
     function isDefeated(encounter as Lang.Dictionary) as Lang.Boolean {
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_116_77_118_4_start:
-[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 117 8 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_140_77_142_4_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 141 8 ]
         %tmp.1 = lgetv %encounter;
-        symbol [ encounter %tmp.1 117 15 24 ];
+        symbol [ encounter %tmp.1 141 15 24 ];
         %tmp.3 = const :hpCurr;
-        symbol [ hpCurr %tmp.3 117 26 32 const ];
+        symbol [ hpCurr %tmp.3 141 26 32 const ];
         %tmp.4 = agetv %tmp.1 %tmp.3;
         %tmp.5 = 0;
         %tmp.6 = lte %tmp.4 %tmp.5;
         ret %tmp.6;
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_116_77_118_4_stop:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_140_77_142_4_stop:
     }
-    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc"; @line = 121; @symbol_functiondef = [hpPercent,121,20,29]; @symbol_param<0> = [encounter,121,30,39]; @symbol_param<0>_type<0> = [Lang,121,43,47]; @symbol_param<0>_type<1> = [Dictionary,121,48,58]; @symbol_return<0> = [Lang,121,63,67]; @symbol_return<1> = [Number,121,68,74]; ]
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc"; @line = 145; @symbol_functiondef = [hpPercent,145,20,29]; @symbol_param<0> = [encounter,145,30,39]; @symbol_param<0>_type<0> = [Lang,145,43,47]; @symbol_param<0>_type<1> = [Dictionary,145,48,58]; @symbol_return<0> = [Lang,145,63,67]; @symbol_return<1> = [Number,145,68,74]; ]
     static
     function hpPercent(encounter as Lang.Dictionary) as Lang.Number {
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_121_75_124_4_start:
-[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 122 8 ]
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_122_8_122_48_if_stmt:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_145_75_148_4_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 146 8 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_146_8_146_48_if_stmt:
         %tmp.1 = lgetv %encounter;
-        symbol [ encounter %tmp.1 122 12 21 ];
+        symbol [ encounter %tmp.1 146 12 21 ];
         %tmp.3 = const :hpMax;
-        symbol [ hpMax %tmp.3 122 23 28 const ];
+        symbol [ hpMax %tmp.3 146 23 28 const ];
         %tmp.4 = agetv %tmp.1 %tmp.3;
         %tmp.5 = 0;
         %tmp.6 = lte %tmp.4 %tmp.5;
-        bf %tmp.6 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_122_8_122_48_if_end;
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_122_8_122_48_if_true:
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_122_36_122_48_start:
-[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 122 38 ]
+        bf %tmp.6 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_146_8_146_48_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_146_8_146_48_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_146_36_146_48_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 146 38 ]
         %tmp.7 = 0;
         ret %tmp.7;
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_122_36_122_48_stop:
-        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_122_8_122_48_if_end;
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_122_8_122_48_if_end:
-[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 123 8 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_146_36_146_48_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_146_8_146_48_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_146_8_146_48_if_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc" 147 8 ]
         %tmp.8 = lgetv %encounter;
-        symbol [ encounter %tmp.8 123 16 25 ];
+        symbol [ encounter %tmp.8 147 16 25 ];
         %tmp.10 = const :hpCurr;
-        symbol [ hpCurr %tmp.10 123 27 33 const ];
+        symbol [ hpCurr %tmp.10 147 27 33 const ];
         %tmp.11 = agetv %tmp.8 %tmp.10;
         %tmp.12 = 100;
         %tmp.13 = mul %tmp.11 %tmp.12;
         %tmp.14 = lgetv %encounter;
-        symbol [ encounter %tmp.14 123 44 53 ];
+        symbol [ encounter %tmp.14 147 44 53 ];
         %tmp.16 = const :hpMax;
-        symbol [ hpMax %tmp.16 123 55 60 const ];
+        symbol [ hpMax %tmp.16 147 55 60 const ];
         %tmp.17 = agetv %tmp.14 %tmp.16;
         %tmp.18 = div %tmp.13 %tmp.17;
         ret %tmp.18;
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_121_75_124_4_stop:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_145_75_148_4_stop:
     }
 }
 [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\SpawnEngine.mc"; @line = 11; ]

@@ -4,12 +4,13 @@
     {
       "label": "Garmin: Build PokeWatch",
       "type": "shell",
-      "command": "monkeyc",
+      "command": "C:/Users/Alonso/AppData/Roaming/Garmin/ConnectIQ/Sdks/connectiq-sdk-win-8.4.1-2026-02-03-e9f77eeaa/bin/monkeyc.bat",
       "args": [
         "-o", "bin/pokewatch.prg",
-        "-m", "monkey.jungle",
-        "-z", "resources",
-        "-y", "developer_key"
+        "-f", "monkey.jungle",
+        "-y", "developer_key",
+        "-d", "vivoactive6",
+        "-w"
       ],
       "group": {
         "kind": "build",

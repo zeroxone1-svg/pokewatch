@@ -61,6 +61,8 @@ class SpawnEngine {
     }
 
     // Construye pool con pesos para cada Pokémon
+    // Solo incluye formas base (no evolucionadas) para que el
+    // jugador las evolucione atrapando duplicados o caminando.
     static function buildPool() as Lang.Array {
         var pool = [];
         var podId = GameState.pokemonOfDay;
@@ -68,7 +70,27 @@ class SpawnEngine {
         var activityBlocks = GameState.getActivityBlocksToday();
         var hasActivityBonus = BalanceConfig.hasRareBonus(activityBlocks);
 
+        // Construir set de Pokemon que son resultado de evolución
+        var evoTargets = {};
+        for (var j = 1; j <= 151; j++) {
+            var d = PokemonData.get(j);
+            var target = d[:evoTo];
+            if (target > 0) {
+                evoTargets[target] = true;
+            } else if (target == -1) {
+                // Eevee: 134, 135, 136 son evoluciones
+                evoTargets[134] = true;
+                evoTargets[135] = true;
+                evoTargets[136] = true;
+            }
+        }
+
         for (var i = 1; i <= 151; i++) {
+            // Excluir Pokemon que son resultado de evolución
+            if (evoTargets.hasKey(i)) { continue; }
+            // Excluir legendarios por misión (solo aparecen por evento)
+            if (LegendaryQuestManager.isQuestLegendary(i)) { continue; }
+
             var data = PokemonData.get(i);
             var tier = data[:tier];
             var weight = tierWeights[tier];
@@ -97,6 +119,7 @@ class SpawnEngine {
         var stepsNow   = GameState.getStepsToday();
         var stepsStart = encounter[:stepsAtStart];
         var stepsDone  = stepsNow - stepsStart;
+        if (stepsDone < 0) { stepsDone = 0; }
         var stepPowerPercent = 100;
         if (encounter.hasKey(:stepPowerPercent)) {
             stepPowerPercent = encounter[:stepPowerPercent];
@@ -107,6 +130,7 @@ class SpawnEngine {
         var totalDamage = (stepsDone * stepPowerPercent) / 100;
         var newHp = encounter[:hpMax] - totalDamage;
         if (newHp < 0) { newHp = 0; }
+        if (newHp > encounter[:hpMax]) { newHp = encounter[:hpMax]; }
 
         encounter[:hpCurr] = newHp;
         return encounter;

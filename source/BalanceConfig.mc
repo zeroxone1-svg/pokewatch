@@ -115,4 +115,45 @@ class BalanceConfig {
     static function applyPercentBonus(baseValue as Lang.Number, percent as Lang.Number) as Lang.Number {
         return baseValue + (baseValue * percent / 100);
     }
+
+    // ── XP / Level System ─────────────────────────────────
+
+    // XP awarded to the caught Pokémon on each catch
+    static function getCatchXP(tier as Lang.Number) as Lang.Number {
+        var xpByTier = [200, 350, 500, 800, 1500];
+        return xpByTier[tier];
+    }
+
+    // Bonus XP para el buddy al capturar de la misma familia
+    static function getBuddyBonusXP(tier as Lang.Number) as Lang.Number {
+        var xpByTier = [150, 250, 400, 600, 1000];
+        return xpByTier[tier];
+    }
+
+    // Level from total XP (every 300 XP = 1 level, max 100)
+    static function getLevelFromXP(xp as Lang.Number) as Lang.Number {
+        var level = 1 + (xp / 300);
+        if (level > 100) { level = 100; }
+        return level;
+    }
+
+    // XP needed to reach a given level
+    static function getXPForLevel(level as Lang.Number) as Lang.Number {
+        return (level - 1) * 300;
+    }
+
+    // Nivel requerido para evolucionar según el evoCost base
+    //   evoCost 25  (Caterpie, Pidgey...) → Lv.10
+    //   evoCost 50  (Ivysaur, Nidorina..) → Lv.20
+    //   evoCost 100 (Pikachu, Kadabra..)  → Lv.30
+    //   evoCost 150 (Dragonair)           → Lv.40
+    //   evoCost 400 (Magikarp)            → Lv.50
+    static function getEvolutionLevel(baseCost as Lang.Number) as Lang.Number {
+        if (baseCost <= 0) { return 0; }
+        if (baseCost <= 25) { return 10; }
+        if (baseCost <= 50) { return 20; }
+        if (baseCost <= 100) { return 30; }
+        if (baseCost <= 150) { return 40; }
+        return 50;
+    }
 }

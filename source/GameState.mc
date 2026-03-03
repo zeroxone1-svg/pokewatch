@@ -21,8 +21,14 @@ class GameState {
     static var dailyStreak     as Lang.Number     = 0;
     static var activityBlocksToday as Lang.Number = 0;
     static var lastPlayDate    as Lang.String     = "";
-    static var totalSteps      as Lang.Number     = 0;
     static var pokemonOfDay    as Lang.Number     = 1;   // id del poke del dia
+    static var buddyId         as Lang.Number     = 0;   // 0 = sin buddy
+    static var buddySteps      as Lang.Number     = 0;   // pasos acumulados con el buddy
+    static var buddyLastSteps  as Lang.Number     = 0;   // referencia de pasos al setear buddy
+    static var pokemonXP       as Lang.Dictionary   = {};  // {id_string => total_xp}
+    static var totalStepsAllTime as Lang.Number     = 0;   // pasos acumulados de por vida
+    static var totalStepsLastRef as Lang.Number     = 0;   // referencia para tracking
+    static var legendaryStatus as Lang.Dictionary   = {};  // {id_str => 0:locked/1:ready/2:caught}
 
     // ── Guardar ───────────────────────────────────────────
     static function save() as Void {
@@ -34,7 +40,27 @@ class GameState {
         Storage.setValue("blocksToday", activityBlocksToday);
         Storage.setValue("streak",    dailyStreak);
         Storage.setValue("lastDate",  lastPlayDate);
-        Storage.setValue("podDay",    pokemonOfDay);
+        Storage.setValue("podDay",    pokemonOfDay);        Storage.setValue("buddyId",   buddyId);
+        Storage.setValue("buddySteps", buddySteps);
+        Storage.setValue("buddyLastSteps", buddyLastSteps);
+        Storage.setValue("pokemonXP", pokemonXP);
+        Storage.setValue("totalSteps", totalStepsAllTime);
+        Storage.setValue("totalStepsRef", totalStepsLastRef);
+        Storage.setValue("legendaryStatus", legendaryStatus);
+        // Persistir encuentro activo (convertir Symbol keys a String keys)
+        if (currentEncounter != null) {
+            var encStore = {
+                "id"      => currentEncounter[:id],
+                "isShiny" => currentEncounter[:isShiny],
+                "hpMax"   => currentEncounter[:hpMax],
+                "hpCurr"  => currentEncounter[:hpCurr],
+                "stepPowerPercent" => currentEncounter[:stepPowerPercent],
+                "stepsAtStart" => currentEncounter[:stepsAtStart]
+            };
+            Storage.setValue("encounter", encStore);
+        } else {
+            Storage.deleteValue("encounter");
+        }
     }
 
     // ── Cargar ────────────────────────────────────────────
@@ -66,7 +92,40 @@ class GameState {
         var pod = Storage.getValue("podDay");
         pokemonOfDay    = (pod != null) ? pod : 1;
 
-        currentEncounter = null;
+        var bi = Storage.getValue("buddyId");
+        buddyId = (bi != null) ? bi : 0;
+
+        var bs = Storage.getValue("buddySteps");
+        buddySteps = (bs != null) ? bs : 0;
+
+        var bls = Storage.getValue("buddyLastSteps");
+        buddyLastSteps = (bls != null) ? bls : 0;
+
+        var pxp = Storage.getValue("pokemonXP");
+        pokemonXP = (pxp != null) ? pxp : {};
+
+        var ts = Storage.getValue("totalSteps");
+        totalStepsAllTime = (ts != null) ? ts : 0;
+        var tsr = Storage.getValue("totalStepsRef");
+        totalStepsLastRef = (tsr != null) ? tsr : 0;
+        var lstat = Storage.getValue("legendaryStatus");
+        legendaryStatus = (lstat != null) ? lstat : {};
+
+        // Restaurar encuentro activo (convertir String keys de vuelta a Symbol keys)
+        var enc = Storage.getValue("encounter");
+        if (enc != null) {
+            var encDict = enc as Lang.Dictionary;
+            currentEncounter = {
+                :id      => encDict["id"],
+                :isShiny => encDict["isShiny"],
+                :hpMax   => encDict["hpMax"],
+                :hpCurr  => encDict["hpCurr"],
+                :stepPowerPercent => encDict["stepPowerPercent"],
+                :stepsAtStart => encDict["stepsAtStart"]
+            };
+        } else {
+            currentEncounter = null;
+        }
 
         // Revisar si es un nuevo día
         checkNewDay();
@@ -217,6 +276,23 @@ class GameState {
             shinyList.add(id);
         }
 
+        // XP por captura (siempre va al Pokémon capturado)
+        var data = PokemonData.get(id);
+        var tier = data[:tier];
+        var catchXP = BalanceConfig.getCatchXP(tier);
+        addPokemonXP(id, catchXP);
+
+        // Bonus XP al buddy SOLO si es de la misma línea evolutiva
+        if (buddyId > 0 && isSameEvolutionLine(id, buddyId)) {
+            var bonusXP = BalanceConfig.getBuddyBonusXP(tier);
+            addPokemonXP(buddyId, bonusXP);
+        }
+
+        // Marcar legendario por misión como atrapado
+        if (id == 144 || id == 145 || id == 146 || id == 150 || id == 151) {
+            legendaryStatus[id.toString()] = 2;
+        }
+
         save();
     }
 
@@ -235,4 +311,144 @@ class GameState {
         if (u >= 10)  { return "BRONCE"; }
         return "";
     }
-}
+    // ── Buddy System ─────────────────────────────────────
+    static function setBuddy(id as Lang.Number) as Void {
+        buddyId = id;
+        buddySteps = 0;
+        buddyLastSteps = getStepsToday();
+        save();
+    }
+
+    // Actualizar pasos del buddy (cada paso = 1 XP para el buddy)
+    static function updateBuddySteps() as Void {
+        if (buddyId == 0) { return; }
+        var stepsNow = getStepsToday();
+        if (stepsNow < buddyLastSteps) {
+            buddyLastSteps = stepsNow; // reset del reloj
+        }
+        var newSteps = stepsNow - buddyLastSteps;
+        if (newSteps > 0) {
+            buddySteps += newSteps;
+            buddyLastSteps = stepsNow;
+            addPokemonXP(buddyId, newSteps);
+        }
+    }
+
+    // ── Total Steps (para misiones legendarias) ───────────
+    static function updateTotalSteps() as Void {
+        var stepsNow = getStepsToday();
+        if (stepsNow < totalStepsLastRef) {
+            totalStepsLastRef = 0;
+        }
+        var delta = stepsNow - totalStepsLastRef;
+        if (delta > 0) {
+            totalStepsAllTime += delta;
+            totalStepsLastRef = stepsNow;
+        }
+    }
+
+    static function getLegendaryStatus(id as Lang.Number) as Lang.Number {
+        var key = id.toString();
+        if (legendaryStatus.hasKey(key)) {
+            return legendaryStatus[key];
+        }
+        return 0;
+    }
+
+    static function setLegendaryStatus(id as Lang.Number, st as Lang.Number) as Void {
+        legendaryStatus[id.toString()] = st;
+        save();
+    }
+
+    // ── XP / Nivel por Pokémon ────────────────────────────
+    static function getPokemonXP(id as Lang.Number) as Lang.Number {
+        var key = id.toString();
+        if (pokemonXP.hasKey(key)) {
+            return pokemonXP[key];
+        }
+        return 0;
+    }
+
+    static function addPokemonXP(id as Lang.Number, amount as Lang.Number) as Void {
+        var key = id.toString();
+        var current = getPokemonXP(id);
+        pokemonXP[key] = current + amount;
+    }
+
+    static function getPokemonLevel(id as Lang.Number) as Lang.Number {
+        return BalanceConfig.getLevelFromXP(getPokemonXP(id));
+    }
+
+    // ── Familia evolutiva ─────────────────────────────────
+    // Verifica si caughtId está en la misma línea evolutiva que buddyId.
+    // Sigue la cadena evoTo desde caughtId hasta 3 niveles de profundidad.
+    static function isSameEvolutionLine(caughtId as Lang.Number, targetId as Lang.Number) as Lang.Boolean {
+        if (caughtId == targetId) { return true; }
+        // Seguir cadena evolutiva del capturado
+        var id = caughtId;
+        for (var depth = 0; depth < 3; depth++) {
+            var d = PokemonData.get(id);
+            var evoTo = d[:evoTo];
+            if (evoTo <= 0) { break; }
+            if (evoTo == targetId) { return true; }
+            id = evoTo;
+        }
+        // Eevee (133) → Vaporeon(134)/Jolteon(135)/Flareon(136)
+        if (caughtId == 133 && (targetId == 134 || targetId == 135 || targetId == 136)) {
+            return true;
+        }
+        // Eeveeluciones → Eevee
+        if (targetId == 133 && (caughtId == 134 || caughtId == 135 || caughtId == 136)) {
+            return true;
+        }
+        return false;
+    }
+
+    // Nivel requerido para que el buddy evolucione
+    static function getBuddyEvoLevel() as Lang.Number {
+        if (buddyId == 0) { return 0; }
+        var data = PokemonData.get(buddyId);
+        var baseCost = data[:evoCost];
+        return BalanceConfig.getEvolutionLevel(baseCost);
+    }
+
+    // Verificar si el buddy puede evolucionar (basado en nivel)
+    static function checkBuddyEvolution() as Lang.Number {
+        if (buddyId == 0) { return 0; }
+        var data = PokemonData.get(buddyId);
+        var evoTo = data[:evoTo];
+        if (evoTo == 0) { return 0; } // no evoluciona
+        var requiredLevel = getBuddyEvoLevel();
+        if (requiredLevel <= 0) { return 0; }
+        var currentLevel = getPokemonLevel(buddyId);
+        if (currentLevel >= requiredLevel) {
+            // Eevee: evolución aleatoria
+            if (evoTo == -1) {
+                var opts = [134, 135, 136];
+                evoTo = opts[Math.rand() % 3];
+            }
+            // Transferir XP al evolucionado
+            var currentXP = getPokemonXP(buddyId);
+            addPokemonXP(evoTo, currentXP);
+            // Registrar la evolución
+            registerCatch(evoTo, false);
+            registerSeen(evoTo);
+            // Actualizar el buddy al evolucionado
+            buddyId = evoTo;
+            buddySteps = 0;
+            save();
+            return evoTo;
+        }
+        return 0;
+    }
+
+    // Progreso del buddy como porcentaje (0-100) basado en nivel
+    static function getBuddyProgress() as Lang.Number {
+        if (buddyId == 0) { return 0; }
+        var requiredLevel = getBuddyEvoLevel();
+        if (requiredLevel <= 0) { return 100; } // ya es forma final
+        var currentLevel = getPokemonLevel(buddyId);
+        var pct = (currentLevel * 100) / requiredLevel;
+        if (pct > 100) { pct = 100; }
+        return pct;
+    }}

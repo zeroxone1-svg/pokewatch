@@ -5,7 +5,9 @@ echo Buscando Garmin SDK...
 
 set "MONKEYC="
 
-if exist "C:\Garmin\ConnectIQ_SDK\bin\monkeyc.exe" (
+if exist "C:\Users\Alonso\AppData\Roaming\Garmin\ConnectIQ\Sdks\connectiq-sdk-win-8.4.1-2026-02-03-e9f77eeaa\bin\monkeyc.bat" (
+    set "MONKEYC=C:\Users\Alonso\AppData\Roaming\Garmin\ConnectIQ\Sdks\connectiq-sdk-win-8.4.1-2026-02-03-e9f77eeaa\bin\monkeyc.bat"
+) else if exist "C:\Garmin\ConnectIQ_SDK\bin\monkeyc.exe" (
     set "MONKEYC=C:\Garmin\ConnectIQ_SDK\bin\monkeyc.exe"
 ) else if exist "C:\Garmin\ConnectIQ\bin\monkeyc.exe" (
     set "MONKEYC=C:\Garmin\ConnectIQ\bin\monkeyc.exe"
@@ -26,7 +28,7 @@ if "!MONKEYC!"=="" (
 echo SDK encontrado: %MONKEYC%
 echo.
 echo Compilando PokeWatch...
-"%MONKEYC%" -o bin/pokewatch.prg -m monkey.jungle -z resources -y developer_key
+"%MONKEYC%" -o bin/pokewatch.prg -f monkey.jungle -y developer_key -d vivoactive6 -w
 
 if %ERRORLEVEL% EQU 0 (
     echo.

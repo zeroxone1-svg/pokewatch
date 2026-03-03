@@ -1,16 +1,24 @@
 // ============================================================
-//  MainView.mc — Pantalla principal rediseñada
-//  Layout limpio para Vivoactive 6 (360x360)
+//  MainView.mc — Pantalla principal con Buddy System
+//  Layout para Vivoactive 6 (360x360 redonda)
+//  - Fondo dinámico por hora del día
+//  - Arco circular de progreso hacia próximo spawn
+//  - Buddy con barra de evolución
+//  - Alerta animada de encuentro
 // ============================================================
 import Toybox.WatchUi;
 import Toybox.Graphics;
 import Toybox.Lang;
 import Toybox.Timer;
 import Toybox.Math;
+import Toybox.Time;
 
 class MainView extends WatchUi.View {
 
     var _timer as Timer.Timer;
+    var _alertBlink as Lang.Boolean = false;
+    var _buddyEvolved as Lang.Number = 0;
+    var _evoShowCount as Lang.Number = 0; // frames restantes para mostrar evo
 
     function initialize() {
         View.initialize();
@@ -20,7 +28,10 @@ class MainView extends WatchUi.View {
     function onLayout(dc as Graphics.Dc) as Void {}
 
     function onShow() as Void {
-        _timer.start(method(:onTimer), 10000, true);
+        _timer.start(method(:onTimer), 5000, true);
+        GameState.updateActivityBlocks();
+        GameState.updateBuddySteps();
+        GameState.updateTotalSteps();
         checkSpawn();
     }
 
@@ -30,6 +41,20 @@ class MainView extends WatchUi.View {
 
     function onTimer() as Void {
         GameState.updateActivityBlocks();
+        GameState.updateBuddySteps();
+        GameState.updateTotalSteps();
+        var evo = GameState.checkBuddyEvolution();
+        if (evo > 0) {
+            _buddyEvolved = evo;
+            _evoShowCount = 6; // mostrar por ~30s (6 ticks x 5s)
+        }
+        if (_evoShowCount > 0) {
+            _evoShowCount -= 1;
+            if (_evoShowCount <= 0) {
+                _buddyEvolved = 0;
+            }
+        }
+        _alertBlink = !_alertBlink;
         checkSpawn();
         WatchUi.requestUpdate();
     }
@@ -39,6 +64,19 @@ class MainView extends WatchUi.View {
     }
 
     function checkSpawn() as Void {
+        if (GameState.currentEncounter != null) { return; }
+
+        // Misiones legendarias tienen prioridad
+        var legendaryId = LegendaryQuestManager.checkQuests();
+        if (legendaryId > 0) {
+            GameState.currentEncounter = LegendaryQuestManager.spawnLegendary(legendaryId);
+            GameState.registerSeen(legendaryId);
+            GameState.save();
+            WatchUi.requestUpdate();
+            return;
+        }
+
+        // Spawn normal
         if (GameState.shouldSpawn()) {
             var blocks = GameState.getActivityBlocksToday();
             var spawnSuccessMax = BalanceConfig.getSpawnRollSuccessMaxForBlocks(blocks);
@@ -47,19 +85,36 @@ class MainView extends WatchUi.View {
                 GameState.registerSeen(encounter[:id]);
                 GameState.currentEncounter = encounter;
                 GameState.markSpawn();
-                // No auto-push: el usuario ve el pokemon en MainView
-                // y entra al encuentro con tap
                 WatchUi.requestUpdate();
             }
         }
     }
 
-    function onUpdate(dc as Graphics.Dc) as Void {
-        var w  = dc.getWidth();   // 360
-        var h  = dc.getHeight();  // 360
-        var cx = w / 2;           // 180
+    function getTimeColors() as Lang.Array {
+        var now = Time.now();
+        var info = Time.Gregorian.info(now, Time.FORMAT_SHORT);
+        var hour = info.hour;
+        if (hour >= 6 && hour < 10) {
+            return [0x0F0A05, 0xFFAA44, 0x1A1008];
+        } else if (hour >= 10 && hour < 17) {
+            return [0x050A0F, 0x44CCFF, 0x081218];
+        } else if (hour >= 17 && hour < 20) {
+            return [0x0F0508, 0xFF7744, 0x180810];
+        } else {
+            return [0x05050F, 0x6666CC, 0x0A0A18];
+        }
+    }
 
-        dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_BLACK);
+    function onUpdate(dc as Graphics.Dc) as Void {
+        var w  = dc.getWidth();
+        var cx = w / 2;
+
+        var timeColors = getTimeColors();
+        var bgColor = timeColors[0];
+        var accentColor = timeColors[1];
+        var bgTint = timeColors[2];
+
+        dc.setColor(bgColor, bgColor);
         dc.clear();
 
         var steps  = GameState.getStepsToday();
@@ -67,97 +122,186 @@ class MainView extends WatchUi.View {
         var nextIn = GameState.stepsUntilNext();
         var unique = GameState.uniqueCaught();
         var streak = GameState.dailyStreak;
+        var spawnInterval = BalanceConfig.getStepsPerSpawn();
 
-        // Si hay encuentro activo, mostrar ESE Pokémon (no el del día)
         var hasEncounter = (GameState.currentEncounter != null);
-        var displayId;
+        var hasBuddy = (GameState.buddyId > 0);
+        var displayId = 0;
         if (hasEncounter) {
             displayId = GameState.currentEncounter[:id];
-        } else {
-            displayId = GameState.pokemonOfDay;
+        } else if (hasBuddy) {
+            displayId = GameState.buddyId;
         }
 
         var tierColors = [0xAAAAAA, 0x44CC44, 0x4488FF, 0xFF66FF, 0xFFAA00];
-        var displayData = PokemonData.get(displayId);
-        var displayTier = displayData[:tier];
-        var tierColor   = tierColors[displayTier];
+        var tierColor = accentColor;
+        if (displayId > 0) {
+            var displayData = PokemonData.get(displayId);
+            var displayTier = displayData[:tier];
+            tierColor = tierColors[displayTier];
+        }
 
-        // ── Layout vertical (34px entre líneas de texto) ──
-        var titleY   = 30;
-        var stepsY   = 54;
-        var spriteY  = 78;
-        var spriteH  = 120;
-        var nameY    = spriteY + spriteH + 2;   // 200
-        var infoY    = nameY + 56;              // 256
-        var info2Y   = infoY + 28;              // 284
-        var footY    = 316;
+        var titleY   = 28;
+        var stepsY   = 52;
+        var spriteY  = 80;
+        var spriteH  = 80;
+        var nameY    = spriteY + spriteH + 4;
+        var buddyBarY = nameY + 30;
+        var buddyTxtY = buddyBarY + 5;
+        var infoY    = buddyTxtY + 26;
+        var footY    = 300;
+
+        // ── Spawn progress (0-100) ────────────────────────
+        var spawnProgress = 0;
+        if (spawnInterval > 0 && !hasEncounter) {
+            spawnProgress = ((spawnInterval - nextIn) * 100) / spawnInterval;
+            if (spawnProgress > 100) { spawnProgress = 100; }
+            if (spawnProgress < 0) { spawnProgress = 0; }
+        }
+        if (hasEncounter) { spawnProgress = 100; }
 
         // ── CABECERA ──────────────────────────────────────
-        dc.setColor(0x151515, Graphics.COLOR_TRANSPARENT);
-        dc.fillRoundedRectangle(70, titleY - 6, w - 140, 50, 8);
         dc.setColor(0xFFCC00, Graphics.COLOR_TRANSPARENT);
         dc.drawText(cx, titleY, Graphics.FONT_XTINY,
             "POKEWATCH", Graphics.TEXT_JUSTIFY_CENTER);
-        dc.setColor(0xBBBBBB, Graphics.COLOR_TRANSPARENT);
+        dc.setColor(0x777777, Graphics.COLOR_TRANSPARENT);
         dc.drawText(cx, stepsY, Graphics.FONT_XTINY,
             steps.toString() + " " + tr(Rez.Strings.LabelSteps),
             Graphics.TEXT_JUSTIFY_CENTER);
 
-        // ── SPRITE centrado (120x120) ─────────────────────
-        dc.setColor(0x1A1A1A, Graphics.COLOR_TRANSPARENT);
-        dc.fillRoundedRectangle(cx - 66, spriteY - 4, 132, 132, 10);
-        dc.setColor(0x333333, Graphics.COLOR_TRANSPARENT);
-        dc.drawRoundedRectangle(cx - 66, spriteY - 4, 132, 132, 10);
-        var displaySprite = SpriteManager.getSprite(displayId);
-        if (displaySprite != null) {
-            dc.drawBitmap(cx - spriteH / 2, spriteY, displaySprite as WatchUi.BitmapResource);
+        // ── SPRITE centrado (sin fondo detrás) ─────────────
+
+        if (displayId > 0) {
+            // Bobbing sutil en el sprite
+            var mainBob = _alertBlink ? -2 : 2;
+            var displaySprite = SpriteManager.getSprite(displayId);
+            if (displaySprite != null) {
+                dc.drawBitmap(cx - spriteH / 2, spriteY + mainBob, displaySprite as WatchUi.BitmapResource);
+            } else {
+                dc.setColor(tierColor, Graphics.COLOR_TRANSPARENT);
+                dc.drawText(cx, spriteY + 34, Graphics.FONT_NUMBER_THAI_HOT,
+                    "#" + displayId.format("%03d"), Graphics.TEXT_JUSTIFY_CENTER);
+            }
+
+            // ── NOMBRE + NIVEL ─────────────────────────────────
+            var nameColor = tierColor;
+            if (hasEncounter) { nameColor = 0xFF6666; }
+            dc.setColor(nameColor, Graphics.COLOR_TRANSPARENT);
+            var displayName = PokemonData.getName(displayId).toUpper();
+            if (!hasEncounter && hasBuddy) {
+                var buddyLevel = GameState.getPokemonLevel(displayId);
+                displayName = displayName + " Lv." + buddyLevel.toString();
+            }
+            dc.drawText(cx, nameY, Graphics.FONT_XTINY,
+                displayName,
+                Graphics.TEXT_JUSTIFY_CENTER);
         } else {
-            dc.setColor(tierColor, Graphics.COLOR_TRANSPARENT);
-            dc.drawText(cx, spriteY + 34, Graphics.FONT_NUMBER_THAI_HOT,
-                "#" + displayId.format("%03d"), Graphics.TEXT_JUSTIFY_CENTER);
+            // Sin buddy: mostrar texto invitando a elegir
+            dc.setColor(0x555555, Graphics.COLOR_TRANSPARENT);
+            dc.drawText(cx, spriteY + 30, Graphics.FONT_XTINY,
+                "?", Graphics.TEXT_JUSTIFY_CENTER);
+            dc.setColor(0x888888, Graphics.COLOR_TRANSPARENT);
+            dc.drawText(cx, nameY, Graphics.FONT_XTINY,
+                tr(Rez.Strings.BuddyHint), Graphics.TEXT_JUSTIFY_CENTER);
         }
 
-        // ── NOMBRE (debajo del sprite) ────────────────────
-        dc.setColor(0xFFFFFF, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(cx, nameY, Graphics.FONT_XTINY,
-            PokemonData.getName(displayId).toUpper(),
-            Graphics.TEXT_JUSTIFY_CENTER);        // Etiqueta sutil para indicar que es el pokemon del día
-        if (!hasEncounter) {
-            dc.setColor(0x666666, Graphics.COLOR_TRANSPARENT);
-            dc.drawText(cx, nameY + 26, Graphics.FONT_XTINY,
-                "Pokemon del dia", Graphics.TEXT_JUSTIFY_CENTER);
+        // (spawn bar removida — el info text ya muestra progreso)
+
+        // ── BUDDY EVOLUTION BAR + LEVEL INFO ─────────────
+        if (!hasEncounter && hasBuddy) {
+            var buddyData = PokemonData.get(displayId);
+            var evoLevel = GameState.getBuddyEvoLevel();
+            var evoCost = BalanceConfig.getEffectiveEvolutionCost(buddyData[:evoCost]);
+            var caughtN = GameState.getCaughtCount(displayId);
+            var currentLevel = GameState.getPokemonLevel(displayId);
+
+            if (evoLevel > 0 || evoCost > 0) {
+                // Barra de evolución por nivel
+                if (evoLevel > 0) {
+                    var progress = GameState.getBuddyProgress();
+                    var barW = 100;
+                    var barX = cx - barW / 2;
+                    var fillW = (progress * barW) / 100;
+                    dc.setColor(0x151515, Graphics.COLOR_TRANSPARENT);
+                    dc.fillRoundedRectangle(barX, buddyBarY, barW, 5, 2);
+                    if (fillW > 0) {
+                        var evoColor = 0x44CCFF;
+                        if (progress > 75) { evoColor = 0x44FF44; }
+                        if (progress > 90) { evoColor = 0xFFCC00; }
+                        dc.setColor(evoColor, Graphics.COLOR_TRANSPARENT);
+                        dc.fillRoundedRectangle(barX, buddyBarY, fillW, 5, 2);
+                    }
+                }
+                // Texto: nivel → nivel evo + capturas
+                var infoTxt = "";
+                if (evoLevel > 0) {
+                    infoTxt = "Lv." + currentLevel.toString() + "/" + evoLevel.toString();
+                }
+                if (evoCost > 0) {
+                    if (infoTxt.length() > 0) { infoTxt = infoTxt + "  "; }
+                    infoTxt = infoTxt + caughtN.toString() + "/" + evoCost.toString() + "x";
+                }
+                dc.setColor(0x666666, Graphics.COLOR_TRANSPARENT);
+                dc.drawText(cx, buddyTxtY, Graphics.FONT_XTINY,
+                    infoTxt, Graphics.TEXT_JUSTIFY_CENTER);
+            } else {
+                dc.setColor(0x555555, Graphics.COLOR_TRANSPARENT);
+                dc.drawText(cx, buddyTxtY, Graphics.FONT_XTINY,
+                    tr(Rez.Strings.BuddyMaxForm), Graphics.TEXT_JUSTIFY_CENTER);
+            }
+        } else if (!hasEncounter && !hasBuddy) {
+            dc.setColor(0x555555, Graphics.COLOR_TRANSPARENT);
+            dc.drawText(cx, buddyTxtY, Graphics.FONT_XTINY,
+                tr(Rez.Strings.SelectBuddy), Graphics.TEXT_JUSTIFY_CENTER);
         }
-        // ── ALERTA ENCUENTRO o PRÓXIMO ────────────────────
+
+        // ── INFO / ENCOUNTER / EVO NOTIFICATION ──────────
         if (hasEncounter) {
-            dc.setColor(0x5A1212, Graphics.COLOR_TRANSPARENT);
-            dc.fillRoundedRectangle(cx - 90, infoY - 4, 180, 58, 6);
-            dc.setColor(0xFF6666, Graphics.COLOR_TRANSPARENT);
-            dc.drawText(cx, infoY, Graphics.FONT_XTINY,
-                tr(Rez.Strings.EncounterReady), Graphics.TEXT_JUSTIFY_CENTER);
-            dc.setColor(0xFFFFFF, Graphics.COLOR_TRANSPARENT);
-            dc.drawText(cx, info2Y, Graphics.FONT_XTINY,
-                tr(Rez.Strings.TapToEnter), Graphics.TEXT_JUSTIFY_CENTER);
+            var isLegQuest = LegendaryQuestManager.isQuestLegendary(displayId);
+            if (isLegQuest) {
+                dc.setColor(0x2A1A00, Graphics.COLOR_TRANSPARENT);
+                dc.fillRoundedRectangle(cx - 85, infoY - 2, 170, 24, 6);
+                dc.setColor(0xFFAA00, Graphics.COLOR_TRANSPARENT);
+                dc.drawText(cx, infoY, Graphics.FONT_XTINY,
+                    tr(Rez.Strings.QuestLegendary) + " - " + tr(Rez.Strings.TapToEnter),
+                    Graphics.TEXT_JUSTIFY_CENTER);
+            } else {
+                dc.setColor(0x2A0808, Graphics.COLOR_TRANSPARENT);
+                dc.fillRoundedRectangle(cx - 85, infoY - 2, 170, 24, 6);
+                dc.setColor(0xFF5555, Graphics.COLOR_TRANSPARENT);
+                dc.drawText(cx, infoY, Graphics.FONT_XTINY,
+                    tr(Rez.Strings.EncounterReady) + " - " + tr(Rez.Strings.TapToEnter),
+                    Graphics.TEXT_JUSTIFY_CENTER);
+            }
         } else {
-            dc.setColor(0x222222, Graphics.COLOR_TRANSPARENT);
-            dc.fillRoundedRectangle(cx - 100, infoY - 4, 200, 58, 6);
-            dc.setColor(0xCCCCCC, Graphics.COLOR_TRANSPARENT);
-            dc.drawText(cx, infoY, Graphics.FONT_XTINY,
-                tr(Rez.Strings.NextIn) + " " + nextIn.toString() + " " + tr(Rez.Strings.LabelSteps),
-                Graphics.TEXT_JUSTIFY_CENTER);
-            var bonusTxt = BalanceConfig.hasRareBonus(blocks) ? "BONUS ACTIVO" : "CAMINA PARA BONUS";
-            dc.setColor(0x44CCFF, Graphics.COLOR_TRANSPARENT);
-            dc.drawText(cx, info2Y, Graphics.FONT_XTINY, bonusTxt,
-                Graphics.TEXT_JUSTIFY_CENTER);
+            dc.setColor(bgTint, Graphics.COLOR_TRANSPARENT);
+            dc.fillRoundedRectangle(cx - 85, infoY - 2, 170, 24, 6);
+            if (_buddyEvolved > 0) {
+                var evoName = PokemonData.getName(_buddyEvolved).toUpper();
+                dc.setColor(0xFFD700, Graphics.COLOR_TRANSPARENT);
+                dc.drawText(cx, infoY, Graphics.FONT_XTINY,
+                    tr(Rez.Strings.BuddyEvolved) + " -> " + evoName,
+                    Graphics.TEXT_JUSTIFY_CENTER);
+            } else {
+                dc.setColor(0xBBBBBB, Graphics.COLOR_TRANSPARENT);
+                dc.drawText(cx, infoY, Graphics.FONT_XTINY,
+                    tr(Rez.Strings.NextIn) + " " + nextIn.toString() + " " + tr(Rez.Strings.LabelSteps),
+                    Graphics.TEXT_JUSTIFY_CENTER);
+            }
         }
 
         // ── PIE: DEX y RACHA ─────────────────────────────
-        dc.setColor(0x1B1B1B, Graphics.COLOR_TRANSPARENT);
-        dc.fillRoundedRectangle(60, footY - 4, w - 120, 30, 6);
+        dc.setColor(bgTint, Graphics.COLOR_TRANSPARENT);
+        dc.fillRoundedRectangle(60, footY - 4, w - 120, 26, 8);
         dc.setColor(0xBBBBBB, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(cx - 54, footY, Graphics.FONT_XTINY,
+        dc.drawText(cx - 50, footY, Graphics.FONT_XTINY,
             unique.toString() + "/151", Graphics.TEXT_JUSTIFY_CENTER);
-        dc.setColor(0xFF8800, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(cx + 54, footY, Graphics.FONT_XTINY,
+        var streakColor = 0x888888;
+        if (streak >= 3) { streakColor = 0xFF8800; }
+        if (streak >= 7) { streakColor = 0xFF4400; }
+        if (streak >= 14) { streakColor = 0xFF0000; }
+        dc.setColor(streakColor, Graphics.COLOR_TRANSPARENT);
+        dc.drawText(cx + 50, footY, Graphics.FONT_XTINY,
             streak.toString() + tr(Rez.Strings.LabelStreakDays),
             Graphics.TEXT_JUSTIFY_CENTER);
     }
@@ -171,22 +315,16 @@ class MainDelegate extends WatchUi.BehaviorDelegate {
 
     function onSelect() as Lang.Boolean {
         if (GameState.currentEncounter != null) {
-            WatchUi.pushView(
-                new EncounterView(),
-                new EncounterDelegate(),
-                WatchUi.SLIDE_UP
-            );
+            var v = new EncounterView();
+            WatchUi.pushView(v, new EncounterDelegate(v), WatchUi.SLIDE_UP);
             return true;
         }
         return false;
     }
 
     function onNextPage() as Lang.Boolean {
-        WatchUi.pushView(
-            new PokedexView(),
-            new PokedexDelegate(),
-            WatchUi.SLIDE_UP
-        );
+        var v = new PokedexView();
+        WatchUi.pushView(v, new PokedexDelegate(v), WatchUi.SLIDE_UP);
         return true;
     }
 

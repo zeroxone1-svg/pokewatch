@@ -3763,7 +3763,7 @@ class PokemonData {
         %tmp.3750 = aputv %tmp.3749 %tmp.3747 %tmp.3748;
         %tmp.3752 = const :hp;
         symbol [ hp %tmp.3752 219 22 24 const ];
-        %tmp.3753 = 10000;
+        %tmp.3753 = 5000;
         %tmp.3754 = dup %tmp.3750;
         %tmp.3755 = aputv %tmp.3754 %tmp.3752 %tmp.3753;
         %tmp.3757 = const :evoCost;
@@ -3786,7 +3786,7 @@ class PokemonData {
         %tmp.3773 = aputv %tmp.3772 %tmp.3770 %tmp.3771;
         %tmp.3775 = const :hp;
         symbol [ hp %tmp.3775 220 22 24 const ];
-        %tmp.3776 = 10000;
+        %tmp.3776 = 5000;
         %tmp.3777 = dup %tmp.3773;
         %tmp.3778 = aputv %tmp.3777 %tmp.3775 %tmp.3776;
         %tmp.3780 = const :evoCost;
@@ -3809,7 +3809,7 @@ class PokemonData {
         %tmp.3796 = aputv %tmp.3795 %tmp.3793 %tmp.3794;
         %tmp.3798 = const :hp;
         symbol [ hp %tmp.3798 221 22 24 const ];
-        %tmp.3799 = 10000;
+        %tmp.3799 = 5000;
         %tmp.3800 = dup %tmp.3796;
         %tmp.3801 = aputv %tmp.3800 %tmp.3798 %tmp.3799;
         %tmp.3803 = const :evoCost;
@@ -3901,7 +3901,7 @@ class PokemonData {
         %tmp.3888 = aputv %tmp.3887 %tmp.3885 %tmp.3886;
         %tmp.3890 = const :hp;
         symbol [ hp %tmp.3890 225 22 24 const ];
-        %tmp.3891 = 12000;
+        %tmp.3891 = 6000;
         %tmp.3892 = dup %tmp.3888;
         %tmp.3893 = aputv %tmp.3892 %tmp.3890 %tmp.3891;
         %tmp.3895 = const :evoCost;
@@ -3924,7 +3924,7 @@ class PokemonData {
         %tmp.3911 = aputv %tmp.3910 %tmp.3908 %tmp.3909;
         %tmp.3913 = const :hp;
         symbol [ hp %tmp.3913 226 22 24 const ];
-        %tmp.3914 = 8000;
+        %tmp.3914 = 4000;
         %tmp.3915 = dup %tmp.3911;
         %tmp.3916 = aputv %tmp.3915 %tmp.3913 %tmp.3914;
         %tmp.3918 = const :evoCost;

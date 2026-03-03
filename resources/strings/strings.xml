@@ -35,11 +35,22 @@
   <string id="KeepWalking">Sigue caminando</string>
   <string id="AlmostThere">Ya casi, no pares</string>
   <string id="FinalSteps">Ultimos pasos</string>
-  <string id="SwipeLeftFlee">HUIR</string>
+  <string id="SwipeLeftFlee">Swipe para HUIR</string>
   <string id="BackNoExit">BACK: volver</string>
   <string id="CaughtTitle">ATRAPADO!</string>
   <string id="ActiveProgress">Buen progreso activo</string>
   <string id="InYourPokedex">en tu Pokedex</string>
   <string id="Evolution">EVOLUCION</string>
   <string id="TapToContinue">Toca para seguir</string>
+  <string id="LabelBuddy">COMPAÑERO</string>
+  <string id="BuddyNone">Sin compañero</string>
+  <string id="BuddyMaxForm">Forma final</string>
+  <string id="BuddyEvolved">EVOLUCIONO!</string>
+  <string id="BuddyHint">Tap en Pokedex para elegir</string>
+  <string id="NewPokemon">NUEVO!</string>
+  <string id="SelectBuddy">Elige un compañero</string>
+  <string id="LabelDistance">~metros</string>
+  <string id="SelectBuddy">Compañero elegido!</string>
+  <string id="LabelBuddySteps">PASOS BUDDY</string>
+  <string id="QuestLegendary">EVENTO LEGENDARIO</string>
 </strings>

@@ -216,13 +216,13 @@ class PokemonData {
         {  :tier=>3, :hp=>2800, :evoCost=>0,  :evoTo=>0   }, // 141 Kabutops
         {  :tier=>3, :hp=>3500, :evoCost=>0,  :evoTo=>0   }, // 142 Aerodactyl
         {  :tier=>3, :hp=>4000, :evoCost=>0,  :evoTo=>0   }, // 143 Snorlax
-        {  :tier=>4, :hp=>10000,:evoCost=>0,  :evoTo=>0   }, // 144 Articuno
-        {  :tier=>4, :hp=>10000,:evoCost=>0,  :evoTo=>0   }, // 145 Zapdos
-        {  :tier=>4, :hp=>10000,:evoCost=>0,  :evoTo=>0   }, // 146 Moltres
+        {  :tier=>4, :hp=>5000, :evoCost=>0,  :evoTo=>0   }, // 144 Articuno  (quest)
+        {  :tier=>4, :hp=>5000, :evoCost=>0,  :evoTo=>0   }, // 145 Zapdos    (quest)
+        {  :tier=>4, :hp=>5000, :evoCost=>0,  :evoTo=>0   }, // 146 Moltres   (quest)
         {  :tier=>2, :hp=>1600, :evoCost=>100,:evoTo=>148 }, // 147 Dratini
         {  :tier=>3, :hp=>3000, :evoCost=>150,:evoTo=>149 }, // 148 Dragonair
         {  :tier=>4, :hp=>9000, :evoCost=>0,  :evoTo=>0   }, // 149 Dragonite
-        {  :tier=>4, :hp=>12000,:evoCost=>0,  :evoTo=>0   }, // 150 Mewtwo
-        {  :tier=>4, :hp=>8000, :evoCost=>0,  :evoTo=>0   }, // 151 Mew
+        {  :tier=>4, :hp=>6000, :evoCost=>0,  :evoTo=>0   }, // 150 Mewtwo    (quest)
+        {  :tier=>4, :hp=>4000, :evoCost=>0,  :evoTo=>0   }, // 151 Mew       (quest)
     ];
 }

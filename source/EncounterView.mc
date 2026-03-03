@@ -20,15 +20,24 @@ class EncounterView extends WatchUi.View {
     var _timer    as Timer.Timer;
     var _captured as Lang.Boolean = false;
     var _evolved  as Lang.Number  = 0; // id al que evolucionó, 0 = nada
+    var _shouldPop as Lang.Boolean = false;
+    var _isNew    as Lang.Boolean = false; // true si es un Pokemon nuevo
+    var _capturedId as Lang.Number = 0; // id del Pokemon capturado para mostrar sprite
+    var _animFrame as Lang.Number = 0; // frame de animación para bobbing
 
     function initialize() {
         View.initialize();
         _timer = new Timer.Timer();
+        // Verificar si es un Pokemon nuevo al entrar
+        if (GameState.currentEncounter != null) {
+            var enc = GameState.currentEncounter;
+            _isNew = (GameState.getCaughtCount(enc[:id]) == 0);
+        }
     }
 
     function onShow() as Void {
-        // Actualizar cada 5 segundos para refrescar HP
-        _timer.start(method(:onTimer), 5000, true);
+        // Actualizar cada 1.5 segundos para animación y HP
+        _timer.start(method(:onTimer), 1500, true);
     }
 
     function onHide() as Void {
@@ -40,6 +49,14 @@ class EncounterView extends WatchUi.View {
     }
 
     function onTimer() as Void {
+        // Manejar pop diferido (no se puede hacer popView dentro de onUpdate)
+        if (_shouldPop) {
+            _shouldPop = false;
+            _timer.stop();
+            WatchUi.popView(WatchUi.SLIDE_DOWN);
+            return;
+        }
+        _animFrame = (_animFrame + 1) % 4;
         if (!_captured && GameState.currentEncounter != null) {
             // Actualizar daño
             GameState.currentEncounter = SpawnEngine.applyStepDamage(
@@ -49,6 +66,7 @@ class EncounterView extends WatchUi.View {
             if (SpawnEngine.isDefeated(GameState.currentEncounter)) {
                 _captured = true;
                 var enc = GameState.currentEncounter;
+                _capturedId = enc[:id];
                 GameState.registerCatch(enc[:id], enc[:isShiny]);
                 // Revisar evolución
                 _evolved = EvolutionManager.checkEvolution(enc[:id]);
@@ -66,7 +84,6 @@ class EncounterView extends WatchUi.View {
         var w = dc.getWidth();   // 360
         var h = dc.getHeight();  // 360
         var cx = w / 2;
-        var cy = h / 2;
 
         dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_BLACK);
         dc.clear();
@@ -77,8 +94,9 @@ class EncounterView extends WatchUi.View {
             return;
         }
 
-        if (GameState.currentEncounter == null) {
-            WatchUi.popView(WatchUi.SLIDE_DOWN);
+        if (GameState.currentEncounter == null && !_captured) {
+            // Diferir el popView al timer — no se puede llamar dentro de onUpdate
+            _shouldPop = true;
             return;
         }
 
@@ -118,35 +136,49 @@ class EncounterView extends WatchUi.View {
             tierNames[tier] + "  #" + id.format("%03d"),
             Graphics.TEXT_JUSTIFY_CENTER);
 
-        // ── SPRITE centrado (120x120) ─────────────────
-        var spriteSize = 120;
-        var spriteY    = 66;
+        // ── SPRITE centrado (100x100) con bobbing solo en bitmap ─
+        var spriteSize = 100;
+        var spriteY    = 70;
+        var bobOffsets = [0, -2, 0, 2];
+        var bob = bobOffsets[_animFrame];
         dc.setColor(0x1A1A1A, Graphics.COLOR_TRANSPARENT);
-        dc.fillRoundedRectangle(cx - 66, spriteY - 4, 132, 132, 10);
-        dc.setColor(0x333333, Graphics.COLOR_TRANSPARENT);
-        dc.drawRoundedRectangle(cx - 66, spriteY - 4, 132, 132, 10);
+        dc.fillRoundedRectangle(cx - 56, spriteY - 4, 112, 112, 10);
+        // Borde dorado si es shiny, color tier si no
+        var spriteBorder = isShiny ? 0xFFD700 : 0x333333;
+        if (_animFrame == 1 || _animFrame == 3) {
+            spriteBorder = isShiny ? 0xFFE84D : 0x444444;
+        }
+        dc.setColor(spriteBorder, Graphics.COLOR_TRANSPARENT);
+        dc.drawRoundedRectangle(cx - 56, spriteY - 4, 112, 112, 10);
+        if (isShiny) {
+            dc.drawRoundedRectangle(cx - 57, spriteY - 5, 114, 114, 11);
+        }
         var sprite     = SpriteManager.getSprite(id);
         if (sprite != null) {
-            dc.drawBitmap(cx - spriteSize / 2, spriteY, sprite as WatchUi.BitmapResource);
+            // Solo el sprite se mueve con bob, la caja queda fija
+            dc.drawBitmap(cx - spriteSize / 2, spriteY + bob, sprite as WatchUi.BitmapResource);
         } else {
             dc.setColor(tierColor, Graphics.COLOR_TRANSPARENT);
-            dc.drawText(cx, spriteY + 34, Graphics.FONT_NUMBER_THAI_HOT,
+            dc.drawText(cx, spriteY + 30, Graphics.FONT_NUMBER_THAI_HOT,
                 "#" + id.format("%03d"), Graphics.TEXT_JUSTIFY_CENTER);
         }
 
-        // Posición dinámica después del sprite
-        var afterY = spriteY + spriteSize + 2; // 188
+        // Posición fija después del sprite (sin bob)
+        var afterY = spriteY + spriteSize + 12;
         if (isShiny) {
             dc.setColor(0xFFD700, Graphics.COLOR_TRANSPARENT);
             dc.drawText(cx, afterY, Graphics.FONT_XTINY,
                 tr(Rez.Strings.Shiny), Graphics.TEXT_JUSTIFY_CENTER);
-            afterY += 28;
+            afterY += 22;
         }
 
-        // ── Barra de HP ───────────────────────────────
-        var barW  = 160;
-        var barX  = (w - barW) / 2;
+        // ── Barra de HP (centrada, limpia) ──────────────
+        var hpCurr = enc[:hpCurr];
+        var hpMax  = enc[:hpMax];
+        var barW  = 140;
+        var barX  = cx - barW / 2;
         var barY  = afterY;
+        var barH  = 10;
         var fillW = (hpPct * barW) / 100;
 
         var hpColor = 0x44CC44;
@@ -154,30 +186,34 @@ class EncounterView extends WatchUi.View {
         if (hpPct < 25) { hpColor = 0xFF4444; }
 
         dc.setColor(0x262626, Graphics.COLOR_TRANSPARENT);
-        dc.fillRoundedRectangle(barX, barY, barW, 14, 6);
+        dc.fillRoundedRectangle(barX, barY, barW, barH, 4);
         if (fillW > 0) {
             dc.setColor(hpColor, Graphics.COLOR_TRANSPARENT);
-            dc.fillRoundedRectangle(barX, barY, fillW, 14, 6);
+            dc.fillRoundedRectangle(barX, barY, fillW, barH, 4);
         }
 
-        dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(cx, barY - 1, Graphics.FONT_XTINY,
-            hpPct.toString() + "%", Graphics.TEXT_JUSTIFY_CENTER);
-
-        // ── Info + mensaje (debajo de HP) ──────────────────
-        var infoY = barY + 20;
-        dc.setColor(0x222222, Graphics.COLOR_TRANSPARENT);
-        dc.fillRoundedRectangle(cx - 95, infoY - 4, 190, 54, 6);
-        dc.setColor(0xCCCCCC, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(cx, infoY, Graphics.FONT_XTINY,
-            stepsInEnc.toString() + " " + tr(Rez.Strings.EncounterSteps),
+        // ── HP números debajo de la barra ─────────────────
+        var hpNumY = barY + barH + 2;
+        dc.setColor(hpColor, Graphics.COLOR_TRANSPARENT);
+        dc.drawText(cx, hpNumY, Graphics.FONT_XTINY,
+            "HP " + hpCurr.toString() + " / " + hpMax.toString(),
             Graphics.TEXT_JUSTIFY_CENTER);
 
+        // ── Info: pasos + distancia (debajo de HP) ────────
+        var infoY = hpNumY + 22;
+        var meters = (stepsInEnc * 75) / 100;
+        dc.setColor(0x666666, Graphics.COLOR_TRANSPARENT);
+        dc.drawText(cx, infoY, Graphics.FONT_XTINY,
+            stepsInEnc.toString() + " pasos  ~" + meters.toString() + "m",
+            Graphics.TEXT_JUSTIFY_CENTER);
+
+        // ── Mensaje motivación ─────────────────────────────
+        var msgY = infoY + 20;
         var msg = tr(Rez.Strings.KeepWalking);
         if (hpPct < 25) { msg = tr(Rez.Strings.AlmostThere); }
         if (hpPct < 10) { msg = tr(Rez.Strings.FinalSteps); }
         dc.setColor(0x44CCFF, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(cx, infoY + 26, Graphics.FONT_XTINY, msg,
+        dc.drawText(cx, msgY, Graphics.FONT_XTINY, msg,
             Graphics.TEXT_JUSTIFY_CENTER);
 
         // ── Botón huir (zona segura para pantalla redonda) ─
@@ -194,30 +230,60 @@ class EncounterView extends WatchUi.View {
         var cx = w / 2;
         var cy = h / 2;
 
-        // Fondo sutil circular
-        dc.setColor(0x002200, Graphics.COLOR_TRANSPARENT);
-        dc.fillCircle(cx, cy, 140);
+        var isLegQuest = (_capturedId > 0) && LegendaryQuestManager.isQuestLegendary(_capturedId);
 
-        dc.setColor(0x44FF44, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(cx, 70, Graphics.FONT_SMALL,
-            tr(Rez.Strings.CaughtTitle), Graphics.TEXT_JUSTIFY_CENTER);
+        // Fondo sutil circular (más compacto)
+        if (isLegQuest) {
+            dc.setColor(0x221A00, Graphics.COLOR_TRANSPARENT);
+            dc.fillCircle(cx, cy + 10, 100);
+            dc.setColor(0x332A00, Graphics.COLOR_TRANSPARENT);
+            dc.drawCircle(cx, cy + 10, 100);
+        } else {
+            dc.setColor(0x002200, Graphics.COLOR_TRANSPARENT);
+            dc.fillCircle(cx, cy + 10, 100);
+            dc.setColor(0x003300, Graphics.COLOR_TRANSPARENT);
+            dc.drawCircle(cx, cy + 10, 100);
+        }
 
-        dc.setColor(0x66FF66, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(cx, 100, Graphics.FONT_XTINY,
-            tr(Rez.Strings.ActiveProgress), Graphics.TEXT_JUSTIFY_CENTER);
+        // Sprite del Pokemon capturado (arriba, fuera del círculo)
+        if (_capturedId > 0) {
+            var sprite = SpriteManager.getSprite(_capturedId);
+            if (sprite != null) {
+                dc.drawBitmap(cx - 40, 30, sprite as WatchUi.BitmapResource);
+            }
+        }
 
+        // Texto ATRAPADO!
+        if (isLegQuest) {
+            dc.setColor(0xFFAA00, Graphics.COLOR_TRANSPARENT);
+            dc.drawText(cx, cy - 20, Graphics.FONT_SMALL,
+                tr(Rez.Strings.QuestLegendary), Graphics.TEXT_JUSTIFY_CENTER);
+        } else {
+            dc.setColor(0x44FF44, Graphics.COLOR_TRANSPARENT);
+            dc.drawText(cx, cy - 20, Graphics.FONT_SMALL,
+                tr(Rez.Strings.CaughtTitle), Graphics.TEXT_JUSTIFY_CENTER);
+        }
+
+        // Pokedex count
         dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(cx, cy - 10, Graphics.FONT_XTINY,
+        dc.drawText(cx, cy + 14, Graphics.FONT_XTINY,
             GameState.uniqueCaught().toString() + "/151 " + tr(Rez.Strings.InYourPokedex),
             Graphics.TEXT_JUSTIFY_CENTER);
 
+        // Badge NUEVO debajo del conteo
+        var nextLineY = cy + 36;
+        if (_isNew) {
+            dc.setColor(0xFFD700, Graphics.COLOR_TRANSPARENT);
+            dc.drawText(cx, nextLineY, Graphics.FONT_XTINY,
+                tr(Rez.Strings.NewPokemon), Graphics.TEXT_JUSTIFY_CENTER);
+            nextLineY += 20;
+        }
+
+        // Evolución debajo de todo
         if (_evolved > 0) {
             dc.setColor(0xFFD700, Graphics.COLOR_TRANSPARENT);
-            dc.drawText(cx, cy + 20, Graphics.FONT_XTINY,
-                tr(Rez.Strings.Evolution), Graphics.TEXT_JUSTIFY_CENTER);
-            dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
-            dc.drawText(cx, cy + 38, Graphics.FONT_XTINY,
-                "-> " + PokemonData.getName(_evolved).toUpper(),
+            dc.drawText(cx, nextLineY, Graphics.FONT_XTINY,
+                tr(Rez.Strings.Evolution) + " -> " + PokemonData.getName(_evolved).toUpper(),
                 Graphics.TEXT_JUSTIFY_CENTER);
         }
 
@@ -229,16 +295,16 @@ class EncounterView extends WatchUi.View {
 
 // ── Delegado ────────────────────────────────────────────────
 class EncounterDelegate extends WatchUi.BehaviorDelegate {
+    var _view as EncounterView;
 
-    function initialize() {
+    function initialize(view as EncounterView) {
         BehaviorDelegate.initialize();
+        _view = view;
     }
 
     // Tap → continuar cuando ya capturó
     function onSelect() as Lang.Boolean {
-        var view = WatchUi.getCurrentView()[0] as EncounterView;
-
-        if (view._captured) {
+        if (_view._captured) {
             WatchUi.popView(WatchUi.SLIDE_DOWN);
             return true;
         }

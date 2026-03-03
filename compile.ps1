@@ -19,6 +19,7 @@ if ($Clean) {
 # Buscar monkeyc
 $monkeyc = $null
 $searchPaths = @(
+    "$env:APPDATA\Garmin\ConnectIQ\Sdks\connectiq-sdk-win-8.4.1-2026-02-03-e9f77eeaa\bin\monkeyc.bat",
     "C:\Garmin\ConnectIQ_SDK\bin\monkeyc.exe",
     "C:\Garmin\ConnectIQ\bin\monkeyc.exe",
     "C:\Program Files\Garmin\ConnectIQ\bin\monkeyc.exe",
@@ -45,7 +46,7 @@ Write-Host "Compilando PokeWatch para vivoactive6..." -ForegroundColor Cyan
 Write-Host ""
 
 try {
-    & $monkeyc -o bin/pokewatch.prg -m monkey.jungle -z resources -y developer_key 2>&1
+    & $monkeyc -o bin/pokewatch.prg -f monkey.jungle -y developer_key -d vivoactive6 -w 2>&1
     
     if ($LASTEXITCODE -eq 0) {
         Write-Host ""

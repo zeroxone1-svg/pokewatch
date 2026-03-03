@@ -1,0 +1,980 @@
+[ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc"; @line = 13; @symbol_importdef<0> = [Toybox,13,7,13]; @symbol_importdef<1> = [Lang,13,14,18]; ]
+import Toybox.Lang;
+[ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc"; @line = 14; @symbol_importdef<0> = [Toybox,14,7,13]; @symbol_importdef<1> = [Math,14,14,18]; ]
+import Toybox.Math;
+[ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc"; @line = 16; @symbol_classdef = [LegendaryQuestManager,16,6,27]; ]
+class LegendaryQuestManager {
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc"; @line = 16; ]
+    <init> {
+    }
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc"; @line = 16; ]
+    static
+    <init> {
+    }
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc"; @line = 19; @position = 17; @symbol_constdef = [STEPS_REQUIRED,19,17,31]; ]
+    static
+    const STEPS_REQUIRED = 500000;
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc"; @line = 20; @position = 17; @symbol_constdef = [STREAK_REQUIRED,20,17,32]; ]
+    static
+    const STREAK_REQUIRED = 30;
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc"; @line = 21; @position = 17; @symbol_constdef = [CATCHES_REQUIRED,21,17,33]; ]
+    static
+    const CATCHES_REQUIRED = 500;
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc"; @line = 22; @position = 17; @symbol_constdef = [NORMAL_COUNT,22,17,29]; ]
+    static
+    const NORMAL_COUNT = 146;
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc"; @line = 25; @symbol_functiondef = [isQuestLegendary,25,20,36]; @symbol_param<0> = [id,25,37,39]; @symbol_param<0>_type<0> = [Lang,25,43,47]; @symbol_param<0>_type<1> = [Number,25,48,54]; @symbol_return<0> = [Lang,25,59,63]; @symbol_return<1> = [Boolean,25,64,71]; ]
+    static
+    function isQuestLegendary(id as Lang.Number) as Lang.Boolean {
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_25_72_27_4_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 26 8 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_26_15_26_73_begin:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_26_15_26_60_begin:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_26_15_26_47_begin:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_26_15_26_34_begin:
+        %tmp.1 = lgetv %id;
+        symbol [ id %tmp.1 26 15 17 ];
+        %tmp.2 = 144;
+        %tmp.3 = eq %tmp.1 %tmp.2;
+        %tmp.4 = dup %tmp.3;
+        bt %tmp.4 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_26_28_26_34_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_26_28_26_34_false:
+        %tmp.5 = lgetv %id;
+        symbol [ id %tmp.5 26 28 30 ];
+        %tmp.6 = 145;
+        %tmp.7 = eq %tmp.5 %tmp.6;
+        %tmp.8 = or %tmp.3 %tmp.7;
+        push %tmp.8;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_26_28_26_34_end:
+        %tmp.9 = phi [%tmp.4 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_26_15_26_34_begin] [%tmp.8 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_26_28_26_34_false] [%tmp.9 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_26_28_26_34_end];
+        %tmp.10 = dup %tmp.9;
+        bt %tmp.10 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_26_41_26_47_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_26_41_26_47_false:
+        %tmp.11 = lgetv %id;
+        symbol [ id %tmp.11 26 41 43 ];
+        %tmp.12 = 146;
+        %tmp.13 = eq %tmp.11 %tmp.12;
+        %tmp.14 = or %tmp.9 %tmp.13;
+        push %tmp.14;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_26_41_26_47_end:
+        %tmp.15 = phi [%tmp.10 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_26_15_26_47_begin] [%tmp.14 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_26_41_26_47_false] [%tmp.15 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_26_41_26_47_end];
+        %tmp.16 = dup %tmp.15;
+        bt %tmp.16 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_26_54_26_60_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_26_54_26_60_false:
+        %tmp.17 = lgetv %id;
+        symbol [ id %tmp.17 26 54 56 ];
+        %tmp.18 = 150;
+        %tmp.19 = eq %tmp.17 %tmp.18;
+        %tmp.20 = or %tmp.15 %tmp.19;
+        push %tmp.20;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_26_54_26_60_end:
+        %tmp.21 = phi [%tmp.16 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_26_15_26_60_begin] [%tmp.20 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_26_54_26_60_false] [%tmp.21 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_26_54_26_60_end];
+        %tmp.22 = dup %tmp.21;
+        bt %tmp.22 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_26_67_26_73_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_26_67_26_73_false:
+        %tmp.23 = lgetv %id;
+        symbol [ id %tmp.23 26 67 69 ];
+        %tmp.24 = 151;
+        %tmp.25 = eq %tmp.23 %tmp.24;
+        %tmp.26 = or %tmp.21 %tmp.25;
+        push %tmp.26;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_26_67_26_73_end:
+        %tmp.27 = phi [%tmp.22 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_26_15_26_73_begin] [%tmp.26 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_26_67_26_73_false] [%tmp.27 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_26_67_26_73_end];
+        ret %tmp.27;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_25_72_27_4_stop:
+    }
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc"; @line = 31; @symbol_functiondef = [checkQuests,31,20,31]; @symbol_return<0> = [Lang,31,37,41]; @symbol_return<1> = [Number,31,42,48]; ]
+    static
+    function checkQuests() as Lang.Number {
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_31_49_39_4_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 33 8 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_33_8_33_40_if_stmt:
+        %tmp.1 = self;
+        symbol [ isReady %tmp.2 33 12 19 ];
+        %tmp.2 = getv function %tmp.1 :isReady;
+        %tmp.3 = 144;
+        %tmp.4 = invoke %tmp.1 %tmp.2(%tmp.3);
+        bf %tmp.4 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_33_8_33_40_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_33_8_33_40_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_33_26_33_40_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 33 28 ]
+        %tmp.5 = 144;
+        ret %tmp.5;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_33_26_33_40_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_33_8_33_40_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_33_8_33_40_if_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 34 8 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_34_8_34_40_if_stmt:
+        %tmp.6 = self;
+        symbol [ isReady %tmp.7 34 12 19 ];
+        %tmp.7 = getv function %tmp.6 :isReady;
+        %tmp.8 = 145;
+        %tmp.9 = invoke %tmp.6 %tmp.7(%tmp.8);
+        bf %tmp.9 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_34_8_34_40_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_34_8_34_40_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_34_26_34_40_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 34 28 ]
+        %tmp.10 = 145;
+        ret %tmp.10;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_34_26_34_40_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_34_8_34_40_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_34_8_34_40_if_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 35 8 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_35_8_35_40_if_stmt:
+        %tmp.11 = self;
+        symbol [ isReady %tmp.12 35 12 19 ];
+        %tmp.12 = getv function %tmp.11 :isReady;
+        %tmp.13 = 146;
+        %tmp.14 = invoke %tmp.11 %tmp.12(%tmp.13);
+        bf %tmp.14 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_35_8_35_40_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_35_8_35_40_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_35_26_35_40_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 35 28 ]
+        %tmp.15 = 146;
+        ret %tmp.15;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_35_26_35_40_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_35_8_35_40_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_35_8_35_40_if_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 36 8 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_36_8_36_40_if_stmt:
+        %tmp.16 = self;
+        symbol [ isReady %tmp.17 36 12 19 ];
+        %tmp.17 = getv function %tmp.16 :isReady;
+        %tmp.18 = 150;
+        %tmp.19 = invoke %tmp.16 %tmp.17(%tmp.18);
+        bf %tmp.19 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_36_8_36_40_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_36_8_36_40_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_36_26_36_40_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 36 28 ]
+        %tmp.20 = 150;
+        ret %tmp.20;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_36_26_36_40_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_36_8_36_40_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_36_8_36_40_if_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 37 8 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_37_8_37_40_if_stmt:
+        %tmp.21 = self;
+        symbol [ isReady %tmp.22 37 12 19 ];
+        %tmp.22 = getv function %tmp.21 :isReady;
+        %tmp.23 = 151;
+        %tmp.24 = invoke %tmp.21 %tmp.22(%tmp.23);
+        bf %tmp.24 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_37_8_37_40_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_37_8_37_40_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_37_26_37_40_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 37 28 ]
+        %tmp.25 = 151;
+        ret %tmp.25;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_37_26_37_40_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_37_8_37_40_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_37_8_37_40_if_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 38 8 ]
+        %tmp.26 = 0;
+        ret %tmp.26;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_31_49_39_4_stop:
+    }
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc"; @line = 42; @symbol_functiondef = [isReady,42,20,27]; @symbol_param<0> = [id,42,28,30]; @symbol_param<0>_type<0> = [Lang,42,34,38]; @symbol_param<0>_type<1> = [Number,42,39,45]; @symbol_return<0> = [Lang,42,50,54]; @symbol_return<1> = [Boolean,42,55,62]; ]
+    static
+    function isReady(id as Lang.Number) as Lang.Boolean {
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_42_63_70_4_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 44 8 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_44_8_44_62_if_stmt:
+        symbol [ GameState %tmp.2 44 12 21 ];
+        %tmp.2 = getv ? :GameState;
+        symbol [ getCaughtCount %tmp.3 44 22 36 ];
+        %tmp.3 = getv function %tmp.2 :getCaughtCount;
+        %tmp.4 = lgetv %id;
+        symbol [ id %tmp.4 44 37 39 ];
+        %tmp.5 = invoke %tmp.2 %tmp.3(%tmp.4);
+        %tmp.6 = 0;
+        %tmp.7 = gt %tmp.5 %tmp.6;
+        bf %tmp.7 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_44_8_44_62_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_44_8_44_62_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_44_46_44_62_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 44 48 ]
+        %tmp.8 = false;
+        ret %tmp.8;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_44_46_44_62_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_44_8_44_62_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_44_8_44_62_if_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 45 8 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_42_63_70_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_42_63_70_4_stop" ]
+        %status.1 = local;
+        symbol [ status %status.1 45 12 18 ];
+        symbol [ GameState %tmp.10 45 21 30 ];
+        %tmp.10 = getv ? :GameState;
+        symbol [ getLegendaryStatus %tmp.11 45 31 49 ];
+        %tmp.11 = getv function %tmp.10 :getLegendaryStatus;
+        %tmp.12 = lgetv %id;
+        symbol [ id %tmp.12 45 50 52 ];
+        %tmp.13 = invoke %tmp.10 %tmp.11(%tmp.12);
+        lputv %status.1 %tmp.13;
+        symbol [ status %status.1 45 12 18 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 46 8 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_46_8_46_41_if_stmt:
+        %tmp.14 = lgetv %status.1;
+        symbol [ status %tmp.14 46 12 18 ];
+        %tmp.15 = 2;
+        %tmp.16 = eq %tmp.14 %tmp.15;
+        bf %tmp.16 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_46_8_46_41_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_46_8_46_41_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_46_25_46_41_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 46 27 ]
+        %tmp.17 = false;
+        ret %tmp.17;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_46_25_46_41_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_46_8_46_41_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_46_8_46_41_if_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 47 8 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_47_8_47_41_if_stmt:
+        %tmp.18 = lgetv %status.1;
+        symbol [ status %tmp.18 47 12 18 ];
+        %tmp.19 = 1;
+        %tmp.20 = eq %tmp.18 %tmp.19;
+        bf %tmp.20 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_47_8_47_41_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_47_8_47_41_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_47_25_47_41_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 47 27 ]
+        %tmp.21 = true;
+        ret %tmp.21;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_47_25_47_41_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_47_8_47_41_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_47_8_47_41_if_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 50 8 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_42_63_70_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_42_63_70_4_stop" ]
+        %met.2 = local;
+        symbol [ met %met.2 50 12 15 ];
+        %tmp.22 = false;
+        lputv %met.2 %tmp.22;
+        symbol [ met %met.2 50 12 15 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 51 8 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_51_8_63_8_if_stmt:
+        %tmp.23 = lgetv %id;
+        symbol [ id %tmp.23 51 12 14 ];
+        %tmp.24 = 144;
+        %tmp.25 = eq %tmp.23 %tmp.24;
+        bf %tmp.25 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_51_8_63_8_if_false;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_51_8_63_8_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_51_23_53_8_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 52 12 ]
+        symbol [ GameState %tmp.27 52 18 27 ];
+        %tmp.27 = getv ? :GameState;
+        symbol [ totalStepsAllTime %tmp.28 52 28 45 ];
+        %tmp.28 = getv %tmp.27 :totalStepsAllTime;
+        symbol [ STEPS_REQUIRED %tmp.30 52 49 63 ];
+        %tmp.30 = getv ? :STEPS_REQUIRED;
+        %tmp.31 = gte %tmp.28 %tmp.30;
+        lputv %met.2 %tmp.31;
+        symbol [ met %met.2 52 12 15 ];
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_51_23_53_8_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_51_8_63_8_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_51_8_63_8_if_false:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 53 15 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_53_15_63_8_if_stmt:
+        %tmp.32 = lgetv %id;
+        symbol [ id %tmp.32 53 19 21 ];
+        %tmp.33 = 145;
+        %tmp.34 = eq %tmp.32 %tmp.33;
+        bf %tmp.34 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_53_15_63_8_if_false;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_53_15_63_8_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_53_30_55_8_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 54 12 ]
+        symbol [ GameState %tmp.36 54 18 27 ];
+        %tmp.36 = getv ? :GameState;
+        symbol [ dailyStreak %tmp.37 54 28 39 ];
+        %tmp.37 = getv %tmp.36 :dailyStreak;
+        symbol [ STREAK_REQUIRED %tmp.39 54 43 58 ];
+        %tmp.39 = getv ? :STREAK_REQUIRED;
+        %tmp.40 = gte %tmp.37 %tmp.39;
+        lputv %met.2 %tmp.40;
+        symbol [ met %met.2 54 12 15 ];
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_53_30_55_8_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_53_15_63_8_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_53_15_63_8_if_false:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 55 15 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_55_15_63_8_if_stmt:
+        %tmp.41 = lgetv %id;
+        symbol [ id %tmp.41 55 19 21 ];
+        %tmp.42 = 146;
+        %tmp.43 = eq %tmp.41 %tmp.42;
+        bf %tmp.43 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_55_15_63_8_if_false;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_55_15_63_8_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_55_30_57_8_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 56 12 ]
+        %tmp.44 = self;
+        symbol [ countTotalCatches %tmp.45 56 18 35 ];
+        %tmp.45 = getv function %tmp.44 :countTotalCatches;
+        %tmp.46 = invoke %tmp.44 %tmp.45();
+        symbol [ CATCHES_REQUIRED %tmp.48 56 41 57 ];
+        %tmp.48 = getv ? :CATCHES_REQUIRED;
+        %tmp.49 = gte %tmp.46 %tmp.48;
+        lputv %met.2 %tmp.49;
+        symbol [ met %met.2 56 12 15 ];
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_55_30_57_8_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_55_15_63_8_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_55_15_63_8_if_false:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 57 15 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_57_15_63_8_if_stmt:
+        %tmp.50 = lgetv %id;
+        symbol [ id %tmp.50 57 19 21 ];
+        %tmp.51 = 150;
+        %tmp.52 = eq %tmp.50 %tmp.51;
+        bf %tmp.52 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_57_15_63_8_if_false;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_57_15_63_8_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_57_30_59_8_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 58 12 ]
+        %tmp.53 = self;
+        symbol [ countNormalUnique %tmp.54 58 18 35 ];
+        %tmp.54 = getv function %tmp.53 :countNormalUnique;
+        %tmp.55 = invoke %tmp.53 %tmp.54();
+        symbol [ NORMAL_COUNT %tmp.57 58 41 53 ];
+        %tmp.57 = getv ? :NORMAL_COUNT;
+        %tmp.58 = gte %tmp.55 %tmp.57;
+        lputv %met.2 %tmp.58;
+        symbol [ met %met.2 58 12 15 ];
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_57_30_59_8_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_57_15_63_8_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_57_15_63_8_if_false:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 59 15 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_59_15_63_8_if_stmt:
+        %tmp.59 = lgetv %id;
+        symbol [ id %tmp.59 59 19 21 ];
+        %tmp.60 = 151;
+        %tmp.61 = eq %tmp.59 %tmp.60;
+        bf %tmp.61 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_59_15_63_8_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_59_15_63_8_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_59_30_63_8_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 60 12 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_60_18_62_50_begin:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_60_18_61_50_begin:
+        symbol [ GameState %tmp.63 60 18 27 ];
+        %tmp.63 = getv ? :GameState;
+        symbol [ getCaughtCount %tmp.64 60 28 42 ];
+        %tmp.64 = getv function %tmp.63 :getCaughtCount;
+        %tmp.65 = 144;
+        %tmp.66 = invoke %tmp.63 %tmp.64(%tmp.65);
+        %tmp.67 = 0;
+        %tmp.68 = gt %tmp.66 %tmp.67;
+        %tmp.69 = dup %tmp.68;
+        bf %tmp.69 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_61_18_61_50_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_61_18_61_50_true:
+        symbol [ GameState %tmp.71 61 18 27 ];
+        %tmp.71 = getv ? :GameState;
+        symbol [ getCaughtCount %tmp.72 61 28 42 ];
+        %tmp.72 = getv function %tmp.71 :getCaughtCount;
+        %tmp.73 = 145;
+        %tmp.74 = invoke %tmp.71 %tmp.72(%tmp.73);
+        %tmp.75 = 0;
+        %tmp.76 = gt %tmp.74 %tmp.75;
+        %tmp.77 = and %tmp.68 %tmp.76;
+        push %tmp.77;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_61_18_61_50_end:
+        %tmp.78 = phi [%tmp.69 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_60_18_61_50_begin] [%tmp.77 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_61_18_61_50_true] [%tmp.78 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_61_18_61_50_end];
+        %tmp.79 = dup %tmp.78;
+        bf %tmp.79 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_62_18_62_50_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_62_18_62_50_true:
+        symbol [ GameState %tmp.81 62 18 27 ];
+        %tmp.81 = getv ? :GameState;
+        symbol [ getCaughtCount %tmp.82 62 28 42 ];
+        %tmp.82 = getv function %tmp.81 :getCaughtCount;
+        %tmp.83 = 146;
+        %tmp.84 = invoke %tmp.81 %tmp.82(%tmp.83);
+        %tmp.85 = 0;
+        %tmp.86 = gt %tmp.84 %tmp.85;
+        %tmp.87 = and %tmp.78 %tmp.86;
+        push %tmp.87;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_62_18_62_50_end:
+        %tmp.88 = phi [%tmp.79 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_60_18_62_50_begin] [%tmp.87 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_62_18_62_50_true] [%tmp.88 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_62_18_62_50_end];
+        lputv %met.2 %tmp.88;
+        symbol [ met %met.2 60 12 15 ];
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_59_30_63_8_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_59_15_63_8_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_59_15_63_8_if_end:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_57_15_63_8_if_end:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_55_15_63_8_if_end:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_53_15_63_8_if_end:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_51_8_63_8_if_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 65 8 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_65_8_68_8_if_stmt:
+        %tmp.89 = lgetv %met.2;
+        symbol [ met %tmp.89 65 12 15 ];
+        bf %tmp.89 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_65_8_68_8_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_65_8_68_8_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_65_17_68_8_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 66 12 ]
+        symbol [ GameState %tmp.91 66 12 21 ];
+        %tmp.91 = getv ? :GameState;
+        symbol [ setLegendaryStatus %tmp.92 66 22 40 ];
+        %tmp.92 = getv function %tmp.91 :setLegendaryStatus;
+        %tmp.93 = lgetv %id;
+        symbol [ id %tmp.93 66 41 43 ];
+        %tmp.94 = 1;
+        invoke %tmp.91 %tmp.92(%tmp.93, %tmp.94);
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 67 12 ]
+        %tmp.95 = true;
+        ret %tmp.95;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_65_17_68_8_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_65_8_68_8_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_65_8_68_8_if_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 69 8 ]
+        %tmp.96 = false;
+        ret %tmp.96;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_42_63_70_4_stop:
+    }
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc"; @line = 73; @symbol_functiondef = [countTotalCatches,73,20,37]; @symbol_return<0> = [Lang,73,43,47]; @symbol_return<1> = [Number,73,48,54]; ]
+    static
+    function countTotalCatches() as Lang.Number {
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_73_55_79_4_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 74 8 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_73_55_79_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_73_55_79_4_stop" ]
+        %total.1 = local;
+        symbol [ total %total.1 74 12 17 ];
+        %tmp.1 = 0;
+        lputv %total.1 %tmp.1;
+        symbol [ total %total.1 74 12 17 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 75 8 ]
+        for @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_75_8_77_8_for_test @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_75_8_77_8_for_incr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_75_8_77_8_for_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_75_8_77_8_for_init:
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_75_8_77_8_for_begin" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_75_8_77_8_for_end" ]
+        %i.2 = local;
+        symbol [ i %i.2 75 17 18 ];
+        %tmp.2 = 1;
+        lputv %i.2 %tmp.2;
+        symbol [ i %i.2 75 17 18 ];
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_75_8_77_8_for_test:
+        %tmp.3 = lgetv %i.2;
+        symbol [ i %tmp.3 75 24 25 ];
+        %tmp.4 = 151;
+        %tmp.5 = lte %tmp.3 %tmp.4;
+        bf %tmp.5 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_75_8_77_8_for_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_75_8_77_8_for_begin:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_75_39_77_8_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 76 12 ]
+        %tmp.6 = lgetv %total.1;
+        symbol [ total %tmp.6 76 12 17 ];
+        symbol [ GameState %tmp.8 76 21 30 ];
+        %tmp.8 = getv ? :GameState;
+        symbol [ getCaughtCount %tmp.9 76 31 45 ];
+        %tmp.9 = getv function %tmp.8 :getCaughtCount;
+        %tmp.10 = lgetv %i.2;
+        symbol [ i %tmp.10 76 46 47 ];
+        %tmp.11 = invoke %tmp.8 %tmp.9(%tmp.10);
+        %tmp.12 = add %tmp.6 %tmp.11;
+        lputv %total.1 %tmp.12;
+        symbol [ total %total.1 76 12 17 ];
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_75_39_77_8_stop:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_75_8_77_8_for_incr:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 75 ]
+        %tmp.15 = lgetv %i.2;
+        symbol [ i %tmp.15 75 34 35 ];
+        %tmp.16 = add %tmp.15 1;
+        lputv %i.2 %tmp.16;
+        symbol [ i %i.2 75 34 35 ];
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_75_8_77_8_for_test;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_75_8_77_8_for_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 78 8 ]
+        %tmp.17 = lgetv %total.1;
+        symbol [ total %tmp.17 78 15 20 ];
+        ret %tmp.17;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_73_55_79_4_stop:
+    }
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc"; @line = 82; @symbol_functiondef = [countNormalUnique,82,20,37]; @symbol_return<0> = [Lang,82,43,47]; @symbol_return<1> = [Number,82,48,54]; ]
+    static
+    function countNormalUnique() as Lang.Number {
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_82_55_89_4_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 83 8 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_82_55_89_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_82_55_89_4_stop" ]
+        %count.1 = local;
+        symbol [ count %count.1 83 12 17 ];
+        %tmp.1 = 0;
+        lputv %count.1 %tmp.1;
+        symbol [ count %count.1 83 12 17 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 84 8 ]
+        for @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_84_8_87_8_for_test @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_84_8_87_8_for_incr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_84_8_87_8_for_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_84_8_87_8_for_init:
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_84_8_87_8_for_begin" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_84_8_87_8_for_end" ]
+        %i.2 = local;
+        symbol [ i %i.2 84 17 18 ];
+        %tmp.2 = 1;
+        lputv %i.2 %tmp.2;
+        symbol [ i %i.2 84 17 18 ];
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_84_8_87_8_for_test:
+        %tmp.3 = lgetv %i.2;
+        symbol [ i %tmp.3 84 24 25 ];
+        %tmp.4 = 151;
+        %tmp.5 = lte %tmp.3 %tmp.4;
+        bf %tmp.5 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_84_8_87_8_for_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_84_8_87_8_for_begin:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_84_39_87_8_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 85 12 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_85_12_85_49_if_stmt:
+        %tmp.6 = self;
+        symbol [ isQuestLegendary %tmp.7 85 16 32 ];
+        %tmp.7 = getv function %tmp.6 :isQuestLegendary;
+        %tmp.8 = lgetv %i.2;
+        symbol [ i %tmp.8 85 33 34 ];
+        %tmp.9 = invoke %tmp.6 %tmp.7(%tmp.8);
+        bf %tmp.9 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_85_12_85_49_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_85_12_85_49_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_85_37_85_49_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 85 39 ]
+        goto break @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_84_8_87_8_for_incr;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_85_37_85_49_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_85_12_85_49_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_85_12_85_49_if_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 86 12 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_86_12_86_60_if_stmt:
+        symbol [ GameState %tmp.11 86 16 25 ];
+        %tmp.11 = getv ? :GameState;
+        symbol [ getCaughtCount %tmp.12 86 26 40 ];
+        %tmp.12 = getv function %tmp.11 :getCaughtCount;
+        %tmp.13 = lgetv %i.2;
+        symbol [ i %tmp.13 86 41 42 ];
+        %tmp.14 = invoke %tmp.11 %tmp.12(%tmp.13);
+        %tmp.15 = 0;
+        %tmp.16 = gt %tmp.14 %tmp.15;
+        bf %tmp.16 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_86_12_86_60_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_86_12_86_60_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_86_49_86_60_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 86 51 ]
+        %tmp.19 = lgetv %count.1;
+        symbol [ count %tmp.19 86 51 56 ];
+        %tmp.20 = add %tmp.19 1;
+        lputv %count.1 %tmp.20;
+        symbol [ count %count.1 86 51 56 ];
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_86_49_86_60_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_86_12_86_60_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_86_12_86_60_if_end:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_84_39_87_8_stop:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_84_8_87_8_for_incr:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 84 ]
+        %tmp.23 = lgetv %i.2;
+        symbol [ i %tmp.23 84 34 35 ];
+        %tmp.24 = add %tmp.23 1;
+        lputv %i.2 %tmp.24;
+        symbol [ i %i.2 84 34 35 ];
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_84_8_87_8_for_test;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_84_8_87_8_for_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 88 8 ]
+        %tmp.25 = lgetv %count.1;
+        symbol [ count %tmp.25 88 15 20 ];
+        ret %tmp.25;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_82_55_89_4_stop:
+    }
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc"; @line = 92; @symbol_functiondef = [spawnLegendary,92,20,34]; @symbol_param<0> = [id,92,35,37]; @symbol_param<0>_type<0> = [Lang,92,41,45]; @symbol_param<0>_type<1> = [Number,92,46,52]; @symbol_return<0> = [Lang,92,57,61]; @symbol_return<1> = [Dictionary,92,62,72]; ]
+    static
+    function spawnLegendary(id as Lang.Number) as Lang.Dictionary {
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_92_73_103_4_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 93 8 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_92_73_103_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_92_73_103_4_stop" ]
+        %data.1 = local;
+        symbol [ data %data.1 93 12 16 ];
+        symbol [ PokemonData %tmp.2 93 19 30 ];
+        %tmp.2 = getv ? :PokemonData;
+        symbol [ get %tmp.3 93 31 34 ];
+        %tmp.3 = getv function %tmp.2 :get;
+        %tmp.4 = lgetv %id;
+        symbol [ id %tmp.4 93 35 37 ];
+        %tmp.5 = invoke %tmp.2 %tmp.3(%tmp.4);
+        lputv %data.1 %tmp.5;
+        symbol [ data %data.1 93 12 16 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 94 8 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_92_73_103_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_92_73_103_4_stop" ]
+        %isShiny.2 = local;
+        symbol [ isShiny %isShiny.2 94 12 19 ];
+        symbol [ Math %tmp.6 94 23 27 ];
+        %tmp.6 = getm $.Toybox.Math;
+        symbol [ rand %tmp.7 94 28 32 ];
+        %tmp.7 = getv function %tmp.6 :rand;
+        %tmp.8 = invoke %tmp.6 %tmp.7();
+        symbol [ BalanceConfig %tmp.10 94 37 50 ];
+        %tmp.10 = getv ? :BalanceConfig;
+        symbol [ getShinyOdds %tmp.11 94 51 63 ];
+        %tmp.11 = getv function %tmp.10 :getShinyOdds;
+        %tmp.12 = invoke %tmp.10 %tmp.11();
+        %tmp.13 = mod %tmp.8 %tmp.12;
+        %tmp.14 = 0;
+        %tmp.15 = eq %tmp.13 %tmp.14;
+        lputv %isShiny.2 %tmp.15;
+        symbol [ isShiny %isShiny.2 94 12 19 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 95 8 ]
+        %tmp.16 = newd 6;
+        %tmp.18 = const :id;
+        symbol [ id %tmp.18 96 13 15 const ];
+        %tmp.19 = lgetv %id;
+        symbol [ id %tmp.19 96 24 26 ];
+        %tmp.20 = dup %tmp.16;
+        %tmp.21 = aputv %tmp.20 %tmp.18 %tmp.19;
+        %tmp.23 = const :isShiny;
+        symbol [ isShiny %tmp.23 97 13 20 const ];
+        %tmp.24 = lgetv %isShiny.2;
+        symbol [ isShiny %tmp.24 97 24 31 ];
+        %tmp.25 = dup %tmp.21;
+        %tmp.26 = aputv %tmp.25 %tmp.23 %tmp.24;
+        %tmp.28 = const :hpMax;
+        symbol [ hpMax %tmp.28 98 13 18 const ];
+        %tmp.29 = lgetv %data.1;
+        symbol [ data %tmp.29 98 24 28 ];
+        %tmp.31 = const :hp;
+        symbol [ hp %tmp.31 98 30 32 const ];
+        %tmp.32 = agetv %tmp.29 %tmp.31;
+        %tmp.33 = dup %tmp.26;
+        %tmp.34 = aputv %tmp.33 %tmp.28 %tmp.32;
+        %tmp.36 = const :hpCurr;
+        symbol [ hpCurr %tmp.36 99 13 19 const ];
+        %tmp.37 = lgetv %data.1;
+        symbol [ data %tmp.37 99 24 28 ];
+        %tmp.39 = const :hp;
+        symbol [ hp %tmp.39 99 30 32 const ];
+        %tmp.40 = agetv %tmp.37 %tmp.39;
+        %tmp.41 = dup %tmp.34;
+        %tmp.42 = aputv %tmp.41 %tmp.36 %tmp.40;
+        %tmp.44 = const :stepPowerPercent;
+        symbol [ stepPowerPercent %tmp.44 100 13 29 const ];
+        %tmp.45 = 100;
+        %tmp.46 = dup %tmp.42;
+        %tmp.47 = aputv %tmp.46 %tmp.44 %tmp.45;
+        %tmp.49 = const :stepsAtStart;
+        symbol [ stepsAtStart %tmp.49 101 13 25 const ];
+        symbol [ GameState %tmp.51 101 29 38 ];
+        %tmp.51 = getv ? :GameState;
+        symbol [ getStepsToday %tmp.52 101 39 52 ];
+        %tmp.52 = getv function %tmp.51 :getStepsToday;
+        %tmp.53 = invoke %tmp.51 %tmp.52();
+        %tmp.54 = dup %tmp.47;
+        %tmp.55 = aputv %tmp.54 %tmp.49 %tmp.53;
+        ret %tmp.55;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_92_73_103_4_stop:
+    }
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc"; @line = 106; @symbol_functiondef = [getProgress,106,20,31]; @symbol_param<0> = [id,106,32,34]; @symbol_param<0>_type<0> = [Lang,106,38,42]; @symbol_param<0>_type<1> = [Number,106,43,49]; @symbol_return<0> = [Lang,106,54,58]; @symbol_return<1> = [Number,106,59,65]; ]
+    static
+    function getProgress(id as Lang.Number) as Lang.Number {
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_106_66_125_4_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 107 8 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_107_8_107_60_if_stmt:
+        symbol [ GameState %tmp.2 107 12 21 ];
+        %tmp.2 = getv ? :GameState;
+        symbol [ getCaughtCount %tmp.3 107 22 36 ];
+        %tmp.3 = getv function %tmp.2 :getCaughtCount;
+        %tmp.4 = lgetv %id;
+        symbol [ id %tmp.4 107 37 39 ];
+        %tmp.5 = invoke %tmp.2 %tmp.3(%tmp.4);
+        %tmp.6 = 0;
+        %tmp.7 = gt %tmp.5 %tmp.6;
+        bf %tmp.7 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_107_8_107_60_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_107_8_107_60_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_107_46_107_60_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 107 48 ]
+        %tmp.8 = 100;
+        ret %tmp.8;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_107_46_107_60_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_107_8_107_60_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_107_8_107_60_if_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 108 8 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_106_66_125_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_106_66_125_4_stop" ]
+        %pct.1 = local;
+        symbol [ pct %pct.1 108 12 15 ];
+        %tmp.9 = 0;
+        lputv %pct.1 %tmp.9;
+        symbol [ pct %pct.1 108 12 15 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 109 8 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_109_8_123_8_if_stmt:
+        %tmp.10 = lgetv %id;
+        symbol [ id %tmp.10 109 12 14 ];
+        %tmp.11 = 144;
+        %tmp.12 = eq %tmp.10 %tmp.11;
+        bf %tmp.12 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_109_8_123_8_if_false;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_109_8_123_8_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_109_23_111_8_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 110 12 ]
+        symbol [ GameState %tmp.14 110 19 28 ];
+        %tmp.14 = getv ? :GameState;
+        symbol [ totalStepsAllTime %tmp.15 110 29 46 ];
+        %tmp.15 = getv %tmp.14 :totalStepsAllTime;
+        %tmp.16 = 100;
+        %tmp.17 = mul %tmp.15 %tmp.16;
+        symbol [ STEPS_REQUIRED %tmp.19 110 56 70 ];
+        %tmp.19 = getv ? :STEPS_REQUIRED;
+        %tmp.20 = div %tmp.17 %tmp.19;
+        lputv %pct.1 %tmp.20;
+        symbol [ pct %pct.1 110 12 15 ];
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_109_23_111_8_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_109_8_123_8_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_109_8_123_8_if_false:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 111 15 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_111_15_123_8_if_stmt:
+        %tmp.21 = lgetv %id;
+        symbol [ id %tmp.21 111 19 21 ];
+        %tmp.22 = 145;
+        %tmp.23 = eq %tmp.21 %tmp.22;
+        bf %tmp.23 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_111_15_123_8_if_false;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_111_15_123_8_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_111_30_113_8_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 112 12 ]
+        symbol [ GameState %tmp.25 112 19 28 ];
+        %tmp.25 = getv ? :GameState;
+        symbol [ dailyStreak %tmp.26 112 29 40 ];
+        %tmp.26 = getv %tmp.25 :dailyStreak;
+        %tmp.27 = 100;
+        %tmp.28 = mul %tmp.26 %tmp.27;
+        symbol [ STREAK_REQUIRED %tmp.30 112 50 65 ];
+        %tmp.30 = getv ? :STREAK_REQUIRED;
+        %tmp.31 = div %tmp.28 %tmp.30;
+        lputv %pct.1 %tmp.31;
+        symbol [ pct %pct.1 112 12 15 ];
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_111_30_113_8_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_111_15_123_8_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_111_15_123_8_if_false:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 113 15 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_113_15_123_8_if_stmt:
+        %tmp.32 = lgetv %id;
+        symbol [ id %tmp.32 113 19 21 ];
+        %tmp.33 = 146;
+        %tmp.34 = eq %tmp.32 %tmp.33;
+        bf %tmp.34 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_113_15_123_8_if_false;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_113_15_123_8_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_113_30_115_8_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 114 12 ]
+        %tmp.35 = self;
+        symbol [ countTotalCatches %tmp.36 114 19 36 ];
+        %tmp.36 = getv function %tmp.35 :countTotalCatches;
+        %tmp.37 = invoke %tmp.35 %tmp.36();
+        %tmp.38 = 100;
+        %tmp.39 = mul %tmp.37 %tmp.38;
+        symbol [ CATCHES_REQUIRED %tmp.41 114 48 64 ];
+        %tmp.41 = getv ? :CATCHES_REQUIRED;
+        %tmp.42 = div %tmp.39 %tmp.41;
+        lputv %pct.1 %tmp.42;
+        symbol [ pct %pct.1 114 12 15 ];
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_113_30_115_8_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_113_15_123_8_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_113_15_123_8_if_false:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 115 15 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_115_15_123_8_if_stmt:
+        %tmp.43 = lgetv %id;
+        symbol [ id %tmp.43 115 19 21 ];
+        %tmp.44 = 150;
+        %tmp.45 = eq %tmp.43 %tmp.44;
+        bf %tmp.45 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_115_15_123_8_if_false;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_115_15_123_8_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_115_30_117_8_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 116 12 ]
+        %tmp.46 = self;
+        symbol [ countNormalUnique %tmp.47 116 19 36 ];
+        %tmp.47 = getv function %tmp.46 :countNormalUnique;
+        %tmp.48 = invoke %tmp.46 %tmp.47();
+        %tmp.49 = 100;
+        %tmp.50 = mul %tmp.48 %tmp.49;
+        symbol [ NORMAL_COUNT %tmp.52 116 48 60 ];
+        %tmp.52 = getv ? :NORMAL_COUNT;
+        %tmp.53 = div %tmp.50 %tmp.52;
+        lputv %pct.1 %tmp.53;
+        symbol [ pct %pct.1 116 12 15 ];
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_115_30_117_8_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_115_15_123_8_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_115_15_123_8_if_false:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 117 15 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_117_15_123_8_if_stmt:
+        %tmp.54 = lgetv %id;
+        symbol [ id %tmp.54 117 19 21 ];
+        %tmp.55 = 151;
+        %tmp.56 = eq %tmp.54 %tmp.55;
+        bf %tmp.56 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_117_15_123_8_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_117_15_123_8_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_117_30_123_8_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 118 12 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_117_30_123_8_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_117_30_123_8_stop" ]
+        %have.2 = local;
+        symbol [ have %have.2 118 16 20 ];
+        %tmp.57 = 0;
+        lputv %have.2 %tmp.57;
+        symbol [ have %have.2 118 16 20 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 119 12 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_119_12_119_61_if_stmt:
+        symbol [ GameState %tmp.59 119 16 25 ];
+        %tmp.59 = getv ? :GameState;
+        symbol [ getCaughtCount %tmp.60 119 26 40 ];
+        %tmp.60 = getv function %tmp.59 :getCaughtCount;
+        %tmp.61 = 144;
+        %tmp.62 = invoke %tmp.59 %tmp.60(%tmp.61);
+        %tmp.63 = 0;
+        %tmp.64 = gt %tmp.62 %tmp.63;
+        bf %tmp.64 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_119_12_119_61_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_119_12_119_61_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_119_51_119_61_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 119 53 ]
+        %tmp.67 = lgetv %have.2;
+        symbol [ have %tmp.67 119 53 57 ];
+        %tmp.68 = add %tmp.67 1;
+        lputv %have.2 %tmp.68;
+        symbol [ have %have.2 119 53 57 ];
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_119_51_119_61_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_119_12_119_61_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_119_12_119_61_if_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 120 12 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_120_12_120_61_if_stmt:
+        symbol [ GameState %tmp.70 120 16 25 ];
+        %tmp.70 = getv ? :GameState;
+        symbol [ getCaughtCount %tmp.71 120 26 40 ];
+        %tmp.71 = getv function %tmp.70 :getCaughtCount;
+        %tmp.72 = 145;
+        %tmp.73 = invoke %tmp.70 %tmp.71(%tmp.72);
+        %tmp.74 = 0;
+        %tmp.75 = gt %tmp.73 %tmp.74;
+        bf %tmp.75 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_120_12_120_61_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_120_12_120_61_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_120_51_120_61_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 120 53 ]
+        %tmp.78 = lgetv %have.2;
+        symbol [ have %tmp.78 120 53 57 ];
+        %tmp.79 = add %tmp.78 1;
+        lputv %have.2 %tmp.79;
+        symbol [ have %have.2 120 53 57 ];
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_120_51_120_61_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_120_12_120_61_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_120_12_120_61_if_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 121 12 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_121_12_121_61_if_stmt:
+        symbol [ GameState %tmp.81 121 16 25 ];
+        %tmp.81 = getv ? :GameState;
+        symbol [ getCaughtCount %tmp.82 121 26 40 ];
+        %tmp.82 = getv function %tmp.81 :getCaughtCount;
+        %tmp.83 = 146;
+        %tmp.84 = invoke %tmp.81 %tmp.82(%tmp.83);
+        %tmp.85 = 0;
+        %tmp.86 = gt %tmp.84 %tmp.85;
+        bf %tmp.86 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_121_12_121_61_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_121_12_121_61_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_121_51_121_61_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 121 53 ]
+        %tmp.89 = lgetv %have.2;
+        symbol [ have %tmp.89 121 53 57 ];
+        %tmp.90 = add %tmp.89 1;
+        lputv %have.2 %tmp.90;
+        symbol [ have %have.2 121 53 57 ];
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_121_51_121_61_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_121_12_121_61_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_121_12_121_61_if_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 122 12 ]
+        %tmp.91 = lgetv %have.2;
+        symbol [ have %tmp.91 122 19 23 ];
+        %tmp.92 = 100;
+        %tmp.93 = mul %tmp.91 %tmp.92;
+        %tmp.94 = 3;
+        %tmp.95 = div %tmp.93 %tmp.94;
+        lputv %pct.1 %tmp.95;
+        symbol [ pct %pct.1 122 12 15 ];
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_117_30_123_8_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_117_15_123_8_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_117_15_123_8_if_end:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_115_15_123_8_if_end:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_113_15_123_8_if_end:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_111_15_123_8_if_end:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_109_8_123_8_if_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 124 8 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_124_15_124_35_begin:
+        %tmp.96 = lgetv %pct.1;
+        symbol [ pct %tmp.96 124 16 19 ];
+        %tmp.97 = 100;
+        %tmp.98 = gt %tmp.96 %tmp.97;
+        bf %tmp.98 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_124_15_124_35_else_false;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_124_15_124_35_true:
+        %tmp.99 = 100;
+        push %tmp.99;
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_124_15_124_35_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_124_15_124_35_else_false:
+        %tmp.100 = lgetv %pct.1;
+        symbol [ pct %tmp.100 124 35 38 ];
+        push %tmp.100;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_124_15_124_35_end:
+        %tmp.101 = phi [%tmp.98 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_124_15_124_35_begin] [%tmp.99 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_124_15_124_35_true] [%tmp.100 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_124_15_124_35_else_false] [%tmp.101 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_124_15_124_35_end];
+        ret %tmp.101;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_106_66_125_4_stop:
+    }
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc"; @line = 128; @symbol_functiondef = [getQuestLabel,128,20,33]; @symbol_param<0> = [id,128,34,36]; @symbol_param<0>_type<0> = [Lang,128,40,44]; @symbol_param<0>_type<1> = [Number,128,45,51]; @symbol_return<0> = [Lang,128,56,60]; @symbol_return<1> = [String,128,61,67]; ]
+    static
+    function getQuestLabel(id as Lang.Number) as Lang.String {
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_128_68_135_4_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 129 8 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_129_8_129_46_if_stmt:
+        %tmp.1 = lgetv %id;
+        symbol [ id %tmp.1 129 12 14 ];
+        %tmp.2 = 144;
+        %tmp.3 = eq %tmp.1 %tmp.2;
+        bf %tmp.3 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_129_8_129_46_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_129_8_129_46_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_129_23_129_46_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 129 25 ]
+        %tmp.4 = "500K pasos";
+        ret %tmp.4;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_129_23_129_46_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_129_8_129_46_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_129_8_129_46_if_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 130 8 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_130_8_130_45_if_stmt:
+        %tmp.5 = lgetv %id;
+        symbol [ id %tmp.5 130 12 14 ];
+        %tmp.6 = 145;
+        %tmp.7 = eq %tmp.5 %tmp.6;
+        bf %tmp.7 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_130_8_130_45_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_130_8_130_45_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_130_23_130_45_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 130 25 ]
+        %tmp.8 = "30d racha";
+        ret %tmp.8;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_130_23_130_45_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_130_8_130_45_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_130_8_130_45_if_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 131 8 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_131_8_131_48_if_stmt:
+        %tmp.9 = lgetv %id;
+        symbol [ id %tmp.9 131 12 14 ];
+        %tmp.10 = 146;
+        %tmp.11 = eq %tmp.9 %tmp.10;
+        bf %tmp.11 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_131_8_131_48_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_131_8_131_48_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_131_23_131_48_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 131 25 ]
+        %tmp.12 = "500 capturas";
+        ret %tmp.12;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_131_23_131_48_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_131_8_131_48_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_131_8_131_48_if_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 132 8 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_132_8_132_47_if_stmt:
+        %tmp.13 = lgetv %id;
+        symbol [ id %tmp.13 132 12 14 ];
+        %tmp.14 = 150;
+        %tmp.15 = eq %tmp.13 %tmp.14;
+        bf %tmp.15 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_132_8_132_47_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_132_8_132_47_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_132_23_132_47_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 132 25 ]
+        %tmp.16 = "146 Pokemon";
+        ret %tmp.16;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_132_23_132_47_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_132_8_132_47_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_132_8_132_47_if_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 133 8 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_133_8_133_47_if_stmt:
+        %tmp.17 = lgetv %id;
+        symbol [ id %tmp.17 133 12 14 ];
+        %tmp.18 = 151;
+        %tmp.19 = eq %tmp.17 %tmp.18;
+        bf %tmp.19 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_133_8_133_47_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_133_8_133_47_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_133_23_133_47_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 133 25 ]
+        %tmp.20 = "3 aves leg.";
+        ret %tmp.20;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_133_23_133_47_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_133_8_133_47_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_133_8_133_47_if_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 134 8 ]
+        %tmp.21 = "";
+        ret %tmp.21;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_128_68_135_4_stop:
+    }
+}
+[ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc"; @line = 13; ]
+<init> {
+}
