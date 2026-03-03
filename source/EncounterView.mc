@@ -88,6 +88,9 @@ class EncounterView extends WatchUi.View {
         dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_BLACK);
         dc.clear();
 
+        // ── Fondo Game Boy (escenario batalla) ───────────
+        drawBattleBackground(dc, w, h);
+
         // ── Pantalla de captura exitosa ───────────────────
         if (_captured) {
             drawCaptureScreen(dc, w, h);
@@ -290,6 +293,16 @@ class EncounterView extends WatchUi.View {
         dc.setColor(0x336633, Graphics.COLOR_TRANSPARENT);
         dc.drawText(cx, h - 50, Graphics.FONT_XTINY,
             tr(Rez.Strings.TapToContinue), Graphics.TEXT_JUSTIFY_CENTER);
+    }
+
+    // ── Dibujar fondo estilo batalla GameBoy (bitmap) ─────────
+    function drawBattleBackground(dc as Graphics.Dc, w as Lang.Number, h as Lang.Number) as Void {
+        try {
+            var bg = WatchUi.loadResource(Rez.Drawables.bg_battle) as WatchUi.BitmapResource;
+            dc.drawBitmap(0, 0, bg);
+        } catch (e) {
+            // fallback: fondo negro si no se puede cargar
+        }
     }
 }
 

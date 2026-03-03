@@ -151,4 +151,10 @@
   <bitmap id="pk149" filename="pk149.png"/>
   <bitmap id="pk150" filename="pk150.png"/>
   <bitmap id="pk151" filename="pk151.png"/>
+  <!-- Fondos Game Boy -->
+  <bitmap id="bg_route_day" filename="bg_route_day.png"/>
+  <bitmap id="bg_route_night" filename="bg_route_night.png"/>
+  <bitmap id="bg_route_sunset" filename="bg_route_sunset.png"/>
+  <bitmap id="bg_route_morning" filename="bg_route_morning.png"/>
+  <bitmap id="bg_battle" filename="bg_battle.png"/>
 </bitmaps>

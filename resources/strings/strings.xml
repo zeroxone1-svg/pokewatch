@@ -6,13 +6,13 @@
   <string id="LabelTier">TIER</string>
   <string id="EncounterReady">ENCUENTRO LISTO</string>
   <string id="TapToEnter">Toca para entrar</string>
-  <string id="NextIn">Siguiente en</string>
+  <string id="NextIn">Aparece en</string>
   <string id="LabelBlocks">Bloques</string>
   <string id="LabelMissing">faltan</string>
   <string id="LabelStreakDays">d racha</string>
   <string id="RareBonusHint">2 bloques activan bonus raro</string>
   <string id="SpawnRate">spawn</string>
-  <string id="KantoTitle">POKEDEX KANTO</string>
+  <string id="KantoTitle">POKEDEX</string>
   <string id="SeenShort">vistos</string>
   <string id="CaughtShort">capt</string>
   <string id="ShiniesShort">shinys</string>

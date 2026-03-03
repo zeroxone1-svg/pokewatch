@@ -157,6 +157,11 @@ module Rez {
         (:initialized) var pk149 as ResourceId;
         (:initialized) var pk150 as ResourceId;
         (:initialized) var pk151 as ResourceId;
+        (:initialized) var bg_route_day as ResourceId;
+        (:initialized) var bg_route_night as ResourceId;
+        (:initialized) var bg_route_sunset as ResourceId;
+        (:initialized) var bg_route_morning as ResourceId;
+        (:initialized) var bg_battle as ResourceId;
         (:initialized) var LauncherIcon as ResourceId;
     } // Drawables
 

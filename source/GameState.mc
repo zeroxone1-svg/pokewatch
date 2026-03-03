@@ -376,7 +376,9 @@ class GameState {
     }
 
     static function getPokemonLevel(id as Lang.Number) as Lang.Number {
-        return BalanceConfig.getLevelFromXP(getPokemonXP(id));
+        var data = PokemonData.get(id);
+        var tier = data[:tier];
+        return BalanceConfig.getLevelFromXP(getPokemonXP(id), tier);
     }
 
     // ── Familia evolutiva ─────────────────────────────────

@@ -28,7 +28,7 @@ class MainView extends WatchUi.View {
     function onLayout(dc as Graphics.Dc) as Void {}
 
     function onShow() as Void {
-        _timer.start(method(:onTimer), 5000, true);
+        _timer.start(method(:onTimer), 1500, true);
         GameState.updateActivityBlocks();
         GameState.updateBuddySteps();
         GameState.updateTotalSteps();
@@ -46,7 +46,7 @@ class MainView extends WatchUi.View {
         var evo = GameState.checkBuddyEvolution();
         if (evo > 0) {
             _buddyEvolved = evo;
-            _evoShowCount = 6; // mostrar por ~30s (6 ticks x 5s)
+            _evoShowCount = 20; // mostrar por ~30s (20 ticks x 1.5s)
         }
         if (_evoShowCount > 0) {
             _evoShowCount -= 1;
@@ -117,6 +117,9 @@ class MainView extends WatchUi.View {
         dc.setColor(bgColor, bgColor);
         dc.clear();
 
+        // ── Fondo Game Boy (escenario pixelart) ──────────
+        drawGBBackground(dc, w, w);
+
         var steps  = GameState.getStepsToday();
         var blocks = GameState.getActivityBlocksToday();
         var nextIn = GameState.stepsUntilNext();
@@ -141,15 +144,18 @@ class MainView extends WatchUi.View {
             tierColor = tierColors[displayTier];
         }
 
-        var titleY   = 28;
-        var stepsY   = 52;
-        var spriteY  = 80;
-        var spriteH  = 80;
-        var nameY    = spriteY + spriteH + 4;
-        var buddyBarY = nameY + 30;
-        var buddyTxtY = buddyBarY + 5;
-        var infoY    = buddyTxtY + 26;
-        var footY    = 300;
+        var titleY   = 20;
+        var stepsY   = 50;
+        // Box visual compacto (96x96), bitmap 120px centrado dentro
+        var boxSize  = 96;
+        var boxY     = 80;
+        var bmpOff   = (120 - boxSize) / 2; // 12px para centrar bitmap en box
+        var spriteDrawY = boxY - bmpOff;     // bitmap empieza 12px antes del box
+        var nameY    = boxY + boxSize + 6;   // 182
+        var buddyBarY = nameY + 40;          // 204
+        var buddyTxtY = buddyBarY + 15;      // 237
+        var infoY    = buddyTxtY + 28;       // 265
+        var footY    = 320;
 
         // ── Spawn progress (0-100) ────────────────────────
         var spawnProgress = 0;
@@ -169,17 +175,25 @@ class MainView extends WatchUi.View {
             steps.toString() + " " + tr(Rez.Strings.LabelSteps),
             Graphics.TEXT_JUSTIFY_CENTER);
 
-        // ── SPRITE centrado (sin fondo detrás) ─────────────
+        // ── SPRITE centrado con recuadro gris ─────────────
 
         if (displayId > 0) {
-            // Bobbing sutil en el sprite
-            var mainBob = _alertBlink ? -2 : 2;
+            // Recuadro gris compacto (96x96) estilo EncounterView
+            var boxX = cx - boxSize / 2;
+            dc.setColor(0x1A1A1A, Graphics.COLOR_TRANSPARENT);
+            dc.fillRoundedRectangle(boxX, boxY, boxSize, boxSize, 10);
+            dc.setColor(0x333333, Graphics.COLOR_TRANSPARENT);
+            dc.drawRoundedRectangle(boxX, boxY, boxSize, boxSize, 10);
+
+            // Bobbing dinámico (±4px)
+            var mainBob = _alertBlink ? -4 : 4;
             var displaySprite = SpriteManager.getSprite(displayId);
             if (displaySprite != null) {
-                dc.drawBitmap(cx - spriteH / 2, spriteY + mainBob, displaySprite as WatchUi.BitmapResource);
+                // Bitmap 120px centrado dentro del box de 96px
+                dc.drawBitmap(cx - 60, spriteDrawY + mainBob, displaySprite as WatchUi.BitmapResource);
             } else {
                 dc.setColor(tierColor, Graphics.COLOR_TRANSPARENT);
-                dc.drawText(cx, spriteY + 34, Graphics.FONT_NUMBER_THAI_HOT,
+                dc.drawText(cx, boxY + 30, Graphics.FONT_NUMBER_THAI_HOT,
                     "#" + displayId.format("%03d"), Graphics.TEXT_JUSTIFY_CENTER);
             }
 
@@ -198,7 +212,7 @@ class MainView extends WatchUi.View {
         } else {
             // Sin buddy: mostrar texto invitando a elegir
             dc.setColor(0x555555, Graphics.COLOR_TRANSPARENT);
-            dc.drawText(cx, spriteY + 30, Graphics.FONT_XTINY,
+            dc.drawText(cx, boxY + 30, Graphics.FONT_XTINY,
                 "?", Graphics.TEXT_JUSTIFY_CENTER);
             dc.setColor(0x888888, Graphics.COLOR_TRANSPARENT);
             dc.drawText(cx, nameY, Graphics.FONT_XTINY,
@@ -207,47 +221,46 @@ class MainView extends WatchUi.View {
 
         // (spawn bar removida — el info text ya muestra progreso)
 
-        // ── BUDDY EVOLUTION BAR + LEVEL INFO ─────────────
+        // ── BUDDY LEVEL BAR + STEPS INFO ──────────────
         if (!hasEncounter && hasBuddy) {
-            var buddyData = PokemonData.get(displayId);
-            var evoLevel = GameState.getBuddyEvoLevel();
-            var evoCost = BalanceConfig.getEffectiveEvolutionCost(buddyData[:evoCost]);
-            var caughtN = GameState.getCaughtCount(displayId);
             var currentLevel = GameState.getPokemonLevel(displayId);
+            var currentXP = GameState.getPokemonXP(displayId);
+            var buddyData2 = PokemonData.get(displayId);
+            var buddyTier2 = buddyData2[:tier];
+            var nextLevelXP = BalanceConfig.getXPForLevel(currentLevel + 1, buddyTier2);
+            var stepsToNext = nextLevelXP - currentXP;
+            if (stepsToNext < 0) { stepsToNext = 0; }
+            var levelXPBase = BalanceConfig.getXPForLevel(currentLevel, buddyTier2);
+            var xpInLevel = currentXP - levelXPBase;
+            var xpNeeded = nextLevelXP - levelXPBase;
+            var progress = 0;
+            if (xpNeeded > 0) { progress = (xpInLevel * 100) / xpNeeded; }
+            if (progress > 100) { progress = 100; }
+            if (currentLevel >= 100) { progress = 100; stepsToNext = 0; }
 
-            if (evoLevel > 0 || evoCost > 0) {
-                // Barra de evolución por nivel
-                if (evoLevel > 0) {
-                    var progress = GameState.getBuddyProgress();
-                    var barW = 100;
-                    var barX = cx - barW / 2;
-                    var fillW = (progress * barW) / 100;
-                    dc.setColor(0x151515, Graphics.COLOR_TRANSPARENT);
-                    dc.fillRoundedRectangle(barX, buddyBarY, barW, 5, 2);
-                    if (fillW > 0) {
-                        var evoColor = 0x44CCFF;
-                        if (progress > 75) { evoColor = 0x44FF44; }
-                        if (progress > 90) { evoColor = 0xFFCC00; }
-                        dc.setColor(evoColor, Graphics.COLOR_TRANSPARENT);
-                        dc.fillRoundedRectangle(barX, buddyBarY, fillW, 5, 2);
-                    }
-                }
-                // Texto: nivel → nivel evo + capturas
-                var infoTxt = "";
-                if (evoLevel > 0) {
-                    infoTxt = "Lv." + currentLevel.toString() + "/" + evoLevel.toString();
-                }
-                if (evoCost > 0) {
-                    if (infoTxt.length() > 0) { infoTxt = infoTxt + "  "; }
-                    infoTxt = infoTxt + caughtN.toString() + "/" + evoCost.toString() + "x";
-                }
-                dc.setColor(0x666666, Graphics.COLOR_TRANSPARENT);
+            // Barra de nivel
+            var barW = 100;
+            var barX = cx - barW / 2;
+            var fillW = (progress * barW) / 100;
+            dc.setColor(0x151515, Graphics.COLOR_TRANSPARENT);
+            dc.fillRoundedRectangle(barX, buddyBarY, barW, 5, 2);
+            if (fillW > 0) {
+                var barColor = 0x44CCFF;
+                if (progress > 75) { barColor = 0x44FF44; }
+                if (progress > 90) { barColor = 0xFFCC00; }
+                dc.setColor(barColor, Graphics.COLOR_TRANSPARENT);
+                dc.fillRoundedRectangle(barX, buddyBarY, fillW, 5, 2);
+            }
+
+            // Texto: pasos restantes para subir de nivel
+            dc.setColor(0x666666, Graphics.COLOR_TRANSPARENT);
+            if (currentLevel >= 100) {
                 dc.drawText(cx, buddyTxtY, Graphics.FONT_XTINY,
-                    infoTxt, Graphics.TEXT_JUSTIFY_CENTER);
+                    "Lv. MAX", Graphics.TEXT_JUSTIFY_CENTER);
             } else {
-                dc.setColor(0x555555, Graphics.COLOR_TRANSPARENT);
                 dc.drawText(cx, buddyTxtY, Graphics.FONT_XTINY,
-                    tr(Rez.Strings.BuddyMaxForm), Graphics.TEXT_JUSTIFY_CENTER);
+                    "Subir Lv: " + stepsToNext.toString() + " p.",
+                    Graphics.TEXT_JUSTIFY_CENTER);
             }
         } else if (!hasEncounter && !hasBuddy) {
             dc.setColor(0x555555, Graphics.COLOR_TRANSPARENT);
@@ -260,17 +273,23 @@ class MainView extends WatchUi.View {
             var isLegQuest = LegendaryQuestManager.isQuestLegendary(displayId);
             if (isLegQuest) {
                 dc.setColor(0x2A1A00, Graphics.COLOR_TRANSPARENT);
-                dc.fillRoundedRectangle(cx - 85, infoY - 2, 170, 24, 6);
+                dc.fillRoundedRectangle(cx - 85, infoY - 2, 170, 40, 6);
                 dc.setColor(0xFFAA00, Graphics.COLOR_TRANSPARENT);
                 dc.drawText(cx, infoY, Graphics.FONT_XTINY,
-                    tr(Rez.Strings.QuestLegendary) + " - " + tr(Rez.Strings.TapToEnter),
+                    tr(Rez.Strings.QuestLegendary),
+                    Graphics.TEXT_JUSTIFY_CENTER);
+                dc.drawText(cx, infoY + 18, Graphics.FONT_XTINY,
+                    tr(Rez.Strings.TapToEnter),
                     Graphics.TEXT_JUSTIFY_CENTER);
             } else {
                 dc.setColor(0x2A0808, Graphics.COLOR_TRANSPARENT);
-                dc.fillRoundedRectangle(cx - 85, infoY - 2, 170, 24, 6);
+                dc.fillRoundedRectangle(cx - 85, infoY - 2, 170, 40, 6);
                 dc.setColor(0xFF5555, Graphics.COLOR_TRANSPARENT);
                 dc.drawText(cx, infoY, Graphics.FONT_XTINY,
-                    tr(Rez.Strings.EncounterReady) + " - " + tr(Rez.Strings.TapToEnter),
+                    tr(Rez.Strings.EncounterReady),
+                    Graphics.TEXT_JUSTIFY_CENTER);
+                dc.drawText(cx, infoY + 18, Graphics.FONT_XTINY,
+                    tr(Rez.Strings.TapToEnter),
                     Graphics.TEXT_JUSTIFY_CENTER);
             }
         } else {
@@ -305,6 +324,32 @@ class MainView extends WatchUi.View {
             streak.toString() + tr(Rez.Strings.LabelStreakDays),
             Graphics.TEXT_JUSTIFY_CENTER);
     }
+
+    // ── Dibujar fondo estilo Game Boy (bitmap) ─────────────────
+    function drawGBBackground(dc as Graphics.Dc, w as Lang.Number, h as Lang.Number) as Void {
+        var now = Time.now();
+        var info = Time.Gregorian.info(now, Time.FORMAT_SHORT);
+        var hour = info.hour;
+
+        var bgRes = null;
+        if (hour >= 6 && hour < 10) {
+            bgRes = Rez.Drawables.bg_route_morning;
+        } else if (hour >= 10 && hour < 17) {
+            bgRes = Rez.Drawables.bg_route_day;
+        } else if (hour >= 17 && hour < 20) {
+            bgRes = Rez.Drawables.bg_route_sunset;
+        } else {
+            bgRes = Rez.Drawables.bg_route_night;
+        }
+
+        try {
+            var bg = WatchUi.loadResource(bgRes) as WatchUi.BitmapResource;
+            dc.drawBitmap(0, 0, bg);
+        } catch (e) {
+            // fallback: fondo negro si no se puede cargar
+        }
+    }
+
 }
 
 class MainDelegate extends WatchUi.BehaviorDelegate {
