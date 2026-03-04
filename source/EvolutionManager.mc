@@ -20,13 +20,39 @@ class EvolutionManager {
 
         if (caught < cost) { return 0; } // no suficientes capturas
 
-        // Eevee: evolución aleatoria entre 134, 135, 136
+        // Branching evolution (evoTo == -1)
         if (evoTo == -1) {
-            var opts = [134, 135, 136];
-            return opts[Math.rand() % 3];
+            return pickBranchEvolution(id);
         }
 
         return evoTo;
+    }
+
+    // Elige aleatoriamente una de las evoluciones posibles
+    // para Pokémon con múltiples ramas evolutivas.
+    static function pickBranchEvolution(id as Lang.Number) as Lang.Number {
+        if (id == 133) {
+            // Eevee → Vaporeon/Jolteon/Flareon/Espeon/Umbreon
+            var opts = [134, 135, 136, 196, 197];
+            return opts[Math.rand() % 5];
+        } else if (id == 44) {
+            // Gloom → Vileplume/Bellossom
+            var opts = [45, 182];
+            return opts[Math.rand() % 2];
+        } else if (id == 61) {
+            // Poliwhirl → Poliwrath/Politoed
+            var opts = [62, 186];
+            return opts[Math.rand() % 2];
+        } else if (id == 79) {
+            // Slowpoke → Slowbro/Slowking
+            var opts = [80, 199];
+            return opts[Math.rand() % 2];
+        } else if (id == 236) {
+            // Tyrogue → Hitmonlee/Hitmonchan/Hitmontop
+            var opts = [106, 107, 237];
+            return opts[Math.rand() % 3];
+        }
+        return 0; // fallback
     }
 
     static function getRequiredCount(id as Lang.Number) as Lang.Number {

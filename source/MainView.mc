@@ -12,6 +12,8 @@ import Toybox.Lang;
 import Toybox.Timer;
 import Toybox.Math;
 import Toybox.Time;
+import Toybox.System;
+import Toybox.Attention;
 
 class MainView extends WatchUi.View {
 
@@ -47,6 +49,18 @@ class MainView extends WatchUi.View {
         if (evo > 0) {
             _buddyEvolved = evo;
             _evoShowCount = 20; // mostrar por ~30s (20 ticks x 1.5s)
+            // Vibrar al evolucionar buddy
+            try {
+                if (Attention has :vibrate) {
+                    Attention.vibrate([
+                        new Attention.VibeProfile(50, 200),
+                        new Attention.VibeProfile(0, 100),
+                        new Attention.VibeProfile(80, 400),
+                        new Attention.VibeProfile(0, 100),
+                        new Attention.VibeProfile(80, 400)
+                    ]);
+                }
+            } catch (e) {}
         }
         if (_evoShowCount > 0) {
             _evoShowCount -= 1;
@@ -63,6 +77,11 @@ class MainView extends WatchUi.View {
         return WatchUi.loadResource(resourceId) as Lang.String;
     }
 
+    // Devuelve la hora local del sistema (0-23)
+    function getLocalHour() as Lang.Number {
+        return System.getClockTime().hour;
+    }
+
     function checkSpawn() as Void {
         if (GameState.currentEncounter != null) { return; }
 
@@ -72,6 +91,7 @@ class MainView extends WatchUi.View {
             GameState.currentEncounter = LegendaryQuestManager.spawnLegendary(legendaryId);
             GameState.registerSeen(legendaryId);
             GameState.save();
+            vibrateSpawn();
             WatchUi.requestUpdate();
             return;
         }
@@ -85,15 +105,27 @@ class MainView extends WatchUi.View {
                 GameState.registerSeen(encounter[:id]);
                 GameState.currentEncounter = encounter;
                 GameState.markSpawn();
+                vibrateSpawn();
                 WatchUi.requestUpdate();
             }
         }
     }
 
+    // Vibrar al aparecer un Pokémon
+    function vibrateSpawn() as Void {
+        try {
+            if (Attention has :vibrate) {
+                Attention.vibrate([
+                    new Attention.VibeProfile(50, 300),
+                    new Attention.VibeProfile(0, 100),
+                    new Attention.VibeProfile(50, 300)
+                ]);
+            }
+        } catch (e) {}
+    }
+
     function getTimeColors() as Lang.Array {
-        var now = Time.now();
-        var info = Time.Gregorian.info(now, Time.FORMAT_SHORT);
-        var hour = info.hour;
+        var hour = getLocalHour();
         if (hour >= 6 && hour < 10) {
             return [0x0F0A05, 0xFFAA44, 0x1A1008];
         } else if (hour >= 10 && hour < 17) {
@@ -144,7 +176,7 @@ class MainView extends WatchUi.View {
             tierColor = tierColors[displayTier];
         }
 
-        var titleY   = 20;
+        var titleY   = 5;
         var stepsY   = 50;
         // Box visual compacto (96x96), bitmap 120px centrado dentro
         var boxSize  = 96;
@@ -166,14 +198,43 @@ class MainView extends WatchUi.View {
         }
         if (hasEncounter) { spawnProgress = 100; }
 
-        // ── CABECERA ──────────────────────────────────────
+        // ── ARCO DE SPAWN PROGRESS ───────────────────────
+        if (spawnProgress > 0) {
+            dc.setPenWidth(3);
+            if (hasEncounter) {
+                dc.setColor(_alertBlink ? 0xFF4444 : 0xFF8888, Graphics.COLOR_TRANSPARENT);
+                dc.drawCircle(cx, w / 2, cx - 2);
+            } else {
+                dc.setColor(accentColor, Graphics.COLOR_TRANSPARENT);
+                if (spawnProgress >= 100) {
+                    dc.drawCircle(cx, w / 2, cx - 2);
+                } else {
+                    var endAngle = 90 - (spawnProgress * 360 / 100);
+                    dc.drawArc(cx, w / 2, cx - 2, Graphics.ARC_CLOCKWISE, 90, endAngle);
+                }
+            }
+            dc.setPenWidth(1);
+        }
+
+        // ── CABECERA: HORA + PASOS ────────────────────────
+        var clk = System.getClockTime();
+        var hr = clk.hour;
+        var is24h = System.getDeviceSettings().is24Hour;
+        if (!is24h) {
+            if (hr == 0) { hr = 12; }
+            else if (hr > 12) { hr -= 12; }
+        }
+        var timeStr = hr.format("%d") + ":" + clk.min.format("%02d");
         dc.setColor(0xFFCC00, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(cx, titleY, Graphics.FONT_XTINY,
-            "POKEWATCH", Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(cx, titleY, Graphics.FONT_SMALL,
+            timeStr, Graphics.TEXT_JUSTIFY_CENTER);
+        var stepsStr = steps.toString() + " " + tr(Rez.Strings.LabelSteps);
+        if (blocks >= BalanceConfig.getActivityBonusMinBlocks()) {
+            stepsStr = stepsStr + " ★";
+        }
         dc.setColor(0x777777, Graphics.COLOR_TRANSPARENT);
         dc.drawText(cx, stepsY, Graphics.FONT_XTINY,
-            steps.toString() + " " + tr(Rez.Strings.LabelSteps),
-            Graphics.TEXT_JUSTIFY_CENTER);
+            stepsStr, Graphics.TEXT_JUSTIFY_CENTER);
 
         // ── SPRITE centrado con recuadro gris ─────────────
 
@@ -256,10 +317,10 @@ class MainView extends WatchUi.View {
             dc.setColor(0x666666, Graphics.COLOR_TRANSPARENT);
             if (currentLevel >= 100) {
                 dc.drawText(cx, buddyTxtY, Graphics.FONT_XTINY,
-                    "Lv. MAX", Graphics.TEXT_JUSTIFY_CENTER);
+                    tr(Rez.Strings.LevelMax), Graphics.TEXT_JUSTIFY_CENTER);
             } else {
                 dc.drawText(cx, buddyTxtY, Graphics.FONT_XTINY,
-                    "Subir Lv: " + stepsToNext.toString() + " p.",
+                    tr(Rez.Strings.LevelUpPrefix) + stepsToNext.toString() + " p.",
                     Graphics.TEXT_JUSTIFY_CENTER);
             }
         } else if (!hasEncounter && !hasBuddy) {
@@ -309,27 +370,32 @@ class MainView extends WatchUi.View {
             }
         }
 
-        // ── PIE: DEX y RACHA ─────────────────────────────
+        // ── PIE: DEX, BATERÍA y RACHA ────────────────────
         dc.setColor(bgTint, Graphics.COLOR_TRANSPARENT);
         dc.fillRoundedRectangle(60, footY - 4, w - 120, 26, 8);
         dc.setColor(0xBBBBBB, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(cx - 50, footY, Graphics.FONT_XTINY,
-            unique.toString() + "/151", Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(cx - 70, footY, Graphics.FONT_XTINY,
+            unique.toString() + "/" + PokemonData.TOTAL_POKEMON.toString(), Graphics.TEXT_JUSTIFY_CENTER);
+        var batt = System.getSystemStats().battery.toNumber();
+        var battColor = 0x44CC44;
+        if (batt < 30) { battColor = 0xFF8800; }
+        if (batt < 15) { battColor = 0xFF4444; }
+        dc.setColor(battColor, Graphics.COLOR_TRANSPARENT);
+        dc.drawText(cx, footY, Graphics.FONT_XTINY,
+            batt.toString() + "%", Graphics.TEXT_JUSTIFY_CENTER);
         var streakColor = 0x888888;
         if (streak >= 3) { streakColor = 0xFF8800; }
         if (streak >= 7) { streakColor = 0xFF4400; }
         if (streak >= 14) { streakColor = 0xFF0000; }
         dc.setColor(streakColor, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(cx + 50, footY, Graphics.FONT_XTINY,
+        dc.drawText(cx + 80, footY, Graphics.FONT_XTINY,
             streak.toString() + tr(Rez.Strings.LabelStreakDays),
             Graphics.TEXT_JUSTIFY_CENTER);
     }
 
     // ── Dibujar fondo estilo Game Boy (bitmap) ─────────────────
     function drawGBBackground(dc as Graphics.Dc, w as Lang.Number, h as Lang.Number) as Void {
-        var now = Time.now();
-        var info = Time.Gregorian.info(now, Time.FORMAT_SHORT);
-        var hour = info.hour;
+        var hour = getLocalHour();
 
         var bgRes = null;
         if (hour >= 6 && hour < 10) {

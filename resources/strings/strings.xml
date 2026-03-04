@@ -50,7 +50,10 @@
   <string id="NewPokemon">NUEVO!</string>
   <string id="SelectBuddy">Elige un compañero</string>
   <string id="LabelDistance">~metros</string>
-  <string id="SelectBuddy">Compañero elegido!</string>
+  <string id="BuddySelected">Compañero elegido!</string>
   <string id="LabelBuddySteps">PASOS BUDDY</string>
   <string id="QuestLegendary">EVENTO LEGENDARIO</string>
+  <string id="LevelUpPrefix">Subir Lv: </string>
+  <string id="LevelMax">Lv. MAX</string>
+  <string id="BonusActive">BONUS</string>
 </strings>

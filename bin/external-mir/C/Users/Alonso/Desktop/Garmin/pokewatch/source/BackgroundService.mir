@@ -1,0 +1,42 @@
+[ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BackgroundService.mc"; @line = 6; @symbol_importdef<0> = [Toybox,6,7,13]; @symbol_importdef<1> = [Background,6,14,24]; ]
+import Toybox.Background;
+[ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BackgroundService.mc"; @line = 7; @symbol_importdef<0> = [Toybox,7,7,13]; @symbol_importdef<1> = [System,7,14,20]; ]
+import Toybox.System;
+[ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BackgroundService.mc"; @line = 8; @symbol_importdef<0> = [Toybox,8,7,13]; @symbol_importdef<1> = [Lang,8,14,18]; ]
+import Toybox.Lang;
+[ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BackgroundService.mc"; @line = 11; background = true; @symbol_classdef = [BackgroundServiceDelegate,11,6,31]; @symbol_extends<0> = [System,11,40,46]; @symbol_extends<1> = [ServiceDelegate,11,47,62]; ]
+class BackgroundServiceDelegate extends System.ServiceDelegate {
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BackgroundService.mc"; @line = 11; ]
+    <init> {
+    }
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BackgroundService.mc"; @line = 11; ]
+    static
+    <init> {
+    }
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BackgroundService.mc"; @line = 13; @symbol_functiondef = [initialize,13,13,23]; ]
+    function initialize() as Void {
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BackgroundService_mc_13_26_15_4_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BackgroundService.mc" 14 8 ]
+        symbol [ ServiceDelegate %tmp.2 14 8 23 ];
+        %tmp.2 = getv ? :ServiceDelegate;
+        symbol [ initialize %tmp.3 14 24 34 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BackgroundService_mc_13_26_15_4_stop:
+    }
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BackgroundService.mc"; @line = 17; @symbol_functiondef = [onTemporalEvent,17,13,28]; ]
+    function onTemporalEvent() as Void {
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BackgroundService_mc_17_39_22_4_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BackgroundService.mc" 21 8 ]
+        symbol [ Background %tmp.1 21 8 18 ];
+        %tmp.1 = getm $.Toybox.Background;
+        symbol [ exit %tmp.2 21 19 23 ];
+        %tmp.2 = getv function %tmp.1 :exit;
+        %tmp.3 = true;
+        invoke %tmp.1 %tmp.2(%tmp.3);
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BackgroundService_mc_17_39_22_4_stop:
+    }
+}
+[ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BackgroundService.mc"; @line = 6; ]
+<init> {
+}

@@ -1,643 +1,551 @@
 """
-Generate Game Boy Color-style pixel art backgrounds for PokeWatch.
-Creates backgrounds for: main route view, battle encounter view.
-Designed for 360x360 round AMOLED display.
-Very dark, subtle colors — just enough to see the scene on AMOLED.
-Output: RGB PNG with black outside the circle (no alpha transparency).
+Generate Game Boy Color-style backgrounds for PokeWatch.
+
+Draws proper pixel-art scenes from scratch using PIL:
+  - Route backgrounds (day/night/sunset/morning) with sky, trees, grass, path
+  - Battle background with terrain platform (like Pokémon Crystal)
+
+Designed for 390x390 round AMOLED display.
+Output: RGB PNG with black outside the circle.
 """
 from PIL import Image, ImageDraw
 import math
 import random
+import os
 
 W, H = 390, 390
 CX, CY = W // 2, H // 2
 RADIUS = W // 2
 
-# Pixel block size for Game Boy feel
-PX = 6  # each "pixel" is 6x6 real pixels
+# Pixel scale: each "game pixel" becomes SCALE real pixels
+SCALE = 3
 
-random.seed(42)  # deterministic output
+# Dimming factor for AMOLED readability
+DIM = 0.40
 
-# Dimming factor: multiply all scene colors by this (0.0-1.0)
-DIM = 0.45
-
-
-def dim(color):
-    """Reduce brightness for AMOLED."""
-    return tuple(max(0, min(255, int(c * DIM))) for c in color)
+random.seed(42)
 
 
-def fill_rect(draw, x, y, w, h, color):
-    """Fill a rectangle aligned to pixel grid."""
-    draw.rectangle([x, y, x + w - 1, y + h - 1], fill=color)
+# ── Color Palettes ─────────────────────────────────────────
+PALETTES = {
+    "day": {
+        "sky_top":      (104, 184, 248),
+        "sky_mid":      (144, 208, 248),
+        "sky_bottom":   (184, 224, 248),
+        "cloud":        (232, 240, 248),
+        "cloud_shadow": (168, 208, 240),
+        "tree_canopy":  (32, 128, 48),
+        "tree_canopy2": (48, 152, 56),
+        "tree_trunk":   (96, 72, 48),
+        "tree_trunk2":  (120, 88, 56),
+        "grass":        (72, 184, 64),
+        "grass2":       (56, 160, 48),
+        "grass_dark":   (40, 128, 32),
+        "tall_grass":   (48, 168, 40),
+        "path":         (200, 176, 128),
+        "path2":        (184, 160, 112),
+        "path_edge":    (160, 136, 96),
+        "hill":         (72, 144, 64),
+        "hill2":        (56, 120, 48),
+        "flowers":      (248, 200, 80),
+        "flowers2":     (248, 120, 96),
+        "water":        (80, 152, 240),
+    },
+    "night": {
+        "sky_top":      (8, 12, 32),
+        "sky_mid":      (12, 16, 40),
+        "sky_bottom":   (16, 24, 48),
+        "cloud":        (24, 32, 56),
+        "cloud_shadow": (16, 24, 44),
+        "tree_canopy":  (12, 40, 20),
+        "tree_canopy2": (16, 52, 24),
+        "tree_trunk":   (32, 24, 16),
+        "tree_trunk2":  (40, 32, 20),
+        "grass":        (20, 56, 20),
+        "grass2":       (16, 48, 16),
+        "grass_dark":   (12, 36, 12),
+        "tall_grass":   (16, 52, 16),
+        "path":         (56, 48, 36),
+        "path2":        (48, 40, 28),
+        "path_edge":    (40, 32, 24),
+        "hill":         (16, 44, 20),
+        "hill2":        (12, 36, 16),
+        "flowers":      (64, 56, 24),
+        "flowers2":     (64, 32, 28),
+        "water":        (16, 32, 72),
+        "star":         (200, 208, 240),
+        "star2":        (160, 168, 200),
+    },
+    "sunset": {
+        "sky_top":      (64, 32, 80),
+        "sky_mid":      (168, 72, 48),
+        "sky_bottom":   (240, 136, 56),
+        "cloud":        (248, 176, 104),
+        "cloud_shadow": (200, 120, 64),
+        "tree_canopy":  (48, 88, 32),
+        "tree_canopy2": (64, 104, 40),
+        "tree_trunk":   (80, 56, 32),
+        "tree_trunk2":  (96, 64, 40),
+        "grass":        (88, 128, 48),
+        "grass2":       (72, 112, 40),
+        "grass_dark":   (56, 88, 32),
+        "tall_grass":   (80, 120, 40),
+        "path":         (176, 136, 88),
+        "path2":        (160, 120, 72),
+        "path_edge":    (136, 100, 60),
+        "hill":         (64, 96, 40),
+        "hill2":        (48, 80, 32),
+        "flowers":      (200, 152, 56),
+        "flowers2":     (200, 96, 72),
+        "water":        (120, 96, 152),
+    },
+    "morning": {
+        "sky_top":      (160, 136, 200),
+        "sky_mid":      (192, 168, 224),
+        "sky_bottom":   (216, 200, 240),
+        "cloud":        (232, 224, 248),
+        "cloud_shadow": (200, 184, 224),
+        "tree_canopy":  (40, 120, 48),
+        "tree_canopy2": (56, 144, 56),
+        "tree_trunk":   (88, 64, 40),
+        "tree_trunk2":  (104, 80, 48),
+        "grass":        (80, 176, 72),
+        "grass2":       (64, 152, 56),
+        "grass_dark":   (48, 120, 40),
+        "tall_grass":   (72, 168, 56),
+        "path":         (192, 176, 136),
+        "path2":        (176, 156, 116),
+        "path_edge":    (152, 132, 100),
+        "hill":         (64, 136, 56),
+        "hill2":        (48, 112, 44),
+        "flowers":      (240, 192, 96),
+        "flowers2":     (240, 136, 112),
+        "water":        (120, 160, 224),
+    },
+}
+
+BATTLE_PAL = {
+    # Sky gradient (dusk/twilight feel like Pokémon Crystal wild battles)
+    "sky_top":       (16, 20, 48),
+    "sky_mid":       (32, 40, 72),
+    "sky_bottom":    (56, 64, 96),
+    "sky_glow":      (80, 72, 104),
+    # Distant mountains
+    "mountain":      (40, 48, 72),
+    "mountain2":     (48, 56, 80),
+    "mountain_snow": (72, 80, 104),
+    # Distant trees (horizon)
+    "far_tree":      (24, 56, 32),
+    "far_tree2":     (32, 64, 40),
+    # Ground terrain
+    "ground":        (88, 104, 64),
+    "ground2":       (72, 88, 52),
+    "ground_dark":   (56, 68, 40),
+    "ground_far":    (64, 80, 52),
+    # Details
+    "grass_tuft":    (64, 128, 48),
+    "grass_tuft2":   (48, 104, 36),
+    "grass_tuft3":   (80, 144, 56),
+    "rock":          (96, 92, 80),
+    "rock2":         (80, 76, 64),
+    "rock_hi":       (112, 108, 96),
+    "dust":          (120, 112, 88),
+}
 
 
-def circle_mask_solid(img):
-    """Apply circular mask — black outside circle, no transparency."""
-    # Create black background
+def dim_pixel(color, factor=DIM):
+    return tuple(max(0, min(255, int(c * factor))) for c in color)
+
+
+def circle_mask(img):
+    """Apply circular mask — black outside circle."""
     result = Image.new("RGB", (W, H), (0, 0, 0))
-    # Create circle mask
     mask = Image.new("L", (W, H), 0)
     d = ImageDraw.Draw(mask)
-    # Slightly smaller circle to avoid edge artifacts on round display
-    margin = 1
-    d.ellipse([margin, margin, W - 1 - margin, H - 1 - margin], fill=255)
-    # Paste scene through circle mask
+    d.ellipse([1, 1, W - 2, H - 2], fill=255)
     result.paste(img.convert("RGB"), mask=mask)
     return result
 
 
-def generate_route_day():
-    """Main view background - Route 1 style (day)."""
+def draw_pixel_rect(draw, x, y, w, h, color, scale=SCALE):
+    """Draw a scaled pixel rectangle."""
+    draw.rectangle(
+        [x * scale, y * scale, (x + w) * scale - 1, (y + h) * scale - 1],
+        fill=dim_pixel(color)
+    )
+
+
+def draw_cloud(draw, cx, cy, pal, scale=SCALE):
+    """Draw a simple pixel-art cloud."""
+    c = pal["cloud"]
+    cs = pal["cloud_shadow"]
+    # Main body (3 blobs merged)
+    draw_pixel_rect(draw, cx - 4, cy, 8, 2, c, scale)
+    draw_pixel_rect(draw, cx - 6, cy + 1, 12, 2, c, scale)
+    draw_pixel_rect(draw, cx - 5, cy + 2, 10, 1, cs, scale)
+    # Left bump
+    draw_pixel_rect(draw, cx - 5, cy - 1, 4, 2, c, scale)
+    # Right bump
+    draw_pixel_rect(draw, cx + 1, cy - 2, 5, 3, c, scale)
+    # Center bump
+    draw_pixel_rect(draw, cx - 2, cy - 2, 4, 2, c, scale)
+
+
+def draw_star(draw, x, y, color, scale=SCALE):
+    """Draw a tiny star (1 pixel)."""
+    draw_pixel_rect(draw, x, y, 1, 1, color, scale)
+
+
+def draw_tree(draw, tx, ty, pal, variant=0, scale=SCALE):
+    """Draw a pixel-art tree (canopy + trunk)."""
+    c1 = pal["tree_canopy"]
+    c2 = pal["tree_canopy2"]
+    t1 = pal["tree_trunk"]
+    t2 = pal["tree_trunk2"]
+
+    if variant == 0:
+        # Round leafy tree
+        draw_pixel_rect(draw, tx - 2, ty - 6, 5, 2, c1, scale)
+        draw_pixel_rect(draw, tx - 3, ty - 4, 7, 3, c1, scale)
+        draw_pixel_rect(draw, tx - 2, ty - 5, 3, 2, c2, scale)
+        draw_pixel_rect(draw, tx - 3, ty - 1, 7, 1, c2, scale)
+        # Trunk
+        draw_pixel_rect(draw, tx, ty, 1, 3, t1, scale)
+        draw_pixel_rect(draw, tx - 1, ty + 2, 1, 1, t2, scale)
+    elif variant == 1:
+        # Pine / conifer tree
+        draw_pixel_rect(draw, tx, ty - 7, 1, 1, c2, scale)
+        draw_pixel_rect(draw, tx - 1, ty - 6, 3, 1, c1, scale)
+        draw_pixel_rect(draw, tx - 2, ty - 5, 5, 1, c1, scale)
+        draw_pixel_rect(draw, tx - 1, ty - 4, 3, 1, c2, scale)
+        draw_pixel_rect(draw, tx - 3, ty - 3, 7, 1, c1, scale)
+        draw_pixel_rect(draw, tx - 2, ty - 2, 5, 1, c1, scale)
+        draw_pixel_rect(draw, tx - 4, ty - 1, 9, 2, c1, scale)
+        draw_pixel_rect(draw, tx - 3, ty, 7, 1, c2, scale)
+        # Trunk
+        draw_pixel_rect(draw, tx, ty + 1, 1, 2, t1, scale)
+    else:
+        # Bush / shrub
+        draw_pixel_rect(draw, tx - 2, ty - 3, 5, 1, c2, scale)
+        draw_pixel_rect(draw, tx - 3, ty - 2, 7, 2, c1, scale)
+        draw_pixel_rect(draw, tx - 2, ty - 1, 5, 1, c2, scale)
+        draw_pixel_rect(draw, tx - 3, ty, 7, 1, c1, scale)
+        # Trunk
+        draw_pixel_rect(draw, tx, ty + 1, 1, 1, t1, scale)
+
+
+def draw_grass_detail(draw, x, y, pal, scale=SCALE):
+    """Draw grass texture blades."""
+    gd = pal["grass_dark"]
+    tg = pal["tall_grass"]
+    draw_pixel_rect(draw, x, y, 1, 1, gd, scale)
+    if random.random() < 0.5:
+        draw_pixel_rect(draw, x, y - 1, 1, 1, tg, scale)
+
+
+def draw_flower(draw, x, y, pal, scale=SCALE):
+    """Draw a small flower dot."""
+    c = pal["flowers"] if random.random() > 0.5 else pal["flowers2"]
+    draw_pixel_rect(draw, x, y, 1, 1, c, scale)
+
+
+def generate_route(pal_name):
+    """Generate a route background with proper composition."""
+    pal = PALETTES[pal_name]
+    pw = W // SCALE  # pixel width in game pixels (~130)
+    ph = H // SCALE  # pixel height (~130)
+
     img = Image.new("RGB", (W, H), (0, 0, 0))
     draw = ImageDraw.Draw(img)
 
-    # === SKY (top portion) ===
-    for y in range(0, 140, PX):
-        t = y / 140.0
-        c = dim((8 + int(t * 12), 14 + int(t * 22), 35 + int(t * 40)))
-        fill_rect(draw, 0, y, W, PX, c)
+    # ── 1. Sky gradient (top ~35%) ─────────────────────────
+    sky_h = int(ph * 0.35)
+    for y in range(sky_h):
+        frac = y / max(1, sky_h - 1)
+        if frac < 0.5:
+            t = frac * 2
+            color = tuple(int(pal["sky_top"][i] * (1 - t) + pal["sky_mid"][i] * t) for i in range(3))
+        else:
+            t = (frac - 0.5) * 2
+            color = tuple(int(pal["sky_mid"][i] * (1 - t) + pal["sky_bottom"][i] * t) for i in range(3))
+        draw_pixel_rect(draw, 0, y, pw, 1, color)
 
-    # Clouds
-    cloud_color = dim((30, 38, 60))
-    cloud_hi = dim((38, 48, 72))
-    for cx_c, cy_c in [(80, 30), (92, 30), (104, 30), (86, 24), (98, 24)]:
-        fill_rect(draw, cx_c, cy_c, PX, PX, cloud_color)
-    for cx_c, cy_c in [(86, 18), (92, 18)]:
-        fill_rect(draw, cx_c, cy_c, PX, PX, cloud_hi)
-    for cx_c, cy_c in [(240, 42), (252, 42), (264, 42), (276, 42), (246, 36), (258, 36), (270, 36)]:
-        fill_rect(draw, cx_c, cy_c, PX, PX, cloud_color)
-    for cx_c, cy_c in [(252, 30), (258, 30), (264, 30)]:
-        fill_rect(draw, cx_c, cy_c, PX, PX, cloud_hi)
+    # Clouds or stars
+    if pal_name != "night":
+        draw_cloud(draw, 20, 8, pal)
+        draw_cloud(draw, 75, 5, pal)
+        draw_cloud(draw, 110, 12, pal)
+        draw_cloud(draw, 50, 18, pal)
+    else:
+        # Stars
+        star_positions = [
+            (10, 3), (25, 8), (45, 2), (60, 10), (80, 5),
+            (95, 12), (110, 4), (120, 9), (15, 15), (70, 7),
+            (35, 14), (100, 3), (55, 6), (88, 14), (42, 11),
+            (105, 8), (18, 6), (65, 13), (82, 2), (115, 11),
+        ]
+        for sx, sy in star_positions:
+            c = pal["star"] if random.random() > 0.4 else pal["star2"]
+            draw_star(draw, sx, sy, c)
 
-    # === DISTANT HILLS ===
-    hill_dark = dim((14, 38, 18))
-    hill_mid = dim((20, 48, 24))
-    for x in range(0, W, PX):
-        h_offset = int(math.sin(x * 0.02) * 12 + math.sin(x * 0.035) * 8)
-        hill_top = 130 + h_offset
-        for y in range(hill_top, 160, PX):
-            c = hill_dark if (x // PX + y // PX) % 3 == 0 else hill_mid
-            fill_rect(draw, x, y, PX, PX, c)
+    # ── 2. Distant hills (~28-42%) ─────────────────────────
+    hill_y = int(ph * 0.28)
+    hill_depth = 14
+    for x in range(pw):
+        phase1 = x * math.pi * 2 / pw
+        phase2 = x * math.pi * 4 / pw
+        hill_top = hill_y + int(4 * math.sin(phase1 + 0.8) + 2 * math.sin(phase2 + 2.1))
+        for y in range(hill_top, hill_y + hill_depth):
+            c = pal["hill"] if ((x + y) % 3 != 0) else pal["hill2"]
+            draw_pixel_rect(draw, x, y, 1, 1, c)
 
-    # === TREES ===
-    tree_positions = [
-        (30, 152), (66, 146), (96, 150),
-        (252, 148), (288, 144), (318, 152),
-        (132, 156), (210, 154),
+    # ── 3. Tree line (~38-50%) ─────────────────────────────
+    tree_base = int(ph * 0.42)
+    grass_start = int(ph * 0.48)
+
+    # Dense canopy fill behind trees — extends down to grass_start (no gap)
+    canopy_top = tree_base - 8
+    canopy_bot = grass_start
+    for y in range(canopy_top, canopy_bot):
+        for x in range(pw):
+            if y < tree_base - 4:
+                c = pal["tree_canopy"] if (x + y) % 2 == 0 else pal["tree_canopy2"]
+            else:
+                c = pal["tree_canopy2"] if (x + y) % 3 == 0 else pal["tree_canopy"]
+            draw_pixel_rect(draw, x, y, 1, 1, c)
+
+    # Individual trees on top of canopy
+    tree_positions = [5, 15, 22, 33, 42, 50, 58, 68, 78, 85, 95, 105, 115, 125]
+    for i, tx in enumerate(tree_positions):
+        if tx < pw:
+            draw_tree(draw, tx, tree_base - 2, pal, variant=i % 3)
+
+    # ── 4. Grass field + path (~48-85%) ────────────────────
+    grass_end = int(ph * 0.85)
+    path_center = pw // 2
+    path_half = 6  # half-width of path
+
+    for y in range(grass_start, grass_end):
+        # Slight path curve
+        curve = int(3 * math.sin((y - grass_start) * math.pi / 40))
+        pc = path_center + curve
+
+        for x in range(pw):
+            dist_from_path = abs(x - pc)
+            if dist_from_path <= path_half:
+                # Path
+                if dist_from_path >= path_half:
+                    c = pal["path_edge"]
+                elif (x + y) % 3 == 0:
+                    c = pal["path2"]
+                else:
+                    c = pal["path"]
+            else:
+                # Grass
+                if (x + y) % 4 == 0:
+                    c = pal["grass2"]
+                elif (x * 3 + y * 7) % 11 == 0:
+                    c = pal["grass_dark"]
+                else:
+                    c = pal["grass"]
+            draw_pixel_rect(draw, x, y, 1, 1, c)
+
+    # Grass details and flowers on the field
+    for y in range(grass_start + 2, grass_end, 4):
+        for x in range(0, pw, 5):
+            curve = int(3 * math.sin((y - grass_start) * math.pi / 40))
+            pc = path_center + curve
+            if abs(x - pc) > path_half + 2:
+                draw_grass_detail(draw, x + random.randint(-1, 1), y, pal)
+                if random.random() < 0.12:
+                    draw_flower(draw, x + random.randint(0, 2), y, pal)
+
+    # ── 5. Foreground (~85-100%) ───────────────────────────
+    fg_start = int(ph * 0.85)
+    for y in range(fg_start, ph):
+        curve = int(3 * math.sin((y - grass_start) * math.pi / 40))
+        pc = path_center + curve
+
+        for x in range(pw):
+            if abs(x - pc) <= path_half + 1:
+                dist_from_path = abs(x - pc)
+                if dist_from_path >= path_half:
+                    c = pal["path_edge"]
+                elif (x + y) % 3 == 0:
+                    c = pal["path2"]
+                else:
+                    c = pal["path"]
+            else:
+                if (x + y) % 3 == 0:
+                    c = pal["grass_dark"]
+                elif (x + y) % 5 == 0:
+                    c = pal["grass2"]
+                else:
+                    c = pal["grass"]
+            draw_pixel_rect(draw, x, y, 1, 1, c)
+
+    return circle_mask(img)
+
+
+def generate_battle():
+    """Generate a battle background like GBA Pokémon — landscape only,
+    no platforms. Sky, distant mountains, tree silhouettes, and natural
+    grassy terrain where Pokémon just stand on the ground."""
+    pal = BATTLE_PAL
+    pw = W // SCALE
+    ph = H // SCALE
+
+    img = Image.new("RGB", (W, H), (0, 0, 0))
+    draw = ImageDraw.Draw(img)
+
+    # ── 1. Atmospheric sky gradient (top ~42%) ─────────────
+    sky_end = int(ph * 0.42)
+    for y in range(sky_end):
+        frac = y / max(1, sky_end - 1)
+        if frac < 0.4:
+            t = frac / 0.4
+            color = tuple(int(pal["sky_top"][i] * (1 - t) + pal["sky_mid"][i] * t) for i in range(3))
+        elif frac < 0.8:
+            t = (frac - 0.4) / 0.4
+            color = tuple(int(pal["sky_mid"][i] * (1 - t) + pal["sky_bottom"][i] * t) for i in range(3))
+        else:
+            t = (frac - 0.8) / 0.2
+            color = tuple(int(pal["sky_bottom"][i] * (1 - t) + pal["sky_glow"][i] * t) for i in range(3))
+        draw_pixel_rect(draw, 0, y, pw, 1, color)
+
+    # ── 2. Distant mountains silhouette ────────────────────
+    mtn_base = int(ph * 0.32)
+    for x in range(pw):
+        # Peak 1: wide, left of center
+        p1x = pw * 0.3
+        p1h = 18
+        d1 = abs(x - p1x)
+        h1 = max(0, p1h - int(d1 * 0.45)) if d1 < p1h / 0.45 else 0
+        # Sub-peak on shoulder
+        sp1x = pw * 0.18
+        sp1h = 10
+        sd1 = abs(x - sp1x)
+        sh1 = max(0, sp1h - int(sd1 * 0.5)) if sd1 < sp1h / 0.5 else 0
+
+        # Peak 2: narrower, right of center
+        p2x = pw * 0.72
+        p2h = 14
+        d2 = abs(x - p2x)
+        h2 = max(0, p2h - int(d2 * 0.55)) if d2 < p2h / 0.55 else 0
+        # Sub-peak
+        sp2x = pw * 0.85
+        sp2h = 8
+        sd2 = abs(x - sp2x)
+        sh2 = max(0, sp2h - int(sd2 * 0.4)) if sd2 < sp2h / 0.4 else 0
+
+        peak = max(h1, h2, sh1, sh2)
+        for dy in range(peak):
+            y = mtn_base - dy
+            if 0 <= y < ph:
+                if dy > peak - 3 and peak > 10:
+                    c = pal["mountain_snow"]
+                elif (x + dy) % 3 == 0:
+                    c = pal["mountain2"]
+                else:
+                    c = pal["mountain"]
+                draw_pixel_rect(draw, x, y, 1, 1, c)
+
+    # ── 3. Distant tree line (horizon) ─────────────────────
+    tree_y = int(ph * 0.38)
+    ground_start = int(ph * 0.42)
+    for x in range(pw):
+        th = 3 + int(2 * math.sin(x * 0.8) + 1.5 * math.sin(x * 1.7 + 0.5))
+        th = max(2, min(6, th))
+        for dy in range(th):
+            y = tree_y - dy
+            if 0 <= y < ph:
+                c = pal["far_tree"] if (x + dy) % 2 == 0 else pal["far_tree2"]
+                draw_pixel_rect(draw, x, y, 1, 1, c)
+        # Fill down to ground_start to avoid gap
+        for dy in range(ground_start - tree_y):
+            c = pal["far_tree"] if (x + dy) % 3 == 0 else pal["far_tree2"]
+            draw_pixel_rect(draw, x, tree_y + dy, 1, 1, c)
+
+    # ── 4. Natural ground terrain ──────────────────────────
+    for y in range(ground_start, ph):
+        depth_frac = (y - ground_start) / max(1, ph - ground_start - 1)
+        for x in range(pw):
+            if depth_frac < 0.15:
+                c = pal["ground_far"]
+            elif (x + y) % 5 == 0:
+                c = pal["ground_dark"]
+            elif (x * 3 + y * 7) % 11 == 0:
+                c = pal["ground2"]
+            else:
+                c = pal["ground"]
+            bright = 0.85 + 0.15 * depth_frac
+            c = tuple(min(255, int(ci * bright)) for ci in c)
+            draw_pixel_rect(draw, x, y, 1, 1, c)
+
+    # Scattered rocks on the ground
+    rock_positions = [
+        (12, ground_start + 8), (28, ground_start + 14),
+        (95, ground_start + 10), (108, ground_start + 20),
+        (45, ground_start + 25), (75, ground_start + 18),
+        (18, ground_start + 35), (115, ground_start + 30),
+        (55, ground_start + 40), (88, ground_start + 45),
     ]
-    trunk_color = dim((40, 26, 12))
-    leaf_dark = dim((18, 48, 22))
-    leaf_mid = dim((28, 64, 30))
-    leaf_hi = dim((36, 76, 38))
+    for rx, ry in rock_positions:
+        if rx < pw and ry < ph:
+            draw_pixel_rect(draw, rx, ry, 2, 1, pal["rock"])
+            draw_pixel_rect(draw, rx, ry - 1, 2, 1, pal["rock_hi"])
+            draw_pixel_rect(draw, rx + 1, ry + 1, 1, 1, pal["rock2"])
 
-    for tx, ty in tree_positions:
-        fill_rect(draw, tx + PX, ty + PX * 3, PX, PX * 2, trunk_color)
-        fill_rect(draw, tx + PX * 2, ty + PX * 3, PX, PX * 2, trunk_color)
-        fill_rect(draw, tx, ty + PX * 2, PX * 4, PX, leaf_dark)
-        fill_rect(draw, tx - PX, ty + PX, PX * 5, PX, leaf_mid)
-        fill_rect(draw, tx, ty, PX * 4, PX, leaf_mid)
-        fill_rect(draw, tx + PX, ty - PX, PX * 2, PX, leaf_hi)
-
-    # === GRASS FIELD ===
-    ground_top = 168
-    grass_dark = dim((14, 40, 16))
-    grass_mid = dim((20, 52, 22))
-    grass_light = dim((26, 62, 28))
-    grass_hi = dim((32, 72, 34))
-
-    for y in range(ground_top, H, PX):
-        for x in range(0, W, PX):
-            noise = random.random()
-            if noise < 0.1:
-                c = grass_hi
-            elif noise < 0.3:
-                c = grass_light
-            elif noise < 0.6:
-                c = grass_mid
-            else:
-                c = grass_dark
-            fill_rect(draw, x, y, PX, PX, c)
-
-    # === PATH ===
-    path_w = 48
-    path_dark = dim((32, 26, 16))
-    path_mid = dim((42, 34, 22))
-    path_light = dim((52, 42, 28))
-    path_edge = dim((22, 38, 20))
-
-    for y in range(ground_top - PX * 2, H, PX):
-        t = (y - ground_top) / max(1, (H - ground_top))
-        pw = int(path_w + t * 30)
-        px_start = CX - pw // 2
-        px_end = CX + pw // 2
-        for x in range(px_start, px_end, PX):
-            dist_from_center = abs(x - CX)
-            if dist_from_center > pw // 2 - PX:
-                c = path_edge
-            elif (x // PX + y // PX) % 4 == 0:
-                c = path_light
-            elif (x // PX + y // PX) % 3 == 0:
-                c = path_mid
-            else:
-                c = path_dark
-            fill_rect(draw, x, y, PX, PX, c)
-
-    # === TALL GRASS ===
-    tall_grass_color = dim((28, 70, 30))
-    tall_grass_tip = dim((38, 82, 38))
-    grass_positions = []
-    for _ in range(30):
-        gx = random.randint(30, W - 40)
-        gy = random.randint(ground_top + 20, H - 30)
-        t = (gy - ground_top) / max(1, (H - ground_top))
-        pw = int(path_w + t * 30)
-        if abs(gx - CX) > pw // 2 + PX:
-            grass_positions.append((gx, gy))
-    for gx, gy in grass_positions:
-        fill_rect(draw, gx, gy, PX, PX * 2, tall_grass_color)
-        fill_rect(draw, gx, gy - PX, PX, PX, tall_grass_tip)
-
-    # === FLOWERS ===
-    flower_colors = [dim((60, 30, 30)), dim((30, 30, 60)), dim((60, 60, 20))]
-    for _ in range(8):
-        fx = random.randint(40, W - 50)
-        fy = random.randint(ground_top + 30, H - 40)
-        t = (fy - ground_top) / max(1, (H - ground_top))
-        pw = int(path_w + t * 30)
-        if abs(fx - CX) > pw // 2 + PX * 2:
-            fc = random.choice(flower_colors)
-            fill_rect(draw, fx, fy, PX, PX, fc)
-
-    return circle_mask_solid(img)
-
-
-def generate_route_night():
-    """Main view background - Route 1 style (night)."""
-    img = Image.new("RGB", (W, H), (0, 0, 0))
-    draw = ImageDraw.Draw(img)
-
-    # === NIGHT SKY ===
-    for y in range(0, 140, PX):
-        t = y / 140.0
-        c = dim((3 + int(t * 5), 3 + int(t * 8), 12 + int(t * 22)))
-        fill_rect(draw, 0, y, W, PX, c)
-
-    # Stars
-    star_color = dim((60, 60, 90))
-    star_bright = dim((90, 90, 130))
-    star_positions = [(55, 18), (110, 10), (160, 28), (210, 14), (265, 22),
-                      (300, 12), (90, 44), (190, 40), (280, 48), (140, 54)]
-    for sx, sy in star_positions:
-        c = star_bright if random.random() > 0.5 else star_color
-        fill_rect(draw, sx, sy, 3, 3, c)
-
-    # Moon
-    fill_rect(draw, 275, 24, PX * 2, PX * 2, dim((50, 50, 70)))
-    fill_rect(draw, 281, 24, PX, PX, dim((70, 70, 90)))
-
-    # === HILLS ===
-    hill_dark = dim((6, 18, 10))
-    hill_mid = dim((10, 24, 14))
-    for x in range(0, W, PX):
-        h_offset = int(math.sin(x * 0.02) * 12 + math.sin(x * 0.035) * 8)
-        hill_top = 130 + h_offset
-        for y in range(hill_top, 160, PX):
-            c = hill_dark if (x // PX + y // PX) % 3 == 0 else hill_mid
-            fill_rect(draw, x, y, PX, PX, c)
-
-    # === TREES ===
-    tree_positions = [
-        (30, 152), (66, 146), (96, 150),
-        (252, 148), (288, 144), (318, 152),
-        (132, 156), (210, 154),
+    # Grass tufts scattered across terrain
+    tuft_positions = [
+        (8, ground_start + 5), (22, ground_start + 12),
+        (40, ground_start + 6), (62, ground_start + 15),
+        (80, ground_start + 8), (100, ground_start + 22),
+        (35, ground_start + 30), (70, ground_start + 35),
+        (110, ground_start + 12), (50, ground_start + 20),
+        (15, ground_start + 28), (90, ground_start + 38),
+        (25, ground_start + 42), (105, ground_start + 48),
+        (60, ground_start + 50), (42, ground_start + 55),
     ]
-    trunk_color = dim((22, 14, 6))
-    leaf_dark = dim((8, 26, 10))
-    leaf_mid = dim((14, 36, 16))
-    leaf_hi = dim((20, 44, 22))
+    for tx, ty in tuft_positions:
+        if tx < pw and ty < ph:
+            c = [pal["grass_tuft"], pal["grass_tuft2"], pal["grass_tuft3"]][
+                (tx + ty) % 3]
+            draw_pixel_rect(draw, tx, ty, 1, 1, c)
+            draw_pixel_rect(draw, tx + 1, ty - 1, 1, 1, c)
+            if (tx + ty) % 2 == 0:
+                draw_pixel_rect(draw, tx - 1, ty, 1, 1, pal["grass_tuft2"])
 
-    for tx, ty in tree_positions:
-        fill_rect(draw, tx + PX, ty + PX * 3, PX, PX * 2, trunk_color)
-        fill_rect(draw, tx + PX * 2, ty + PX * 3, PX, PX * 2, trunk_color)
-        fill_rect(draw, tx, ty + PX * 2, PX * 4, PX, leaf_dark)
-        fill_rect(draw, tx - PX, ty + PX, PX * 5, PX, leaf_mid)
-        fill_rect(draw, tx, ty, PX * 4, PX, leaf_mid)
-        fill_rect(draw, tx + PX, ty - PX, PX * 2, PX, leaf_hi)
-
-    # === GRASS FIELD ===
-    ground_top = 168
-    grass_dark = dim((6, 20, 8))
-    grass_mid = dim((10, 28, 12))
-    grass_light = dim((14, 36, 16))
-    grass_hi = dim((18, 42, 20))
-
-    random.seed(42)
-    for y in range(ground_top, H, PX):
-        for x in range(0, W, PX):
-            noise = random.random()
-            if noise < 0.1:
-                c = grass_hi
-            elif noise < 0.3:
-                c = grass_light
-            elif noise < 0.6:
-                c = grass_mid
-            else:
-                c = grass_dark
-            fill_rect(draw, x, y, PX, PX, c)
-
-    # === PATH ===
-    path_w = 48
-    path_dark = dim((18, 14, 8))
-    path_mid = dim((24, 18, 10))
-    path_light = dim((30, 22, 14))
-    path_edge = dim((12, 20, 10))
-
-    for y in range(ground_top - PX * 2, H, PX):
-        t = (y - ground_top) / max(1, (H - ground_top))
-        pw = int(path_w + t * 30)
-        px_start = CX - pw // 2
-        px_end = CX + pw // 2
-        for x in range(px_start, px_end, PX):
-            dist_from_center = abs(x - CX)
-            if dist_from_center > pw // 2 - PX:
-                c = path_edge
-            elif (x // PX + y // PX) % 4 == 0:
-                c = path_light
-            elif (x // PX + y // PX) % 3 == 0:
-                c = path_mid
-            else:
-                c = path_dark
-            fill_rect(draw, x, y, PX, PX, c)
-
-    # Tall grass
-    tall_grass = dim((16, 40, 18))
-    tall_tip = dim((22, 48, 24))
-    random.seed(55)
-    for _ in range(20):
-        gx = random.randint(30, W - 40)
-        gy = random.randint(ground_top + 20, H - 30)
-        t = (gy - ground_top) / max(1, (H - ground_top))
-        pw = int(path_w + t * 30)
-        if abs(gx - CX) > pw // 2 + PX:
-            fill_rect(draw, gx, gy, PX, PX * 2, tall_grass)
-            fill_rect(draw, gx, gy - PX, PX, PX, tall_tip)
-
-    return circle_mask_solid(img)
-
-
-def generate_route_sunset():
-    """Main view background - Route 1 style (sunset)."""
-    img = Image.new("RGB", (W, H), (0, 0, 0))
-    draw = ImageDraw.Draw(img)
-
-    # === SUNSET SKY ===
-    for y in range(0, 140, PX):
-        t = y / 140.0
-        c = dim((18 + int(t * 28), 6 + int(t * 14), 8 + int(t * 16)))
-        fill_rect(draw, 0, y, W, PX, c)
-
-    # Sun glow
-    sun_colors = [dim((60, 36, 14)), dim((50, 28, 10)), dim((40, 22, 8))]
-    for i, sc in enumerate(sun_colors):
-        radius = (3 - i) * PX
-        sx, sy = 280, 60
-        for dy in range(-radius, radius + 1, PX):
-            for dx in range(-radius, radius + 1, PX):
-                if dx * dx + dy * dy <= radius * radius:
-                    fill_rect(draw, sx + dx, sy + dy, PX, PX, sc)
-
-    # Clouds
-    cloud_color = dim((44, 26, 20))
-    cloud_hi = dim((52, 32, 24))
-    for cx_c, cy_c in [(60, 40), (72, 40), (84, 40), (66, 34), (78, 34)]:
-        fill_rect(draw, cx_c, cy_c, PX, PX, cloud_color)
-    for cx_c, cy_c in [(180, 50), (192, 50), (204, 50), (216, 50), (186, 44), (198, 44)]:
-        fill_rect(draw, cx_c, cy_c, PX, PX, cloud_hi)
-
-    # === HILLS ===
-    hill_dark = dim((16, 26, 12))
-    hill_mid = dim((22, 32, 16))
-    for x in range(0, W, PX):
-        h_offset = int(math.sin(x * 0.02) * 12 + math.sin(x * 0.035) * 8)
-        hill_top = 130 + h_offset
-        for y in range(hill_top, 160, PX):
-            c = hill_dark if (x // PX + y // PX) % 3 == 0 else hill_mid
-            fill_rect(draw, x, y, PX, PX, c)
-
-    # === TREES ===
-    tree_positions = [
-        (30, 152), (66, 146), (96, 150),
-        (252, 148), (288, 144), (318, 152),
-        (132, 156), (210, 154),
+    # ── 5. Dust particles (subtle atmosphere) ──────────────
+    dust_spots = [
+        (10, ground_start + 3), (30, ground_start + 9),
+        (85, ground_start + 5), (120, ground_start + 16),
+        (50, ground_start + 28), (70, ground_start + 12),
     ]
-    trunk_color = dim((34, 20, 8))
-    leaf_dark = dim((18, 38, 14))
-    leaf_mid = dim((26, 48, 20))
-    leaf_hi = dim((32, 56, 26))
+    for dx, dy in dust_spots:
+        if dx < pw and dy < ph:
+            draw_pixel_rect(draw, dx, dy, 1, 1, pal["dust"])
 
-    for tx, ty in tree_positions:
-        fill_rect(draw, tx + PX, ty + PX * 3, PX, PX * 2, trunk_color)
-        fill_rect(draw, tx + PX * 2, ty + PX * 3, PX, PX * 2, trunk_color)
-        fill_rect(draw, tx, ty + PX * 2, PX * 4, PX, leaf_dark)
-        fill_rect(draw, tx - PX, ty + PX, PX * 5, PX, leaf_mid)
-        fill_rect(draw, tx, ty, PX * 4, PX, leaf_mid)
-        fill_rect(draw, tx + PX, ty - PX, PX * 2, PX, leaf_hi)
-
-    # === GRASS FIELD ===
-    ground_top = 168
-    grass_dark = dim((14, 32, 12))
-    grass_mid = dim((20, 42, 18))
-    grass_light = dim((26, 52, 22))
-    grass_hi = dim((32, 60, 26))
-
-    random.seed(42)
-    for y in range(ground_top, H, PX):
-        for x in range(0, W, PX):
-            noise = random.random()
-            if noise < 0.1:
-                c = grass_hi
-            elif noise < 0.3:
-                c = grass_light
-            elif noise < 0.6:
-                c = grass_mid
-            else:
-                c = grass_dark
-            fill_rect(draw, x, y, PX, PX, c)
-
-    # === PATH ===
-    path_w = 48
-    path_dark = dim((28, 20, 12))
-    path_mid = dim((38, 26, 16))
-    path_light = dim((48, 34, 20))
-    path_edge = dim((20, 32, 16))
-
-    for y in range(ground_top - PX * 2, H, PX):
-        t = (y - ground_top) / max(1, (H - ground_top))
-        pw = int(path_w + t * 30)
-        px_start = CX - pw // 2
-        px_end = CX + pw // 2
-        for x in range(px_start, px_end, PX):
-            dist_from_center = abs(x - CX)
-            if dist_from_center > pw // 2 - PX:
-                c = path_edge
-            elif (x // PX + y // PX) % 4 == 0:
-                c = path_light
-            elif (x // PX + y // PX) % 3 == 0:
-                c = path_mid
-            else:
-                c = path_dark
-            fill_rect(draw, x, y, PX, PX, c)
-
-    # Tall grass
-    tall_grass = dim((28, 60, 24))
-    tall_tip = dim((36, 70, 30))
-    random.seed(55)
-    for _ in range(20):
-        gx = random.randint(30, W - 40)
-        gy = random.randint(ground_top + 20, H - 30)
-        t = (gy - ground_top) / max(1, (H - ground_top))
-        pw = int(path_w + t * 30)
-        if abs(gx - CX) > pw // 2 + PX:
-            fill_rect(draw, gx, gy, PX, PX * 2, tall_grass)
-            fill_rect(draw, gx, gy - PX, PX, PX, tall_tip)
-
-    return circle_mask_solid(img)
-
-
-def generate_battle_bg():
-    """Encounter/battle background - classic Pokemon battle field."""
-    img = Image.new("RGB", (W, H), (0, 0, 0))
-    draw = ImageDraw.Draw(img)
-
-    # === DARK GRADIENT SKY ===
-    for y in range(0, 100, PX):
-        t = y / 100.0
-        c = dim((4 + int(t * 8), 6 + int(t * 10), 14 + int(t * 20)))
-        fill_rect(draw, 0, y, W, PX, c)
-
-    # === BATTLE ARENA GROUND ===
-    ground_top = 240
-    ground_dark = dim((18, 24, 14))
-    ground_mid = dim((24, 32, 20))
-    ground_light = dim((32, 40, 24))
-
-    random.seed(77)
-    for y in range(ground_top, H, PX):
-        for x in range(0, W, PX):
-            noise = random.random()
-            if noise < 0.15:
-                c = ground_light
-            elif noise < 0.4:
-                c = ground_mid
-            else:
-                c = ground_dark
-            fill_rect(draw, x, y, PX, PX, c)
-
-    # === BATTLE PLATFORM ===
-    plat_y = ground_top - 12
-    plat_w = 160
-    plat_x = CX - plat_w // 2
-
-    shadow_color = dim((14, 18, 10))
-    fill_rect(draw, plat_x + PX, plat_y + PX * 2, plat_w - PX * 2, PX, shadow_color)
-    plat_top = dim((30, 38, 22))
-    plat_mid = dim((24, 32, 20))
-    plat_edge = dim((18, 26, 16))
-    fill_rect(draw, plat_x, plat_y, plat_w, PX * 2, plat_mid)
-    fill_rect(draw, plat_x + PX, plat_y - PX, plat_w - PX * 2, PX, plat_top)
-    fill_rect(draw, plat_x, plat_y, PX, PX * 2, plat_edge)
-    fill_rect(draw, plat_x + plat_w - PX, plat_y, PX, PX * 2, plat_edge)
-    for x in range(plat_x + PX, plat_x + plat_w - PX, PX * 2):
-        fill_rect(draw, x, plat_y, PX, PX, plat_top)
-
-    # === GRASS around arena ===
-    tg_dark = dim((12, 38, 16))
-    tg_mid = dim((18, 50, 22))
-    tg_hi = dim((24, 58, 28))
-
-    random.seed(88)
-    for _ in range(12):
-        gx = random.randint(30, plat_x - 20)
-        gy = random.randint(ground_top - 20, H - 30)
-        fill_rect(draw, gx, gy, PX, PX * 2, tg_mid)
-        fill_rect(draw, gx, gy - PX, PX, PX, tg_hi)
-    for _ in range(12):
-        gx = random.randint(plat_x + plat_w + 10, W - 40)
-        gy = random.randint(ground_top - 20, H - 30)
-        fill_rect(draw, gx, gy, PX, PX * 2, tg_mid)
-        fill_rect(draw, gx, gy - PX, PX, PX, tg_hi)
-
-    # === ROCKS ===
-    rock_dark = dim((22, 22, 22))
-    rock_mid = dim((30, 30, 30))
-    rock_hi = dim((38, 38, 38))
-    fill_rect(draw, 40, ground_top + 12, PX * 3, PX * 2, rock_dark)
-    fill_rect(draw, 40 + PX, ground_top + 6, PX * 2, PX, rock_mid)
-    fill_rect(draw, W - 55, ground_top + 24, PX * 3, PX * 2, rock_dark)
-    fill_rect(draw, W - 55 + PX, ground_top + 18, PX * 2, PX, rock_mid)
-    fill_rect(draw, 90, ground_top + 40, PX * 2, PX, rock_dark)
-
-    # === BUSHES ===
-    bush_dark = dim((10, 28, 14))
-    bush_mid = dim((16, 38, 20))
-    bush_hi = dim((22, 46, 26))
-    fill_rect(draw, 10, ground_top - 18, PX * 4, PX * 3, bush_dark)
-    fill_rect(draw, 10 + PX, ground_top - 24, PX * 3, PX, bush_mid)
-    fill_rect(draw, W - PX * 5, ground_top - 18, PX * 4, PX * 3, bush_dark)
-    fill_rect(draw, W - PX * 4, ground_top - 24, PX * 3, PX, bush_mid)
-
-    # Horizon line
-    line_color = dim((28, 36, 22))
-    fill_rect(draw, 50, ground_top - 2, W - 100, 2, line_color)
-
-    return circle_mask_solid(img)
-
-
-def generate_morning_route():
-    """Main view background - Route 1 style (morning)."""
-    img = Image.new("RGB", (W, H), (0, 0, 0))
-    draw = ImageDraw.Draw(img)
-
-    # === MORNING SKY ===
-    for y in range(0, 140, PX):
-        t = y / 140.0
-        c = dim((10 + int(t * 18), 10 + int(t * 16), 20 + int(t * 32)))
-        fill_rect(draw, 0, y, W, PX, c)
-
-    # Morning sun
-    fill_rect(draw, 70, 70, PX * 2, PX * 2, dim((50, 40, 16)))
-    fill_rect(draw, 76, 70, PX, PX, dim((62, 48, 22)))
-    # Sun rays
-    ray_color = dim((34, 28, 14))
-    for rx, ry in [(56, 76), (92, 64), (82, 58)]:
-        fill_rect(draw, rx, ry, PX, PX, ray_color)
-
-    # Clouds
-    cloud_color = dim((28, 30, 48))
-    for cx_c, cy_c in [(180, 30), (192, 30), (204, 30), (186, 24), (198, 24)]:
-        fill_rect(draw, cx_c, cy_c, PX, PX, cloud_color)
-    for cx_c, cy_c in [(280, 46), (292, 46), (304, 46), (286, 40)]:
-        fill_rect(draw, cx_c, cy_c, PX, PX, cloud_color)
-
-    # === HILLS ===
-    hill_dark = dim((12, 30, 14))
-    hill_mid = dim((18, 38, 20))
-    for x in range(0, W, PX):
-        h_offset = int(math.sin(x * 0.02) * 12 + math.sin(x * 0.035) * 8)
-        hill_top = 130 + h_offset
-        for y in range(hill_top, 160, PX):
-            c = hill_dark if (x // PX + y // PX) % 3 == 0 else hill_mid
-            fill_rect(draw, x, y, PX, PX, c)
-
-    # === TREES ===
-    tree_positions = [
-        (30, 152), (66, 146), (96, 150),
-        (252, 148), (288, 144), (318, 152),
-        (132, 156), (210, 154),
-    ]
-    trunk_color = dim((36, 22, 8))
-    leaf_dark = dim((14, 42, 16))
-    leaf_mid = dim((22, 56, 24))
-    leaf_hi = dim((30, 68, 32))
-
-    for tx, ty in tree_positions:
-        fill_rect(draw, tx + PX, ty + PX * 3, PX, PX * 2, trunk_color)
-        fill_rect(draw, tx + PX * 2, ty + PX * 3, PX, PX * 2, trunk_color)
-        fill_rect(draw, tx, ty + PX * 2, PX * 4, PX, leaf_dark)
-        fill_rect(draw, tx - PX, ty + PX, PX * 5, PX, leaf_mid)
-        fill_rect(draw, tx, ty, PX * 4, PX, leaf_mid)
-        fill_rect(draw, tx + PX, ty - PX, PX * 2, PX, leaf_hi)
-
-    # === GRASS FIELD ===
-    ground_top = 168
-    grass_dark = dim((12, 36, 14))
-    grass_mid = dim((18, 48, 20))
-    grass_light = dim((24, 58, 26))
-    grass_hi = dim((28, 66, 30))
-
-    random.seed(42)
-    for y in range(ground_top, H, PX):
-        for x in range(0, W, PX):
-            noise = random.random()
-            if noise < 0.1:
-                c = grass_hi
-            elif noise < 0.3:
-                c = grass_light
-            elif noise < 0.6:
-                c = grass_mid
-            else:
-                c = grass_dark
-            fill_rect(draw, x, y, PX, PX, c)
-
-    # === PATH ===
-    path_w = 48
-    path_dark = dim((28, 22, 12))
-    path_mid = dim((38, 28, 16))
-    path_light = dim((46, 36, 22))
-    path_edge = dim((20, 34, 18))
-
-    for y in range(ground_top - PX * 2, H, PX):
-        t = (y - ground_top) / max(1, (H - ground_top))
-        pw = int(path_w + t * 30)
-        px_start = CX - pw // 2
-        px_end = CX + pw // 2
-        for x in range(px_start, px_end, PX):
-            dist_from_center = abs(x - CX)
-            if dist_from_center > pw // 2 - PX:
-                c = path_edge
-            elif (x // PX + y // PX) % 4 == 0:
-                c = path_light
-            elif (x // PX + y // PX) % 3 == 0:
-                c = path_mid
-            else:
-                c = path_dark
-            fill_rect(draw, x, y, PX, PX, c)
-
-    # Tall grass
-    tall_grass = dim((24, 62, 26))
-    tall_tip = dim((32, 72, 34))
-    random.seed(55)
-    for _ in range(20):
-        gx = random.randint(30, W - 40)
-        gy = random.randint(ground_top + 20, H - 30)
-        t = (gy - ground_top) / max(1, (H - ground_top))
-        pw = int(path_w + t * 30)
-        if abs(gx - CX) > pw // 2 + PX:
-            fill_rect(draw, gx, gy, PX, PX * 2, tall_grass)
-            fill_rect(draw, gx, gy - PX, PX, PX, tall_tip)
-
-    # Flowers
-    flower_colors = [dim((56, 34, 24)), dim((48, 24, 42)), dim((56, 56, 20))]
-    random.seed(99)
-    for _ in range(8):
-        fx = random.randint(40, W - 50)
-        fy = random.randint(ground_top + 30, H - 40)
-        t = (fy - ground_top) / max(1, (H - ground_top))
-        pw = int(path_w + t * 30)
-        if abs(fx - CX) > pw // 2 + PX * 2:
-            fc = random.choice(flower_colors)
-            fill_rect(draw, fx, fy, PX, PX, fc)
-
-    return circle_mask_solid(img)
+    return circle_mask(img)
 
 
 if __name__ == "__main__":
     out_dir = "resources/drawables"
+    os.makedirs(out_dir, exist_ok=True)
 
     print("Generating bg_route_day.png...")
-    generate_route_day().save(f"{out_dir}/bg_route_day.png")
+    generate_route("day").save(f"{out_dir}/bg_route_day.png")
 
     print("Generating bg_route_night.png...")
-    generate_route_night().save(f"{out_dir}/bg_route_night.png")
+    generate_route("night").save(f"{out_dir}/bg_route_night.png")
 
     print("Generating bg_route_sunset.png...")
-    generate_route_sunset().save(f"{out_dir}/bg_route_sunset.png")
+    generate_route("sunset").save(f"{out_dir}/bg_route_sunset.png")
 
     print("Generating bg_route_morning.png...")
-    generate_morning_route().save(f"{out_dir}/bg_route_morning.png")
+    generate_route("morning").save(f"{out_dir}/bg_route_morning.png")
 
     print("Generating bg_battle.png...")
-    generate_battle_bg().save(f"{out_dir}/bg_battle.png")
+    generate_battle().save(f"{out_dir}/bg_battle.png")
 
-    print("Done! Generated 5 background images.")
+    print("Done! Generated 5 pixel-art backgrounds.")

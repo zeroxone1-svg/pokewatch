@@ -72,20 +72,35 @@ class SpawnEngine {
 
         // Construir set de Pokemon que son resultado de evolución
         var evoTargets = {};
-        for (var j = 1; j <= 151; j++) {
+        for (var j = 1; j <= PokemonData.TOTAL_POKEMON; j++) {
             var d = PokemonData.get(j);
             var target = d[:evoTo];
             if (target > 0) {
                 evoTargets[target] = true;
             } else if (target == -1) {
-                // Eevee: 134, 135, 136 son evoluciones
+                // Eevee: 134,135,136,196,197
                 evoTargets[134] = true;
                 evoTargets[135] = true;
                 evoTargets[136] = true;
+                evoTargets[196] = true;
+                evoTargets[197] = true;
+                // Gloom→Vileplume(45)/Bellossom(182)
+                evoTargets[45]  = true;
+                evoTargets[182] = true;
+                // Poliwhirl→Poliwrath(62)/Politoed(186)
+                evoTargets[62]  = true;
+                evoTargets[186] = true;
+                // Slowpoke→Slowbro(80)/Slowking(199)
+                evoTargets[80]  = true;
+                evoTargets[199] = true;
+                // Tyrogue→Hitmonlee(106)/Hitmonchan(107)/Hitmontop(237)
+                evoTargets[106] = true;
+                evoTargets[107] = true;
+                evoTargets[237] = true;
             }
         }
 
-        for (var i = 1; i <= 151; i++) {
+        for (var i = 1; i <= PokemonData.TOTAL_POKEMON; i++) {
             // Excluir Pokemon que son resultado de evolución
             if (evoTargets.hasKey(i)) { continue; }
             // Excluir legendarios por misión (solo aparecen por evento)

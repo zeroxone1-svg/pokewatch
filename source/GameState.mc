@@ -65,8 +65,17 @@ class GameState {
 
     // ── Cargar ────────────────────────────────────────────
     static function load() as Void {
-        var c = Storage.getValue("caught");
+        try { System.println("GameState.load: start"); } catch (e) {}
+            var c = null;
+            try {
+                c = Storage.getValue("caught");
+                try { System.println("GameState.load: key 'caught' read: " + (c == null ? "null" : "ok")); } catch (e) {}
+            } catch (e) {
+                try { System.println("GameState.load: Storage.getValue('caught') threw: " + e.toString()); } catch (e2) {}
+                c = null;
+            }
         caughtCounts    = (c != null) ? c : {};
+        try { System.println("GameState.load: caught loaded"); } catch (e) {}
 
         var s = Storage.getValue("seen");
         pokedexSeen     = (s != null) ? s : [];
@@ -199,7 +208,7 @@ class GameState {
             stepsAtLastSpawn = stepsNow;
             stepsAtLastBlock = stepsNow;
             activityBlocksToday = 0;
-            pokemonOfDay = (Math.rand() % 151) + 1;
+            pokemonOfDay = (Math.rand() % PokemonData.TOTAL_POKEMON) + 1;
             lastPlayDate = today;
             save();
         }
@@ -245,7 +254,7 @@ class GameState {
     // ── Total de Pokémon distintos atrapados ──────────────
     static function uniqueCaught() as Lang.Number {
         var count = 0;
-        for (var i = 1; i <= 151; i++) {
+        for (var i = 1; i <= PokemonData.TOTAL_POKEMON; i++) {
             var key = i.toString();
             if (caughtCounts.hasKey(key) && caughtCounts[key] > 0) {
                 count++;
@@ -289,7 +298,7 @@ class GameState {
         }
 
         // Marcar legendario por misión como atrapado
-        if (id == 144 || id == 145 || id == 146 || id == 150 || id == 151) {
+        if (LegendaryQuestManager.isQuestLegendary(id)) {
             legendaryStatus[id.toString()] = 2;
         }
 
@@ -306,9 +315,10 @@ class GameState {
     // ── Medalla actual ────────────────────────────────────
     static function getMedal() as Lang.String {
         var u = uniqueCaught();
-        if (u >= 100) { return "ORO"; }
-        if (u >= 50)  { return "PLATA"; }
-        if (u >= 10)  { return "BRONCE"; }
+        if (u >= 200) { return "DIAMANTE"; }
+        if (u >= 151) { return "ORO"; }
+        if (u >= 100) { return "PLATA"; }
+        if (u >= 50)  { return "BRONCE"; }
         return "";
     }
     // ── Buddy System ─────────────────────────────────────
@@ -395,13 +405,43 @@ class GameState {
             if (evoTo == targetId) { return true; }
             id = evoTo;
         }
-        // Eevee (133) → Vaporeon(134)/Jolteon(135)/Flareon(136)
-        if (caughtId == 133 && (targetId == 134 || targetId == 135 || targetId == 136)) {
-            return true;
+        // Eevee (133) → Vaporeon(134)/Jolteon(135)/Flareon(136)/Espeon(196)/Umbreon(197)
+        var eeveeEvos = [134, 135, 136, 196, 197];
+        if (caughtId == 133) {
+            for (var e = 0; e < eeveeEvos.size(); e++) {
+                if (targetId == eeveeEvos[e]) { return true; }
+            }
         }
-        // Eeveeluciones → Eevee
-        if (targetId == 133 && (caughtId == 134 || caughtId == 135 || caughtId == 136)) {
-            return true;
+        if (targetId == 133) {
+            for (var e = 0; e < eeveeEvos.size(); e++) {
+                if (caughtId == eeveeEvos[e]) { return true; }
+            }
+        }
+        // Branching evos: Gloom, Poliwhirl, Slowpoke, Tyrogue
+        var branchFamilies = [
+            [44, 45, 182],   // Gloom → Vileplume/Bellossom
+            [61, 62, 186],   // Poliwhirl → Poliwrath/Politoed
+            [79, 80, 199],   // Slowpoke → Slowbro/Slowking
+            [236, 106, 107, 237] // Tyrogue → Hitmonlee/Hitmonchan/Hitmontop
+        ];
+        for (var f = 0; f < branchFamilies.size(); f++) {
+            var fam = branchFamilies[f];
+            var inFam = false;
+            for (var m = 0; m < fam.size(); m++) {
+                if (caughtId == fam[m] || targetId == fam[m]) { inFam = true; break; }
+            }
+            if (inFam) {
+                for (var m = 0; m < fam.size(); m++) {
+                    if (caughtId == fam[m] || targetId == fam[m]) { /* check both */ }
+                }
+                var hasCaught = false;
+                var hasTarget = false;
+                for (var m = 0; m < fam.size(); m++) {
+                    if (caughtId == fam[m]) { hasCaught = true; }
+                    if (targetId == fam[m]) { hasTarget = true; }
+                }
+                if (hasCaught && hasTarget) { return true; }
+            }
         }
         return false;
     }
@@ -424,10 +464,9 @@ class GameState {
         if (requiredLevel <= 0) { return 0; }
         var currentLevel = getPokemonLevel(buddyId);
         if (currentLevel >= requiredLevel) {
-            // Eevee: evolución aleatoria
+            // Evolución aleatoria para Pokémon con múltiples opciones
             if (evoTo == -1) {
-                var opts = [134, 135, 136];
-                evoTo = opts[Math.rand() % 3];
+                evoTo = EvolutionManager.pickBranchEvolution(buddyId);
             }
             // Transferir XP al evolucionado
             var currentXP = getPokemonXP(buddyId);

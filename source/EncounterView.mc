@@ -14,6 +14,7 @@ import Toybox.WatchUi;
 import Toybox.Graphics;
 import Toybox.Lang;
 import Toybox.Timer;
+import Toybox.Attention;
 
 class EncounterView extends WatchUi.View {
 
@@ -75,9 +76,34 @@ class EncounterView extends WatchUi.View {
                 }
                 GameState.currentEncounter = null;
                 GameState.save();
+                // Vibrar al capturar
+                vibrateCatch(_evolved > 0);
             }
         }
         WatchUi.requestUpdate();
+    }
+
+    // Vibrar al capturar (más fuerte si evoluciona)
+    function vibrateCatch(evolved as Lang.Boolean) as Void {
+        try {
+            if (Attention has :vibrate) {
+                if (evolved) {
+                    Attention.vibrate([
+                        new Attention.VibeProfile(50, 200),
+                        new Attention.VibeProfile(0, 100),
+                        new Attention.VibeProfile(80, 400),
+                        new Attention.VibeProfile(0, 100),
+                        new Attention.VibeProfile(80, 400)
+                    ]);
+                } else {
+                    Attention.vibrate([
+                        new Attention.VibeProfile(50, 300),
+                        new Attention.VibeProfile(0, 100),
+                        new Attention.VibeProfile(50, 200)
+                    ]);
+                }
+            }
+        } catch (e) {}
     }
 
     function onUpdate(dc as Graphics.Dc) as Void {
@@ -270,7 +296,7 @@ class EncounterView extends WatchUi.View {
         // Pokedex count
         dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
         dc.drawText(cx, cy + 14, Graphics.FONT_XTINY,
-            GameState.uniqueCaught().toString() + "/151 " + tr(Rez.Strings.InYourPokedex),
+            GameState.uniqueCaught().toString() + "/" + PokemonData.TOTAL_POKEMON.toString() + " " + tr(Rez.Strings.InYourPokedex),
             Graphics.TEXT_JUSTIFY_CENTER);
 
         // Badge NUEVO debajo del conteo

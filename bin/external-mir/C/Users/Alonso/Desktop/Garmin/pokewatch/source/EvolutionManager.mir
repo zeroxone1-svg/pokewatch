@@ -14,9 +14,9 @@ class EvolutionManager {
     [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\EvolutionManager.mc"; @line = 11; @symbol_functiondef = [checkEvolution,11,20,34]; @symbol_param<0> = [id,11,35,37]; @symbol_param<0>_type<0> = [Lang,11,41,45]; @symbol_param<0>_type<1> = [Number,11,46,52]; @symbol_return<0> = [Lang,11,57,61]; @symbol_return<1> = [Number,11,62,68]; ]
     static
     function checkEvolution(id as Lang.Number) as Lang.Number {
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_11_69_30_4_start:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_11_69_29_4_start:
 [ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\EvolutionManager.mc" 12 8 ]
-        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_11_69_30_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_11_69_30_4_stop" ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_11_69_29_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_11_69_29_4_stop" ]
         %data.1 = local;
         symbol [ data %data.1 12 12 16 ];
         symbol [ PokemonData %tmp.2 12 21 32 ];
@@ -29,7 +29,7 @@ C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_11_69_30_4_s
         lputv %data.1 %tmp.5;
         symbol [ data %data.1 12 12 16 ];
 [ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\EvolutionManager.mc" 13 8 ]
-        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_11_69_30_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_11_69_30_4_stop" ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_11_69_29_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_11_69_29_4_stop" ]
         %evoTo.2 = local;
         symbol [ evoTo %evoTo.2 13 12 17 ];
         %tmp.6 = lgetv %data.1;
@@ -40,7 +40,7 @@ C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_11_69_30_4_s
         lputv %evoTo.2 %tmp.9;
         symbol [ evoTo %evoTo.2 13 12 17 ];
 [ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\EvolutionManager.mc" 14 8 ]
-        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_11_69_30_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_11_69_30_4_stop" ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_11_69_29_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_11_69_29_4_stop" ]
         %baseCost.3 = local;
         symbol [ baseCost %baseCost.3 14 12 20 ];
         %tmp.10 = lgetv %data.1;
@@ -51,7 +51,7 @@ C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_11_69_30_4_s
         lputv %baseCost.3 %tmp.13;
         symbol [ baseCost %baseCost.3 14 12 20 ];
 [ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\EvolutionManager.mc" 15 8 ]
-        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_11_69_30_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_11_69_30_4_stop" ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_11_69_29_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_11_69_29_4_stop" ]
         %cost.4 = local;
         symbol [ cost %cost.4 15 12 16 ];
         symbol [ BalanceConfig %tmp.15 15 21 34 ];
@@ -89,7 +89,7 @@ C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_17_37_17_49_
         goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_17_8_17_49_if_end;
 C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_17_8_17_49_if_end:
 [ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\EvolutionManager.mc" 19 8 ]
-        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_11_69_30_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_11_69_30_4_stop" ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_11_69_29_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_11_69_29_4_stop" ]
         %caught.5 = local;
         symbol [ caught %caught.5 19 12 18 ];
         symbol [ GameState %tmp.28 19 21 30 ];
@@ -118,169 +118,359 @@ C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_21_27_21_39_
         goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_21_8_21_39_if_end;
 C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_21_8_21_39_if_end:
 [ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\EvolutionManager.mc" 24 8 ]
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_24_8_27_8_if_stmt:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_24_8_26_8_if_stmt:
         %tmp.36 = lgetv %evoTo.2;
         symbol [ evoTo %tmp.36 24 12 17 ];
         %tmp.37 = -1;
         %tmp.38 = eq %tmp.36 %tmp.37;
-        bf %tmp.38 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_24_8_27_8_if_end;
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_24_8_27_8_if_true:
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_24_25_27_8_start:
+        bf %tmp.38 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_24_8_26_8_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_24_8_26_8_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_24_25_26_8_start:
 [ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\EvolutionManager.mc" 25 12 ]
-        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_24_25_27_8_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_24_25_27_8_stop" ]
-        %opts.6 = local;
-        symbol [ opts %opts.6 25 16 20 ];
-        %tmp.39 = newa 3;
-        %tmp.40 = 134;
-        %tmp.41 = dup %tmp.39;
-        %tmp.42 = aputv %tmp.41 0 %tmp.40;
-        %tmp.43 = 135;
-        %tmp.44 = dup %tmp.42;
-        %tmp.45 = aputv %tmp.44 1 %tmp.43;
-        %tmp.46 = 136;
-        %tmp.47 = dup %tmp.45;
-        %tmp.48 = aputv %tmp.47 2 %tmp.46;
-        lputv %opts.6 %tmp.48;
-        symbol [ opts %opts.6 25 16 20 ];
-[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\EvolutionManager.mc" 26 12 ]
-        %tmp.49 = lgetv %opts.6;
-        symbol [ opts %tmp.49 26 19 23 ];
-        symbol [ Math %tmp.50 26 24 28 ];
-        %tmp.50 = getm $.Toybox.Math;
-        symbol [ rand %tmp.51 26 29 33 ];
-        %tmp.51 = getv function %tmp.50 :rand;
-        %tmp.52 = invoke %tmp.50 %tmp.51();
-        %tmp.53 = 3;
-        %tmp.54 = mod %tmp.52 %tmp.53;
-        %tmp.55 = agetv %tmp.49 %tmp.54;
-        ret %tmp.55;
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_24_25_27_8_stop:
-        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_24_8_27_8_if_end;
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_24_8_27_8_if_end:
-[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\EvolutionManager.mc" 29 8 ]
-        %tmp.56 = lgetv %evoTo.2;
-        symbol [ evoTo %tmp.56 29 15 20 ];
-        ret %tmp.56;
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_11_69_30_4_stop:
+        %tmp.39 = self;
+        symbol [ pickBranchEvolution %tmp.40 25 19 38 ];
+        %tmp.40 = getv function %tmp.39 :pickBranchEvolution;
+        %tmp.41 = lgetv %id;
+        symbol [ id %tmp.41 25 39 41 ];
+        %tmp.42 = invoke %tmp.39 %tmp.40(%tmp.41);
+        ret %tmp.42;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_24_25_26_8_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_24_8_26_8_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_24_8_26_8_if_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\EvolutionManager.mc" 28 8 ]
+        %tmp.43 = lgetv %evoTo.2;
+        symbol [ evoTo %tmp.43 28 15 20 ];
+        ret %tmp.43;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_11_69_29_4_stop:
     }
-    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\EvolutionManager.mc"; @line = 32; @symbol_functiondef = [getRequiredCount,32,20,36]; @symbol_param<0> = [id,32,37,39]; @symbol_param<0>_type<0> = [Lang,32,43,47]; @symbol_param<0>_type<1> = [Number,32,48,54]; @symbol_return<0> = [Lang,32,59,63]; @symbol_return<1> = [Number,32,64,70]; ]
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\EvolutionManager.mc"; @line = 33; @symbol_functiondef = [pickBranchEvolution,33,20,39]; @symbol_param<0> = [id,33,40,42]; @symbol_param<0>_type<0> = [Lang,33,46,50]; @symbol_param<0>_type<1> = [Number,33,51,57]; @symbol_return<0> = [Lang,33,62,66]; @symbol_return<1> = [Number,33,67,73]; ]
+    static
+    function pickBranchEvolution(id as Lang.Number) as Lang.Number {
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_33_74_56_4_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\EvolutionManager.mc" 34 8 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_34_8_54_8_if_stmt:
+        %tmp.1 = lgetv %id;
+        symbol [ id %tmp.1 34 12 14 ];
+        %tmp.2 = 133;
+        %tmp.3 = eq %tmp.1 %tmp.2;
+        bf %tmp.3 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_34_8_54_8_if_false;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_34_8_54_8_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_34_23_38_8_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\EvolutionManager.mc" 36 12 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_34_23_38_8_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_34_23_38_8_stop" ]
+        %opts.1 = local;
+        symbol [ opts %opts.1 36 16 20 ];
+        %tmp.4 = newa 5;
+        %tmp.5 = 134;
+        %tmp.6 = dup %tmp.4;
+        %tmp.7 = aputv %tmp.6 0 %tmp.5;
+        %tmp.8 = 135;
+        %tmp.9 = dup %tmp.7;
+        %tmp.10 = aputv %tmp.9 1 %tmp.8;
+        %tmp.11 = 136;
+        %tmp.12 = dup %tmp.10;
+        %tmp.13 = aputv %tmp.12 2 %tmp.11;
+        %tmp.14 = 196;
+        %tmp.15 = dup %tmp.13;
+        %tmp.16 = aputv %tmp.15 3 %tmp.14;
+        %tmp.17 = 197;
+        %tmp.18 = dup %tmp.16;
+        %tmp.19 = aputv %tmp.18 4 %tmp.17;
+        lputv %opts.1 %tmp.19;
+        symbol [ opts %opts.1 36 16 20 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\EvolutionManager.mc" 37 12 ]
+        %tmp.20 = lgetv %opts.1;
+        symbol [ opts %tmp.20 37 19 23 ];
+        symbol [ Math %tmp.21 37 24 28 ];
+        %tmp.21 = getm $.Toybox.Math;
+        symbol [ rand %tmp.22 37 29 33 ];
+        %tmp.22 = getv function %tmp.21 :rand;
+        %tmp.23 = invoke %tmp.21 %tmp.22();
+        %tmp.24 = 5;
+        %tmp.25 = mod %tmp.23 %tmp.24;
+        %tmp.26 = agetv %tmp.20 %tmp.25;
+        ret %tmp.26;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_34_23_38_8_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_34_8_54_8_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_34_8_54_8_if_false:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\EvolutionManager.mc" 38 15 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_38_15_54_8_if_stmt:
+        %tmp.27 = lgetv %id;
+        symbol [ id %tmp.27 38 19 21 ];
+        %tmp.28 = 44;
+        %tmp.29 = eq %tmp.27 %tmp.28;
+        bf %tmp.29 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_38_15_54_8_if_false;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_38_15_54_8_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_38_29_42_8_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\EvolutionManager.mc" 40 12 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_38_29_42_8_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_38_29_42_8_stop" ]
+        %opts.2 = local;
+        symbol [ opts %opts.2 40 16 20 ];
+        %tmp.30 = newa 2;
+        %tmp.31 = 45;
+        %tmp.32 = dup %tmp.30;
+        %tmp.33 = aputv %tmp.32 0 %tmp.31;
+        %tmp.34 = 182;
+        %tmp.35 = dup %tmp.33;
+        %tmp.36 = aputv %tmp.35 1 %tmp.34;
+        lputv %opts.2 %tmp.36;
+        symbol [ opts %opts.2 40 16 20 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\EvolutionManager.mc" 41 12 ]
+        %tmp.37 = lgetv %opts.2;
+        symbol [ opts %tmp.37 41 19 23 ];
+        symbol [ Math %tmp.38 41 24 28 ];
+        %tmp.38 = getm $.Toybox.Math;
+        symbol [ rand %tmp.39 41 29 33 ];
+        %tmp.39 = getv function %tmp.38 :rand;
+        %tmp.40 = invoke %tmp.38 %tmp.39();
+        %tmp.41 = 2;
+        %tmp.42 = mod %tmp.40 %tmp.41;
+        %tmp.43 = agetv %tmp.37 %tmp.42;
+        ret %tmp.43;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_38_29_42_8_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_38_15_54_8_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_38_15_54_8_if_false:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\EvolutionManager.mc" 42 15 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_42_15_54_8_if_stmt:
+        %tmp.44 = lgetv %id;
+        symbol [ id %tmp.44 42 19 21 ];
+        %tmp.45 = 61;
+        %tmp.46 = eq %tmp.44 %tmp.45;
+        bf %tmp.46 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_42_15_54_8_if_false;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_42_15_54_8_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_42_29_46_8_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\EvolutionManager.mc" 44 12 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_42_29_46_8_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_42_29_46_8_stop" ]
+        %opts.3 = local;
+        symbol [ opts %opts.3 44 16 20 ];
+        %tmp.47 = newa 2;
+        %tmp.48 = 62;
+        %tmp.49 = dup %tmp.47;
+        %tmp.50 = aputv %tmp.49 0 %tmp.48;
+        %tmp.51 = 186;
+        %tmp.52 = dup %tmp.50;
+        %tmp.53 = aputv %tmp.52 1 %tmp.51;
+        lputv %opts.3 %tmp.53;
+        symbol [ opts %opts.3 44 16 20 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\EvolutionManager.mc" 45 12 ]
+        %tmp.54 = lgetv %opts.3;
+        symbol [ opts %tmp.54 45 19 23 ];
+        symbol [ Math %tmp.55 45 24 28 ];
+        %tmp.55 = getm $.Toybox.Math;
+        symbol [ rand %tmp.56 45 29 33 ];
+        %tmp.56 = getv function %tmp.55 :rand;
+        %tmp.57 = invoke %tmp.55 %tmp.56();
+        %tmp.58 = 2;
+        %tmp.59 = mod %tmp.57 %tmp.58;
+        %tmp.60 = agetv %tmp.54 %tmp.59;
+        ret %tmp.60;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_42_29_46_8_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_42_15_54_8_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_42_15_54_8_if_false:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\EvolutionManager.mc" 46 15 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_46_15_54_8_if_stmt:
+        %tmp.61 = lgetv %id;
+        symbol [ id %tmp.61 46 19 21 ];
+        %tmp.62 = 79;
+        %tmp.63 = eq %tmp.61 %tmp.62;
+        bf %tmp.63 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_46_15_54_8_if_false;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_46_15_54_8_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_46_29_50_8_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\EvolutionManager.mc" 48 12 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_46_29_50_8_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_46_29_50_8_stop" ]
+        %opts.4 = local;
+        symbol [ opts %opts.4 48 16 20 ];
+        %tmp.64 = newa 2;
+        %tmp.65 = 80;
+        %tmp.66 = dup %tmp.64;
+        %tmp.67 = aputv %tmp.66 0 %tmp.65;
+        %tmp.68 = 199;
+        %tmp.69 = dup %tmp.67;
+        %tmp.70 = aputv %tmp.69 1 %tmp.68;
+        lputv %opts.4 %tmp.70;
+        symbol [ opts %opts.4 48 16 20 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\EvolutionManager.mc" 49 12 ]
+        %tmp.71 = lgetv %opts.4;
+        symbol [ opts %tmp.71 49 19 23 ];
+        symbol [ Math %tmp.72 49 24 28 ];
+        %tmp.72 = getm $.Toybox.Math;
+        symbol [ rand %tmp.73 49 29 33 ];
+        %tmp.73 = getv function %tmp.72 :rand;
+        %tmp.74 = invoke %tmp.72 %tmp.73();
+        %tmp.75 = 2;
+        %tmp.76 = mod %tmp.74 %tmp.75;
+        %tmp.77 = agetv %tmp.71 %tmp.76;
+        ret %tmp.77;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_46_29_50_8_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_46_15_54_8_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_46_15_54_8_if_false:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\EvolutionManager.mc" 50 15 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_50_15_54_8_if_stmt:
+        %tmp.78 = lgetv %id;
+        symbol [ id %tmp.78 50 19 21 ];
+        %tmp.79 = 236;
+        %tmp.80 = eq %tmp.78 %tmp.79;
+        bf %tmp.80 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_50_15_54_8_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_50_15_54_8_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_50_30_54_8_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\EvolutionManager.mc" 52 12 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_50_30_54_8_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_50_30_54_8_stop" ]
+        %opts.5 = local;
+        symbol [ opts %opts.5 52 16 20 ];
+        %tmp.81 = newa 3;
+        %tmp.82 = 106;
+        %tmp.83 = dup %tmp.81;
+        %tmp.84 = aputv %tmp.83 0 %tmp.82;
+        %tmp.85 = 107;
+        %tmp.86 = dup %tmp.84;
+        %tmp.87 = aputv %tmp.86 1 %tmp.85;
+        %tmp.88 = 237;
+        %tmp.89 = dup %tmp.87;
+        %tmp.90 = aputv %tmp.89 2 %tmp.88;
+        lputv %opts.5 %tmp.90;
+        symbol [ opts %opts.5 52 16 20 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\EvolutionManager.mc" 53 12 ]
+        %tmp.91 = lgetv %opts.5;
+        symbol [ opts %tmp.91 53 19 23 ];
+        symbol [ Math %tmp.92 53 24 28 ];
+        %tmp.92 = getm $.Toybox.Math;
+        symbol [ rand %tmp.93 53 29 33 ];
+        %tmp.93 = getv function %tmp.92 :rand;
+        %tmp.94 = invoke %tmp.92 %tmp.93();
+        %tmp.95 = 3;
+        %tmp.96 = mod %tmp.94 %tmp.95;
+        %tmp.97 = agetv %tmp.91 %tmp.96;
+        ret %tmp.97;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_50_30_54_8_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_50_15_54_8_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_50_15_54_8_if_end:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_46_15_54_8_if_end:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_42_15_54_8_if_end:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_38_15_54_8_if_end:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_34_8_54_8_if_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\EvolutionManager.mc" 55 8 ]
+        %tmp.98 = 0;
+        ret %tmp.98;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_33_74_56_4_stop:
+    }
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\EvolutionManager.mc"; @line = 58; @symbol_functiondef = [getRequiredCount,58,20,36]; @symbol_param<0> = [id,58,37,39]; @symbol_param<0>_type<0> = [Lang,58,43,47]; @symbol_param<0>_type<1> = [Number,58,48,54]; @symbol_return<0> = [Lang,58,59,63]; @symbol_return<1> = [Number,58,64,70]; ]
     static
     function getRequiredCount(id as Lang.Number) as Lang.Number {
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_32_71_35_4_start:
-[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\EvolutionManager.mc" 33 8 ]
-        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_32_71_35_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_32_71_35_4_stop" ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_58_71_61_4_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\EvolutionManager.mc" 59 8 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_58_71_61_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_58_71_61_4_stop" ]
         %data.1 = local;
-        symbol [ data %data.1 33 12 16 ];
-        symbol [ PokemonData %tmp.2 33 19 30 ];
+        symbol [ data %data.1 59 12 16 ];
+        symbol [ PokemonData %tmp.2 59 19 30 ];
         %tmp.2 = getv ? :PokemonData;
-        symbol [ get %tmp.3 33 31 34 ];
+        symbol [ get %tmp.3 59 31 34 ];
         %tmp.3 = getv function %tmp.2 :get;
         %tmp.4 = lgetv %id;
-        symbol [ id %tmp.4 33 35 37 ];
+        symbol [ id %tmp.4 59 35 37 ];
         %tmp.5 = invoke %tmp.2 %tmp.3(%tmp.4);
         lputv %data.1 %tmp.5;
-        symbol [ data %data.1 33 12 16 ];
-[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\EvolutionManager.mc" 34 8 ]
-        symbol [ BalanceConfig %tmp.7 34 15 28 ];
+        symbol [ data %data.1 59 12 16 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\EvolutionManager.mc" 60 8 ]
+        symbol [ BalanceConfig %tmp.7 60 15 28 ];
         %tmp.7 = getv ? :BalanceConfig;
-        symbol [ getEffectiveEvolutionCost %tmp.8 34 29 54 ];
+        symbol [ getEffectiveEvolutionCost %tmp.8 60 29 54 ];
         %tmp.8 = getv function %tmp.7 :getEffectiveEvolutionCost;
         %tmp.9 = lgetv %data.1;
-        symbol [ data %tmp.9 34 55 59 ];
+        symbol [ data %tmp.9 60 55 59 ];
         %tmp.11 = const :evoCost;
-        symbol [ evoCost %tmp.11 34 61 68 const ];
+        symbol [ evoCost %tmp.11 60 61 68 const ];
         %tmp.12 = agetv %tmp.9 %tmp.11;
         %tmp.13 = invoke %tmp.7 %tmp.8(%tmp.12);
         ret %tmp.13;
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_32_71_35_4_stop:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_58_71_61_4_stop:
     }
-    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\EvolutionManager.mc"; @line = 39; @symbol_functiondef = [evolve,39,20,26]; @symbol_param<0> = [fromId,39,27,33]; @symbol_param<0>_type<0> = [Lang,39,37,41]; @symbol_param<0>_type<1> = [Number,39,42,48]; @symbol_param<1> = [toId,39,50,54]; @symbol_param<1>_type<0> = [Lang,39,58,62]; @symbol_param<1>_type<1> = [Number,39,63,69]; ]
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\EvolutionManager.mc"; @line = 65; @symbol_functiondef = [evolve,65,20,26]; @symbol_param<0> = [fromId,65,27,33]; @symbol_param<0>_type<0> = [Lang,65,37,41]; @symbol_param<0>_type<1> = [Number,65,42,48]; @symbol_param<1> = [toId,65,50,54]; @symbol_param<1>_type<0> = [Lang,65,58,62]; @symbol_param<1>_type<1> = [Number,65,63,69]; ]
     static
     function evolve(fromId as Lang.Number, toId as Lang.Number) as Void {
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_39_79_48_4_start:
-[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\EvolutionManager.mc" 40 8 ]
-        symbol [ GameState %tmp.2 40 8 17 ];
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_65_79_74_4_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\EvolutionManager.mc" 66 8 ]
+        symbol [ GameState %tmp.2 66 8 17 ];
         %tmp.2 = getv ? :GameState;
-        symbol [ registerCatch %tmp.3 40 18 31 ];
+        symbol [ registerCatch %tmp.3 66 18 31 ];
         %tmp.3 = getv function %tmp.2 :registerCatch;
         %tmp.4 = lgetv %toId;
-        symbol [ toId %tmp.4 40 32 36 ];
+        symbol [ toId %tmp.4 66 32 36 ];
         %tmp.5 = false;
         invoke %tmp.2 %tmp.3(%tmp.4, %tmp.5);
-[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\EvolutionManager.mc" 42 8 ]
-        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_39_79_48_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_39_79_48_4_stop" ]
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\EvolutionManager.mc" 68 8 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_65_79_74_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_65_79_74_4_stop" ]
         %cost.1 = local;
-        symbol [ cost %cost.1 42 12 16 ];
+        symbol [ cost %cost.1 68 12 16 ];
         %tmp.6 = self;
-        symbol [ getRequiredCount %tmp.7 42 19 35 ];
+        symbol [ getRequiredCount %tmp.7 68 19 35 ];
         %tmp.7 = getv function %tmp.6 :getRequiredCount;
         %tmp.8 = lgetv %fromId;
-        symbol [ fromId %tmp.8 42 36 42 ];
+        symbol [ fromId %tmp.8 68 36 42 ];
         %tmp.9 = invoke %tmp.6 %tmp.7(%tmp.8);
         lputv %cost.1 %tmp.9;
-        symbol [ cost %cost.1 42 12 16 ];
-[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\EvolutionManager.mc" 43 8 ]
-        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_39_79_48_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_39_79_48_4_stop" ]
+        symbol [ cost %cost.1 68 12 16 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\EvolutionManager.mc" 69 8 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_65_79_74_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_65_79_74_4_stop" ]
         %key.2 = local;
-        symbol [ key %key.2 43 12 15 ];
+        symbol [ key %key.2 69 12 15 ];
         %tmp.10 = lgetv %fromId;
-        symbol [ fromId %tmp.10 43 18 24 ];
-        symbol [ toString %tmp.11 43 25 33 ];
+        symbol [ fromId %tmp.10 69 18 24 ];
+        symbol [ toString %tmp.11 69 25 33 ];
         %tmp.11 = getv function %tmp.10 :toString;
         %tmp.12 = invoke %tmp.10 %tmp.11();
         lputv %key.2 %tmp.12;
-        symbol [ key %key.2 43 12 15 ];
-[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\EvolutionManager.mc" 44 8 ]
-        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_39_79_48_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_39_79_48_4_stop" ]
+        symbol [ key %key.2 69 12 15 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\EvolutionManager.mc" 70 8 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_65_79_74_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_65_79_74_4_stop" ]
         %current.3 = local;
-        symbol [ current %current.3 44 12 19 ];
-        symbol [ GameState %tmp.14 44 22 31 ];
+        symbol [ current %current.3 70 12 19 ];
+        symbol [ GameState %tmp.14 70 22 31 ];
         %tmp.14 = getv ? :GameState;
-        symbol [ getCaughtCount %tmp.15 44 32 46 ];
+        symbol [ getCaughtCount %tmp.15 70 32 46 ];
         %tmp.15 = getv function %tmp.14 :getCaughtCount;
         %tmp.16 = lgetv %fromId;
-        symbol [ fromId %tmp.16 44 47 53 ];
+        symbol [ fromId %tmp.16 70 47 53 ];
         %tmp.17 = invoke %tmp.14 %tmp.15(%tmp.16);
         lputv %current.3 %tmp.17;
-        symbol [ current %current.3 44 12 19 ];
-[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\EvolutionManager.mc" 45 8 ]
-        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_39_79_48_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_39_79_48_4_stop" ]
+        symbol [ current %current.3 70 12 19 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\EvolutionManager.mc" 71 8 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_65_79_74_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_65_79_74_4_stop" ]
         %newCount.4 = local;
-        symbol [ newCount %newCount.4 45 12 20 ];
+        symbol [ newCount %newCount.4 71 12 20 ];
         %tmp.18 = lgetv %current.3;
-        symbol [ current %tmp.18 45 23 30 ];
+        symbol [ current %tmp.18 71 23 30 ];
         %tmp.19 = lgetv %cost.1;
-        symbol [ cost %tmp.19 45 33 37 ];
+        symbol [ cost %tmp.19 71 33 37 ];
         %tmp.20 = sub %tmp.18 %tmp.19;
         lputv %newCount.4 %tmp.20;
-        symbol [ newCount %newCount.4 45 12 20 ];
-[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\EvolutionManager.mc" 46 8 ]
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_46_8_46_42_if_stmt:
+        symbol [ newCount %newCount.4 71 12 20 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\EvolutionManager.mc" 72 8 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_72_8_72_42_if_stmt:
         %tmp.21 = lgetv %newCount.4;
-        symbol [ newCount %tmp.21 46 12 20 ];
+        symbol [ newCount %tmp.21 72 12 20 ];
         %tmp.22 = 0;
         %tmp.23 = lt %tmp.21 %tmp.22;
-        bf %tmp.23 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_46_8_46_42_if_end;
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_46_8_46_42_if_true:
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_46_26_46_42_start:
-[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\EvolutionManager.mc" 46 28 ]
+        bf %tmp.23 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_72_8_72_42_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_72_8_72_42_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_72_26_72_42_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\EvolutionManager.mc" 72 28 ]
         %tmp.24 = 0;
         lputv %newCount.4 %tmp.24;
-        symbol [ newCount %newCount.4 46 28 36 ];
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_46_26_46_42_stop:
-        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_46_8_46_42_if_end;
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_46_8_46_42_if_end:
-[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\EvolutionManager.mc" 47 8 ]
-        symbol [ GameState %tmp.25 47 8 17 ];
+        symbol [ newCount %newCount.4 72 28 36 ];
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_72_26_72_42_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_72_8_72_42_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_72_8_72_42_if_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\EvolutionManager.mc" 73 8 ]
+        symbol [ GameState %tmp.25 73 8 17 ];
         %tmp.25 = getv self :GameState;
-        symbol [ caughtCounts %tmp.26 47 18 30 ];
+        symbol [ caughtCounts %tmp.26 73 18 30 ];
         %tmp.26 = getv %tmp.25 :caughtCounts;
         %tmp.27 = lgetv %newCount.4;
-        symbol [ newCount %tmp.27 47 38 46 ];
+        symbol [ newCount %tmp.27 73 38 46 ];
         %tmp.28 = lgetv %key.2;
-        symbol [ key %tmp.28 47 31 34 ];
+        symbol [ key %tmp.28 73 31 34 ];
         aputv %tmp.26 %tmp.28 %tmp.27;
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_39_79_48_4_stop:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_EvolutionManager_mc_65_79_74_4_stop:
     }
 }
 [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\EvolutionManager.mc"; @line = 4; ]

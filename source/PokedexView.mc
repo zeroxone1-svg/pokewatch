@@ -32,7 +32,7 @@ class PokedexView extends WatchUi.View {
         }
         var row = (tapY - startY) / lineH;
         var idx = _scroll + row;
-        if (idx < 0 || idx >= 151) { return 0; }
+        if (idx < 0 || idx >= PokemonData.TOTAL_POKEMON) { return 0; }
         var id = idx + 1;
         if (GameState.getCaughtCount(id) > 0) {
             return id;
@@ -49,17 +49,17 @@ class PokedexView extends WatchUi.View {
 
         // Header con fondo (ajustado para pantalla redonda)
         dc.setColor(0x0F0F18, Graphics.COLOR_TRANSPARENT);
-        dc.fillRoundedRectangle(100, 8, w - 200, 24, 8);
+        dc.fillRoundedRectangle(100, 4, w - 200, 24, 8);
 
         dc.setColor(0xFFCC00, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(cx, 10, Graphics.FONT_XTINY,
+        dc.drawText(cx, 6, Graphics.FONT_XTINY,
             tr(Rez.Strings.KantoTitle), Graphics.TEXT_JUSTIFY_CENTER);
 
-        // Stats: vistos / capturados / shinies
+        // Stats: vistos / capturados / shinies (elevados para evitar recorte)
         var unique = GameState.uniqueCaught();
         var seen = GameState.pokedexSeen.size();
         dc.setColor(0x666666, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(cx, 34, Graphics.FONT_XTINY,
+        dc.drawText(cx, 26, Graphics.FONT_XTINY,
             seen.toString() + "v | " +
             unique.toString() + "c | " +
             GameState.shinyList.size().toString() + "sh",
@@ -71,7 +71,7 @@ class PokedexView extends WatchUi.View {
 
         for (var i = 0; i < 7; i++) {
             var idx = _scroll + i;
-            if (idx >= 151) { break; }
+            if (idx >= PokemonData.TOTAL_POKEMON) { break; }
 
             var id      = idx + 1;
             var caught  = GameState.getCaughtCount(id) > 0;
@@ -136,7 +136,7 @@ class PokedexView extends WatchUi.View {
         dc.fillRoundedRectangle(80, 340, w - 160, 18, 6);
         dc.setColor(0x444444, Graphics.COLOR_TRANSPARENT);
         var page = (_scroll / 7) + 1;
-        var totalPages = ((151 + 6) / 7);
+        var totalPages = ((PokemonData.TOTAL_POKEMON + 6) / 7);
         dc.drawText(cx, 340, Graphics.FONT_XTINY,
             page.toString() + "/" + totalPages.toString() + " Tap=buddy",
             Graphics.TEXT_JUSTIFY_CENTER);
@@ -152,7 +152,7 @@ class PokedexDelegate extends WatchUi.BehaviorDelegate {
     }
 
     function onNextPage() as Lang.Boolean {
-        if (_view._scroll + 7 < 151) {
+        if (_view._scroll + 7 < PokemonData.TOTAL_POKEMON) {
             _view._scroll += 7;
             WatchUi.requestUpdate();
         }
@@ -222,49 +222,17 @@ class ProfileView extends WatchUi.View {
         var seen   = GameState.pokedexSeen.size();
         var blocks = GameState.getActivityBlocksToday();
 
-        // Buddy section (centrado para pantalla redonda)
-        var buddyY = 56;
-        if (GameState.buddyId > 0) {
-            var buddyData = PokemonData.get(GameState.buddyId);
-            var buddyTier = buddyData[:tier];
-            var tierColors = [0xAAAAAA, 0x44CC44, 0x4488FF, 0xFF66FF, 0xFFAA00];
-
-            dc.setColor(0x1A1A00, Graphics.COLOR_TRANSPARENT);
-            dc.fillRoundedRectangle(55, buddyY - 4, w - 110, 26, 8);
-
-            // Progreso buddy (basado en nivel)
-            var evoLevel = GameState.getBuddyEvoLevel();
-            if (evoLevel > 0) {
-                var progress = GameState.getBuddyProgress();
-                dc.setColor(tierColors[buddyTier], Graphics.COLOR_TRANSPARENT);
-                dc.drawText(cx, buddyY, Graphics.FONT_XTINY,
-                    "#" + GameState.buddyId.format("%03d") + " - " + progress.toString() + "%",
-                    Graphics.TEXT_JUSTIFY_CENTER);
-            } else {
-                dc.setColor(0x666666, Graphics.COLOR_TRANSPARENT);
-                dc.drawText(cx, buddyY, Graphics.FONT_XTINY,
-                    "#" + GameState.buddyId.format("%03d") + " - " + tr(Rez.Strings.BuddyMaxForm),
-                    Graphics.TEXT_JUSTIFY_CENTER);
-            }
-        } else {
-            dc.setColor(0x111118, Graphics.COLOR_TRANSPARENT);
-            dc.fillRoundedRectangle(55, buddyY - 4, w - 110, 26, 8);
-            dc.setColor(0x555555, Graphics.COLOR_TRANSPARENT);
-            dc.drawText(cx, buddyY, Graphics.FONT_XTINY,
-                tr(Rez.Strings.BuddyHint), Graphics.TEXT_JUSTIFY_CENTER);
-        }
-
-        // Stats rows
+        // Stats rows (Perfil: eliminada la sección de información de un Pokémon)
         var rows = [
             [tr(Rez.Strings.LabelStepsToday),   steps.toString(),     0xBBBBBB],
-            [tr(Rez.Strings.LabelSeen),         seen.toString() + "/151", 0x44CCFF],
-            [tr(Rez.Strings.LabelCaught),       unique.toString() + "/151", 0x44FF44],
+            [tr(Rez.Strings.LabelSeen),         seen.toString() + "/" + PokemonData.TOTAL_POKEMON.toString(), 0x44CCFF],
+            [tr(Rez.Strings.LabelCaught),       unique.toString() + "/" + PokemonData.TOTAL_POKEMON.toString(), 0x44FF44],
             [tr(Rez.Strings.LabelShinies),      shiny.toString(),     0xFFD700],
             [tr(Rez.Strings.LabelBlocksToday),  blocks.toString(),    0x44CCFF],
             [tr(Rez.Strings.LabelStreak),       streak.toString() + " " + tr(Rez.Strings.LabelDays), 0xFF8800],
         ];
 
-        var y = (GameState.buddyId > 0) ? 90 : 86;
+        var y = 70;
         var rowH = 34;
         for (var i = 0; i < rows.size(); i++) {
             // Alternating row backgrounds
@@ -287,6 +255,7 @@ class ProfileView extends WatchUi.View {
             var medalColor = 0xCD7F32;
             if (medal.equals("PLATA")) { medalColor = 0xC0C0C0; }
             if (medal.equals("ORO"))   { medalColor = 0xFFD700; }
+            if (medal.equals("DIAMANTE")) { medalColor = 0x44CCFF; }
             dc.setColor(0x111118, Graphics.COLOR_TRANSPARENT);
             dc.fillRoundedRectangle(cx - 60, y + 4, 120, 26, 8);
             dc.setColor(medalColor, Graphics.COLOR_TRANSPARENT);
