@@ -34,7 +34,7 @@ class SpawnEngine {
             :hpMax   => hp,
             :hpCurr  => hp,
             :stepPowerPercent => stepPowerPercent,
-            :stepsAtStart => GameState.getStepsToday()
+            :stepsAtStart => GameState.getCumulativeSteps()
         };
     }
 
@@ -131,7 +131,7 @@ class SpawnEngine {
     // Llamar cada vez que se actualizan los pasos durante un encuentro.
     // Devuelve el HP actualizado.
     static function applyStepDamage(encounter as Lang.Dictionary) as Lang.Dictionary {
-        var stepsNow   = GameState.getStepsToday();
+        var stepsNow   = GameState.getCumulativeSteps();
         var stepsStart = encounter[:stepsAtStart];
         var stepsDone  = stepsNow - stepsStart;
         if (stepsDone < 0) { stepsDone = 0; }

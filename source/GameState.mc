@@ -136,11 +136,25 @@ class GameState {
             currentEncounter = null;
         }
 
+        // ── Migración v1→v2: de pasos diarios a acumulados ──
+        var migrated = Storage.getValue("v2");
+        if (migrated == null || migrated != true) {
+            updateTotalSteps();
+            stepsAtLastSpawn = totalStepsAllTime;
+            stepsAtLastBlock = totalStepsAllTime;
+            buddyLastSteps   = totalStepsAllTime;
+            if (currentEncounter != null) {
+                currentEncounter[:stepsAtStart] = totalStepsAllTime;
+            }
+            Storage.setValue("v2", true);
+            save();
+        }
+
         // Revisar si es un nuevo día
         checkNewDay();
     }
 
-    // ── Pasos actuales del reloj ──────────────────────────
+    // ── Pasos actuales del reloj (solo para UI) ──────────
     static function getStepsToday() as Lang.Number {
         var info = ActivityMonitor.getInfo();
         if (info != null && info.steps != null) {
@@ -149,12 +163,19 @@ class GameState {
         return 0;
     }
 
+    // ── Pasos acumulados de por vida (para tracking interno) ──
+    // Siempre creciente, nunca se reinicia al cambiar de día.
+    static function getCumulativeSteps() as Lang.Number {
+        updateTotalSteps();
+        return totalStepsAllTime;
+    }
+
     // ── ¿Es momento de generar un encuentro? ─────────────
     static function shouldSpawn() as Lang.Boolean {
         checkNewDay();
         if (currentEncounter != null) { return false; }
-        var steps = getStepsToday();
-        // Si el contador de pasos bajó (reset del reloj), ajustar
+        var steps = getCumulativeSteps();
+        // Safety: si por alguna razón bajó, ajustar
         if (steps < stepsAtLastSpawn) {
             stepsAtLastSpawn = steps;
             save();
@@ -164,15 +185,15 @@ class GameState {
 
     // ── Registrar que se generó un spawn ─────────────────
     static function markSpawn() as Void {
-        stepsAtLastSpawn = getStepsToday();
+        stepsAtLastSpawn = getCumulativeSteps();
         save();
     }
 
     // ── Pasos para el próximo encuentro ──────────────────
     static function stepsUntilNext() as Lang.Number {
         checkNewDay();
-        var steps = getStepsToday();
-        // Si el contador bajó, resetear referencia
+        var steps = getCumulativeSteps();
+        // Safety: si por alguna razón bajó, ajustar
         if (steps < stepsAtLastSpawn) {
             stepsAtLastSpawn = steps;
             save();
@@ -190,7 +211,7 @@ class GameState {
         var today = getDateString();
         if (lastPlayDate.equals("")) {
             lastPlayDate = today;
-            var stepsInit = getStepsToday();
+            var stepsInit = getCumulativeSteps();
             stepsAtLastSpawn = stepsInit;
             stepsAtLastBlock = stepsInit;
             save();
@@ -204,9 +225,10 @@ class GameState {
                 dailyStreak = 0;
             }
 
-            var stepsNow = getStepsToday();
-            stepsAtLastSpawn = stepsNow;
-            stepsAtLastBlock = stepsNow;
+            // Solo resetear bloques de actividad (son diarios).
+            // stepsAtLastSpawn NO se reinicia: el progreso hacia
+            // el próximo spawn se mantiene entre días.
+            stepsAtLastBlock = getCumulativeSteps();
             activityBlocksToday = 0;
             pokemonOfDay = (Math.rand() % PokemonData.TOTAL_POKEMON) + 1;
             lastPlayDate = today;
@@ -223,7 +245,7 @@ class GameState {
     static function updateActivityBlocks() as Void {
         checkNewDay();
 
-        var stepsNow = getStepsToday();
+        var stepsNow = getCumulativeSteps();
         if (stepsNow < stepsAtLastBlock) {
             stepsAtLastBlock = stepsNow;
         }
@@ -247,7 +269,7 @@ class GameState {
 
     static function stepsUntilNextActivityBlock() as Lang.Number {
         updateActivityBlocks();
-        var remaining = BalanceConfig.getStepsPerActivityBlock() - (getStepsToday() - stepsAtLastBlock);
+        var remaining = BalanceConfig.getStepsPerActivityBlock() - (getCumulativeSteps() - stepsAtLastBlock);
         return (remaining > 0) ? remaining : 0;
     }
 
@@ -274,6 +296,16 @@ class GameState {
 
     // ── Registrar captura ─────────────────────────────────
     static function registerCatch(id as Lang.Number, isShiny as Lang.Boolean) as Void {
+        registerCatchInternal(id, isShiny, true);
+    }
+
+    // ── Registrar evolución (sin XP extra) ────────────────
+    static function registerEvolution(id as Lang.Number) as Void {
+        registerCatchInternal(id, false, false);
+    }
+
+    // ── Lógica compartida de registro ─────────────────────
+    static function registerCatchInternal(id as Lang.Number, isShiny as Lang.Boolean, giveXP as Lang.Boolean) as Void {
         var key = id.toString();
         var prev = getCaughtCount(id);
         caughtCounts[key] = prev + 1;
@@ -285,16 +317,18 @@ class GameState {
             shinyList.add(id);
         }
 
-        // XP por captura (siempre va al Pokémon capturado)
-        var data = PokemonData.get(id);
-        var tier = data[:tier];
-        var catchXP = BalanceConfig.getCatchXP(tier);
-        addPokemonXP(id, catchXP);
+        if (giveXP) {
+            // XP por captura (siempre va al Pokémon capturado)
+            var data = PokemonData.get(id);
+            var tier = data[:tier];
+            var catchXP = BalanceConfig.getCatchXP(tier);
+            addPokemonXP(id, catchXP);
 
-        // Bonus XP al buddy SOLO si es de la misma línea evolutiva
-        if (buddyId > 0 && isSameEvolutionLine(id, buddyId)) {
-            var bonusXP = BalanceConfig.getBuddyBonusXP(tier);
-            addPokemonXP(buddyId, bonusXP);
+            // Bonus XP al buddy SOLO si es de la misma línea evolutiva
+            if (buddyId > 0 && isSameEvolutionLine(id, buddyId)) {
+                var bonusXP = BalanceConfig.getBuddyBonusXP(tier);
+                addPokemonXP(buddyId, bonusXP);
+            }
         }
 
         // Marcar legendario por misión como atrapado
@@ -325,16 +359,16 @@ class GameState {
     static function setBuddy(id as Lang.Number) as Void {
         buddyId = id;
         buddySteps = 0;
-        buddyLastSteps = getStepsToday();
+        buddyLastSteps = getCumulativeSteps();
         save();
     }
 
     // Actualizar pasos del buddy (cada paso = 1 XP para el buddy)
     static function updateBuddySteps() as Void {
         if (buddyId == 0) { return; }
-        var stepsNow = getStepsToday();
+        var stepsNow = getCumulativeSteps();
         if (stepsNow < buddyLastSteps) {
-            buddyLastSteps = stepsNow; // reset del reloj
+            buddyLastSteps = stepsNow;
         }
         var newSteps = stepsNow - buddyLastSteps;
         if (newSteps > 0) {
@@ -344,7 +378,9 @@ class GameState {
         }
     }
 
-    // ── Total Steps (para misiones legendarias) ───────────
+    // ── Total Steps (acumulado de por vida) ───────────────
+    // Usa getStepsToday() internamente para computar deltas
+    // contra el contador diario del reloj.
     static function updateTotalSteps() as Void {
         var stepsNow = getStepsToday();
         if (stepsNow < totalStepsLastRef) {

@@ -31,9 +31,9 @@ class MainView extends WatchUi.View {
 
     function onShow() as Void {
         _timer.start(method(:onTimer), 1500, true);
+        GameState.updateTotalSteps();
         GameState.updateActivityBlocks();
         GameState.updateBuddySteps();
-        GameState.updateTotalSteps();
         checkSpawn();
     }
 
@@ -42,9 +42,9 @@ class MainView extends WatchUi.View {
     }
 
     function onTimer() as Void {
+        GameState.updateTotalSteps();
         GameState.updateActivityBlocks();
         GameState.updateBuddySteps();
-        GameState.updateTotalSteps();
         var evo = GameState.checkBuddyEvolution();
         if (evo > 0) {
             _buddyEvolved = evo;

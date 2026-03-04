@@ -25,7 +25,7 @@ class LegendaryQuestManager {
     const KANTO_NORMAL_COUNT = 146;
     [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc"; @line = 34; @position = 17; @symbol_constdef = [DAILY_STEPS_REQUIRED,34,17,37]; ]
     static
-    const DAILY_STEPS_REQUIRED = 20000;
+    const DAILY_STEPS_REQUIRED = 10000;
     [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc"; @line = 35; @position = 17; @symbol_constdef = [MIN_TOTAL_FOR_DAILY,35,17,36]; ]
     static
     const MIN_TOTAL_FOR_DAILY = 50000;
@@ -1229,8 +1229,8 @@ C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_162_73_
         symbol [ stepsAtStart %tmp.49 171 13 25 const ];
         symbol [ GameState %tmp.51 171 29 38 ];
         %tmp.51 = getv ? :GameState;
-        symbol [ getStepsToday %tmp.52 171 39 52 ];
-        %tmp.52 = getv function %tmp.51 :getStepsToday;
+        symbol [ getCumulativeSteps %tmp.52 171 39 57 ];
+        %tmp.52 = getv function %tmp.51 :getCumulativeSteps;
         %tmp.53 = invoke %tmp.51 %tmp.52();
         %tmp.54 = dup %tmp.47;
         %tmp.55 = aputv %tmp.54 %tmp.49 %tmp.53;
@@ -1847,7 +1847,7 @@ C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_228_8_2
 C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_228_8_228_45_if_true:
 C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_228_23_228_45_start:
 [ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\LegendaryQuestManager.mc" 228 25 ]
-        %tmp.24 = "20K p/dia";
+        %tmp.24 = "10K p/dia";
         ret %tmp.24;
 C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_228_23_228_45_stop:
         goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_LegendaryQuestManager_mc_228_8_228_45_if_end;

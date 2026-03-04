@@ -7,7 +7,6 @@
     <iq:permissions>
       <iq:uses-permission id="FitContributor"/>
       <iq:uses-permission id="UserProfile"/>
-      <iq:uses-permission id="Background"/>
     </iq:permissions>
     <iq:languages>
       <iq:language>spa</iq:language>

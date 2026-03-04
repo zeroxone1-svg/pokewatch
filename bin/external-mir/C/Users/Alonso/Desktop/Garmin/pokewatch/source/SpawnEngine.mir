@@ -184,8 +184,8 @@ C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_17_50_39_4_start:
         symbol [ stepsAtStart %tmp.82 37 13 25 const ];
         symbol [ GameState %tmp.84 37 29 38 ];
         %tmp.84 = getv ? :GameState;
-        symbol [ getStepsToday %tmp.85 37 39 52 ];
-        %tmp.85 = getv function %tmp.84 :getStepsToday;
+        symbol [ getCumulativeSteps %tmp.85 37 39 57 ];
+        %tmp.85 = getv function %tmp.84 :getCumulativeSteps;
         %tmp.86 = invoke %tmp.84 %tmp.85();
         %tmp.87 = dup %tmp.80;
         %tmp.88 = aputv %tmp.87 %tmp.82 %tmp.86;
@@ -812,8 +812,8 @@ C__Users_Alonso_Desktop_Garmin_pokewatch_source_SpawnEngine_mc_133_85_152_4_star
         symbol [ stepsNow %stepsNow.1 134 12 20 ];
         symbol [ GameState %tmp.2 134 25 34 ];
         %tmp.2 = getv ? :GameState;
-        symbol [ getStepsToday %tmp.3 134 35 48 ];
-        %tmp.3 = getv function %tmp.2 :getStepsToday;
+        symbol [ getCumulativeSteps %tmp.3 134 35 53 ];
+        %tmp.3 = getv function %tmp.2 :getCumulativeSteps;
         %tmp.4 = invoke %tmp.2 %tmp.3();
         lputv %stepsNow.1 %tmp.4;
         symbol [ stepsNow %stepsNow.1 134 12 20 ];

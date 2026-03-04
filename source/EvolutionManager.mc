@@ -63,7 +63,7 @@ class EvolutionManager {
     // Ejecutar la evolución: añade 1 al nuevo Pokémon en la dex.
     // Resta el costo de evolución del Pokémon base.
     static function evolve(fromId as Lang.Number, toId as Lang.Number) as Void {
-        GameState.registerCatch(toId, false);
+        GameState.registerEvolution(toId);
         // Restar el costo del conteo para no disparar evoluciones repetidas
         var cost = getRequiredCount(fromId);
         var key = fromId.toString();

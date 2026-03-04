@@ -15,6 +15,7 @@ import Toybox.Graphics;
 import Toybox.Lang;
 import Toybox.Timer;
 import Toybox.Attention;
+import Toybox.System;
 
 class EncounterView extends WatchUi.View {
 
@@ -117,6 +118,9 @@ class EncounterView extends WatchUi.View {
         // ── Fondo Game Boy (escenario batalla) ───────────
         drawBattleBackground(dc, w, h);
 
+        // ── Reloj (visible siempre en encounter) ─────────
+        drawClock(dc, w);
+
         // ── Pantalla de captura exitosa ───────────────────
         if (_captured) {
             drawCaptureScreen(dc, w, h);
@@ -136,7 +140,7 @@ class EncounterView extends WatchUi.View {
         var data    = PokemonData.get(id);
         var tier    = data[:tier];
         var name    = PokemonData.getName(id);
-        var stepsNow   = GameState.getStepsToday();
+        var stepsNow   = GameState.getCumulativeSteps();
         var stepsInEnc = stepsNow - enc[:stepsAtStart];
 
         var tierNames  = [
@@ -233,7 +237,7 @@ class EncounterView extends WatchUi.View {
         var meters = (stepsInEnc * 75) / 100;
         dc.setColor(0x666666, Graphics.COLOR_TRANSPARENT);
         dc.drawText(cx, infoY, Graphics.FONT_XTINY,
-            stepsInEnc.toString() + " pasos  ~" + meters.toString() + "m",
+            stepsInEnc.toString() + " " + tr(Rez.Strings.LabelSteps) + "  ~" + meters.toString() + "m",
             Graphics.TEXT_JUSTIFY_CENTER);
 
         // ── Mensaje motivación ─────────────────────────────
@@ -319,6 +323,24 @@ class EncounterView extends WatchUi.View {
         dc.setColor(0x336633, Graphics.COLOR_TRANSPARENT);
         dc.drawText(cx, h - 50, Graphics.FONT_XTINY,
             tr(Rez.Strings.TapToContinue), Graphics.TEXT_JUSTIFY_CENTER);
+    }
+
+    // ── Dibujar reloj abajo centrado (safe area) ───────────
+    function drawClock(dc as Graphics.Dc, w as Lang.Number) as Void {
+        var clk = System.getClockTime();
+        var hr = clk.hour;
+        var is24h = System.getDeviceSettings().is24Hour;
+        if (!is24h) {
+            if (hr == 0) { hr = 12; }
+            else if (hr > 12) { hr -= 12; }
+        }
+        var timeStr = hr.format("%d") + ":" + clk.min.format("%02d");
+        var cx = w / 2;
+        var y = 338;
+        dc.setColor(0x101010, Graphics.COLOR_TRANSPARENT);
+        dc.fillRoundedRectangle(cx - 34, y - 2, 68, 16, 6);
+        dc.setColor(0xFFCC00, Graphics.COLOR_TRANSPARENT);
+        dc.drawText(cx, y, Graphics.FONT_XTINY, timeStr, Graphics.TEXT_JUSTIFY_CENTER);
     }
 
     // ── Dibujar fondo estilo batalla GameBoy (bitmap) ─────────

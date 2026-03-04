@@ -12,7 +12,7 @@
 //  Mew      (151): Capturar Articuno + Zapdos + Moltres
 //
 //  ── Gen 2 (Johto) ──
-//  Raikou   (243): 20,000 pasos en un día (req. 50K totales)
+//  Raikou   (243): 10,000 pasos en un día (req. 50K totales)
 //  Entei    (244): 1,000,000 pasos totales acumulados
 //  Suicune  (245): Racha de 60 días activos consecutivos
 //  Lugia    (249): Capturar las 3 bestias (Raikou+Entei+Suicune)
@@ -31,7 +31,7 @@ class LegendaryQuestManager {
     // Mewtwo: todos los normales de Kanto (151 - 5 quest legendarios = 146)
     static const KANTO_NORMAL_COUNT    = 146;
     // Gen 2 conditions
-    static const DAILY_STEPS_REQUIRED  = 20000;   // Raikou: 20K en un día
+    static const DAILY_STEPS_REQUIRED  = 10000;   // Raikou: 10K en un día
     static const MIN_TOTAL_FOR_DAILY   = 50000;   // Mínimo pasos totales antes de activar quest diario
     static const TOTAL_STEPS_GEN2      = 1000000; // Entei: 1M pasos totales
     static const STREAK_GEN2_REQUIRED  = 60;      // Suicune: 60 días racha
@@ -168,7 +168,7 @@ class LegendaryQuestManager {
             :hpMax   => data[:hp],
             :hpCurr  => data[:hp],
             :stepPowerPercent => 100,
-            :stepsAtStart => GameState.getStepsToday()
+            :stepsAtStart => GameState.getCumulativeSteps()
         };
     }
 
@@ -225,7 +225,7 @@ class LegendaryQuestManager {
         if (id == 146) { return "500 capturas"; }
         if (id == 150) { return "146 Kanto"; }
         if (id == 151) { return "3 aves leg."; }
-        if (id == 243) { return "20K p/dia"; }
+        if (id == 243) { return "10K p/dia"; }
         if (id == 244) { return "1M pasos"; }
         if (id == 245) { return "60d racha"; }
         if (id == 249) { return "3 bestias"; }

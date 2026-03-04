@@ -73,20 +73,20 @@ C__Users_Alonso_Desktop_Garmin_pokewatch_source_MainView_mc_32_30_38_4_start:
 [ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\MainView.mc" 34 8 ]
         symbol [ GameState %tmp.12 34 8 17 ];
         %tmp.12 = getv ? :GameState;
-        symbol [ updateActivityBlocks %tmp.13 34 18 38 ];
-        %tmp.13 = getv function %tmp.12 :updateActivityBlocks;
+        symbol [ updateTotalSteps %tmp.13 34 18 34 ];
+        %tmp.13 = getv function %tmp.12 :updateTotalSteps;
         invoke %tmp.12 %tmp.13();
 [ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\MainView.mc" 35 8 ]
         symbol [ GameState %tmp.15 35 8 17 ];
         %tmp.15 = getv ? :GameState;
-        symbol [ updateBuddySteps %tmp.16 35 18 34 ];
-        %tmp.16 = getv function %tmp.15 :updateBuddySteps;
+        symbol [ updateActivityBlocks %tmp.16 35 18 38 ];
+        %tmp.16 = getv function %tmp.15 :updateActivityBlocks;
         invoke %tmp.15 %tmp.16();
 [ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\MainView.mc" 36 8 ]
         symbol [ GameState %tmp.18 36 8 17 ];
         %tmp.18 = getv ? :GameState;
-        symbol [ updateTotalSteps %tmp.19 36 18 34 ];
-        %tmp.19 = getv function %tmp.18 :updateTotalSteps;
+        symbol [ updateBuddySteps %tmp.19 36 18 34 ];
+        %tmp.19 = getv function %tmp.18 :updateBuddySteps;
         invoke %tmp.18 %tmp.19();
 [ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\MainView.mc" 37 8 ]
         %tmp.20 = self;
@@ -112,20 +112,20 @@ C__Users_Alonso_Desktop_Garmin_pokewatch_source_MainView_mc_44_31_74_4_start:
 [ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\MainView.mc" 45 8 ]
         symbol [ GameState %tmp.2 45 8 17 ];
         %tmp.2 = getv ? :GameState;
-        symbol [ updateActivityBlocks %tmp.3 45 18 38 ];
-        %tmp.3 = getv function %tmp.2 :updateActivityBlocks;
+        symbol [ updateTotalSteps %tmp.3 45 18 34 ];
+        %tmp.3 = getv function %tmp.2 :updateTotalSteps;
         invoke %tmp.2 %tmp.3();
 [ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\MainView.mc" 46 8 ]
         symbol [ GameState %tmp.5 46 8 17 ];
         %tmp.5 = getv ? :GameState;
-        symbol [ updateBuddySteps %tmp.6 46 18 34 ];
-        %tmp.6 = getv function %tmp.5 :updateBuddySteps;
+        symbol [ updateActivityBlocks %tmp.6 46 18 38 ];
+        %tmp.6 = getv function %tmp.5 :updateActivityBlocks;
         invoke %tmp.5 %tmp.6();
 [ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\MainView.mc" 47 8 ]
         symbol [ GameState %tmp.8 47 8 17 ];
         %tmp.8 = getv ? :GameState;
-        symbol [ updateTotalSteps %tmp.9 47 18 34 ];
-        %tmp.9 = getv function %tmp.8 :updateTotalSteps;
+        symbol [ updateBuddySteps %tmp.9 47 18 34 ];
+        %tmp.9 = getv function %tmp.8 :updateBuddySteps;
         invoke %tmp.8 %tmp.9();
 [ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\MainView.mc" 48 8 ]
         [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_MainView_mc_44_31_74_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_MainView_mc_44_31_74_4_stop" ]
