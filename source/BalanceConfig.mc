@@ -116,33 +116,58 @@ class BalanceConfig {
         return baseValue + (baseValue * percent / 100);
     }
 
-    // ── XP / Level System ─────────────────────────────────
+    // ── XP / Level System (Curva exponencial) ────────────
     //
-    //  Crecimiento variable por tier (como los juegos):
-    //    Tier 0 (Común):      100 XP/nivel — suben rápido
-    //    Tier 1 (Poco común): 200 XP/nivel
-    //    Tier 2 (Raro):       350 XP/nivel
-    //    Tier 3 (Muy raro):   550 XP/nivel — suben lento
-    //    Tier 4 (Legendario): 800 XP/nivel
+    //  Fórmula: XP acumulado para nivel N = sum(base * n * intSqrt(n) / 10, n=1..N-1)
+    //  Bases por tier: [30, 55, 90, 140, 200]
     //
-    //  Niveles de evolución (parecido a los juegos):
-    //    evoCost 25  → Lv.7   (Caterpie, Weedle, Pidgey…)
-    //    evoCost 50  → Lv.18  (Nidorina, Gloom, Haunter…)
-    //    evoCost 100 → Lv.25  (Pikachu, Eevee, Kadabra…)
-    //    evoCost 150 → Lv.40  (Dragonair)
-    //    evoCost 400 → Lv.20  (Magikarp → Gyarados)
-    //
-    //  Ejemplos resultantes:
-    //    Caterpie  (tier 0, Lv.7)  → 600 XP  → 3 capturas ✓
-    //    Nidorina  (tier 1, Lv.18) → 3400 XP → ~10 capturas
-    //    Pikachu   (tier 2, Lv.25) → 8400 XP → ~17 capturas
-    //    Dragonair (tier 3, Lv.40) → 21450XP → ~27 capturas
-    //    Magikarp  (tier 0, Lv.20) → 1900 XP → ~10 capturas
+    //  Primeros niveles suben rápido, los últimos requieren dedicación real.
 
-    // XP que necesita un Pokémon para subir 1 nivel, según su tier
-    static function getXPPerLevel(tier as Lang.Number) as Lang.Number {
-        var xpByTier = [100, 200, 350, 550, 800];
-        return xpByTier[tier];
+    // Base de curva XP por tier
+    static function getXPBase(tier as Lang.Number) as Lang.Number {
+        var bases = [30, 55, 90, 140, 200];
+        return bases[tier];
+    }
+
+    // Raíz cuadrada entera (Newton's method, solo enteros)
+    static function intSqrt(n as Lang.Number) as Lang.Number {
+        if (n <= 0) { return 0; }
+        if (n == 1) { return 1; }
+        var x = n;
+        var y = (x + 1) / 2;
+        while (y < x) {
+            x = y;
+            y = (x + n / x) / 2;
+        }
+        return x;
+    }
+
+    // XP acumulado total necesario para alcanzar un nivel dado
+    static function getXPForLevel(level as Lang.Number, tier as Lang.Number) as Lang.Number {
+        if (level <= 1) { return 0; }
+        var base = getXPBase(tier);
+        var total = 0;
+        for (var n = 1; n < level; n++) {
+            total += base * n * intSqrt(n) / 10;
+        }
+        return total;
+    }
+
+    // Level from total XP (búsqueda binaria, max 7 iteraciones)
+    static function getLevelFromXP(xp as Lang.Number, tier as Lang.Number) as Lang.Number {
+        if (xp <= 0) { return 1; }
+        var lo = 1;
+        var hi = 100;
+        while (lo < hi) {
+            var mid = (lo + hi + 1) / 2;
+            if (getXPForLevel(mid, tier) <= xp) {
+                lo = mid;
+            } else {
+                hi = mid - 1;
+            }
+        }
+        if (lo > 100) { lo = 100; }
+        return lo;
     }
 
     // XP awarded to the caught Pokémon on each catch
@@ -157,28 +182,47 @@ class BalanceConfig {
         return xpByTier[tier];
     }
 
-    // Level from total XP (variable por tier, max 100)
-    static function getLevelFromXP(xp as Lang.Number, tier as Lang.Number) as Lang.Number {
-        var perLevel = getXPPerLevel(tier);
-        var level = 1 + (xp / perLevel);
-        if (level > 100) { level = 100; }
-        return level;
-    }
-
-    // XP needed to reach a given level (variable por tier)
-    static function getXPForLevel(level as Lang.Number, tier as Lang.Number) as Lang.Number {
-        var perLevel = getXPPerLevel(tier);
-        return (level - 1) * perLevel;
-    }
-
     // Nivel requerido para evolucionar según el evoCost base
-    //   (alineado con los juegos originales)
     static function getEvolutionLevel(baseCost as Lang.Number) as Lang.Number {
         if (baseCost <= 0) { return 0; }
-        if (baseCost <= 25) { return 7; }   // Caterpie Lv.7, Pidgey Lv.7…
-        if (baseCost <= 50) { return 18; }  // Nidorina Lv.18, Gloom Lv.18…
-        if (baseCost <= 100) { return 25; } // Pikachu Lv.25, Eevee Lv.25…
-        if (baseCost <= 150) { return 40; } // Dragonair Lv.40
-        return 20;                          // Magikarp Lv.20 (caso especial)
+        if (baseCost <= 25) { return 7; }
+        if (baseCost <= 50) { return 18; }
+        if (baseCost <= 100) { return 25; }
+        if (baseCost <= 150) { return 40; }
+        return 20;
     }
+
+    // ── Battle System constants ───────────────────────────
+
+    // Trainer spawn chance (15% of spawns are trainers)
+    static function getTrainerSpawnPercent() as Lang.Number {
+        return 15;
+    }
+
+    // Gym data: [name, pokemonId, level, baseSteps, timeSec, unlock, xpReward]
+    // unlock > 0 = rival wins required; unlock < 0 = -(previous badge index)
+    static const GYM_DATA = [
+        ["Brock",    95, 14, 2000, 2700,   0,   500],
+        ["Misty",   121, 21, 2500, 3000,  -1,   800],
+        ["Surge",    26, 28, 3000, 3300,  -2,  1200],
+        ["Erika",    45, 32, 3500, 3600,  -3,  1800],
+        ["Koga",     89, 37, 4000, 3600,  -4,  2500],
+        ["Sabrina",  65, 43, 5000, 4200,  -5,  3500],
+        ["Blaine",   59, 47, 5500, 4500,  -6,  5000],
+        ["Giovanni", 34, 50, 6000, 4800,  -7,  8000],
+        ["Falkner", 164, 52, 6500, 4500,  -8,  3000],
+        ["Bugsy",   123, 55, 7000, 4500,  -9,  3500],
+        ["Whitney", 241, 58, 7500, 4500, -10,  4000],
+        ["Morty",    94, 62, 8000, 4800, -11,  5000],
+        ["Chuck",    62, 65, 8500, 4800, -12,  6000],
+        ["Jasmine", 208, 68, 9000, 4800, -13,  7000],
+        ["Pryce",   221, 72,10000, 5100, -14,  9000],
+        ["Clair",   230, 75,11000, 5400, -15, 12000],
+        ["Will",    178, 80,12000, 5400, -16, 10000],
+        ["Koga E4", 169, 85,13000, 5400, -17, 12000],
+        ["Bruno",    68, 90,14000, 6000, -18, 15000],
+        ["Lance",   149, 95,16000, 7200, -19, 20000]
+    ];
+
+    static const GYM_COUNT = 20;
 }

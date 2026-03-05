@@ -1,0 +1,1353 @@
+[ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc"; @line = 6; @symbol_importdef<0> = [Toybox,6,7,13]; @symbol_importdef<1> = [WatchUi,6,14,21]; ]
+import Toybox.WatchUi;
+[ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc"; @line = 7; @symbol_importdef<0> = [Toybox,7,7,13]; @symbol_importdef<1> = [Graphics,7,14,22]; ]
+import Toybox.Graphics;
+[ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc"; @line = 8; @symbol_importdef<0> = [Toybox,8,7,13]; @symbol_importdef<1> = [Lang,8,14,18]; ]
+import Toybox.Lang;
+[ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc"; @line = 10; @symbol_classdef = [TeamView,10,6,14]; @symbol_extends<0> = [WatchUi,10,23,30]; @symbol_extends<1> = [View,10,31,35]; ]
+class TeamView extends WatchUi.View {
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc"; @line = 10; ]
+    <init> {
+    }
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc"; @line = 10; ]
+    static
+    <init> {
+    }
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc"; @line = 12; @position = 8; @symbol_vardef = [_flashMsg,12,8,17]; @symbol_type<0> = [Lang,12,21,25]; @symbol_type<1> = [String,12,26,32]; ]
+    var _flashMsg as Lang.String = "";
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc"; @line = 13; @position = 8; @symbol_vardef = [_flashFrames,13,8,20]; @symbol_type<0> = [Lang,13,24,28]; @symbol_type<1> = [Number,13,29,35]; ]
+    var _flashFrames as Lang.Number = 0;
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc"; @line = 15; @symbol_functiondef = [initialize,15,13,23]; ]
+    function initialize() as Void {
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_15_26_17_4_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 16 8 ]
+        symbol [ View %tmp.2 16 8 12 ];
+        %tmp.2 = getv ? :View;
+        symbol [ initialize %tmp.3 16 13 23 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_15_26_17_4_stop:
+    }
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc"; @line = 20; @symbol_functiondef = [getEffectiveTeam,20,13,29]; @symbol_return<0> = [Lang,20,35,39]; @symbol_return<1> = [Array,20,40,45]; ]
+    function getEffectiveTeam() as Lang.Array {
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_20_46_31_4_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 21 8 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_20_46_31_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_20_46_31_4_stop" ]
+        %ids.1 = local;
+        symbol [ ids %ids.1 21 12 15 ];
+        %tmp.1 = newa 0 Lang.Array;
+        symbol [ Lang %tmp.1 21 24 28 ];
+        symbol [ Array %tmp.1 21 29 34 ];
+        lputv %ids.1 %tmp.1;
+        symbol [ ids %ids.1 21 12 15 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 22 8 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_22_8_24_8_if_stmt:
+        symbol [ GameState %tmp.3 22 12 21 ];
+        %tmp.3 = getv ? :GameState;
+        symbol [ buddyId %tmp.4 22 22 29 ];
+        %tmp.4 = getv %tmp.3 :buddyId;
+        %tmp.5 = 0;
+        %tmp.6 = gt %tmp.4 %tmp.5;
+        bf %tmp.6 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_22_8_24_8_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_22_8_24_8_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_22_35_24_8_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 23 12 ]
+        %tmp.7 = lgetv %ids.1;
+        symbol [ ids %tmp.7 23 12 15 ];
+        symbol [ add %tmp.8 23 16 19 ];
+        %tmp.8 = getv function %tmp.7 :add;
+        symbol [ GameState %tmp.10 23 20 29 ];
+        %tmp.10 = getv ? :GameState;
+        symbol [ buddyId %tmp.11 23 30 37 ];
+        %tmp.11 = getv %tmp.10 :buddyId;
+        invoke %tmp.7 %tmp.8(%tmp.11);
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_22_35_24_8_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_22_8_24_8_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_22_8_24_8_if_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 25 8 ]
+        for @C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_25_8_29_8_for_test @C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_25_8_29_8_for_incr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_25_8_29_8_for_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_25_8_29_8_for_init:
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_25_8_29_8_for_begin" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_25_8_29_8_for_end" ]
+        %i.2 = local;
+        symbol [ i %i.2 25 17 18 ];
+        %tmp.12 = 0;
+        lputv %i.2 %tmp.12;
+        symbol [ i %i.2 25 17 18 ];
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_25_8_29_8_for_test:
+        %tmp.13 = lgetv %i.2;
+        symbol [ i %tmp.13 25 24 25 ];
+        symbol [ GameState %tmp.15 25 28 37 ];
+        %tmp.15 = getv ? :GameState;
+        symbol [ team %tmp.16 25 38 42 ];
+        %tmp.16 = getv %tmp.15 :team;
+        symbol [ size %tmp.17 25 43 47 ];
+        %tmp.17 = getv function %tmp.16 :size;
+        %tmp.18 = invoke %tmp.16 %tmp.17();
+        %tmp.19 = lt %tmp.13 %tmp.18;
+        bf %tmp.19 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_25_8_29_8_for_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_25_8_29_8_for_begin:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_25_56_29_8_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 26 12 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_26_12_28_12_if_stmt:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_26_16_26_71_begin:
+        symbol [ GameState %tmp.21 26 16 25 ];
+        %tmp.21 = getv ? :GameState;
+        symbol [ team %tmp.22 26 26 30 ];
+        %tmp.22 = getv %tmp.21 :team;
+        %tmp.23 = lgetv %i.2;
+        symbol [ i %tmp.23 26 31 32 ];
+        %tmp.24 = agetv %tmp.22 %tmp.23;
+        symbol [ GameState %tmp.26 26 37 46 ];
+        %tmp.26 = getv ? :GameState;
+        symbol [ buddyId %tmp.27 26 47 54 ];
+        %tmp.27 = getv %tmp.26 :buddyId;
+        %tmp.28 = ne %tmp.24 %tmp.27;
+        bf %tmp.28 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_26_12_28_12_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_26_58_26_71_true:
+        %tmp.29 = lgetv %ids.1;
+        symbol [ ids %tmp.29 26 58 61 ];
+        symbol [ size %tmp.30 26 62 66 ];
+        %tmp.30 = getv function %tmp.29 :size;
+        %tmp.31 = invoke %tmp.29 %tmp.30();
+        %tmp.32 = 6;
+        %tmp.33 = lt %tmp.31 %tmp.32;
+        push %tmp.33;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_26_58_26_71_end:
+        %tmp.34 = phi [%tmp.28 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_26_16_26_71_begin] [%tmp.33 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_26_58_26_71_true] [%tmp.34 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_26_58_26_71_end];
+        bf %tmp.34 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_26_12_28_12_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_26_12_28_12_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_26_74_28_12_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 27 16 ]
+        %tmp.35 = lgetv %ids.1;
+        symbol [ ids %tmp.35 27 16 19 ];
+        symbol [ add %tmp.36 27 20 23 ];
+        %tmp.36 = getv function %tmp.35 :add;
+        symbol [ GameState %tmp.38 27 24 33 ];
+        %tmp.38 = getv ? :GameState;
+        symbol [ team %tmp.39 27 34 38 ];
+        %tmp.39 = getv %tmp.38 :team;
+        %tmp.40 = lgetv %i.2;
+        symbol [ i %tmp.40 27 39 40 ];
+        %tmp.41 = agetv %tmp.39 %tmp.40;
+        invoke %tmp.35 %tmp.36(%tmp.41);
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_26_74_28_12_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_26_12_28_12_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_26_12_28_12_if_end:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_25_56_29_8_stop:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_25_8_29_8_for_incr:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 25 ]
+        %tmp.44 = lgetv %i.2;
+        symbol [ i %tmp.44 25 51 52 ];
+        %tmp.45 = add %tmp.44 1;
+        lputv %i.2 %tmp.45;
+        symbol [ i %i.2 25 51 52 ];
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_25_8_29_8_for_test;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_25_8_29_8_for_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 30 8 ]
+        %tmp.46 = lgetv %ids.1;
+        symbol [ ids %tmp.46 30 15 18 ];
+        ret %tmp.46;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_20_46_31_4_stop:
+    }
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc"; @line = 33; @symbol_functiondef = [getIdAtTapY,33,13,24]; @symbol_param<0> = [tapY,33,25,29]; @symbol_param<0>_type<0> = [Lang,33,33,37]; @symbol_param<0>_type<1> = [Number,33,38,44]; @symbol_return<0> = [Lang,33,49,53]; @symbol_return<1> = [Number,33,54,60]; ]
+    function getIdAtTapY(tapY as Lang.Number) as Lang.Number {
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_33_61_45_4_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 34 8 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_33_61_45_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_33_61_45_4_stop" ]
+        %startY.1 = local;
+        symbol [ startY %startY.1 34 12 18 ];
+        symbol [ Layout %tmp.2 34 21 27 ];
+        %tmp.2 = getv ? :Layout;
+        symbol [ Team %tmp.3 34 28 32 ];
+        %tmp.3 = getv %tmp.2 :Team;
+        symbol [ LIST_START_Y %tmp.4 34 33 45 ];
+        %tmp.4 = getv %tmp.3 :LIST_START_Y;
+        lputv %startY.1 %tmp.4;
+        symbol [ startY %startY.1 34 12 18 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 35 8 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_33_61_45_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_33_61_45_4_stop" ]
+        %slotH.2 = local;
+        symbol [ slotH %slotH.2 35 12 17 ];
+        symbol [ Layout %tmp.6 35 20 26 ];
+        %tmp.6 = getv ? :Layout;
+        symbol [ Team %tmp.7 35 27 31 ];
+        %tmp.7 = getv %tmp.6 :Team;
+        symbol [ SLOT_H %tmp.8 35 32 38 ];
+        %tmp.8 = getv %tmp.7 :SLOT_H;
+        lputv %slotH.2 %tmp.8;
+        symbol [ slotH %slotH.2 35 12 17 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 36 8 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_36_8_38_8_if_stmt:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_36_12_36_50_begin:
+        %tmp.9 = lgetv %tapY;
+        symbol [ tapY %tmp.9 36 12 16 ];
+        %tmp.10 = lgetv %startY.1;
+        symbol [ startY %tmp.10 36 19 25 ];
+        %tmp.11 = lt %tmp.9 %tmp.10;
+        bt %tmp.11 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_36_8_38_8_if_true;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_36_29_36_50_false:
+        %tmp.12 = lgetv %tapY;
+        symbol [ tapY %tmp.12 36 29 33 ];
+        %tmp.13 = lgetv %startY.1;
+        symbol [ startY %tmp.13 36 37 43 ];
+        %tmp.14 = 6;
+        %tmp.15 = lgetv %slotH.2;
+        symbol [ slotH %tmp.15 36 50 55 ];
+        %tmp.16 = mul %tmp.14 %tmp.15;
+        %tmp.17 = add %tmp.13 %tmp.16;
+        %tmp.18 = gte %tmp.12 %tmp.17;
+        push %tmp.18;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_36_29_36_50_end:
+        %tmp.19 = phi [%tmp.11 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_36_12_36_50_begin] [%tmp.18 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_36_29_36_50_false] [%tmp.19 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_36_29_36_50_end];
+        bf %tmp.19 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_36_8_38_8_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_36_8_38_8_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_36_57_38_8_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 37 12 ]
+        %tmp.20 = 0;
+        ret %tmp.20;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_36_57_38_8_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_36_8_38_8_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_36_8_38_8_if_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 39 8 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_33_61_45_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_33_61_45_4_stop" ]
+        %row.3 = local;
+        symbol [ row %row.3 39 12 15 ];
+        %tmp.21 = lgetv %tapY;
+        symbol [ tapY %tmp.21 39 19 23 ];
+        %tmp.22 = lgetv %startY.1;
+        symbol [ startY %tmp.22 39 26 32 ];
+        %tmp.23 = sub %tmp.21 %tmp.22;
+        %tmp.24 = lgetv %slotH.2;
+        symbol [ slotH %tmp.24 39 36 41 ];
+        %tmp.25 = div %tmp.23 %tmp.24;
+        lputv %row.3 %tmp.25;
+        symbol [ row %row.3 39 12 15 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 40 8 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_33_61_45_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_33_61_45_4_stop" ]
+        %team.4 = local;
+        symbol [ team %team.4 40 12 16 ];
+        %tmp.26 = self;
+        symbol [ getEffectiveTeam %tmp.27 40 19 35 ];
+        %tmp.27 = getv function %tmp.26 :getEffectiveTeam;
+        %tmp.28 = invoke %tmp.26 %tmp.27();
+        lputv %team.4 %tmp.28;
+        symbol [ team %team.4 40 12 16 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 41 8 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_41_8_43_8_if_stmt:
+        %tmp.29 = lgetv %row.3;
+        symbol [ row %tmp.29 41 12 15 ];
+        %tmp.30 = lgetv %team.4;
+        symbol [ team %tmp.30 41 18 22 ];
+        symbol [ size %tmp.31 41 23 27 ];
+        %tmp.31 = getv function %tmp.30 :size;
+        %tmp.32 = invoke %tmp.30 %tmp.31();
+        %tmp.33 = lt %tmp.29 %tmp.32;
+        bf %tmp.33 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_41_8_43_8_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_41_8_43_8_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_41_31_43_8_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 42 12 ]
+        %tmp.34 = lgetv %team.4;
+        symbol [ team %tmp.34 42 19 23 ];
+        %tmp.35 = lgetv %row.3;
+        symbol [ row %tmp.35 42 24 27 ];
+        %tmp.36 = agetv %tmp.34 %tmp.35;
+        %tmp.37 = as %tmp.36 Lang.Number;
+        symbol [ Lang %tmp.37 42 32 36 ];
+        symbol [ Number %tmp.37 42 37 43 ];
+        ret %tmp.37;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_41_31_43_8_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_41_8_43_8_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_41_8_43_8_if_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 44 8 ]
+        %tmp.38 = 0;
+        ret %tmp.38;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_33_61_45_4_stop:
+    }
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc"; @line = 47; @symbol_functiondef = [showFlash,47,13,22]; @symbol_param<0> = [msg,47,23,26]; @symbol_param<0>_type<0> = [Lang,47,30,34]; @symbol_param<0>_type<1> = [String,47,35,41]; ]
+    function showFlash(msg as Lang.String) as Void {
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_47_51_50_4_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 48 8 ]
+        %tmp.1 = lgetv %msg;
+        symbol [ msg %tmp.1 48 20 23 ];
+        symbol [ _flashMsg ? 48 8 17 ];
+        putv self :_flashMsg %tmp.1;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 49 8 ]
+        %tmp.2 = 3;
+        symbol [ _flashFrames ? 49 8 20 ];
+        putv self :_flashFrames %tmp.2;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_47_51_50_4_stop:
+    }
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc"; @line = 52; @symbol_functiondef = [onUpdate,52,13,21]; @symbol_param<0> = [dc,52,22,24]; @symbol_param<0>_type<0> = [Graphics,52,28,36]; @symbol_param<0>_type<1> = [Dc,52,37,39]; ]
+    function onUpdate(dc as Graphics.Dc) as Void {
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_52_49_152_4_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 53 8 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_52_49_152_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_52_49_152_4_stop" ]
+        %w.1 = local;
+        symbol [ w %w.1 53 12 13 ];
+        %tmp.1 = lgetv %dc;
+        symbol [ dc %tmp.1 53 16 18 ];
+        symbol [ getWidth %tmp.2 53 19 27 ];
+        %tmp.2 = getv function %tmp.1 :getWidth;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        lputv %w.1 %tmp.3;
+        symbol [ w %w.1 53 12 13 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 54 8 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_52_49_152_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_52_49_152_4_stop" ]
+        %cx.2 = local;
+        symbol [ cx %cx.2 54 12 14 ];
+        %tmp.4 = lgetv %w.1;
+        symbol [ w %tmp.4 54 17 18 ];
+        %tmp.5 = 2;
+        %tmp.6 = div %tmp.4 %tmp.5;
+        lputv %cx.2 %tmp.6;
+        symbol [ cx %cx.2 54 12 14 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 56 8 ]
+        %tmp.7 = lgetv %dc;
+        symbol [ dc %tmp.7 56 8 10 ];
+        symbol [ setColor %tmp.8 56 11 19 ];
+        %tmp.8 = getv function %tmp.7 :setColor;
+        %tmp.9 = 0x050508;
+        %tmp.10 = 0x050508;
+        invoke %tmp.7 %tmp.8(%tmp.9, %tmp.10);
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 57 8 ]
+        %tmp.11 = lgetv %dc;
+        symbol [ dc %tmp.11 57 8 10 ];
+        symbol [ clear %tmp.12 57 11 16 ];
+        %tmp.12 = getv function %tmp.11 :clear;
+        invoke %tmp.11 %tmp.12();
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 60 8 ]
+        %tmp.13 = lgetv %dc;
+        symbol [ dc %tmp.13 60 8 10 ];
+        symbol [ setColor %tmp.14 60 11 19 ];
+        %tmp.14 = getv function %tmp.13 :setColor;
+        %tmp.15 = 0x0F0F18;
+        symbol [ Graphics %tmp.16 60 30 38 ];
+        %tmp.16 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.17 60 39 56 ];
+        %tmp.17 = getv %tmp.16 :COLOR_TRANSPARENT;
+        invoke %tmp.13 %tmp.14(%tmp.15, %tmp.17);
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 61 8 ]
+        %tmp.18 = lgetv %dc;
+        symbol [ dc %tmp.18 61 8 10 ];
+        symbol [ fillRoundedRectangle %tmp.19 61 11 31 ];
+        %tmp.19 = getv function %tmp.18 :fillRoundedRectangle;
+        %tmp.20 = 90;
+        symbol [ Layout %tmp.22 61 36 42 ];
+        %tmp.22 = getv ? :Layout;
+        symbol [ Team %tmp.23 61 43 47 ];
+        %tmp.23 = getv %tmp.22 :Team;
+        symbol [ HEADER_Y %tmp.24 61 48 56 ];
+        %tmp.24 = getv %tmp.23 :HEADER_Y;
+        %tmp.25 = lgetv %w.1;
+        symbol [ w %tmp.25 61 58 59 ];
+        %tmp.26 = 180;
+        %tmp.27 = sub %tmp.25 %tmp.26;
+        symbol [ Layout %tmp.29 61 67 73 ];
+        %tmp.29 = getv ? :Layout;
+        symbol [ Team %tmp.30 61 74 78 ];
+        %tmp.30 = getv %tmp.29 :Team;
+        symbol [ HEADER_H %tmp.31 61 79 87 ];
+        %tmp.31 = getv %tmp.30 :HEADER_H;
+        %tmp.32 = 8;
+        invoke %tmp.18 %tmp.19(%tmp.20, %tmp.24, %tmp.27, %tmp.31, %tmp.32);
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 62 8 ]
+        %tmp.33 = lgetv %dc;
+        symbol [ dc %tmp.33 62 8 10 ];
+        symbol [ setColor %tmp.34 62 11 19 ];
+        %tmp.34 = getv function %tmp.33 :setColor;
+        %tmp.35 = 0x44CCFF;
+        symbol [ Graphics %tmp.36 62 30 38 ];
+        %tmp.36 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.37 62 39 56 ];
+        %tmp.37 = getv %tmp.36 :COLOR_TRANSPARENT;
+        invoke %tmp.33 %tmp.34(%tmp.35, %tmp.37);
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 63 8 ]
+        %tmp.38 = lgetv %dc;
+        symbol [ dc %tmp.38 63 8 10 ];
+        symbol [ drawText %tmp.39 63 11 19 ];
+        %tmp.39 = getv function %tmp.38 :drawText;
+        %tmp.40 = lgetv %cx.2;
+        symbol [ cx %tmp.40 63 20 22 ];
+        symbol [ Layout %tmp.42 63 24 30 ];
+        %tmp.42 = getv ? :Layout;
+        symbol [ Team %tmp.43 63 31 35 ];
+        %tmp.43 = getv %tmp.42 :Team;
+        symbol [ TITLE_Y %tmp.44 63 36 43 ];
+        %tmp.44 = getv %tmp.43 :TITLE_Y;
+        symbol [ Graphics %tmp.45 63 45 53 ];
+        %tmp.45 = getm $.Toybox.Graphics;
+        symbol [ FONT_XTINY %tmp.46 63 54 64 ];
+        %tmp.46 = getv %tmp.45 :FONT_XTINY;
+        %tmp.47 = "TEAM";
+        symbol [ Graphics %tmp.48 64 20 28 ];
+        %tmp.48 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.49 64 29 48 ];
+        %tmp.49 = getv %tmp.48 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.38 %tmp.39(%tmp.40, %tmp.44, %tmp.46, %tmp.47, %tmp.49);
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 67 8 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_52_49_152_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_52_49_152_4_stop" ]
+        %team.3 = local;
+        symbol [ team %team.3 67 12 16 ];
+        %tmp.50 = self;
+        symbol [ getEffectiveTeam %tmp.51 67 19 35 ];
+        %tmp.51 = getv function %tmp.50 :getEffectiveTeam;
+        %tmp.52 = invoke %tmp.50 %tmp.51();
+        lputv %team.3 %tmp.52;
+        symbol [ team %team.3 67 12 16 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 68 8 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_52_49_152_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_52_49_152_4_stop" ]
+        %avgLv.4 = local;
+        symbol [ avgLv %avgLv.4 68 12 17 ];
+        symbol [ GameState %tmp.54 68 20 29 ];
+        %tmp.54 = getv ? :GameState;
+        symbol [ getTeamAvgLevel %tmp.55 68 30 45 ];
+        %tmp.55 = getv function %tmp.54 :getTeamAvgLevel;
+        %tmp.56 = invoke %tmp.54 %tmp.55();
+        lputv %avgLv.4 %tmp.56;
+        symbol [ avgLv %avgLv.4 68 12 17 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 69 8 ]
+        %tmp.57 = lgetv %dc;
+        symbol [ dc %tmp.57 69 8 10 ];
+        symbol [ setColor %tmp.58 69 11 19 ];
+        %tmp.58 = getv function %tmp.57 :setColor;
+        %tmp.59 = 0x666666;
+        symbol [ Graphics %tmp.60 69 30 38 ];
+        %tmp.60 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.61 69 39 56 ];
+        %tmp.61 = getv %tmp.60 :COLOR_TRANSPARENT;
+        invoke %tmp.57 %tmp.58(%tmp.59, %tmp.61);
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 70 8 ]
+        %tmp.62 = lgetv %dc;
+        symbol [ dc %tmp.62 70 8 10 ];
+        symbol [ drawText %tmp.63 70 11 19 ];
+        %tmp.63 = getv function %tmp.62 :drawText;
+        %tmp.64 = lgetv %cx.2;
+        symbol [ cx %tmp.64 70 20 22 ];
+        symbol [ Layout %tmp.66 70 24 30 ];
+        %tmp.66 = getv ? :Layout;
+        symbol [ Team %tmp.67 70 31 35 ];
+        %tmp.67 = getv %tmp.66 :Team;
+        symbol [ STATS_Y %tmp.68 70 36 43 ];
+        %tmp.68 = getv %tmp.67 :STATS_Y;
+        symbol [ Graphics %tmp.69 70 45 53 ];
+        %tmp.69 = getm $.Toybox.Graphics;
+        symbol [ FONT_XTINY %tmp.70 70 54 64 ];
+        %tmp.70 = getv %tmp.69 :FONT_XTINY;
+        %tmp.71 = lgetv %team.3;
+        symbol [ team %tmp.71 71 12 16 ];
+        symbol [ size %tmp.72 71 17 21 ];
+        %tmp.72 = getv function %tmp.71 :size;
+        %tmp.73 = invoke %tmp.71 %tmp.72();
+        symbol [ toString %tmp.74 71 24 32 ];
+        %tmp.74 = getv function %tmp.73 :toString;
+        %tmp.75 = invoke %tmp.73 %tmp.74();
+        %tmp.76 = "/6  Avg Lv.";
+        %tmp.77 = add %tmp.75 %tmp.76;
+        %tmp.78 = lgetv %avgLv.4;
+        symbol [ avgLv %tmp.78 71 53 58 ];
+        symbol [ toString %tmp.79 71 59 67 ];
+        %tmp.79 = getv function %tmp.78 :toString;
+        %tmp.80 = invoke %tmp.78 %tmp.79();
+        %tmp.81 = add %tmp.77 %tmp.80;
+        symbol [ Graphics %tmp.82 72 12 20 ];
+        %tmp.82 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.83 72 21 40 ];
+        %tmp.83 = getv %tmp.82 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.62 %tmp.63(%tmp.64, %tmp.68, %tmp.70, %tmp.81, %tmp.83);
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 74 8 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_52_49_152_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_52_49_152_4_stop" ]
+        %tierColors.5 = local;
+        symbol [ tierColors %tierColors.5 74 12 22 ];
+        %tmp.84 = newa 5;
+        %tmp.85 = 0xAAAAAA;
+        %tmp.86 = dup %tmp.84;
+        %tmp.87 = aputv %tmp.86 0 %tmp.85;
+        %tmp.88 = 0x44CC44;
+        %tmp.89 = dup %tmp.87;
+        %tmp.90 = aputv %tmp.89 1 %tmp.88;
+        %tmp.91 = 0x4488FF;
+        %tmp.92 = dup %tmp.90;
+        %tmp.93 = aputv %tmp.92 2 %tmp.91;
+        %tmp.94 = 0xFF66FF;
+        %tmp.95 = dup %tmp.93;
+        %tmp.96 = aputv %tmp.95 3 %tmp.94;
+        %tmp.97 = 0xFFAA00;
+        %tmp.98 = dup %tmp.96;
+        %tmp.99 = aputv %tmp.98 4 %tmp.97;
+        lputv %tierColors.5 %tmp.99;
+        symbol [ tierColors %tierColors.5 74 12 22 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 75 8 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_52_49_152_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_52_49_152_4_stop" ]
+        %slotH.6 = local;
+        symbol [ slotH %slotH.6 75 12 17 ];
+        symbol [ Layout %tmp.101 75 20 26 ];
+        %tmp.101 = getv ? :Layout;
+        symbol [ Team %tmp.102 75 27 31 ];
+        %tmp.102 = getv %tmp.101 :Team;
+        symbol [ SLOT_H %tmp.103 75 32 38 ];
+        %tmp.103 = getv %tmp.102 :SLOT_H;
+        lputv %slotH.6 %tmp.103;
+        symbol [ slotH %slotH.6 75 12 17 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 76 8 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_52_49_152_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_52_49_152_4_stop" ]
+        %startY.7 = local;
+        symbol [ startY %startY.7 76 12 18 ];
+        symbol [ Layout %tmp.105 76 21 27 ];
+        %tmp.105 = getv ? :Layout;
+        symbol [ Team %tmp.106 76 28 32 ];
+        %tmp.106 = getv %tmp.105 :Team;
+        symbol [ LIST_START_Y %tmp.107 76 33 45 ];
+        %tmp.107 = getv %tmp.106 :LIST_START_Y;
+        lputv %startY.7 %tmp.107;
+        symbol [ startY %startY.7 76 12 18 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 78 8 ]
+        for @C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_78_8_134_8_for_test @C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_78_8_134_8_for_incr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_78_8_134_8_for_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_78_8_134_8_for_init:
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_78_8_134_8_for_begin" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_78_8_134_8_for_end" ]
+        %i.8 = local;
+        symbol [ i %i.8 78 17 18 ];
+        %tmp.108 = 0;
+        lputv %i.8 %tmp.108;
+        symbol [ i %i.8 78 17 18 ];
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_78_8_134_8_for_test:
+        %tmp.109 = lgetv %i.8;
+        symbol [ i %tmp.109 78 24 25 ];
+        %tmp.110 = 6;
+        %tmp.111 = lt %tmp.109 %tmp.110;
+        bf %tmp.111 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_78_8_134_8_for_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_78_8_134_8_for_begin:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_78_36_134_8_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 79 12 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_78_36_134_8_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_78_36_134_8_stop" ]
+        %y.9 = local;
+        symbol [ y %y.9 79 16 17 ];
+        %tmp.112 = lgetv %startY.7;
+        symbol [ startY %tmp.112 79 20 26 ];
+        %tmp.113 = lgetv %i.8;
+        symbol [ i %tmp.113 79 30 31 ];
+        %tmp.114 = lgetv %slotH.6;
+        symbol [ slotH %tmp.114 79 34 39 ];
+        %tmp.115 = mul %tmp.113 %tmp.114;
+        %tmp.116 = add %tmp.112 %tmp.115;
+        lputv %y.9 %tmp.116;
+        symbol [ y %y.9 79 16 17 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 80 12 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_78_36_134_8_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_78_36_134_8_stop" ]
+        %textY.10 = local;
+        symbol [ textY %textY.10 80 16 21 ];
+        %tmp.117 = lgetv %y.9;
+        symbol [ y %tmp.117 80 24 25 ];
+        %tmp.118 = 10;
+        %tmp.119 = add %tmp.117 %tmp.118;
+        lputv %textY.10 %tmp.119;
+        symbol [ textY %textY.10 80 16 21 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 83 12 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_83_12_86_12_if_stmt:
+        %tmp.120 = lgetv %i.8;
+        symbol [ i %tmp.120 83 16 17 ];
+        %tmp.121 = 2;
+        %tmp.122 = mod %tmp.120 %tmp.121;
+        %tmp.123 = 0;
+        %tmp.124 = eq %tmp.122 %tmp.123;
+        bf %tmp.124 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_83_12_86_12_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_83_12_86_12_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_83_28_86_12_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 84 16 ]
+        %tmp.125 = lgetv %dc;
+        symbol [ dc %tmp.125 84 16 18 ];
+        symbol [ setColor %tmp.126 84 19 27 ];
+        %tmp.126 = getv function %tmp.125 :setColor;
+        %tmp.127 = 0x0A0A12;
+        symbol [ Graphics %tmp.128 84 38 46 ];
+        %tmp.128 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.129 84 47 64 ];
+        %tmp.129 = getv %tmp.128 :COLOR_TRANSPARENT;
+        invoke %tmp.125 %tmp.126(%tmp.127, %tmp.129);
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 85 16 ]
+        %tmp.130 = lgetv %dc;
+        symbol [ dc %tmp.130 85 16 18 ];
+        symbol [ fillRectangle %tmp.131 85 19 32 ];
+        %tmp.131 = getv function %tmp.130 :fillRectangle;
+        %tmp.132 = 30;
+        %tmp.133 = lgetv %y.9;
+        symbol [ y %tmp.133 85 37 38 ];
+        %tmp.134 = lgetv %w.1;
+        symbol [ w %tmp.134 85 40 41 ];
+        %tmp.135 = 60;
+        %tmp.136 = sub %tmp.134 %tmp.135;
+        %tmp.137 = lgetv %slotH.6;
+        symbol [ slotH %tmp.137 85 48 53 ];
+        invoke %tmp.130 %tmp.131(%tmp.132, %tmp.133, %tmp.136, %tmp.137);
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_83_28_86_12_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_83_12_86_12_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_83_12_86_12_if_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 88 12 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_88_12_129_12_if_stmt:
+        %tmp.138 = lgetv %i.8;
+        symbol [ i %tmp.138 88 16 17 ];
+        %tmp.139 = lgetv %team.3;
+        symbol [ team %tmp.139 88 20 24 ];
+        symbol [ size %tmp.140 88 25 29 ];
+        %tmp.140 = getv function %tmp.139 :size;
+        %tmp.141 = invoke %tmp.139 %tmp.140();
+        %tmp.142 = lt %tmp.138 %tmp.141;
+        bf %tmp.142 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_88_12_129_12_if_else_false;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_88_12_129_12_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_88_33_121_12_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 89 16 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_88_33_121_12_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_88_33_121_12_stop" ]
+        %id.11 = local;
+        symbol [ id %id.11 89 20 22 ];
+        %tmp.143 = lgetv %team.3;
+        symbol [ team %tmp.143 89 25 29 ];
+        %tmp.144 = lgetv %i.8;
+        symbol [ i %tmp.144 89 30 31 ];
+        %tmp.145 = agetv %tmp.143 %tmp.144;
+        %tmp.146 = as %tmp.145 Lang.Number;
+        symbol [ Lang %tmp.146 89 36 40 ];
+        symbol [ Number %tmp.146 89 41 47 ];
+        lputv %id.11 %tmp.146;
+        symbol [ id %id.11 89 20 22 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 90 16 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_88_33_121_12_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_88_33_121_12_stop" ]
+        %data.12 = local;
+        symbol [ data %data.12 90 20 24 ];
+        symbol [ PokemonData %tmp.148 90 27 38 ];
+        %tmp.148 = getv ? :PokemonData;
+        symbol [ get %tmp.149 90 39 42 ];
+        %tmp.149 = getv function %tmp.148 :get;
+        %tmp.150 = lgetv %id.11;
+        symbol [ id %tmp.150 90 43 45 ];
+        %tmp.151 = invoke %tmp.148 %tmp.149(%tmp.150);
+        lputv %data.12 %tmp.151;
+        symbol [ data %data.12 90 20 24 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 91 16 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_88_33_121_12_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_88_33_121_12_stop" ]
+        %tier.13 = local;
+        symbol [ tier %tier.13 91 20 24 ];
+        %tmp.152 = lgetv %data.12;
+        symbol [ data %tmp.152 91 27 31 ];
+        %tmp.154 = const :tier;
+        symbol [ tier %tmp.154 91 33 37 const ];
+        %tmp.155 = agetv %tmp.152 %tmp.154;
+        lputv %tier.13 %tmp.155;
+        symbol [ tier %tier.13 91 20 24 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 92 16 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_88_33_121_12_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_88_33_121_12_stop" ]
+        %level.14 = local;
+        symbol [ level %level.14 92 20 25 ];
+        symbol [ GameState %tmp.157 92 28 37 ];
+        %tmp.157 = getv ? :GameState;
+        symbol [ getPokemonLevel %tmp.158 92 38 53 ];
+        %tmp.158 = getv function %tmp.157 :getPokemonLevel;
+        %tmp.159 = lgetv %id.11;
+        symbol [ id %tmp.159 92 54 56 ];
+        %tmp.160 = invoke %tmp.157 %tmp.158(%tmp.159);
+        lputv %level.14 %tmp.160;
+        symbol [ level %level.14 92 20 25 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 93 16 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_88_33_121_12_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_88_33_121_12_stop" ]
+        %isBuddy.15 = local;
+        symbol [ isBuddy %isBuddy.15 93 20 27 ];
+        %tmp.161 = lgetv %id.11;
+        symbol [ id %tmp.161 93 31 33 ];
+        symbol [ GameState %tmp.163 93 37 46 ];
+        %tmp.163 = getv ? :GameState;
+        symbol [ buddyId %tmp.164 93 47 54 ];
+        %tmp.164 = getv %tmp.163 :buddyId;
+        %tmp.165 = eq %tmp.161 %tmp.164;
+        lputv %isBuddy.15 %tmp.165;
+        symbol [ isBuddy %isBuddy.15 93 20 27 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 94 16 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_88_33_121_12_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_88_33_121_12_stop" ]
+        %isShiny.16 = local;
+        symbol [ isShiny %isShiny.16 94 20 27 ];
+        symbol [ GameState %tmp.167 94 30 39 ];
+        %tmp.167 = getv ? :GameState;
+        symbol [ shinyList %tmp.168 94 40 49 ];
+        %tmp.168 = getv %tmp.167 :shinyList;
+        symbol [ indexOf %tmp.169 94 50 57 ];
+        %tmp.169 = getv function %tmp.168 :indexOf;
+        %tmp.170 = lgetv %id.11;
+        symbol [ id %tmp.170 94 58 60 ];
+        %tmp.171 = invoke %tmp.168 %tmp.169(%tmp.170);
+        %tmp.172 = -1;
+        %tmp.173 = ne %tmp.171 %tmp.172;
+        lputv %isShiny.16 %tmp.173;
+        symbol [ isShiny %isShiny.16 94 20 27 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 97 16 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_88_33_121_12_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_88_33_121_12_stop" ]
+        %slotColor.17 = local;
+        symbol [ slotColor %slotColor.17 97 20 29 ];
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_97_32_97_53_begin:
+        %tmp.174 = lgetv %isBuddy.15;
+        symbol [ isBuddy %tmp.174 97 32 39 ];
+        bf %tmp.174 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_97_32_97_53_else_false;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_97_32_97_53_true:
+        %tmp.175 = 0x44CC44;
+        push %tmp.175;
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_97_32_97_53_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_97_32_97_53_else_false:
+        %tmp.176 = 0x4488FF;
+        push %tmp.176;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_97_32_97_53_end:
+        %tmp.177 = phi [%tmp.174 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_97_32_97_53_begin] [%tmp.175 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_97_32_97_53_true] [%tmp.176 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_97_32_97_53_else_false] [%tmp.177 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_97_32_97_53_end];
+        lputv %slotColor.17 %tmp.177;
+        symbol [ slotColor %slotColor.17 97 20 29 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 98 16 ]
+        %tmp.178 = lgetv %dc;
+        symbol [ dc %tmp.178 98 16 18 ];
+        symbol [ setColor %tmp.179 98 19 27 ];
+        %tmp.179 = getv function %tmp.178 :setColor;
+        %tmp.180 = lgetv %slotColor.17;
+        symbol [ slotColor %tmp.180 98 28 37 ];
+        symbol [ Graphics %tmp.181 98 39 47 ];
+        %tmp.181 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.182 98 48 65 ];
+        %tmp.182 = getv %tmp.181 :COLOR_TRANSPARENT;
+        invoke %tmp.178 %tmp.179(%tmp.180, %tmp.182);
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 99 16 ]
+        %tmp.183 = lgetv %dc;
+        symbol [ dc %tmp.183 99 16 18 ];
+        symbol [ drawText %tmp.184 99 19 27 ];
+        %tmp.184 = getv function %tmp.183 :drawText;
+        symbol [ Layout %tmp.186 99 28 34 ];
+        %tmp.186 = getv ? :Layout;
+        symbol [ Team %tmp.187 99 35 39 ];
+        %tmp.187 = getv %tmp.186 :Team;
+        symbol [ SLOT_NUM_X %tmp.188 99 40 50 ];
+        %tmp.188 = getv %tmp.187 :SLOT_NUM_X;
+        %tmp.189 = lgetv %textY.10;
+        symbol [ textY %tmp.189 99 52 57 ];
+        symbol [ Graphics %tmp.190 99 59 67 ];
+        %tmp.190 = getm $.Toybox.Graphics;
+        symbol [ FONT_XTINY %tmp.191 99 68 78 ];
+        %tmp.191 = getv %tmp.190 :FONT_XTINY;
+        %tmp.192 = lgetv %i.8;
+        symbol [ i %tmp.192 100 21 22 ];
+        %tmp.193 = 1;
+        %tmp.194 = add %tmp.192 %tmp.193;
+        symbol [ toString %tmp.195 100 28 36 ];
+        %tmp.195 = getv function %tmp.194 :toString;
+        %tmp.196 = invoke %tmp.194 %tmp.195();
+        symbol [ Graphics %tmp.197 100 40 48 ];
+        %tmp.197 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.198 100 49 68 ];
+        %tmp.198 = getv %tmp.197 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.183 %tmp.184(%tmp.188, %tmp.189, %tmp.191, %tmp.196, %tmp.198);
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 103 16 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_103_16_108_16_if_stmt:
+        %tmp.199 = lgetv %isBuddy.15;
+        symbol [ isBuddy %tmp.199 103 20 27 ];
+        bf %tmp.199 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_103_16_108_16_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_103_16_108_16_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_103_29_108_16_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 104 20 ]
+        %tmp.200 = lgetv %dc;
+        symbol [ dc %tmp.200 104 20 22 ];
+        symbol [ setColor %tmp.201 104 23 31 ];
+        %tmp.201 = getv function %tmp.200 :setColor;
+        %tmp.202 = 0x0A1A0A;
+        symbol [ Graphics %tmp.203 104 42 50 ];
+        %tmp.203 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.204 104 51 68 ];
+        %tmp.204 = getv %tmp.203 :COLOR_TRANSPARENT;
+        invoke %tmp.200 %tmp.201(%tmp.202, %tmp.204);
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 105 20 ]
+        %tmp.205 = lgetv %dc;
+        symbol [ dc %tmp.205 105 20 22 ];
+        symbol [ fillRectangle %tmp.206 105 23 36 ];
+        %tmp.206 = getv function %tmp.205 :fillRectangle;
+        %tmp.207 = 30;
+        %tmp.208 = lgetv %y.9;
+        symbol [ y %tmp.208 105 41 42 ];
+        %tmp.209 = lgetv %w.1;
+        symbol [ w %tmp.209 105 44 45 ];
+        %tmp.210 = 60;
+        %tmp.211 = sub %tmp.209 %tmp.210;
+        %tmp.212 = lgetv %slotH.6;
+        symbol [ slotH %tmp.212 105 52 57 ];
+        invoke %tmp.205 %tmp.206(%tmp.207, %tmp.208, %tmp.211, %tmp.212);
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 106 20 ]
+        %tmp.213 = lgetv %dc;
+        symbol [ dc %tmp.213 106 20 22 ];
+        symbol [ setColor %tmp.214 106 23 31 ];
+        %tmp.214 = getv function %tmp.213 :setColor;
+        %tmp.215 = 0x44CC44;
+        symbol [ Graphics %tmp.216 106 42 50 ];
+        %tmp.216 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.217 106 51 68 ];
+        %tmp.217 = getv %tmp.216 :COLOR_TRANSPARENT;
+        invoke %tmp.213 %tmp.214(%tmp.215, %tmp.217);
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 107 20 ]
+        %tmp.218 = lgetv %dc;
+        symbol [ dc %tmp.218 107 20 22 ];
+        symbol [ drawRectangle %tmp.219 107 23 36 ];
+        %tmp.219 = getv function %tmp.218 :drawRectangle;
+        %tmp.220 = 30;
+        %tmp.221 = lgetv %y.9;
+        symbol [ y %tmp.221 107 41 42 ];
+        %tmp.222 = lgetv %w.1;
+        symbol [ w %tmp.222 107 44 45 ];
+        %tmp.223 = 60;
+        %tmp.224 = sub %tmp.222 %tmp.223;
+        %tmp.225 = lgetv %slotH.6;
+        symbol [ slotH %tmp.225 107 52 57 ];
+        invoke %tmp.218 %tmp.219(%tmp.220, %tmp.221, %tmp.224, %tmp.225);
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_103_29_108_16_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_103_16_108_16_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_103_16_108_16_if_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 111 16 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_88_33_121_12_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_88_33_121_12_stop" ]
+        %name.18 = local;
+        symbol [ name %name.18 111 20 24 ];
+        symbol [ PokemonData %tmp.227 111 27 38 ];
+        %tmp.227 = getv ? :PokemonData;
+        symbol [ getName %tmp.228 111 39 46 ];
+        %tmp.228 = getv function %tmp.227 :getName;
+        %tmp.229 = lgetv %id.11;
+        symbol [ id %tmp.229 111 47 49 ];
+        %tmp.230 = invoke %tmp.227 %tmp.228(%tmp.229);
+        lputv %name.18 %tmp.230;
+        symbol [ name %name.18 111 20 24 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 112 16 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_112_16_112_50_if_stmt:
+        %tmp.231 = lgetv %isShiny.16;
+        symbol [ isShiny %tmp.231 112 20 27 ];
+        bf %tmp.231 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_112_16_112_50_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_112_16_112_50_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_112_29_112_50_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 112 31 ]
+        %tmp.232 = "★";
+        %tmp.233 = lgetv %name.18;
+        symbol [ name %tmp.233 112 44 48 ];
+        %tmp.234 = add %tmp.232 %tmp.233;
+        lputv %name.18 %tmp.234;
+        symbol [ name %name.18 112 31 35 ];
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_112_29_112_50_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_112_16_112_50_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_112_16_112_50_if_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 113 16 ]
+        %tmp.235 = lgetv %dc;
+        symbol [ dc %tmp.235 113 16 18 ];
+        symbol [ setColor %tmp.236 113 19 27 ];
+        %tmp.236 = getv function %tmp.235 :setColor;
+        %tmp.237 = lgetv %tierColors.5;
+        symbol [ tierColors %tmp.237 113 28 38 ];
+        %tmp.238 = lgetv %tier.13;
+        symbol [ tier %tmp.238 113 39 43 ];
+        %tmp.239 = agetv %tmp.237 %tmp.238;
+        symbol [ Graphics %tmp.240 113 46 54 ];
+        %tmp.240 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.241 113 55 72 ];
+        %tmp.241 = getv %tmp.240 :COLOR_TRANSPARENT;
+        invoke %tmp.235 %tmp.236(%tmp.239, %tmp.241);
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 114 16 ]
+        %tmp.242 = lgetv %dc;
+        symbol [ dc %tmp.242 114 16 18 ];
+        symbol [ drawText %tmp.243 114 19 27 ];
+        %tmp.243 = getv function %tmp.242 :drawText;
+        symbol [ Layout %tmp.245 114 28 34 ];
+        %tmp.245 = getv ? :Layout;
+        symbol [ Team %tmp.246 114 35 39 ];
+        %tmp.246 = getv %tmp.245 :Team;
+        symbol [ NAME_X %tmp.247 114 40 46 ];
+        %tmp.247 = getv %tmp.246 :NAME_X;
+        %tmp.248 = lgetv %textY.10;
+        symbol [ textY %tmp.248 114 48 53 ];
+        symbol [ Graphics %tmp.249 114 55 63 ];
+        %tmp.249 = getm $.Toybox.Graphics;
+        symbol [ FONT_XTINY %tmp.250 114 64 74 ];
+        %tmp.250 = getv %tmp.249 :FONT_XTINY;
+        %tmp.251 = lgetv %name.18;
+        symbol [ name %tmp.251 115 20 24 ];
+        symbol [ Graphics %tmp.252 115 26 34 ];
+        %tmp.252 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_LEFT %tmp.253 115 35 52 ];
+        %tmp.253 = getv %tmp.252 :TEXT_JUSTIFY_LEFT;
+        invoke %tmp.242 %tmp.243(%tmp.247, %tmp.248, %tmp.250, %tmp.251, %tmp.253);
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 118 16 ]
+        %tmp.254 = lgetv %dc;
+        symbol [ dc %tmp.254 118 16 18 ];
+        symbol [ setColor %tmp.255 118 19 27 ];
+        %tmp.255 = getv function %tmp.254 :setColor;
+        %tmp.256 = 0xBBBBBB;
+        symbol [ Graphics %tmp.257 118 38 46 ];
+        %tmp.257 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.258 118 47 64 ];
+        %tmp.258 = getv %tmp.257 :COLOR_TRANSPARENT;
+        invoke %tmp.254 %tmp.255(%tmp.256, %tmp.258);
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 119 16 ]
+        %tmp.259 = lgetv %dc;
+        symbol [ dc %tmp.259 119 16 18 ];
+        symbol [ drawText %tmp.260 119 19 27 ];
+        %tmp.260 = getv function %tmp.259 :drawText;
+        %tmp.261 = lgetv %w.1;
+        symbol [ w %tmp.261 119 28 29 ];
+        symbol [ Layout %tmp.263 119 32 38 ];
+        %tmp.263 = getv ? :Layout;
+        symbol [ Team %tmp.264 119 39 43 ];
+        %tmp.264 = getv %tmp.263 :Team;
+        symbol [ LEVEL_X_PAD %tmp.265 119 44 55 ];
+        %tmp.265 = getv %tmp.264 :LEVEL_X_PAD;
+        %tmp.266 = sub %tmp.261 %tmp.265;
+        %tmp.267 = lgetv %textY.10;
+        symbol [ textY %tmp.267 119 57 62 ];
+        symbol [ Graphics %tmp.268 119 64 72 ];
+        %tmp.268 = getm $.Toybox.Graphics;
+        symbol [ FONT_XTINY %tmp.269 119 73 83 ];
+        %tmp.269 = getv %tmp.268 :FONT_XTINY;
+        %tmp.270 = "Lv.";
+        %tmp.271 = lgetv %level.14;
+        symbol [ level %tmp.271 120 28 33 ];
+        symbol [ toString %tmp.272 120 34 42 ];
+        %tmp.272 = getv function %tmp.271 :toString;
+        %tmp.273 = invoke %tmp.271 %tmp.272();
+        %tmp.274 = add %tmp.270 %tmp.273;
+        symbol [ Graphics %tmp.275 120 46 54 ];
+        %tmp.275 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_RIGHT %tmp.276 120 55 73 ];
+        %tmp.276 = getv %tmp.275 :TEXT_JUSTIFY_RIGHT;
+        invoke %tmp.259 %tmp.260(%tmp.266, %tmp.267, %tmp.269, %tmp.274, %tmp.276);
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_88_33_121_12_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_88_12_129_12_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_88_12_129_12_if_else_false:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_121_19_129_12_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 123 16 ]
+        %tmp.277 = lgetv %dc;
+        symbol [ dc %tmp.277 123 16 18 ];
+        symbol [ setColor %tmp.278 123 19 27 ];
+        %tmp.278 = getv function %tmp.277 :setColor;
+        %tmp.279 = 0x222222;
+        symbol [ Graphics %tmp.280 123 38 46 ];
+        %tmp.280 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.281 123 47 64 ];
+        %tmp.281 = getv %tmp.280 :COLOR_TRANSPARENT;
+        invoke %tmp.277 %tmp.278(%tmp.279, %tmp.281);
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 124 16 ]
+        %tmp.282 = lgetv %dc;
+        symbol [ dc %tmp.282 124 16 18 ];
+        symbol [ drawText %tmp.283 124 19 27 ];
+        %tmp.283 = getv function %tmp.282 :drawText;
+        symbol [ Layout %tmp.285 124 28 34 ];
+        %tmp.285 = getv ? :Layout;
+        symbol [ Team %tmp.286 124 35 39 ];
+        %tmp.286 = getv %tmp.285 :Team;
+        symbol [ SLOT_NUM_X %tmp.287 124 40 50 ];
+        %tmp.287 = getv %tmp.286 :SLOT_NUM_X;
+        %tmp.288 = lgetv %textY.10;
+        symbol [ textY %tmp.288 124 52 57 ];
+        symbol [ Graphics %tmp.289 124 59 67 ];
+        %tmp.289 = getm $.Toybox.Graphics;
+        symbol [ FONT_XTINY %tmp.290 124 68 78 ];
+        %tmp.290 = getv %tmp.289 :FONT_XTINY;
+        %tmp.291 = lgetv %i.8;
+        symbol [ i %tmp.291 125 21 22 ];
+        %tmp.292 = 1;
+        %tmp.293 = add %tmp.291 %tmp.292;
+        symbol [ toString %tmp.294 125 28 36 ];
+        %tmp.294 = getv function %tmp.293 :toString;
+        %tmp.295 = invoke %tmp.293 %tmp.294();
+        symbol [ Graphics %tmp.296 125 40 48 ];
+        %tmp.296 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.297 125 49 68 ];
+        %tmp.297 = getv %tmp.296 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.282 %tmp.283(%tmp.287, %tmp.288, %tmp.290, %tmp.295, %tmp.297);
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 126 16 ]
+        %tmp.298 = lgetv %dc;
+        symbol [ dc %tmp.298 126 16 18 ];
+        symbol [ setColor %tmp.299 126 19 27 ];
+        %tmp.299 = getv function %tmp.298 :setColor;
+        %tmp.300 = 0x333333;
+        symbol [ Graphics %tmp.301 126 38 46 ];
+        %tmp.301 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.302 126 47 64 ];
+        %tmp.302 = getv %tmp.301 :COLOR_TRANSPARENT;
+        invoke %tmp.298 %tmp.299(%tmp.300, %tmp.302);
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 127 16 ]
+        %tmp.303 = lgetv %dc;
+        symbol [ dc %tmp.303 127 16 18 ];
+        symbol [ drawText %tmp.304 127 19 27 ];
+        %tmp.304 = getv function %tmp.303 :drawText;
+        %tmp.305 = lgetv %cx.2;
+        symbol [ cx %tmp.305 127 28 30 ];
+        %tmp.306 = lgetv %textY.10;
+        symbol [ textY %tmp.306 127 32 37 ];
+        symbol [ Graphics %tmp.307 127 39 47 ];
+        %tmp.307 = getm $.Toybox.Graphics;
+        symbol [ FONT_XTINY %tmp.308 127 48 58 ];
+        %tmp.308 = getv %tmp.307 :FONT_XTINY;
+        %tmp.309 = "- empty -";
+        symbol [ Graphics %tmp.310 128 33 41 ];
+        %tmp.310 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.311 128 42 61 ];
+        %tmp.311 = getv %tmp.310 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.303 %tmp.304(%tmp.305, %tmp.306, %tmp.308, %tmp.309, %tmp.311);
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_121_19_129_12_stop:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_88_12_129_12_if_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 132 12 ]
+        %tmp.312 = lgetv %dc;
+        symbol [ dc %tmp.312 132 12 14 ];
+        symbol [ setColor %tmp.313 132 15 23 ];
+        %tmp.313 = getv function %tmp.312 :setColor;
+        %tmp.314 = 0x111118;
+        symbol [ Graphics %tmp.315 132 34 42 ];
+        %tmp.315 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.316 132 43 60 ];
+        %tmp.316 = getv %tmp.315 :COLOR_TRANSPARENT;
+        invoke %tmp.312 %tmp.313(%tmp.314, %tmp.316);
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 133 12 ]
+        %tmp.317 = lgetv %dc;
+        symbol [ dc %tmp.317 133 12 14 ];
+        symbol [ drawLine %tmp.318 133 15 23 ];
+        %tmp.318 = getv function %tmp.317 :drawLine;
+        %tmp.319 = 40;
+        %tmp.320 = lgetv %y.9;
+        symbol [ y %tmp.320 133 28 29 ];
+        %tmp.321 = lgetv %slotH.6;
+        symbol [ slotH %tmp.321 133 32 37 ];
+        %tmp.322 = add %tmp.320 %tmp.321;
+        %tmp.323 = 1;
+        %tmp.324 = sub %tmp.322 %tmp.323;
+        %tmp.325 = lgetv %w.1;
+        symbol [ w %tmp.325 133 43 44 ];
+        %tmp.326 = 40;
+        %tmp.327 = sub %tmp.325 %tmp.326;
+        %tmp.328 = lgetv %y.9;
+        symbol [ y %tmp.328 133 51 52 ];
+        %tmp.329 = lgetv %slotH.6;
+        symbol [ slotH %tmp.329 133 55 60 ];
+        %tmp.330 = add %tmp.328 %tmp.329;
+        %tmp.331 = 1;
+        %tmp.332 = sub %tmp.330 %tmp.331;
+        invoke %tmp.317 %tmp.318(%tmp.319, %tmp.324, %tmp.327, %tmp.332);
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_78_36_134_8_stop:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_78_8_134_8_for_incr:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 78 ]
+        %tmp.335 = lgetv %i.8;
+        symbol [ i %tmp.335 78 31 32 ];
+        %tmp.336 = add %tmp.335 1;
+        lputv %i.8 %tmp.336;
+        symbol [ i %i.8 78 31 32 ];
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_78_8_134_8_for_test;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_78_8_134_8_for_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 137 8 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_137_8_151_8_if_stmt:
+        symbol [ _flashFrames %tmp.338 137 12 24 ];
+        %tmp.338 = getv ? :_flashFrames;
+        %tmp.339 = 0;
+        %tmp.340 = gt %tmp.338 %tmp.339;
+        bf %tmp.340 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_137_8_151_8_if_else_false;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_137_8_151_8_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_137_30_144_8_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 138 12 ]
+        %tmp.341 = lgetv %dc;
+        symbol [ dc %tmp.341 138 12 14 ];
+        symbol [ setColor %tmp.342 138 15 23 ];
+        %tmp.342 = getv function %tmp.341 :setColor;
+        %tmp.343 = 0x1A1A2A;
+        symbol [ Graphics %tmp.344 138 34 42 ];
+        %tmp.344 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.345 138 43 60 ];
+        %tmp.345 = getv %tmp.344 :COLOR_TRANSPARENT;
+        invoke %tmp.341 %tmp.342(%tmp.343, %tmp.345);
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 139 12 ]
+        %tmp.346 = lgetv %dc;
+        symbol [ dc %tmp.346 139 12 14 ];
+        symbol [ fillRoundedRectangle %tmp.347 139 15 35 ];
+        %tmp.347 = getv function %tmp.346 :fillRoundedRectangle;
+        %tmp.348 = lgetv %cx.2;
+        symbol [ cx %tmp.348 139 36 38 ];
+        %tmp.349 = 80;
+        %tmp.350 = sub %tmp.348 %tmp.349;
+        symbol [ Layout %tmp.352 139 45 51 ];
+        %tmp.352 = getv ? :Layout;
+        symbol [ Team %tmp.353 139 52 56 ];
+        %tmp.353 = getv %tmp.352 :Team;
+        symbol [ FOOTER_Y %tmp.354 139 57 65 ];
+        %tmp.354 = getv %tmp.353 :FOOTER_Y;
+        %tmp.355 = 160;
+        symbol [ Layout %tmp.357 139 72 78 ];
+        %tmp.357 = getv ? :Layout;
+        symbol [ Team %tmp.358 139 79 83 ];
+        %tmp.358 = getv %tmp.357 :Team;
+        symbol [ FOOTER_H %tmp.359 139 84 92 ];
+        %tmp.359 = getv %tmp.358 :FOOTER_H;
+        %tmp.360 = 6;
+        invoke %tmp.346 %tmp.347(%tmp.350, %tmp.354, %tmp.355, %tmp.359, %tmp.360);
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 140 12 ]
+        %tmp.361 = lgetv %dc;
+        symbol [ dc %tmp.361 140 12 14 ];
+        symbol [ setColor %tmp.362 140 15 23 ];
+        %tmp.362 = getv function %tmp.361 :setColor;
+        %tmp.363 = 0xFFCC00;
+        symbol [ Graphics %tmp.364 140 34 42 ];
+        %tmp.364 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.365 140 43 60 ];
+        %tmp.365 = getv %tmp.364 :COLOR_TRANSPARENT;
+        invoke %tmp.361 %tmp.362(%tmp.363, %tmp.365);
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 141 12 ]
+        %tmp.366 = lgetv %dc;
+        symbol [ dc %tmp.366 141 12 14 ];
+        symbol [ drawText %tmp.367 141 15 23 ];
+        %tmp.367 = getv function %tmp.366 :drawText;
+        %tmp.368 = lgetv %cx.2;
+        symbol [ cx %tmp.368 141 24 26 ];
+        symbol [ Layout %tmp.370 141 28 34 ];
+        %tmp.370 = getv ? :Layout;
+        symbol [ Team %tmp.371 141 35 39 ];
+        %tmp.371 = getv %tmp.370 :Team;
+        symbol [ FOOTER_Y %tmp.372 141 40 48 ];
+        %tmp.372 = getv %tmp.371 :FOOTER_Y;
+        %tmp.373 = 2;
+        %tmp.374 = add %tmp.372 %tmp.373;
+        symbol [ Graphics %tmp.375 141 54 62 ];
+        %tmp.375 = getm $.Toybox.Graphics;
+        symbol [ FONT_XTINY %tmp.376 141 63 73 ];
+        %tmp.376 = getv %tmp.375 :FONT_XTINY;
+        symbol [ _flashMsg %tmp.378 142 16 25 ];
+        %tmp.378 = getv ? :_flashMsg;
+        symbol [ Graphics %tmp.379 142 27 35 ];
+        %tmp.379 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.380 142 36 55 ];
+        %tmp.380 = getv %tmp.379 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.366 %tmp.367(%tmp.368, %tmp.374, %tmp.376, %tmp.378, %tmp.380);
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 143 12 ]
+        symbol [ _flashFrames %tmp.381 143 12 24 ];
+        %tmp.381 = getv self :_flashFrames;
+        %tmp.382 = 1;
+        %tmp.383 = sub %tmp.381 %tmp.382;
+        symbol [ _flashFrames ? 143 12 24 ];
+        putv self :_flashFrames dup %tmp.383;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_137_30_144_8_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_137_8_151_8_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_137_8_151_8_if_else_false:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_144_15_151_8_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 146 12 ]
+        %tmp.384 = lgetv %dc;
+        symbol [ dc %tmp.384 146 12 14 ];
+        symbol [ setColor %tmp.385 146 15 23 ];
+        %tmp.385 = getv function %tmp.384 :setColor;
+        %tmp.386 = 0x0F0F18;
+        symbol [ Graphics %tmp.387 146 34 42 ];
+        %tmp.387 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.388 146 43 60 ];
+        %tmp.388 = getv %tmp.387 :COLOR_TRANSPARENT;
+        invoke %tmp.384 %tmp.385(%tmp.386, %tmp.388);
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 147 12 ]
+        %tmp.389 = lgetv %dc;
+        symbol [ dc %tmp.389 147 12 14 ];
+        symbol [ fillRoundedRectangle %tmp.390 147 15 35 ];
+        %tmp.390 = getv function %tmp.389 :fillRoundedRectangle;
+        %tmp.391 = 80;
+        symbol [ Layout %tmp.393 147 40 46 ];
+        %tmp.393 = getv ? :Layout;
+        symbol [ Team %tmp.394 147 47 51 ];
+        %tmp.394 = getv %tmp.393 :Team;
+        symbol [ FOOTER_Y %tmp.395 147 52 60 ];
+        %tmp.395 = getv %tmp.394 :FOOTER_Y;
+        %tmp.396 = lgetv %w.1;
+        symbol [ w %tmp.396 147 62 63 ];
+        %tmp.397 = 160;
+        %tmp.398 = sub %tmp.396 %tmp.397;
+        symbol [ Layout %tmp.400 147 71 77 ];
+        %tmp.400 = getv ? :Layout;
+        symbol [ Team %tmp.401 147 78 82 ];
+        %tmp.401 = getv %tmp.400 :Team;
+        symbol [ FOOTER_H %tmp.402 147 83 91 ];
+        %tmp.402 = getv %tmp.401 :FOOTER_H;
+        %tmp.403 = 6;
+        invoke %tmp.389 %tmp.390(%tmp.391, %tmp.395, %tmp.398, %tmp.402, %tmp.403);
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 148 12 ]
+        %tmp.404 = lgetv %dc;
+        symbol [ dc %tmp.404 148 12 14 ];
+        symbol [ setColor %tmp.405 148 15 23 ];
+        %tmp.405 = getv function %tmp.404 :setColor;
+        %tmp.406 = 0x444444;
+        symbol [ Graphics %tmp.407 148 34 42 ];
+        %tmp.407 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.408 148 43 60 ];
+        %tmp.408 = getv %tmp.407 :COLOR_TRANSPARENT;
+        invoke %tmp.404 %tmp.405(%tmp.406, %tmp.408);
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 149 12 ]
+        %tmp.409 = lgetv %dc;
+        symbol [ dc %tmp.409 149 12 14 ];
+        symbol [ drawText %tmp.410 149 15 23 ];
+        %tmp.410 = getv function %tmp.409 :drawText;
+        %tmp.411 = lgetv %cx.2;
+        symbol [ cx %tmp.411 149 24 26 ];
+        symbol [ Layout %tmp.413 149 28 34 ];
+        %tmp.413 = getv ? :Layout;
+        symbol [ Team %tmp.414 149 35 39 ];
+        %tmp.414 = getv %tmp.413 :Team;
+        symbol [ FOOTER_Y %tmp.415 149 40 48 ];
+        %tmp.415 = getv %tmp.414 :FOOTER_Y;
+        %tmp.416 = 2;
+        %tmp.417 = add %tmp.415 %tmp.416;
+        symbol [ Graphics %tmp.418 149 54 62 ];
+        %tmp.418 = getm $.Toybox.Graphics;
+        symbol [ FONT_XTINY %tmp.419 149 63 73 ];
+        %tmp.419 = getv %tmp.418 :FONT_XTINY;
+        %tmp.420 = "Tap to remove";
+        symbol [ Graphics %tmp.421 150 33 41 ];
+        %tmp.421 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.422 150 42 61 ];
+        %tmp.422 = getv %tmp.421 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.409 %tmp.410(%tmp.411, %tmp.417, %tmp.419, %tmp.420, %tmp.422);
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_144_15_151_8_stop:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_137_8_151_8_if_end:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_52_49_152_4_stop:
+    }
+}
+[ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc"; @line = 155; @symbol_classdef = [TeamDelegate,155,6,18]; @symbol_extends<0> = [WatchUi,155,27,34]; @symbol_extends<1> = [BehaviorDelegate,155,35,51]; ]
+class TeamDelegate extends WatchUi.BehaviorDelegate {
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc"; @line = 155; ]
+    <init> {
+    }
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc"; @line = 155; ]
+    static
+    <init> {
+    }
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc"; @line = 156; @position = 8; @symbol_vardef = [_view,156,8,13]; @symbol_type<0> = [TeamView,156,17,25]; ]
+    var _view as TeamView;
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc"; @line = 158; @symbol_functiondef = [initialize,158,13,23]; @symbol_param<0> = [view,158,24,28]; @symbol_param<0>_type<0> = [TeamView,158,32,40]; ]
+    function initialize(view as TeamView) as Void {
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_158_42_161_4_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 159 8 ]
+        symbol [ BehaviorDelegate %tmp.2 159 8 24 ];
+        %tmp.2 = getv ? :BehaviorDelegate;
+        symbol [ initialize %tmp.3 159 25 35 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 160 8 ]
+        %tmp.4 = lgetv %view;
+        symbol [ view %tmp.4 160 16 20 ];
+        symbol [ _view ? 160 8 13 ];
+        putv self :_view %tmp.4;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_158_42_161_4_stop:
+    }
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc"; @line = 163; @symbol_functiondef = [onTap,163,13,18]; @symbol_param<0> = [evt,163,19,22]; @symbol_param<0>_type<0> = [WatchUi,163,26,33]; @symbol_param<0>_type<1> = [ClickEvent,163,34,44]; @symbol_return<0> = [Lang,163,49,53]; @symbol_return<1> = [Boolean,163,54,61]; ]
+    function onTap(evt as WatchUi.ClickEvent) as Lang.Boolean {
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_163_62_177_4_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 164 8 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_163_62_177_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_163_62_177_4_stop" ]
+        %coords.1 = local;
+        symbol [ coords %coords.1 164 12 18 ];
+        %tmp.1 = lgetv %evt;
+        symbol [ evt %tmp.1 164 21 24 ];
+        symbol [ getCoordinates %tmp.2 164 25 39 ];
+        %tmp.2 = getv function %tmp.1 :getCoordinates;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        lputv %coords.1 %tmp.3;
+        symbol [ coords %coords.1 164 12 18 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 165 8 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_163_62_177_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_163_62_177_4_stop" ]
+        %tapY.2 = local;
+        symbol [ tapY %tapY.2 165 12 16 ];
+        %tmp.4 = lgetv %coords.1;
+        symbol [ coords %tmp.4 165 19 25 ];
+        %tmp.5 = 1;
+        %tmp.6 = agetv %tmp.4 %tmp.5;
+        %tmp.7 = as %tmp.6 Lang.Number;
+        symbol [ Lang %tmp.7 165 32 36 ];
+        symbol [ Number %tmp.7 165 37 43 ];
+        lputv %tapY.2 %tmp.7;
+        symbol [ tapY %tapY.2 165 12 16 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 166 8 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_163_62_177_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_163_62_177_4_stop" ]
+        %pickId.3 = local;
+        symbol [ pickId %pickId.3 166 12 18 ];
+        symbol [ _view %tmp.9 166 21 26 ];
+        %tmp.9 = getv ? :_view;
+        symbol [ getIdAtTapY %tmp.10 166 27 38 ];
+        %tmp.10 = getv function %tmp.9 :getIdAtTapY;
+        %tmp.11 = lgetv %tapY.2;
+        symbol [ tapY %tmp.11 166 39 43 ];
+        %tmp.12 = invoke %tmp.9 %tmp.10(%tmp.11);
+        lputv %pickId.3 %tmp.12;
+        symbol [ pickId %pickId.3 166 12 18 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 167 8 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_167_8_175_8_if_stmt:
+        %tmp.13 = lgetv %pickId.3;
+        symbol [ pickId %tmp.13 167 12 18 ];
+        %tmp.14 = 0;
+        %tmp.15 = gt %tmp.13 %tmp.14;
+        bf %tmp.15 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_167_8_175_8_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_167_8_175_8_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_167_24_175_8_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 168 12 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_168_12_173_12_if_stmt:
+        %tmp.16 = lgetv %pickId.3;
+        symbol [ pickId %tmp.16 168 16 22 ];
+        symbol [ GameState %tmp.18 168 26 35 ];
+        %tmp.18 = getv ? :GameState;
+        symbol [ buddyId %tmp.19 168 36 43 ];
+        %tmp.19 = getv %tmp.18 :buddyId;
+        %tmp.20 = eq %tmp.16 %tmp.19;
+        bf %tmp.20 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_168_12_173_12_if_else_false;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_168_12_173_12_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_168_45_170_12_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 169 16 ]
+        symbol [ _view %tmp.22 169 16 21 ];
+        %tmp.22 = getv ? :_view;
+        symbol [ showFlash %tmp.23 169 22 31 ];
+        %tmp.23 = getv function %tmp.22 :showFlash;
+        %tmp.24 = "Buddy can't be removed";
+        invoke %tmp.22 %tmp.23(%tmp.24);
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_168_45_170_12_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_168_12_173_12_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_168_12_173_12_if_else_false:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_170_19_173_12_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 171 16 ]
+        symbol [ GameState %tmp.26 171 16 25 ];
+        %tmp.26 = getv ? :GameState;
+        symbol [ removeFromTeam %tmp.27 171 26 40 ];
+        %tmp.27 = getv function %tmp.26 :removeFromTeam;
+        %tmp.28 = lgetv %pickId.3;
+        symbol [ pickId %tmp.28 171 41 47 ];
+        invoke %tmp.26 %tmp.27(%tmp.28);
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 172 16 ]
+        symbol [ _view %tmp.30 172 16 21 ];
+        %tmp.30 = getv ? :_view;
+        symbol [ showFlash %tmp.31 172 22 31 ];
+        %tmp.31 = getv function %tmp.30 :showFlash;
+        %tmp.32 = "Removed!";
+        invoke %tmp.30 %tmp.31(%tmp.32);
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_170_19_173_12_stop:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_168_12_173_12_if_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 174 12 ]
+        symbol [ WatchUi %tmp.33 174 12 19 ];
+        %tmp.33 = getm $.Toybox.WatchUi;
+        symbol [ requestUpdate %tmp.34 174 20 33 ];
+        %tmp.34 = getv function %tmp.33 :requestUpdate;
+        invoke %tmp.33 %tmp.34();
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_167_24_175_8_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_167_8_175_8_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_167_8_175_8_if_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 176 8 ]
+        %tmp.35 = true;
+        ret %tmp.35;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_163_62_177_4_stop:
+    }
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc"; @line = 179; @symbol_functiondef = [onBack,179,13,19]; @symbol_return<0> = [Lang,179,25,29]; @symbol_return<1> = [Boolean,179,30,37]; ]
+    function onBack() as Lang.Boolean {
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_179_38_182_4_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 180 8 ]
+        symbol [ WatchUi %tmp.1 180 8 15 ];
+        %tmp.1 = getm $.Toybox.WatchUi;
+        symbol [ popView %tmp.2 180 16 23 ];
+        %tmp.2 = getv function %tmp.1 :popView;
+        symbol [ WatchUi %tmp.3 180 24 31 ];
+        %tmp.3 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_DOWN %tmp.4 180 32 42 ];
+        %tmp.4 = getv %tmp.3 :SLIDE_DOWN;
+        invoke %tmp.1 %tmp.2(%tmp.4);
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc" 181 8 ]
+        %tmp.5 = true;
+        ret %tmp.5;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_TeamView_mc_179_38_182_4_stop:
+    }
+}
+[ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\TeamView.mc"; @line = 6; ]
+<init> {
+}

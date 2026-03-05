@@ -285,6 +285,7 @@ module Rez {
         (:initialized) var LevelUpPrefix as ResourceId;
         (:initialized) var LevelMax as ResourceId;
         (:initialized) var InYourPokedex as ResourceId;
+        (:initialized) var LabelTotalSteps as ResourceId;
         (:initialized) var AlmostThere as ResourceId;
         (:initialized) var LabelCaught as ResourceId;
         (:initialized) var LabelBuddySteps as ResourceId;

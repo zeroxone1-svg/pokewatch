@@ -13,9 +13,16 @@ import Toybox.Lang;
 class PokedexView extends WatchUi.View {
 
     var _scroll as Lang.Number = 0;
+    var _flashMsg as Lang.String = "";
+    var _flashFrames as Lang.Number = 0;
 
     function initialize() {
         View.initialize();
+    }
+
+    function showFlash(msg as Lang.String) as Void {
+        _flashMsg = msg;
+        _flashFrames = 3;
     }
 
     function tr(resourceId) as Lang.String {
@@ -25,9 +32,9 @@ class PokedexView extends WatchUi.View {
     // Dado un tap en coordenada Y, devolver el id del Pokémon en esa fila.
     // Retorna 0 si no corresponde a ninguna fila válida o no está capturado.
     function getIdAtTapY(tapY as Lang.Number) as Lang.Number {
-        var startY = 56;
-        var lineH  = 40;
-        if (tapY < startY || tapY >= startY + 7 * lineH) {
+        var startY = Layout.Pokedex.LIST_START_Y;
+        var lineH  = Layout.Pokedex.LINE_H;
+        if (tapY < startY || tapY >= startY + Layout.Pokedex.VISIBLE_ROWS * lineH) {
             return 0;
         }
         var row = (tapY - startY) / lineH;
@@ -49,27 +56,27 @@ class PokedexView extends WatchUi.View {
 
         // Header con fondo (ajustado para pantalla redonda)
         dc.setColor(0x0F0F18, Graphics.COLOR_TRANSPARENT);
-        dc.fillRoundedRectangle(100, 4, w - 200, 24, 8);
+        dc.fillRoundedRectangle(100, Layout.Pokedex.HEADER_Y, w - 200, Layout.Pokedex.HEADER_H, 8);
 
         dc.setColor(0xFFCC00, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(cx, 6, Graphics.FONT_XTINY,
+        dc.drawText(cx, Layout.Pokedex.TITLE_Y, Graphics.FONT_XTINY,
             tr(Rez.Strings.KantoTitle), Graphics.TEXT_JUSTIFY_CENTER);
 
-        // Stats: vistos / capturados / shinies (elevados para evitar recorte)
+        // Stats: vistos / capturados / shinies
         var unique = GameState.uniqueCaught();
         var seen = GameState.pokedexSeen.size();
         dc.setColor(0x666666, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(cx, 26, Graphics.FONT_XTINY,
+        dc.drawText(cx, Layout.Pokedex.STATS_Y, Graphics.FONT_XTINY,
             seen.toString() + "v | " +
             unique.toString() + "c | " +
             GameState.shinyList.size().toString() + "sh",
             Graphics.TEXT_JUSTIFY_CENTER);
 
         var tierColors = [0xAAAAAA, 0x44CC44, 0x4488FF, 0xFF66FF, 0xFFAA00];
-        var lineH  = 40;
-        var startY = 56;
+        var lineH  = Layout.Pokedex.LINE_H;
+        var startY = Layout.Pokedex.LIST_START_Y;
 
-        for (var i = 0; i < 7; i++) {
+        for (var i = 0; i < Layout.Pokedex.VISIBLE_ROWS; i++) {
             var idx = _scroll + i;
             if (idx >= PokemonData.TOTAL_POKEMON) { break; }
 
@@ -77,6 +84,7 @@ class PokedexView extends WatchUi.View {
             var caught  = GameState.getCaughtCount(id) > 0;
             var isShiny = GameState.shinyList.indexOf(id) != -1;
             var isBuddy = (id == GameState.buddyId);
+            var isTeam  = GameState.isInTeam(id);
             var data    = PokemonData.get(id);
             var tier    = data[:tier];
             var y       = startY + (i * lineH);
@@ -94,16 +102,34 @@ class PokedexView extends WatchUi.View {
                 dc.fillRectangle(20, y, w - 40, lineH);
                 dc.setColor(0x44CC44, Graphics.COLOR_TRANSPARENT);
                 dc.drawRectangle(20, y, w - 40, lineH);
+            } else if (isTeam) {
+                dc.setColor(0x0A0A1A, Graphics.COLOR_TRANSPARENT);
+                dc.fillRectangle(20, y, w - 40, lineH);
+                dc.setColor(0x4488FF, Graphics.COLOR_TRANSPARENT);
+                dc.drawRectangle(20, y, w - 40, lineH);
+            }
+
+            // Team/Buddy icon on the right edge
+            if (caught) {
+                if (isBuddy) {
+                    dc.setColor(0x44CC44, Graphics.COLOR_TRANSPARENT);
+                    dc.drawText(w - Layout.Pokedex.BUDDY_ICON_X, textY, Graphics.FONT_XTINY,
+                        "B", Graphics.TEXT_JUSTIFY_CENTER);
+                } else if (isTeam) {
+                    dc.setColor(0x4488FF, Graphics.COLOR_TRANSPARENT);
+                    dc.drawText(w - Layout.Pokedex.BUDDY_ICON_X, textY, Graphics.FONT_XTINY,
+                        "T", Graphics.TEXT_JUSTIFY_CENTER);
+                }
             }
 
             // Número del Pokémon
             var numColor = caught ? tierColors[tier] : 0x1A1A1A;
             dc.setColor(numColor, Graphics.COLOR_TRANSPARENT);
-            dc.drawText(45, textY, Graphics.FONT_XTINY,
+            dc.drawText(Layout.Pokedex.NUM_X, textY, Graphics.FONT_XTINY,
                 "#" + id.format("%03d"), Graphics.TEXT_JUSTIFY_CENTER);
 
             // Nombre
-            var nameX = 75;
+            var nameX = Layout.Pokedex.NAME_X;
             var nameColor = caught ? 0xDDDDDD : 0x282828;
             if (isShiny) { nameColor = 0xFFD700; }
             dc.setColor(nameColor, Graphics.COLOR_TRANSPARENT);
@@ -122,7 +148,7 @@ class PokedexView extends WatchUi.View {
                     countStr = count.toString() + "/" + cost.toString();
                 }
                 dc.setColor(0x555555, Graphics.COLOR_TRANSPARENT);
-                dc.drawText(w - 28, textY, Graphics.FONT_XTINY,
+                dc.drawText(w - Layout.Pokedex.COUNT_X_PAD, textY, Graphics.FONT_XTINY,
                     countStr, Graphics.TEXT_JUSTIFY_RIGHT);
             }
 
@@ -131,15 +157,34 @@ class PokedexView extends WatchUi.View {
             dc.drawLine(30, y + lineH - 1, w - 30, y + lineH - 1);
         }
 
-        // Footer: paginación + hint buddy
-        dc.setColor(0x0F0F18, Graphics.COLOR_TRANSPARENT);
-        dc.fillRoundedRectangle(80, 340, w - 160, 18, 6);
-        dc.setColor(0x444444, Graphics.COLOR_TRANSPARENT);
-        var page = (_scroll / 7) + 1;
-        var totalPages = ((PokemonData.TOTAL_POKEMON + 6) / 7);
-        dc.drawText(cx, 340, Graphics.FONT_XTINY,
-            page.toString() + "/" + totalPages.toString() + " Tap=buddy",
-            Graphics.TEXT_JUSTIFY_CENTER);
+        // Team counter in sub-header
+        var teamCount = GameState.team.size();
+        var buddyAddsOne = (GameState.buddyId > 0 && !GameState.isInTeam(GameState.buddyId)) ? 1 : 0;
+        var effectiveCount = teamCount + buddyAddsOne;
+        if (GameState.buddyId > 0 && GameState.isInTeam(GameState.buddyId)) {
+            effectiveCount = teamCount;
+        }
+        if (effectiveCount > 6) { effectiveCount = 6; }
+
+        // Flash message or footer
+        if (_flashFrames > 0) {
+            dc.setColor(0x1A1A2A, Graphics.COLOR_TRANSPARENT);
+            dc.fillRoundedRectangle(80, Layout.Pokedex.FOOTER_Y, w - 160, Layout.Pokedex.FOOTER_H, 6);
+            dc.setColor(0xFFCC00, Graphics.COLOR_TRANSPARENT);
+            dc.drawText(cx, Layout.Pokedex.FOOTER_Y, Graphics.FONT_XTINY,
+                _flashMsg, Graphics.TEXT_JUSTIFY_CENTER);
+            _flashFrames -= 1;
+        } else {
+            // Footer: paginación + team count
+            dc.setColor(0x0F0F18, Graphics.COLOR_TRANSPARENT);
+            dc.fillRoundedRectangle(80, Layout.Pokedex.FOOTER_Y, w - 160, Layout.Pokedex.FOOTER_H, 6);
+            dc.setColor(0x444444, Graphics.COLOR_TRANSPARENT);
+            var page = (_scroll / Layout.Pokedex.VISIBLE_ROWS) + 1;
+            var totalPages = ((PokemonData.TOTAL_POKEMON + Layout.Pokedex.VISIBLE_ROWS - 1) / Layout.Pokedex.VISIBLE_ROWS);
+            dc.drawText(cx, Layout.Pokedex.FOOTER_Y, Graphics.FONT_XTINY,
+                page.toString() + "/" + totalPages.toString() + " [Team:" + effectiveCount.toString() + "/6]",
+                Graphics.TEXT_JUSTIFY_CENTER);
+        }
     }
 }
 
@@ -152,8 +197,8 @@ class PokedexDelegate extends WatchUi.BehaviorDelegate {
     }
 
     function onNextPage() as Lang.Boolean {
-        if (_view._scroll + 7 < PokemonData.TOTAL_POKEMON) {
-            _view._scroll += 7;
+        if (_view._scroll + Layout.Pokedex.VISIBLE_ROWS < PokemonData.TOTAL_POKEMON) {
+            _view._scroll += Layout.Pokedex.VISIBLE_ROWS;
             WatchUi.requestUpdate();
         }
         return true;
@@ -161,20 +206,46 @@ class PokedexDelegate extends WatchUi.BehaviorDelegate {
 
     function onPreviousPage() as Lang.Boolean {
         if (_view._scroll > 0) {
-            _view._scroll -= 7;
+            _view._scroll -= Layout.Pokedex.VISIBLE_ROWS;
             if (_view._scroll < 0) { _view._scroll = 0; }
             WatchUi.requestUpdate();
         }
         return true;
     }
 
-    // Tap directo en una fila para elegir buddy
+    // Tap directo en una fila: tap izquierdo = buddy, tap derecho = team
+    // Tap en footer (Team: X/6) = abrir TeamView
     function onTap(evt as WatchUi.ClickEvent) as Lang.Boolean {
         var coords = evt.getCoordinates();
         var tapY = coords[1] as Lang.Number;
+        var tapX = coords[0] as Lang.Number;
+
+        // Tap on footer area → open TeamView
+        if (tapY >= 336) {
+            var v = new TeamView();
+            WatchUi.pushView(v, new TeamDelegate(v), WatchUi.SLIDE_UP);
+            return true;
+        }
+
         var pickId = _view.getIdAtTapY(tapY);
         if (pickId > 0) {
-            GameState.setBuddy(pickId);
+            if (tapX > 180) {
+                // Right side: add/remove from team
+                if (GameState.isInTeam(pickId)) {
+                    GameState.removeFromTeam(pickId);
+                    _view.showFlash("Removed from team");
+                } else {
+                    var added = GameState.addToTeam(pickId);
+                    if (added) {
+                        _view.showFlash("Added to team!");
+                    } else {
+                        _view.showFlash("Team full (6/6)");
+                    }
+                }
+            } else {
+                GameState.setBuddy(pickId);
+                _view.showFlash("New buddy!");
+            }
             WatchUi.requestUpdate();
         }
         return true;
@@ -209,9 +280,9 @@ class ProfileView extends WatchUi.View {
 
         // Header (ajustado para pantalla redonda)
         dc.setColor(0x0F0F18, Graphics.COLOR_TRANSPARENT);
-        dc.fillRoundedRectangle(90, 22, w - 180, 26, 8);
+        dc.fillRoundedRectangle(90, Layout.Profile.HEADER_Y, w - 180, Layout.Profile.HEADER_H, 8);
         dc.setColor(0x4488FF, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(cx, 24, Graphics.FONT_XTINY,
+        dc.drawText(cx, Layout.Profile.TITLE_Y, Graphics.FONT_XTINY,
             tr(Rez.Strings.ProfileTitle), Graphics.TEXT_JUSTIFY_CENTER);
 
         var steps  = GameState.getStepsToday();
@@ -225,6 +296,7 @@ class ProfileView extends WatchUi.View {
         // Stats rows (Perfil: eliminada la sección de información de un Pokémon)
         var rows = [
             [tr(Rez.Strings.LabelStepsToday),   steps.toString(),     0xBBBBBB],
+            [tr(Rez.Strings.LabelTotalSteps),   GameState.totalStepsAllTime.toString(), 0xBBBBBB],
             [tr(Rez.Strings.LabelSeen),         seen.toString() + "/" + PokemonData.TOTAL_POKEMON.toString(), 0x44CCFF],
             [tr(Rez.Strings.LabelCaught),       unique.toString() + "/" + PokemonData.TOTAL_POKEMON.toString(), 0x44FF44],
             [tr(Rez.Strings.LabelShinies),      shiny.toString(),     0xFFD700],
@@ -232,8 +304,8 @@ class ProfileView extends WatchUi.View {
             [tr(Rez.Strings.LabelStreak),       streak.toString() + " " + tr(Rez.Strings.LabelDays), 0xFF8800],
         ];
 
-        var y = 70;
-        var rowH = 34;
+        var y = Layout.Profile.ROWS_START_Y;
+        var rowH = Layout.Profile.ROW_H;
         for (var i = 0; i < rows.size(); i++) {
             // Alternating row backgrounds
             if (i % 2 == 0) {
@@ -242,10 +314,10 @@ class ProfileView extends WatchUi.View {
             }
 
             dc.setColor(0x777777, Graphics.COLOR_TRANSPARENT);
-            dc.drawText(36, y + 4, Graphics.FONT_XTINY,
+            dc.drawText(Layout.Profile.LABEL_X, y + 4, Graphics.FONT_XTINY,
                 rows[i][0], Graphics.TEXT_JUSTIFY_LEFT);
             dc.setColor(rows[i][2], Graphics.COLOR_TRANSPARENT);
-            dc.drawText(w - 36, y + 4, Graphics.FONT_XTINY,
+            dc.drawText(w - Layout.Profile.VALUE_X_PAD, y + 4, Graphics.FONT_XTINY,
                 rows[i][1], Graphics.TEXT_JUSTIFY_RIGHT);
             y += rowH;
         }

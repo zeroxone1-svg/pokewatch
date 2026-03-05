@@ -154,35 +154,35 @@ class EncounterView extends WatchUi.View {
         var tierColor  = tierColors[tier];
 
         dc.setColor(0x141414, Graphics.COLOR_TRANSPARENT);
-        dc.fillRoundedRectangle(60, 8, w - 120, 54, 8);
+        dc.fillRoundedRectangle(60, Layout.Encounter.HEADER_Y, w - 120, Layout.Encounter.HEADER_H, Layout.Encounter.HEADER_RADIUS);
 
         // ── Nombre + shiny (top) ──────────────────────
         var displayName = isShiny ? ("★ " + name.toUpper()) : name.toUpper();
         var nameColor   = isShiny ? 0xFFD700 : Graphics.COLOR_WHITE;
         dc.setColor(nameColor, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(cx, 12, Graphics.FONT_XTINY,
+        dc.drawText(cx, Layout.Encounter.NAME_Y, Graphics.FONT_XTINY,
             displayName, Graphics.TEXT_JUSTIFY_CENTER);
 
-        // ── Tier (debajo del nombre, 34px gap) ────────────
+        // ── Tier (debajo del nombre) ────────────
         dc.setColor(tierColor, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(cx, 38, Graphics.FONT_XTINY,
+        dc.drawText(cx, Layout.Encounter.TIER_Y, Graphics.FONT_XTINY,
             tierNames[tier] + "  #" + id.format("%03d"),
             Graphics.TEXT_JUSTIFY_CENTER);
 
         // ── SPRITE centrado (100x100) con bobbing solo en bitmap ─
-        var spriteSize = 100;
-        var spriteY    = 70;
+        var spriteSize = Layout.Encounter.SPRITE_SIZE;
+        var spriteY    = Layout.Encounter.SPRITE_Y;
         var bobOffsets = [0, -2, 0, 2];
         var bob = bobOffsets[_animFrame];
         dc.setColor(0x1A1A1A, Graphics.COLOR_TRANSPARENT);
-        dc.fillRoundedRectangle(cx - 56, spriteY - 4, 112, 112, 10);
+        dc.fillRoundedRectangle(cx - 56, spriteY - 4, 112, 112, Layout.Encounter.BOX_RADIUS);
         // Borde dorado si es shiny, color tier si no
         var spriteBorder = isShiny ? 0xFFD700 : 0x333333;
         if (_animFrame == 1 || _animFrame == 3) {
             spriteBorder = isShiny ? 0xFFE84D : 0x444444;
         }
         dc.setColor(spriteBorder, Graphics.COLOR_TRANSPARENT);
-        dc.drawRoundedRectangle(cx - 56, spriteY - 4, 112, 112, 10);
+        dc.drawRoundedRectangle(cx - 56, spriteY - 4, 112, 112, Layout.Encounter.BOX_RADIUS);
         if (isShiny) {
             dc.drawRoundedRectangle(cx - 57, spriteY - 5, 114, 114, 11);
         }
@@ -208,10 +208,10 @@ class EncounterView extends WatchUi.View {
         // ── Barra de HP (centrada, limpia) ──────────────
         var hpCurr = enc[:hpCurr];
         var hpMax  = enc[:hpMax];
-        var barW  = 140;
+        var barW  = Layout.Encounter.HP_BAR_W;
         var barX  = cx - barW / 2;
         var barY  = afterY;
-        var barH  = 10;
+        var barH  = Layout.Encounter.HP_BAR_H;
         var fillW = (hpPct * barW) / 100;
 
         var hpColor = 0x44CC44;
@@ -219,10 +219,10 @@ class EncounterView extends WatchUi.View {
         if (hpPct < 25) { hpColor = 0xFF4444; }
 
         dc.setColor(0x262626, Graphics.COLOR_TRANSPARENT);
-        dc.fillRoundedRectangle(barX, barY, barW, barH, 4);
+        dc.fillRoundedRectangle(barX, barY, barW, barH, Layout.Encounter.HP_BAR_RADIUS);
         if (fillW > 0) {
             dc.setColor(hpColor, Graphics.COLOR_TRANSPARENT);
-            dc.fillRoundedRectangle(barX, barY, fillW, barH, 4);
+            dc.fillRoundedRectangle(barX, barY, fillW, barH, Layout.Encounter.HP_BAR_RADIUS);
         }
 
         // ── HP números debajo de la barra ─────────────────
@@ -250,9 +250,9 @@ class EncounterView extends WatchUi.View {
             Graphics.TEXT_JUSTIFY_CENTER);
 
         // ── Botón huir (zona segura para pantalla redonda) ─
-        var fleeY = h - 78;
+        var fleeY = h - Layout.Encounter.FLEE_BTN_PAD;
         dc.setColor(0x331111, Graphics.COLOR_TRANSPARENT);
-        dc.fillRoundedRectangle(cx - 70, fleeY - 4, 140, 30, 6);
+        dc.fillRoundedRectangle(cx - 70, fleeY - 4, Layout.Encounter.FLEE_BTN_W, Layout.Encounter.FLEE_BTN_H, 6);
         dc.setColor(0xFF8888, Graphics.COLOR_TRANSPARENT);
         dc.drawText(cx, fleeY, Graphics.FONT_XTINY,
             tr(Rez.Strings.SwipeLeftFlee), Graphics.TEXT_JUSTIFY_CENTER);
@@ -282,7 +282,7 @@ class EncounterView extends WatchUi.View {
         if (_capturedId > 0) {
             var sprite = SpriteManager.getSprite(_capturedId);
             if (sprite != null) {
-                dc.drawBitmap(cx - 40, 30, sprite as WatchUi.BitmapResource);
+                dc.drawBitmap(cx - 40, Layout.Encounter.CAPTURE_SPRITE_Y, sprite as WatchUi.BitmapResource);
             }
         }
 
@@ -336,7 +336,7 @@ class EncounterView extends WatchUi.View {
         }
         var timeStr = hr.format("%d") + ":" + clk.min.format("%02d");
         var cx = w / 2;
-        var y = 338;
+        var y = Layout.Encounter.CLOCK_Y;
         dc.setColor(0x101010, Graphics.COLOR_TRANSPARENT);
         dc.fillRoundedRectangle(cx - 34, y - 2, 68, 16, 6);
         dc.setColor(0xFFCC00, Graphics.COLOR_TRANSPARENT);

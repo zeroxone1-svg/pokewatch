@@ -1,0 +1,1675 @@
+[ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc"; @line = 6; @symbol_importdef<0> = [Toybox,6,7,13]; @symbol_importdef<1> = [WatchUi,6,14,21]; ]
+import Toybox.WatchUi;
+[ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc"; @line = 7; @symbol_importdef<0> = [Toybox,7,7,13]; @symbol_importdef<1> = [Graphics,7,14,22]; ]
+import Toybox.Graphics;
+[ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc"; @line = 8; @symbol_importdef<0> = [Toybox,8,7,13]; @symbol_importdef<1> = [Lang,8,14,18]; ]
+import Toybox.Lang;
+[ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc"; @line = 9; @symbol_importdef<0> = [Toybox,9,7,13]; @symbol_importdef<1> = [Time,9,14,18]; ]
+import Toybox.Time;
+[ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc"; @line = 11; @symbol_classdef = [GymListView,11,6,17]; @symbol_extends<0> = [WatchUi,11,26,33]; @symbol_extends<1> = [View,11,34,38]; ]
+class GymListView extends WatchUi.View {
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc"; @line = 11; ]
+    <init> {
+    }
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc"; @line = 11; ]
+    static
+    <init> {
+    }
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc"; @line = 13; @position = 8; @symbol_vardef = [_cursor,13,8,15]; @symbol_type<0> = [Lang,13,19,23]; @symbol_type<1> = [Number,13,24,30]; ]
+    var _cursor as Lang.Number = 0;
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc"; @line = 14; @position = 8; @symbol_vardef = [_scroll,14,8,15]; @symbol_type<0> = [Lang,14,19,23]; @symbol_type<1> = [Number,14,24,30]; ]
+    var _scroll as Lang.Number = 0;
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc"; @line = 15; @position = 10; @symbol_constdef = [VISIBLE_ROWS,15,10,22]; ]
+    const VISIBLE_ROWS = 3;
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc"; @line = 16; @position = 10; @symbol_constdef = [LINE_H,16,10,16]; ]
+    const LINE_H = 50;
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc"; @line = 17; @position = 10; @symbol_constdef = [START_Y,17,10,17]; ]
+    const START_Y = 90;
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc"; @line = 19; @symbol_functiondef = [initialize,19,13,23]; ]
+    function initialize() as Void {
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_19_26_21_4_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 20 8 ]
+        symbol [ View %tmp.2 20 8 12 ];
+        %tmp.2 = getv ? :View;
+        symbol [ initialize %tmp.3 20 13 23 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_19_26_21_4_stop:
+    }
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc"; @line = 23; @symbol_functiondef = [ensureCursorVisible,23,13,32]; ]
+    function ensureCursorVisible() as Void {
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_23_43_29_4_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 24 8 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_24_8_28_8_if_stmt:
+        symbol [ _cursor %tmp.2 24 12 19 ];
+        %tmp.2 = getv ? :_cursor;
+        symbol [ _scroll %tmp.4 24 22 29 ];
+        %tmp.4 = getv ? :_scroll;
+        %tmp.5 = lt %tmp.2 %tmp.4;
+        bf %tmp.5 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_24_8_28_8_if_false;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_24_8_28_8_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_24_31_26_8_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 25 12 ]
+        symbol [ _cursor %tmp.7 25 22 29 ];
+        %tmp.7 = getv ? :_cursor;
+        symbol [ _scroll ? 25 12 19 ];
+        putv self :_scroll %tmp.7;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_24_31_26_8_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_24_8_28_8_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_24_8_28_8_if_false:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 26 15 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_26_15_28_8_if_stmt:
+        symbol [ _cursor %tmp.9 26 19 26 ];
+        %tmp.9 = getv ? :_cursor;
+        symbol [ _scroll %tmp.11 26 30 37 ];
+        %tmp.11 = getv ? :_scroll;
+        symbol [ VISIBLE_ROWS %tmp.13 26 40 52 ];
+        %tmp.13 = getv ? :VISIBLE_ROWS;
+        %tmp.14 = add %tmp.11 %tmp.13;
+        %tmp.15 = gte %tmp.9 %tmp.14;
+        bf %tmp.15 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_26_15_28_8_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_26_15_28_8_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_26_54_28_8_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 27 12 ]
+        symbol [ _cursor %tmp.17 27 22 29 ];
+        %tmp.17 = getv ? :_cursor;
+        symbol [ VISIBLE_ROWS %tmp.19 27 32 44 ];
+        %tmp.19 = getv ? :VISIBLE_ROWS;
+        %tmp.20 = sub %tmp.17 %tmp.19;
+        %tmp.21 = 1;
+        %tmp.22 = add %tmp.20 %tmp.21;
+        symbol [ _scroll ? 27 12 19 ];
+        putv self :_scroll %tmp.22;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_26_54_28_8_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_26_15_28_8_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_26_15_28_8_if_end:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_24_8_28_8_if_end:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_23_43_29_4_stop:
+    }
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc"; @line = 31; @symbol_functiondef = [onUpdate,31,13,21]; @symbol_param<0> = [dc,31,22,24]; @symbol_param<0>_type<0> = [Graphics,31,28,36]; @symbol_param<0>_type<1> = [Dc,31,37,39]; ]
+    function onUpdate(dc as Graphics.Dc) as Void {
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_31_49_143_4_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 32 8 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_31_49_143_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_31_49_143_4_stop" ]
+        %w.1 = local;
+        symbol [ w %w.1 32 12 13 ];
+        %tmp.1 = lgetv %dc;
+        symbol [ dc %tmp.1 32 16 18 ];
+        symbol [ getWidth %tmp.2 32 19 27 ];
+        %tmp.2 = getv function %tmp.1 :getWidth;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        lputv %w.1 %tmp.3;
+        symbol [ w %w.1 32 12 13 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 33 8 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_31_49_143_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_31_49_143_4_stop" ]
+        %h.2 = local;
+        symbol [ h %h.2 33 12 13 ];
+        %tmp.4 = lgetv %dc;
+        symbol [ dc %tmp.4 33 16 18 ];
+        symbol [ getHeight %tmp.5 33 19 28 ];
+        %tmp.5 = getv function %tmp.4 :getHeight;
+        %tmp.6 = invoke %tmp.4 %tmp.5();
+        lputv %h.2 %tmp.6;
+        symbol [ h %h.2 33 12 13 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 34 8 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_31_49_143_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_31_49_143_4_stop" ]
+        %cx.3 = local;
+        symbol [ cx %cx.3 34 12 14 ];
+        %tmp.7 = lgetv %w.1;
+        symbol [ w %tmp.7 34 17 18 ];
+        %tmp.8 = 2;
+        %tmp.9 = div %tmp.7 %tmp.8;
+        lputv %cx.3 %tmp.9;
+        symbol [ cx %cx.3 34 12 14 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 36 8 ]
+        %tmp.10 = lgetv %dc;
+        symbol [ dc %tmp.10 36 8 10 ];
+        symbol [ setColor %tmp.11 36 11 19 ];
+        %tmp.11 = getv function %tmp.10 :setColor;
+        %tmp.12 = 0x050508;
+        %tmp.13 = 0x050508;
+        invoke %tmp.10 %tmp.11(%tmp.12, %tmp.13);
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 37 8 ]
+        %tmp.14 = lgetv %dc;
+        symbol [ dc %tmp.14 37 8 10 ];
+        symbol [ clear %tmp.15 37 11 16 ];
+        %tmp.15 = getv function %tmp.14 :clear;
+        invoke %tmp.14 %tmp.15();
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 40 8 ]
+        %tmp.16 = lgetv %dc;
+        symbol [ dc %tmp.16 40 8 10 ];
+        symbol [ setColor %tmp.17 40 11 19 ];
+        %tmp.17 = getv function %tmp.16 :setColor;
+        %tmp.18 = 0x0F0F18;
+        symbol [ Graphics %tmp.19 40 30 38 ];
+        %tmp.19 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.20 40 39 56 ];
+        %tmp.20 = getv %tmp.19 :COLOR_TRANSPARENT;
+        invoke %tmp.16 %tmp.17(%tmp.18, %tmp.20);
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 41 8 ]
+        %tmp.21 = lgetv %dc;
+        symbol [ dc %tmp.21 41 8 10 ];
+        symbol [ fillRoundedRectangle %tmp.22 41 11 31 ];
+        %tmp.22 = getv function %tmp.21 :fillRoundedRectangle;
+        %tmp.23 = 60;
+        symbol [ Layout %tmp.25 41 36 42 ];
+        %tmp.25 = getv ? :Layout;
+        symbol [ Gym %tmp.26 41 43 46 ];
+        %tmp.26 = getv %tmp.25 :Gym;
+        symbol [ HEADER_BG_Y %tmp.27 41 47 58 ];
+        %tmp.27 = getv %tmp.26 :HEADER_BG_Y;
+        %tmp.28 = lgetv %w.1;
+        symbol [ w %tmp.28 41 60 61 ];
+        %tmp.29 = 120;
+        %tmp.30 = sub %tmp.28 %tmp.29;
+        symbol [ Layout %tmp.32 41 69 75 ];
+        %tmp.32 = getv ? :Layout;
+        symbol [ Gym %tmp.33 41 76 79 ];
+        %tmp.33 = getv %tmp.32 :Gym;
+        symbol [ HEADER_BG_H %tmp.34 41 80 91 ];
+        %tmp.34 = getv %tmp.33 :HEADER_BG_H;
+        %tmp.35 = 8;
+        invoke %tmp.21 %tmp.22(%tmp.23, %tmp.27, %tmp.30, %tmp.34, %tmp.35);
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 42 8 ]
+        %tmp.36 = lgetv %dc;
+        symbol [ dc %tmp.36 42 8 10 ];
+        symbol [ setColor %tmp.37 42 11 19 ];
+        %tmp.37 = getv function %tmp.36 :setColor;
+        %tmp.38 = 0xBB66FF;
+        symbol [ Graphics %tmp.39 42 30 38 ];
+        %tmp.39 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.40 42 39 56 ];
+        %tmp.40 = getv %tmp.39 :COLOR_TRANSPARENT;
+        invoke %tmp.36 %tmp.37(%tmp.38, %tmp.40);
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 43 8 ]
+        %tmp.41 = lgetv %dc;
+        symbol [ dc %tmp.41 43 8 10 ];
+        symbol [ drawText %tmp.42 43 11 19 ];
+        %tmp.42 = getv function %tmp.41 :drawText;
+        %tmp.43 = lgetv %cx.3;
+        symbol [ cx %tmp.43 43 20 22 ];
+        symbol [ Layout %tmp.45 43 24 30 ];
+        %tmp.45 = getv ? :Layout;
+        symbol [ Gym %tmp.46 43 31 34 ];
+        %tmp.46 = getv %tmp.45 :Gym;
+        symbol [ TITLE_Y %tmp.47 43 35 42 ];
+        %tmp.47 = getv %tmp.46 :TITLE_Y;
+        symbol [ Graphics %tmp.48 43 44 52 ];
+        %tmp.48 = getm $.Toybox.Graphics;
+        symbol [ FONT_XTINY %tmp.49 43 53 63 ];
+        %tmp.49 = getv %tmp.48 :FONT_XTINY;
+        %tmp.50 = "GYMS & ELITE FOUR";
+        symbol [ Graphics %tmp.51 44 33 41 ];
+        %tmp.51 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.52 44 42 61 ];
+        %tmp.52 = getv %tmp.51 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.41 %tmp.42(%tmp.43, %tmp.47, %tmp.49, %tmp.50, %tmp.52);
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 47 8 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_31_49_143_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_31_49_143_4_stop" ]
+        %badges.4 = local;
+        symbol [ badges %badges.4 47 12 18 ];
+        symbol [ GameState %tmp.54 47 21 30 ];
+        %tmp.54 = getv ? :GameState;
+        symbol [ getGymBadgeCount %tmp.55 47 31 47 ];
+        %tmp.55 = getv function %tmp.54 :getGymBadgeCount;
+        %tmp.56 = invoke %tmp.54 %tmp.55();
+        lputv %badges.4 %tmp.56;
+        symbol [ badges %badges.4 47 12 18 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 48 8 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_31_49_143_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_31_49_143_4_stop" ]
+        %wins.5 = local;
+        symbol [ wins %wins.5 48 12 16 ];
+        symbol [ GameState %tmp.58 48 19 28 ];
+        %tmp.58 = getv ? :GameState;
+        symbol [ rivalWins %tmp.59 48 29 38 ];
+        %tmp.59 = getv %tmp.58 :rivalWins;
+        lputv %wins.5 %tmp.59;
+        symbol [ wins %wins.5 48 12 16 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 49 8 ]
+        %tmp.60 = lgetv %dc;
+        symbol [ dc %tmp.60 49 8 10 ];
+        symbol [ setColor %tmp.61 49 11 19 ];
+        %tmp.61 = getv function %tmp.60 :setColor;
+        %tmp.62 = 0x666666;
+        symbol [ Graphics %tmp.63 49 30 38 ];
+        %tmp.63 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.64 49 39 56 ];
+        %tmp.64 = getv %tmp.63 :COLOR_TRANSPARENT;
+        invoke %tmp.60 %tmp.61(%tmp.62, %tmp.64);
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 50 8 ]
+        %tmp.65 = lgetv %dc;
+        symbol [ dc %tmp.65 50 8 10 ];
+        symbol [ drawText %tmp.66 50 11 19 ];
+        %tmp.66 = getv function %tmp.65 :drawText;
+        %tmp.67 = lgetv %cx.3;
+        symbol [ cx %tmp.67 50 20 22 ];
+        symbol [ Layout %tmp.69 50 24 30 ];
+        %tmp.69 = getv ? :Layout;
+        symbol [ Gym %tmp.70 50 31 34 ];
+        %tmp.70 = getv %tmp.69 :Gym;
+        symbol [ STATS_Y %tmp.71 50 35 42 ];
+        %tmp.71 = getv %tmp.70 :STATS_Y;
+        symbol [ Graphics %tmp.72 50 44 52 ];
+        %tmp.72 = getm $.Toybox.Graphics;
+        symbol [ FONT_XTINY %tmp.73 50 53 63 ];
+        %tmp.73 = getv %tmp.72 :FONT_XTINY;
+        %tmp.74 = lgetv %badges.4;
+        symbol [ badges %tmp.74 51 12 18 ];
+        symbol [ toString %tmp.75 51 19 27 ];
+        %tmp.75 = getv function %tmp.74 :toString;
+        %tmp.76 = invoke %tmp.74 %tmp.75();
+        %tmp.77 = "/20 medals  ";
+        %tmp.78 = add %tmp.76 %tmp.77;
+        %tmp.79 = lgetv %wins.5;
+        symbol [ wins %tmp.79 51 49 53 ];
+        symbol [ toString %tmp.80 51 54 62 ];
+        %tmp.80 = getv function %tmp.79 :toString;
+        %tmp.81 = invoke %tmp.79 %tmp.80();
+        %tmp.82 = add %tmp.78 %tmp.81;
+        %tmp.83 = " wins";
+        %tmp.84 = add %tmp.82 %tmp.83;
+        symbol [ Graphics %tmp.85 52 12 20 ];
+        %tmp.85 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.86 52 21 40 ];
+        %tmp.86 = getv %tmp.85 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.65 %tmp.66(%tmp.67, %tmp.71, %tmp.73, %tmp.84, %tmp.86);
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 54 8 ]
+        for @C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_54_8_134_8_for_test @C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_54_8_134_8_for_incr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_54_8_134_8_for_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_54_8_134_8_for_init:
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_54_8_134_8_for_begin" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_54_8_134_8_for_end" ]
+        %i.6 = local;
+        symbol [ i %i.6 54 17 18 ];
+        %tmp.87 = 0;
+        lputv %i.6 %tmp.87;
+        symbol [ i %i.6 54 17 18 ];
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_54_8_134_8_for_test:
+        %tmp.88 = lgetv %i.6;
+        symbol [ i %tmp.88 54 24 25 ];
+        symbol [ VISIBLE_ROWS %tmp.90 54 28 40 ];
+        %tmp.90 = getv ? :VISIBLE_ROWS;
+        %tmp.91 = lt %tmp.88 %tmp.90;
+        bf %tmp.91 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_54_8_134_8_for_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_54_8_134_8_for_begin:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_54_47_134_8_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 55 12 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_54_47_134_8_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_54_47_134_8_stop" ]
+        %idx.7 = local;
+        symbol [ idx %idx.7 55 16 19 ];
+        symbol [ _scroll %tmp.93 55 22 29 ];
+        %tmp.93 = getv ? :_scroll;
+        %tmp.94 = lgetv %i.6;
+        symbol [ i %tmp.94 55 32 33 ];
+        %tmp.95 = add %tmp.93 %tmp.94;
+        lputv %idx.7 %tmp.95;
+        symbol [ idx %idx.7 55 16 19 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 56 12 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_56_12_56_57_if_stmt:
+        %tmp.96 = lgetv %idx.7;
+        symbol [ idx %tmp.96 56 16 19 ];
+        symbol [ BalanceConfig %tmp.98 56 23 36 ];
+        %tmp.98 = getv ? :BalanceConfig;
+        symbol [ GYM_COUNT %tmp.99 56 37 46 ];
+        %tmp.99 = getv %tmp.98 :GYM_COUNT;
+        %tmp.100 = gte %tmp.96 %tmp.99;
+        bf %tmp.100 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_56_12_56_57_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_56_12_56_57_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_56_48_56_57_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 56 50 ]
+        goto break @C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_54_8_134_8_for_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_56_48_56_57_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_56_12_56_57_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_56_12_56_57_if_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 58 12 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_54_47_134_8_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_54_47_134_8_stop" ]
+        %gymData.8 = local;
+        symbol [ gymData %gymData.8 58 16 23 ];
+        symbol [ BalanceConfig %tmp.102 58 26 39 ];
+        %tmp.102 = getv ? :BalanceConfig;
+        symbol [ GYM_DATA %tmp.103 58 40 48 ];
+        %tmp.103 = getv %tmp.102 :GYM_DATA;
+        %tmp.104 = lgetv %idx.7;
+        symbol [ idx %tmp.104 58 49 52 ];
+        %tmp.105 = agetv %tmp.103 %tmp.104;
+        lputv %gymData.8 %tmp.105;
+        symbol [ gymData %gymData.8 58 16 23 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 59 12 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_54_47_134_8_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_54_47_134_8_stop" ]
+        %name.9 = local;
+        symbol [ name %name.9 59 16 20 ];
+        %tmp.106 = lgetv %gymData.8;
+        symbol [ gymData %tmp.106 59 23 30 ];
+        %tmp.107 = 0;
+        %tmp.108 = agetv %tmp.106 %tmp.107;
+        lputv %name.9 %tmp.108;
+        symbol [ name %name.9 59 16 20 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 60 12 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_54_47_134_8_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_54_47_134_8_stop" ]
+        %pokId.10 = local;
+        symbol [ pokId %pokId.10 60 16 21 ];
+        %tmp.109 = lgetv %gymData.8;
+        symbol [ gymData %tmp.109 60 24 31 ];
+        %tmp.110 = 1;
+        %tmp.111 = agetv %tmp.109 %tmp.110;
+        lputv %pokId.10 %tmp.111;
+        symbol [ pokId %pokId.10 60 16 21 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 61 12 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_54_47_134_8_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_54_47_134_8_stop" ]
+        %level.11 = local;
+        symbol [ level %level.11 61 16 21 ];
+        %tmp.112 = lgetv %gymData.8;
+        symbol [ gymData %tmp.112 61 24 31 ];
+        %tmp.113 = 2;
+        %tmp.114 = agetv %tmp.112 %tmp.113;
+        lputv %level.11 %tmp.114;
+        symbol [ level %level.11 61 16 21 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 62 12 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_54_47_134_8_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_54_47_134_8_stop" ]
+        %status.12 = local;
+        symbol [ status %status.12 62 16 22 ];
+        symbol [ GameState %tmp.116 62 25 34 ];
+        %tmp.116 = getv ? :GameState;
+        symbol [ getGymStatus %tmp.117 62 35 47 ];
+        %tmp.117 = getv function %tmp.116 :getGymStatus;
+        %tmp.118 = lgetv %idx.7;
+        symbol [ idx %tmp.118 62 48 51 ];
+        %tmp.119 = invoke %tmp.116 %tmp.117(%tmp.118);
+        lputv %status.12 %tmp.119;
+        symbol [ status %status.12 62 16 22 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 63 12 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_54_47_134_8_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_54_47_134_8_stop" ]
+        %y.13 = local;
+        symbol [ y %y.13 63 16 17 ];
+        symbol [ Layout %tmp.121 63 20 26 ];
+        %tmp.121 = getv ? :Layout;
+        symbol [ Gym %tmp.122 63 27 30 ];
+        %tmp.122 = getv %tmp.121 :Gym;
+        symbol [ LIST_START_Y %tmp.123 63 31 43 ];
+        %tmp.123 = getv %tmp.122 :LIST_START_Y;
+        %tmp.124 = lgetv %i.6;
+        symbol [ i %tmp.124 63 47 48 ];
+        symbol [ Layout %tmp.126 63 51 57 ];
+        %tmp.126 = getv ? :Layout;
+        symbol [ Gym %tmp.127 63 58 61 ];
+        %tmp.127 = getv %tmp.126 :Gym;
+        symbol [ LINE_H %tmp.128 63 62 68 ];
+        %tmp.128 = getv %tmp.127 :LINE_H;
+        %tmp.129 = mul %tmp.124 %tmp.128;
+        %tmp.130 = add %tmp.123 %tmp.129;
+        lputv %y.13 %tmp.130;
+        symbol [ y %y.13 63 16 17 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 64 12 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_54_47_134_8_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_54_47_134_8_stop" ]
+        %isSelected.14 = local;
+        symbol [ isSelected %isSelected.14 64 16 26 ];
+        %tmp.131 = lgetv %idx.7;
+        symbol [ idx %tmp.131 64 30 33 ];
+        symbol [ _cursor %tmp.133 64 37 44 ];
+        %tmp.133 = getv ? :_cursor;
+        %tmp.134 = eq %tmp.131 %tmp.133;
+        lputv %isSelected.14 %tmp.134;
+        symbol [ isSelected %isSelected.14 64 16 26 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 67 12 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_54_47_134_8_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_54_47_134_8_stop" ]
+        %regionColor.15 = local;
+        symbol [ regionColor %regionColor.15 67 16 27 ];
+        %tmp.135 = 0x4488FF;
+        lputv %regionColor.15 %tmp.135;
+        symbol [ regionColor %regionColor.15 67 16 27 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 68 12 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_68_12_68_64_if_stmt:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_68_16_68_34_begin:
+        %tmp.136 = lgetv %idx.7;
+        symbol [ idx %tmp.136 68 16 19 ];
+        %tmp.137 = 8;
+        %tmp.138 = gte %tmp.136 %tmp.137;
+        bf %tmp.138 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_68_12_68_64_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_68_28_68_34_true:
+        %tmp.139 = lgetv %idx.7;
+        symbol [ idx %tmp.139 68 28 31 ];
+        %tmp.140 = 16;
+        %tmp.141 = lt %tmp.139 %tmp.140;
+        push %tmp.141;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_68_28_68_34_end:
+        %tmp.142 = phi [%tmp.138 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_68_16_68_34_begin] [%tmp.141 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_68_28_68_34_true] [%tmp.142 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_68_28_68_34_end];
+        bf %tmp.142 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_68_12_68_64_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_68_12_68_64_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_68_38_68_64_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 68 40 ]
+        %tmp.143 = 0xFF66FF;
+        lputv %regionColor.15 %tmp.143;
+        symbol [ regionColor %regionColor.15 68 40 51 ];
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_68_38_68_64_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_68_12_68_64_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_68_12_68_64_if_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 69 12 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_69_12_69_53_if_stmt:
+        %tmp.144 = lgetv %idx.7;
+        symbol [ idx %tmp.144 69 16 19 ];
+        %tmp.145 = 16;
+        %tmp.146 = gte %tmp.144 %tmp.145;
+        bf %tmp.146 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_69_12_69_53_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_69_12_69_53_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_69_27_69_53_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 69 29 ]
+        %tmp.147 = 0xFFAA00;
+        lputv %regionColor.15 %tmp.147;
+        symbol [ regionColor %regionColor.15 69 29 40 ];
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_69_27_69_53_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_69_12_69_53_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_69_12_69_53_if_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 72 12 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_72_12_84_12_if_stmt:
+        %tmp.148 = lgetv %isSelected.14;
+        symbol [ isSelected %tmp.148 72 16 26 ];
+        bf %tmp.148 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_72_12_84_12_if_false;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_72_12_84_12_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_72_28_81_12_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 73 16 ]
+        %tmp.149 = lgetv %dc;
+        symbol [ dc %tmp.149 73 16 18 ];
+        symbol [ setColor %tmp.150 73 19 27 ];
+        %tmp.150 = getv function %tmp.149 :setColor;
+        %tmp.151 = 0x181830;
+        symbol [ Graphics %tmp.152 73 38 46 ];
+        %tmp.152 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.153 73 47 64 ];
+        %tmp.153 = getv %tmp.152 :COLOR_TRANSPARENT;
+        invoke %tmp.149 %tmp.150(%tmp.151, %tmp.153);
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 74 16 ]
+        %tmp.154 = lgetv %dc;
+        symbol [ dc %tmp.154 74 16 18 ];
+        symbol [ fillRoundedRectangle %tmp.155 74 19 39 ];
+        %tmp.155 = getv function %tmp.154 :fillRoundedRectangle;
+        symbol [ Layout %tmp.157 74 40 46 ];
+        %tmp.157 = getv ? :Layout;
+        symbol [ Gym %tmp.158 74 47 50 ];
+        %tmp.158 = getv %tmp.157 :Gym;
+        symbol [ ROW_PAD %tmp.159 74 51 58 ];
+        %tmp.159 = getv %tmp.158 :ROW_PAD;
+        %tmp.160 = lgetv %y.13;
+        symbol [ y %tmp.160 74 60 61 ];
+        %tmp.161 = lgetv %w.1;
+        symbol [ w %tmp.161 74 63 64 ];
+        symbol [ Layout %tmp.163 74 67 73 ];
+        %tmp.163 = getv ? :Layout;
+        symbol [ Gym %tmp.164 74 74 77 ];
+        %tmp.164 = getv %tmp.163 :Gym;
+        symbol [ ROW_PAD %tmp.165 74 78 85 ];
+        %tmp.165 = getv %tmp.164 :ROW_PAD;
+        %tmp.166 = 2;
+        %tmp.167 = mul %tmp.165 %tmp.166;
+        %tmp.168 = sub %tmp.161 %tmp.167;
+        symbol [ Layout %tmp.170 74 91 97 ];
+        %tmp.170 = getv ? :Layout;
+        symbol [ Gym %tmp.171 74 98 101 ];
+        %tmp.171 = getv %tmp.170 :Gym;
+        symbol [ LINE_H %tmp.172 74 102 108 ];
+        %tmp.172 = getv %tmp.171 :LINE_H;
+        %tmp.173 = 2;
+        %tmp.174 = sub %tmp.172 %tmp.173;
+        %tmp.175 = 8;
+        invoke %tmp.154 %tmp.155(%tmp.159, %tmp.160, %tmp.168, %tmp.174, %tmp.175);
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 76 16 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_72_28_81_12_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_72_28_81_12_stop" ]
+        %selColor.16 = local;
+        symbol [ selColor %selColor.16 76 20 28 ];
+        %tmp.176 = 0x4488FF;
+        lputv %selColor.16 %tmp.176;
+        symbol [ selColor %selColor.16 76 20 28 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 77 16 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_77_16_78_64_if_stmt:
+        %tmp.177 = lgetv %status.12;
+        symbol [ status %tmp.177 77 20 26 ];
+        %tmp.178 = 2;
+        %tmp.179 = eq %tmp.177 %tmp.178;
+        bf %tmp.179 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_77_16_78_64_if_false;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_77_16_78_64_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_77_33_77_56_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 77 35 ]
+        %tmp.180 = 0x44CC44;
+        lputv %selColor.16 %tmp.180;
+        symbol [ selColor %selColor.16 77 35 43 ];
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_77_33_77_56_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_77_16_78_64_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_77_16_78_64_if_false:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 78 21 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_78_21_78_64_if_stmt:
+        %tmp.181 = lgetv %status.12;
+        symbol [ status %tmp.181 78 25 31 ];
+        %tmp.182 = 1;
+        %tmp.183 = eq %tmp.181 %tmp.182;
+        bf %tmp.183 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_78_21_78_64_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_78_21_78_64_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_78_38_78_64_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 78 40 ]
+        %tmp.184 = lgetv %regionColor.15;
+        symbol [ regionColor %tmp.184 78 51 62 ];
+        lputv %selColor.16 %tmp.184;
+        symbol [ selColor %selColor.16 78 40 48 ];
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_78_38_78_64_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_78_21_78_64_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_78_21_78_64_if_end:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_77_16_78_64_if_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 79 16 ]
+        %tmp.185 = lgetv %dc;
+        symbol [ dc %tmp.185 79 16 18 ];
+        symbol [ setColor %tmp.186 79 19 27 ];
+        %tmp.186 = getv function %tmp.185 :setColor;
+        %tmp.187 = lgetv %selColor.16;
+        symbol [ selColor %tmp.187 79 28 36 ];
+        symbol [ Graphics %tmp.188 79 38 46 ];
+        %tmp.188 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.189 79 47 64 ];
+        %tmp.189 = getv %tmp.188 :COLOR_TRANSPARENT;
+        invoke %tmp.185 %tmp.186(%tmp.187, %tmp.189);
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 80 16 ]
+        %tmp.190 = lgetv %dc;
+        symbol [ dc %tmp.190 80 16 18 ];
+        symbol [ drawRoundedRectangle %tmp.191 80 19 39 ];
+        %tmp.191 = getv function %tmp.190 :drawRoundedRectangle;
+        symbol [ Layout %tmp.193 80 40 46 ];
+        %tmp.193 = getv ? :Layout;
+        symbol [ Gym %tmp.194 80 47 50 ];
+        %tmp.194 = getv %tmp.193 :Gym;
+        symbol [ ROW_PAD %tmp.195 80 51 58 ];
+        %tmp.195 = getv %tmp.194 :ROW_PAD;
+        %tmp.196 = lgetv %y.13;
+        symbol [ y %tmp.196 80 60 61 ];
+        %tmp.197 = lgetv %w.1;
+        symbol [ w %tmp.197 80 63 64 ];
+        symbol [ Layout %tmp.199 80 67 73 ];
+        %tmp.199 = getv ? :Layout;
+        symbol [ Gym %tmp.200 80 74 77 ];
+        %tmp.200 = getv %tmp.199 :Gym;
+        symbol [ ROW_PAD %tmp.201 80 78 85 ];
+        %tmp.201 = getv %tmp.200 :ROW_PAD;
+        %tmp.202 = 2;
+        %tmp.203 = mul %tmp.201 %tmp.202;
+        %tmp.204 = sub %tmp.197 %tmp.203;
+        symbol [ Layout %tmp.206 80 91 97 ];
+        %tmp.206 = getv ? :Layout;
+        symbol [ Gym %tmp.207 80 98 101 ];
+        %tmp.207 = getv %tmp.206 :Gym;
+        symbol [ LINE_H %tmp.208 80 102 108 ];
+        %tmp.208 = getv %tmp.207 :LINE_H;
+        %tmp.209 = 2;
+        %tmp.210 = sub %tmp.208 %tmp.209;
+        %tmp.211 = 8;
+        invoke %tmp.190 %tmp.191(%tmp.195, %tmp.196, %tmp.204, %tmp.210, %tmp.211);
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_72_28_81_12_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_72_12_84_12_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_72_12_84_12_if_false:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 81 19 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_81_19_84_12_if_stmt:
+        %tmp.212 = lgetv %i.6;
+        symbol [ i %tmp.212 81 23 24 ];
+        %tmp.213 = 2;
+        %tmp.214 = mod %tmp.212 %tmp.213;
+        %tmp.215 = 0;
+        %tmp.216 = eq %tmp.214 %tmp.215;
+        bf %tmp.216 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_81_19_84_12_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_81_19_84_12_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_81_35_84_12_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 82 16 ]
+        %tmp.217 = lgetv %dc;
+        symbol [ dc %tmp.217 82 16 18 ];
+        symbol [ setColor %tmp.218 82 19 27 ];
+        %tmp.218 = getv function %tmp.217 :setColor;
+        %tmp.219 = 0x0A0A12;
+        symbol [ Graphics %tmp.220 82 38 46 ];
+        %tmp.220 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.221 82 47 64 ];
+        %tmp.221 = getv %tmp.220 :COLOR_TRANSPARENT;
+        invoke %tmp.217 %tmp.218(%tmp.219, %tmp.221);
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 83 16 ]
+        %tmp.222 = lgetv %dc;
+        symbol [ dc %tmp.222 83 16 18 ];
+        symbol [ fillRoundedRectangle %tmp.223 83 19 39 ];
+        %tmp.223 = getv function %tmp.222 :fillRoundedRectangle;
+        symbol [ Layout %tmp.225 83 40 46 ];
+        %tmp.225 = getv ? :Layout;
+        symbol [ Gym %tmp.226 83 47 50 ];
+        %tmp.226 = getv %tmp.225 :Gym;
+        symbol [ ROW_PAD %tmp.227 83 51 58 ];
+        %tmp.227 = getv %tmp.226 :ROW_PAD;
+        %tmp.228 = lgetv %y.13;
+        symbol [ y %tmp.228 83 60 61 ];
+        %tmp.229 = lgetv %w.1;
+        symbol [ w %tmp.229 83 63 64 ];
+        symbol [ Layout %tmp.231 83 67 73 ];
+        %tmp.231 = getv ? :Layout;
+        symbol [ Gym %tmp.232 83 74 77 ];
+        %tmp.232 = getv %tmp.231 :Gym;
+        symbol [ ROW_PAD %tmp.233 83 78 85 ];
+        %tmp.233 = getv %tmp.232 :ROW_PAD;
+        %tmp.234 = 2;
+        %tmp.235 = mul %tmp.233 %tmp.234;
+        %tmp.236 = sub %tmp.229 %tmp.235;
+        symbol [ Layout %tmp.238 83 91 97 ];
+        %tmp.238 = getv ? :Layout;
+        symbol [ Gym %tmp.239 83 98 101 ];
+        %tmp.239 = getv %tmp.238 :Gym;
+        symbol [ LINE_H %tmp.240 83 102 108 ];
+        %tmp.240 = getv %tmp.239 :LINE_H;
+        %tmp.241 = 2;
+        %tmp.242 = sub %tmp.240 %tmp.241;
+        %tmp.243 = 6;
+        invoke %tmp.222 %tmp.223(%tmp.227, %tmp.228, %tmp.236, %tmp.242, %tmp.243);
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_81_35_84_12_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_81_19_84_12_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_81_19_84_12_if_end:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_72_12_84_12_if_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 86 12 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_86_12_89_12_if_stmt:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_86_16_86_32_begin:
+        %tmp.244 = lgetv %status.12;
+        symbol [ status %tmp.244 86 16 22 ];
+        %tmp.245 = 2;
+        %tmp.246 = eq %tmp.244 %tmp.245;
+        bf %tmp.246 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_86_12_89_12_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_86_31_86_32_true:
+        %tmp.247 = lgetv %isSelected.14;
+        symbol [ isSelected %tmp.247 86 32 42 ];
+        %tmp.248 = not %tmp.247;
+        push %tmp.248;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_86_31_86_32_end:
+        %tmp.249 = phi [%tmp.246 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_86_16_86_32_begin] [%tmp.248 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_86_31_86_32_true] [%tmp.249 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_86_31_86_32_end];
+        bf %tmp.249 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_86_12_89_12_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_86_12_89_12_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_86_44_89_12_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 87 16 ]
+        %tmp.250 = lgetv %dc;
+        symbol [ dc %tmp.250 87 16 18 ];
+        symbol [ setColor %tmp.251 87 19 27 ];
+        %tmp.251 = getv function %tmp.250 :setColor;
+        %tmp.252 = 0x0A1A0A;
+        symbol [ Graphics %tmp.253 87 38 46 ];
+        %tmp.253 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.254 87 47 64 ];
+        %tmp.254 = getv %tmp.253 :COLOR_TRANSPARENT;
+        invoke %tmp.250 %tmp.251(%tmp.252, %tmp.254);
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 88 16 ]
+        %tmp.255 = lgetv %dc;
+        symbol [ dc %tmp.255 88 16 18 ];
+        symbol [ fillRoundedRectangle %tmp.256 88 19 39 ];
+        %tmp.256 = getv function %tmp.255 :fillRoundedRectangle;
+        symbol [ Layout %tmp.258 88 40 46 ];
+        %tmp.258 = getv ? :Layout;
+        symbol [ Gym %tmp.259 88 47 50 ];
+        %tmp.259 = getv %tmp.258 :Gym;
+        symbol [ ROW_PAD %tmp.260 88 51 58 ];
+        %tmp.260 = getv %tmp.259 :ROW_PAD;
+        %tmp.261 = lgetv %y.13;
+        symbol [ y %tmp.261 88 60 61 ];
+        %tmp.262 = lgetv %w.1;
+        symbol [ w %tmp.262 88 63 64 ];
+        symbol [ Layout %tmp.264 88 67 73 ];
+        %tmp.264 = getv ? :Layout;
+        symbol [ Gym %tmp.265 88 74 77 ];
+        %tmp.265 = getv %tmp.264 :Gym;
+        symbol [ ROW_PAD %tmp.266 88 78 85 ];
+        %tmp.266 = getv %tmp.265 :ROW_PAD;
+        %tmp.267 = 2;
+        %tmp.268 = mul %tmp.266 %tmp.267;
+        %tmp.269 = sub %tmp.262 %tmp.268;
+        symbol [ Layout %tmp.271 88 91 97 ];
+        %tmp.271 = getv ? :Layout;
+        symbol [ Gym %tmp.272 88 98 101 ];
+        %tmp.272 = getv %tmp.271 :Gym;
+        symbol [ LINE_H %tmp.273 88 102 108 ];
+        %tmp.273 = getv %tmp.272 :LINE_H;
+        %tmp.274 = 2;
+        %tmp.275 = sub %tmp.273 %tmp.274;
+        %tmp.276 = 6;
+        invoke %tmp.255 %tmp.256(%tmp.260, %tmp.261, %tmp.269, %tmp.275, %tmp.276);
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_86_44_89_12_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_86_12_89_12_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_86_12_89_12_if_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 92 12 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_92_12_96_12_if_stmt:
+        %tmp.277 = lgetv %isSelected.14;
+        symbol [ isSelected %tmp.277 92 16 26 ];
+        bf %tmp.277 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_92_12_96_12_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_92_12_96_12_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_92_28_96_12_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 93 16 ]
+        %tmp.278 = lgetv %dc;
+        symbol [ dc %tmp.278 93 16 18 ];
+        symbol [ setColor %tmp.279 93 19 27 ];
+        %tmp.279 = getv function %tmp.278 :setColor;
+        %tmp.280 = 0xDDDDDD;
+        symbol [ Graphics %tmp.281 93 38 46 ];
+        %tmp.281 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.282 93 47 64 ];
+        %tmp.282 = getv %tmp.281 :COLOR_TRANSPARENT;
+        invoke %tmp.278 %tmp.279(%tmp.280, %tmp.282);
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 94 16 ]
+        %tmp.283 = lgetv %dc;
+        symbol [ dc %tmp.283 94 16 18 ];
+        symbol [ drawText %tmp.284 94 19 27 ];
+        %tmp.284 = getv function %tmp.283 :drawText;
+        symbol [ Layout %tmp.286 94 28 34 ];
+        %tmp.286 = getv ? :Layout;
+        symbol [ Gym %tmp.287 94 35 38 ];
+        %tmp.287 = getv %tmp.286 :Gym;
+        symbol [ ARROW_X %tmp.288 94 39 46 ];
+        %tmp.288 = getv %tmp.287 :ARROW_X;
+        %tmp.289 = lgetv %y.13;
+        symbol [ y %tmp.289 94 48 49 ];
+        %tmp.290 = 14;
+        %tmp.291 = add %tmp.289 %tmp.290;
+        symbol [ Graphics %tmp.292 94 56 64 ];
+        %tmp.292 = getm $.Toybox.Graphics;
+        symbol [ FONT_XTINY %tmp.293 94 65 75 ];
+        %tmp.293 = getv %tmp.292 :FONT_XTINY;
+        %tmp.294 = ">";
+        symbol [ Graphics %tmp.295 95 25 33 ];
+        %tmp.295 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_LEFT %tmp.296 95 34 51 ];
+        %tmp.296 = getv %tmp.295 :TEXT_JUSTIFY_LEFT;
+        invoke %tmp.283 %tmp.284(%tmp.288, %tmp.291, %tmp.293, %tmp.294, %tmp.296);
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_92_28_96_12_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_92_12_96_12_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_92_12_96_12_if_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 99 12 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_54_47_134_8_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_54_47_134_8_stop" ]
+        %numColor.17 = local;
+        symbol [ numColor %numColor.17 99 16 24 ];
+        %tmp.297 = 0x444444;
+        lputv %numColor.17 %tmp.297;
+        symbol [ numColor %numColor.17 99 16 24 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 100 12 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_100_12_101_60_if_stmt:
+        %tmp.298 = lgetv %status.12;
+        symbol [ status %tmp.298 100 16 22 ];
+        %tmp.299 = 2;
+        %tmp.300 = eq %tmp.298 %tmp.299;
+        bf %tmp.300 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_100_12_101_60_if_false;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_100_12_101_60_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_100_29_100_52_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 100 31 ]
+        %tmp.301 = 0x44CC44;
+        lputv %numColor.17 %tmp.301;
+        symbol [ numColor %numColor.17 100 31 39 ];
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_100_29_100_52_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_100_12_101_60_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_100_12_101_60_if_false:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 101 17 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_101_17_101_60_if_stmt:
+        %tmp.302 = lgetv %status.12;
+        symbol [ status %tmp.302 101 21 27 ];
+        %tmp.303 = 1;
+        %tmp.304 = eq %tmp.302 %tmp.303;
+        bf %tmp.304 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_101_17_101_60_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_101_17_101_60_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_101_34_101_60_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 101 36 ]
+        %tmp.305 = lgetv %regionColor.15;
+        symbol [ regionColor %tmp.305 101 47 58 ];
+        lputv %numColor.17 %tmp.305;
+        symbol [ numColor %numColor.17 101 36 44 ];
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_101_34_101_60_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_101_17_101_60_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_101_17_101_60_if_end:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_100_12_101_60_if_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 102 12 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_102_12_102_51_if_stmt:
+        %tmp.306 = lgetv %isSelected.14;
+        symbol [ isSelected %tmp.306 102 16 26 ];
+        bf %tmp.306 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_102_12_102_51_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_102_12_102_51_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_102_28_102_51_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 102 30 ]
+        %tmp.307 = 0xFFFFFF;
+        lputv %numColor.17 %tmp.307;
+        symbol [ numColor %numColor.17 102 30 38 ];
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_102_28_102_51_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_102_12_102_51_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_102_12_102_51_if_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 103 12 ]
+        %tmp.308 = lgetv %dc;
+        symbol [ dc %tmp.308 103 12 14 ];
+        symbol [ setColor %tmp.309 103 15 23 ];
+        %tmp.309 = getv function %tmp.308 :setColor;
+        %tmp.310 = lgetv %numColor.17;
+        symbol [ numColor %tmp.310 103 24 32 ];
+        symbol [ Graphics %tmp.311 103 34 42 ];
+        %tmp.311 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.312 103 43 60 ];
+        %tmp.312 = getv %tmp.311 :COLOR_TRANSPARENT;
+        invoke %tmp.308 %tmp.309(%tmp.310, %tmp.312);
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 104 12 ]
+        %tmp.313 = lgetv %dc;
+        symbol [ dc %tmp.313 104 12 14 ];
+        symbol [ drawText %tmp.314 104 15 23 ];
+        %tmp.314 = getv function %tmp.313 :drawText;
+        symbol [ Layout %tmp.316 104 24 30 ];
+        %tmp.316 = getv ? :Layout;
+        symbol [ Gym %tmp.317 104 31 34 ];
+        %tmp.317 = getv %tmp.316 :Gym;
+        symbol [ NUM_X %tmp.318 104 35 40 ];
+        %tmp.318 = getv %tmp.317 :NUM_X;
+        %tmp.319 = lgetv %y.13;
+        symbol [ y %tmp.319 104 42 43 ];
+        %tmp.320 = 4;
+        %tmp.321 = add %tmp.319 %tmp.320;
+        symbol [ Graphics %tmp.322 104 49 57 ];
+        %tmp.322 = getm $.Toybox.Graphics;
+        symbol [ FONT_XTINY %tmp.323 104 58 68 ];
+        %tmp.323 = getv %tmp.322 :FONT_XTINY;
+        %tmp.324 = lgetv %idx.7;
+        symbol [ idx %tmp.324 105 17 20 ];
+        %tmp.325 = 1;
+        %tmp.326 = add %tmp.324 %tmp.325;
+        symbol [ format %tmp.327 105 26 32 ];
+        %tmp.327 = getv function %tmp.326 :format;
+        %tmp.328 = "%02d";
+        %tmp.329 = invoke %tmp.326 %tmp.327(%tmp.328);
+        symbol [ Graphics %tmp.330 105 42 50 ];
+        %tmp.330 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.331 105 51 70 ];
+        %tmp.331 = getv %tmp.330 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.313 %tmp.314(%tmp.318, %tmp.321, %tmp.323, %tmp.329, %tmp.331);
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 108 12 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_54_47_134_8_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_54_47_134_8_stop" ]
+        %nameColor.18 = local;
+        symbol [ nameColor %nameColor.18 108 16 25 ];
+        %tmp.332 = 0x383838;
+        lputv %nameColor.18 %tmp.332;
+        symbol [ nameColor %nameColor.18 108 16 25 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 109 12 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_109_12_109_53_if_stmt:
+        %tmp.333 = lgetv %status.12;
+        symbol [ status %tmp.333 109 16 22 ];
+        %tmp.334 = 1;
+        %tmp.335 = eq %tmp.333 %tmp.334;
+        bf %tmp.335 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_109_12_109_53_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_109_12_109_53_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_109_29_109_53_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 109 31 ]
+        %tmp.336 = 0xDDDDDD;
+        lputv %nameColor.18 %tmp.336;
+        symbol [ nameColor %nameColor.18 109 31 40 ];
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_109_29_109_53_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_109_12_109_53_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_109_12_109_53_if_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 110 12 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_110_12_110_53_if_stmt:
+        %tmp.337 = lgetv %status.12;
+        symbol [ status %tmp.337 110 16 22 ];
+        %tmp.338 = 2;
+        %tmp.339 = eq %tmp.337 %tmp.338;
+        bf %tmp.339 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_110_12_110_53_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_110_12_110_53_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_110_29_110_53_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 110 31 ]
+        %tmp.340 = 0x88FF88;
+        lputv %nameColor.18 %tmp.340;
+        symbol [ nameColor %nameColor.18 110 31 40 ];
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_110_29_110_53_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_110_12_110_53_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_110_12_110_53_if_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 111 12 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_111_12_111_67_if_stmt:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_111_16_111_40_begin:
+        %tmp.341 = lgetv %isSelected.14;
+        symbol [ isSelected %tmp.341 111 16 26 ];
+        bf %tmp.341 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_111_12_111_67_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_111_30_111_40_true:
+        %tmp.342 = lgetv %status.12;
+        symbol [ status %tmp.342 111 30 36 ];
+        %tmp.343 = 0;
+        %tmp.344 = eq %tmp.342 %tmp.343;
+        push %tmp.344;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_111_30_111_40_end:
+        %tmp.345 = phi [%tmp.341 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_111_16_111_40_begin] [%tmp.344 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_111_30_111_40_true] [%tmp.345 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_111_30_111_40_end];
+        bf %tmp.345 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_111_12_111_67_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_111_12_111_67_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_111_43_111_67_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 111 45 ]
+        %tmp.346 = 0x888888;
+        lputv %nameColor.18 %tmp.346;
+        symbol [ nameColor %nameColor.18 111 45 54 ];
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_111_43_111_67_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_111_12_111_67_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_111_12_111_67_if_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 112 12 ]
+        %tmp.347 = lgetv %dc;
+        symbol [ dc %tmp.347 112 12 14 ];
+        symbol [ setColor %tmp.348 112 15 23 ];
+        %tmp.348 = getv function %tmp.347 :setColor;
+        %tmp.349 = lgetv %nameColor.18;
+        symbol [ nameColor %tmp.349 112 24 33 ];
+        symbol [ Graphics %tmp.350 112 35 43 ];
+        %tmp.350 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.351 112 44 61 ];
+        %tmp.351 = getv %tmp.350 :COLOR_TRANSPARENT;
+        invoke %tmp.347 %tmp.348(%tmp.349, %tmp.351);
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 113 12 ]
+        %tmp.352 = lgetv %dc;
+        symbol [ dc %tmp.352 113 12 14 ];
+        symbol [ drawText %tmp.353 113 15 23 ];
+        %tmp.353 = getv function %tmp.352 :drawText;
+        symbol [ Layout %tmp.355 113 24 30 ];
+        %tmp.355 = getv ? :Layout;
+        symbol [ Gym %tmp.356 113 31 34 ];
+        %tmp.356 = getv %tmp.355 :Gym;
+        symbol [ NAME_X %tmp.357 113 35 41 ];
+        %tmp.357 = getv %tmp.356 :NAME_X;
+        %tmp.358 = lgetv %y.13;
+        symbol [ y %tmp.358 113 43 44 ];
+        %tmp.359 = 4;
+        %tmp.360 = add %tmp.358 %tmp.359;
+        symbol [ Graphics %tmp.361 113 50 58 ];
+        %tmp.361 = getm $.Toybox.Graphics;
+        symbol [ FONT_XTINY %tmp.362 113 59 69 ];
+        %tmp.362 = getv %tmp.361 :FONT_XTINY;
+        %tmp.363 = lgetv %name.9;
+        symbol [ name %tmp.363 114 16 20 ];
+        symbol [ Graphics %tmp.364 114 22 30 ];
+        %tmp.364 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_LEFT %tmp.365 114 31 48 ];
+        %tmp.365 = getv %tmp.364 :TEXT_JUSTIFY_LEFT;
+        invoke %tmp.352 %tmp.353(%tmp.357, %tmp.360, %tmp.362, %tmp.363, %tmp.365);
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 117 12 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_54_47_134_8_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_54_47_134_8_stop" ]
+        %pokName.19 = local;
+        symbol [ pokName %pokName.19 117 16 23 ];
+        symbol [ PokemonData %tmp.367 117 26 37 ];
+        %tmp.367 = getv ? :PokemonData;
+        symbol [ getName %tmp.368 117 38 45 ];
+        %tmp.368 = getv function %tmp.367 :getName;
+        %tmp.369 = lgetv %pokId.10;
+        symbol [ pokId %tmp.369 117 46 51 ];
+        %tmp.370 = invoke %tmp.367 %tmp.368(%tmp.369);
+        lputv %pokName.19 %tmp.370;
+        symbol [ pokName %pokName.19 117 16 23 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 118 12 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_54_47_134_8_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_54_47_134_8_stop" ]
+        %infoColor.20 = local;
+        symbol [ infoColor %infoColor.20 118 16 25 ];
+        %tmp.371 = 0x444444;
+        lputv %infoColor.20 %tmp.371;
+        symbol [ infoColor %infoColor.20 118 16 25 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 119 12 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_119_12_119_52_if_stmt:
+        %tmp.372 = lgetv %isSelected.14;
+        symbol [ isSelected %tmp.372 119 16 26 ];
+        bf %tmp.372 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_119_12_119_52_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_119_12_119_52_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_119_28_119_52_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 119 30 ]
+        %tmp.373 = 0x666666;
+        lputv %infoColor.20 %tmp.373;
+        symbol [ infoColor %infoColor.20 119 30 39 ];
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_119_28_119_52_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_119_12_119_52_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_119_12_119_52_if_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 120 12 ]
+        %tmp.374 = lgetv %dc;
+        symbol [ dc %tmp.374 120 12 14 ];
+        symbol [ setColor %tmp.375 120 15 23 ];
+        %tmp.375 = getv function %tmp.374 :setColor;
+        %tmp.376 = lgetv %infoColor.20;
+        symbol [ infoColor %tmp.376 120 24 33 ];
+        symbol [ Graphics %tmp.377 120 35 43 ];
+        %tmp.377 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.378 120 44 61 ];
+        %tmp.378 = getv %tmp.377 :COLOR_TRANSPARENT;
+        invoke %tmp.374 %tmp.375(%tmp.376, %tmp.378);
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 121 12 ]
+        %tmp.379 = lgetv %dc;
+        symbol [ dc %tmp.379 121 12 14 ];
+        symbol [ drawText %tmp.380 121 15 23 ];
+        %tmp.380 = getv function %tmp.379 :drawText;
+        symbol [ Layout %tmp.382 121 24 30 ];
+        %tmp.382 = getv ? :Layout;
+        symbol [ Gym %tmp.383 121 31 34 ];
+        %tmp.383 = getv %tmp.382 :Gym;
+        symbol [ NAME_X %tmp.384 121 35 41 ];
+        %tmp.384 = getv %tmp.383 :NAME_X;
+        %tmp.385 = lgetv %y.13;
+        symbol [ y %tmp.385 121 43 44 ];
+        %tmp.386 = 24;
+        %tmp.387 = add %tmp.385 %tmp.386;
+        symbol [ Graphics %tmp.388 121 51 59 ];
+        %tmp.388 = getm $.Toybox.Graphics;
+        symbol [ FONT_XTINY %tmp.389 121 60 70 ];
+        %tmp.389 = getv %tmp.388 :FONT_XTINY;
+        %tmp.390 = lgetv %pokName.19;
+        symbol [ pokName %tmp.390 122 16 23 ];
+        %tmp.391 = " Lv.";
+        %tmp.392 = add %tmp.390 %tmp.391;
+        %tmp.393 = lgetv %level.11;
+        symbol [ level %tmp.393 122 35 40 ];
+        symbol [ toString %tmp.394 122 41 49 ];
+        %tmp.394 = getv function %tmp.393 :toString;
+        %tmp.395 = invoke %tmp.393 %tmp.394();
+        %tmp.396 = add %tmp.392 %tmp.395;
+        symbol [ Graphics %tmp.397 123 16 24 ];
+        %tmp.397 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_LEFT %tmp.398 123 25 42 ];
+        %tmp.398 = getv %tmp.397 :TEXT_JUSTIFY_LEFT;
+        invoke %tmp.379 %tmp.380(%tmp.384, %tmp.387, %tmp.389, %tmp.396, %tmp.398);
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 126 12 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_54_47_134_8_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_54_47_134_8_stop" ]
+        %statusStr.21 = local;
+        symbol [ statusStr %statusStr.21 126 16 25 ];
+        %tmp.399 = "LOCKED";
+        lputv %statusStr.21 %tmp.399;
+        symbol [ statusStr %statusStr.21 126 16 25 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 127 12 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_54_47_134_8_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_54_47_134_8_stop" ]
+        %statusColor.22 = local;
+        symbol [ statusColor %statusColor.22 127 16 27 ];
+        %tmp.400 = 0x333333;
+        lputv %statusColor.22 %tmp.400;
+        symbol [ statusColor %statusColor.22 127 16 27 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 128 12 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_128_12_128_77_if_stmt:
+        %tmp.401 = lgetv %status.12;
+        symbol [ status %tmp.401 128 16 22 ];
+        %tmp.402 = 1;
+        %tmp.403 = eq %tmp.401 %tmp.402;
+        bf %tmp.403 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_128_12_128_77_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_128_12_128_77_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_128_29_128_77_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 128 31 ]
+        %tmp.404 = "GO!";
+        lputv %statusStr.21 %tmp.404;
+        symbol [ statusStr %statusStr.21 128 31 40 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 128 50 ]
+        %tmp.405 = lgetv %regionColor.15;
+        symbol [ regionColor %tmp.405 128 64 75 ];
+        lputv %statusColor.22 %tmp.405;
+        symbol [ statusColor %statusColor.22 128 50 61 ];
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_128_29_128_77_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_128_12_128_77_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_128_12_128_77_if_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 129 12 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_129_12_129_74_if_stmt:
+        %tmp.406 = lgetv %status.12;
+        symbol [ status %tmp.406 129 16 22 ];
+        %tmp.407 = 2;
+        %tmp.408 = eq %tmp.406 %tmp.407;
+        bf %tmp.408 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_129_12_129_74_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_129_12_129_74_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_129_29_129_74_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 129 31 ]
+        %tmp.409 = "WON";
+        lputv %statusStr.21 %tmp.409;
+        symbol [ statusStr %statusStr.21 129 31 40 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 129 50 ]
+        %tmp.410 = 0x44CC44;
+        lputv %statusColor.22 %tmp.410;
+        symbol [ statusColor %statusColor.22 129 50 61 ];
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_129_29_129_74_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_129_12_129_74_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_129_12_129_74_if_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 130 12 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_130_12_130_69_if_stmt:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_130_16_130_40_begin:
+        %tmp.411 = lgetv %isSelected.14;
+        symbol [ isSelected %tmp.411 130 16 26 ];
+        bf %tmp.411 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_130_12_130_69_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_130_30_130_40_true:
+        %tmp.412 = lgetv %status.12;
+        symbol [ status %tmp.412 130 30 36 ];
+        %tmp.413 = 0;
+        %tmp.414 = eq %tmp.412 %tmp.413;
+        push %tmp.414;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_130_30_130_40_end:
+        %tmp.415 = phi [%tmp.411 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_130_16_130_40_begin] [%tmp.414 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_130_30_130_40_true] [%tmp.415 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_130_30_130_40_end];
+        bf %tmp.415 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_130_12_130_69_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_130_12_130_69_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_130_43_130_69_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 130 45 ]
+        %tmp.416 = 0x555555;
+        lputv %statusColor.22 %tmp.416;
+        symbol [ statusColor %statusColor.22 130 45 56 ];
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_130_43_130_69_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_130_12_130_69_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_130_12_130_69_if_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 131 12 ]
+        %tmp.417 = lgetv %dc;
+        symbol [ dc %tmp.417 131 12 14 ];
+        symbol [ setColor %tmp.418 131 15 23 ];
+        %tmp.418 = getv function %tmp.417 :setColor;
+        %tmp.419 = lgetv %statusColor.22;
+        symbol [ statusColor %tmp.419 131 24 35 ];
+        symbol [ Graphics %tmp.420 131 37 45 ];
+        %tmp.420 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.421 131 46 63 ];
+        %tmp.421 = getv %tmp.420 :COLOR_TRANSPARENT;
+        invoke %tmp.417 %tmp.418(%tmp.419, %tmp.421);
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 132 12 ]
+        %tmp.422 = lgetv %dc;
+        symbol [ dc %tmp.422 132 12 14 ];
+        symbol [ drawText %tmp.423 132 15 23 ];
+        %tmp.423 = getv function %tmp.422 :drawText;
+        %tmp.424 = lgetv %w.1;
+        symbol [ w %tmp.424 132 24 25 ];
+        symbol [ Layout %tmp.426 132 28 34 ];
+        %tmp.426 = getv ? :Layout;
+        symbol [ Gym %tmp.427 132 35 38 ];
+        %tmp.427 = getv %tmp.426 :Gym;
+        symbol [ STATUS_X_PAD %tmp.428 132 39 51 ];
+        %tmp.428 = getv %tmp.427 :STATUS_X_PAD;
+        %tmp.429 = sub %tmp.424 %tmp.428;
+        %tmp.430 = lgetv %y.13;
+        symbol [ y %tmp.430 132 53 54 ];
+        %tmp.431 = 14;
+        %tmp.432 = add %tmp.430 %tmp.431;
+        symbol [ Graphics %tmp.433 132 61 69 ];
+        %tmp.433 = getm $.Toybox.Graphics;
+        symbol [ FONT_XTINY %tmp.434 132 70 80 ];
+        %tmp.434 = getv %tmp.433 :FONT_XTINY;
+        %tmp.435 = lgetv %statusStr.21;
+        symbol [ statusStr %tmp.435 133 16 25 ];
+        symbol [ Graphics %tmp.436 133 27 35 ];
+        %tmp.436 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_RIGHT %tmp.437 133 36 54 ];
+        %tmp.437 = getv %tmp.436 :TEXT_JUSTIFY_RIGHT;
+        invoke %tmp.422 %tmp.423(%tmp.429, %tmp.432, %tmp.434, %tmp.435, %tmp.437);
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_54_47_134_8_stop:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_54_8_134_8_for_incr:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 54 ]
+        %tmp.440 = lgetv %i.6;
+        symbol [ i %tmp.440 54 42 43 ];
+        %tmp.441 = add %tmp.440 1;
+        lputv %i.6 %tmp.441;
+        symbol [ i %i.6 54 42 43 ];
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_54_8_134_8_for_test;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_54_8_134_8_for_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 137 8 ]
+        %tmp.442 = lgetv %dc;
+        symbol [ dc %tmp.442 137 8 10 ];
+        symbol [ setColor %tmp.443 137 11 19 ];
+        %tmp.443 = getv function %tmp.442 :setColor;
+        %tmp.444 = 0x0F0F18;
+        symbol [ Graphics %tmp.445 137 30 38 ];
+        %tmp.445 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.446 137 39 56 ];
+        %tmp.446 = getv %tmp.445 :COLOR_TRANSPARENT;
+        invoke %tmp.442 %tmp.443(%tmp.444, %tmp.446);
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 138 8 ]
+        %tmp.447 = lgetv %dc;
+        symbol [ dc %tmp.447 138 8 10 ];
+        symbol [ fillRoundedRectangle %tmp.448 138 11 31 ];
+        %tmp.448 = getv function %tmp.447 :fillRoundedRectangle;
+        %tmp.449 = 50;
+        %tmp.450 = lgetv %h.2;
+        symbol [ h %tmp.450 138 36 37 ];
+        symbol [ Layout %tmp.452 138 40 46 ];
+        %tmp.452 = getv ? :Layout;
+        symbol [ Gym %tmp.453 138 47 50 ];
+        %tmp.453 = getv %tmp.452 :Gym;
+        symbol [ FOOTER_PAD %tmp.454 138 51 61 ];
+        %tmp.454 = getv %tmp.453 :FOOTER_PAD;
+        %tmp.455 = sub %tmp.450 %tmp.454;
+        %tmp.456 = lgetv %w.1;
+        symbol [ w %tmp.456 138 63 64 ];
+        %tmp.457 = 100;
+        %tmp.458 = sub %tmp.456 %tmp.457;
+        %tmp.459 = 24;
+        %tmp.460 = 8;
+        invoke %tmp.447 %tmp.448(%tmp.449, %tmp.455, %tmp.458, %tmp.459, %tmp.460);
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 139 8 ]
+        %tmp.461 = lgetv %dc;
+        symbol [ dc %tmp.461 139 8 10 ];
+        symbol [ setColor %tmp.462 139 11 19 ];
+        %tmp.462 = getv function %tmp.461 :setColor;
+        %tmp.463 = 0x888888;
+        symbol [ Graphics %tmp.464 139 30 38 ];
+        %tmp.464 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.465 139 39 56 ];
+        %tmp.465 = getv %tmp.464 :COLOR_TRANSPARENT;
+        invoke %tmp.461 %tmp.462(%tmp.463, %tmp.465);
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 140 8 ]
+        %tmp.466 = lgetv %dc;
+        symbol [ dc %tmp.466 140 8 10 ];
+        symbol [ drawText %tmp.467 140 11 19 ];
+        %tmp.467 = getv function %tmp.466 :drawText;
+        %tmp.468 = lgetv %cx.3;
+        symbol [ cx %tmp.468 140 20 22 ];
+        %tmp.469 = lgetv %h.2;
+        symbol [ h %tmp.469 140 24 25 ];
+        symbol [ Layout %tmp.471 140 28 34 ];
+        %tmp.471 = getv ? :Layout;
+        symbol [ Gym %tmp.472 140 35 38 ];
+        %tmp.472 = getv %tmp.471 :Gym;
+        symbol [ FOOTER_PAD %tmp.473 140 39 49 ];
+        %tmp.473 = getv %tmp.472 :FOOTER_PAD;
+        %tmp.474 = sub %tmp.469 %tmp.473;
+        %tmp.475 = 2;
+        %tmp.476 = add %tmp.474 %tmp.475;
+        symbol [ Graphics %tmp.477 140 55 63 ];
+        %tmp.477 = getm $.Toybox.Graphics;
+        symbol [ FONT_XTINY %tmp.478 140 64 74 ];
+        %tmp.478 = getv %tmp.477 :FONT_XTINY;
+        symbol [ _cursor %tmp.480 141 13 20 ];
+        %tmp.480 = getv ? :_cursor;
+        %tmp.481 = 1;
+        %tmp.482 = add %tmp.480 %tmp.481;
+        symbol [ toString %tmp.483 141 26 34 ];
+        %tmp.483 = getv function %tmp.482 :toString;
+        %tmp.484 = invoke %tmp.482 %tmp.483();
+        %tmp.485 = "/";
+        %tmp.486 = add %tmp.484 %tmp.485;
+        symbol [ BalanceConfig %tmp.488 141 45 58 ];
+        %tmp.488 = getv ? :BalanceConfig;
+        symbol [ GYM_COUNT %tmp.489 141 59 68 ];
+        %tmp.489 = getv %tmp.488 :GYM_COUNT;
+        symbol [ toString %tmp.490 141 69 77 ];
+        %tmp.490 = getv function %tmp.489 :toString;
+        %tmp.491 = invoke %tmp.489 %tmp.490();
+        %tmp.492 = add %tmp.486 %tmp.491;
+        %tmp.493 = "  swipe \u2192 battle";
+        %tmp.494 = add %tmp.492 %tmp.493;
+        symbol [ Graphics %tmp.495 142 12 20 ];
+        %tmp.495 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.496 142 21 40 ];
+        %tmp.496 = getv %tmp.495 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.466 %tmp.467(%tmp.468, %tmp.476, %tmp.478, %tmp.494, %tmp.496);
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_31_49_143_4_stop:
+    }
+}
+[ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc"; @line = 146; @symbol_classdef = [GymListDelegate,146,6,21]; @symbol_extends<0> = [WatchUi,146,30,37]; @symbol_extends<1> = [BehaviorDelegate,146,38,54]; ]
+class GymListDelegate extends WatchUi.BehaviorDelegate {
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc"; @line = 146; ]
+    <init> {
+    }
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc"; @line = 146; ]
+    static
+    <init> {
+    }
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc"; @line = 147; @position = 8; @symbol_vardef = [_view,147,8,13]; @symbol_type<0> = [GymListView,147,17,28]; ]
+    var _view as GymListView;
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc"; @line = 149; @symbol_functiondef = [initialize,149,13,23]; @symbol_param<0> = [view,149,24,28]; @symbol_param<0>_type<0> = [GymListView,149,32,43]; ]
+    function initialize(view as GymListView) as Void {
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_149_45_152_4_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 150 8 ]
+        symbol [ BehaviorDelegate %tmp.2 150 8 24 ];
+        %tmp.2 = getv ? :BehaviorDelegate;
+        symbol [ initialize %tmp.3 150 25 35 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 151 8 ]
+        %tmp.4 = lgetv %view;
+        symbol [ view %tmp.4 151 16 20 ];
+        symbol [ _view ? 151 8 13 ];
+        putv self :_view %tmp.4;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_149_45_152_4_stop:
+    }
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc"; @line = 154; @symbol_functiondef = [onNextPage,154,13,23]; @symbol_return<0> = [Lang,154,29,33]; @symbol_return<1> = [Boolean,154,34,41]; ]
+    function onNextPage() as Lang.Boolean {
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_154_42_161_4_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 155 8 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_155_8_159_8_if_stmt:
+        symbol [ _view %tmp.2 155 12 17 ];
+        %tmp.2 = getv ? :_view;
+        symbol [ _cursor %tmp.3 155 18 25 ];
+        %tmp.3 = getv %tmp.2 :_cursor;
+        symbol [ BalanceConfig %tmp.5 155 28 41 ];
+        %tmp.5 = getv ? :BalanceConfig;
+        symbol [ GYM_COUNT %tmp.6 155 42 51 ];
+        %tmp.6 = getv %tmp.5 :GYM_COUNT;
+        %tmp.7 = 1;
+        %tmp.8 = sub %tmp.6 %tmp.7;
+        %tmp.9 = lt %tmp.3 %tmp.8;
+        bf %tmp.9 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_155_8_159_8_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_155_8_159_8_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_155_57_159_8_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 156 12 ]
+        symbol [ _view %tmp.10 156 12 17 ];
+        %tmp.10 = getv self :_view;
+        symbol [ _view %tmp.13 156 12 17 ];
+        %tmp.13 = getv ? :_view;
+        symbol [ _cursor %tmp.14 156 18 25 ];
+        %tmp.14 = getv %tmp.13 :_cursor;
+        %tmp.15 = add %tmp.14 1;
+        symbol [ _cursor ? 156 18 25 ];
+        putv %tmp.10 :_cursor dup %tmp.15;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 157 12 ]
+        symbol [ _view %tmp.17 157 12 17 ];
+        %tmp.17 = getv ? :_view;
+        symbol [ ensureCursorVisible %tmp.18 157 18 37 ];
+        %tmp.18 = getv function %tmp.17 :ensureCursorVisible;
+        invoke %tmp.17 %tmp.18();
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 158 12 ]
+        symbol [ WatchUi %tmp.19 158 12 19 ];
+        %tmp.19 = getm $.Toybox.WatchUi;
+        symbol [ requestUpdate %tmp.20 158 20 33 ];
+        %tmp.20 = getv function %tmp.19 :requestUpdate;
+        invoke %tmp.19 %tmp.20();
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_155_57_159_8_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_155_8_159_8_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_155_8_159_8_if_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 160 8 ]
+        %tmp.21 = true;
+        ret %tmp.21;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_154_42_161_4_stop:
+    }
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc"; @line = 163; @symbol_functiondef = [onPreviousPage,163,13,27]; @symbol_return<0> = [Lang,163,33,37]; @symbol_return<1> = [Boolean,163,38,45]; ]
+    function onPreviousPage() as Lang.Boolean {
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_163_46_170_4_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 164 8 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_164_8_168_8_if_stmt:
+        symbol [ _view %tmp.2 164 12 17 ];
+        %tmp.2 = getv ? :_view;
+        symbol [ _cursor %tmp.3 164 18 25 ];
+        %tmp.3 = getv %tmp.2 :_cursor;
+        %tmp.4 = 0;
+        %tmp.5 = gt %tmp.3 %tmp.4;
+        bf %tmp.5 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_164_8_168_8_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_164_8_168_8_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_164_31_168_8_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 165 12 ]
+        symbol [ _view %tmp.6 165 12 17 ];
+        %tmp.6 = getv self :_view;
+        symbol [ _view %tmp.9 165 12 17 ];
+        %tmp.9 = getv ? :_view;
+        symbol [ _cursor %tmp.10 165 18 25 ];
+        %tmp.10 = getv %tmp.9 :_cursor;
+        %tmp.11 = sub %tmp.10 1;
+        symbol [ _cursor ? 165 18 25 ];
+        putv %tmp.6 :_cursor dup %tmp.11;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 166 12 ]
+        symbol [ _view %tmp.13 166 12 17 ];
+        %tmp.13 = getv ? :_view;
+        symbol [ ensureCursorVisible %tmp.14 166 18 37 ];
+        %tmp.14 = getv function %tmp.13 :ensureCursorVisible;
+        invoke %tmp.13 %tmp.14();
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 167 12 ]
+        symbol [ WatchUi %tmp.15 167 12 19 ];
+        %tmp.15 = getm $.Toybox.WatchUi;
+        symbol [ requestUpdate %tmp.16 167 20 33 ];
+        %tmp.16 = getv function %tmp.15 :requestUpdate;
+        invoke %tmp.15 %tmp.16();
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_164_31_168_8_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_164_8_168_8_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_164_8_168_8_if_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 169 8 ]
+        %tmp.17 = true;
+        ret %tmp.17;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_163_46_170_4_stop:
+    }
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc"; @line = 172; @symbol_functiondef = [startGymBattle,172,13,27]; @symbol_return<0> = [Lang,172,33,37]; @symbol_return<1> = [Boolean,172,38,45]; ]
+    function startGymBattle() as Lang.Boolean {
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_172_46_195_4_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 173 8 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_172_46_195_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_172_46_195_4_stop" ]
+        %gymIdx.1 = local;
+        symbol [ gymIdx %gymIdx.1 173 12 18 ];
+        symbol [ _view %tmp.2 173 21 26 ];
+        %tmp.2 = getv ? :_view;
+        symbol [ _cursor %tmp.3 173 27 34 ];
+        %tmp.3 = getv %tmp.2 :_cursor;
+        lputv %gymIdx.1 %tmp.3;
+        symbol [ gymIdx %gymIdx.1 173 12 18 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 174 8 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_172_46_195_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_172_46_195_4_stop" ]
+        %status.2 = local;
+        symbol [ status %status.2 174 12 18 ];
+        symbol [ GameState %tmp.5 174 21 30 ];
+        %tmp.5 = getv ? :GameState;
+        symbol [ getGymStatus %tmp.6 174 31 43 ];
+        %tmp.6 = getv function %tmp.5 :getGymStatus;
+        %tmp.7 = lgetv %gymIdx.1;
+        symbol [ gymIdx %tmp.7 174 44 50 ];
+        %tmp.8 = invoke %tmp.5 %tmp.6(%tmp.7);
+        lputv %status.2 %tmp.8;
+        symbol [ status %status.2 174 12 18 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 175 8 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_175_8_193_8_if_stmt:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_175_12_175_54_begin:
+        %tmp.9 = lgetv %status.2;
+        symbol [ status %tmp.9 175 12 18 ];
+        %tmp.10 = 1;
+        %tmp.11 = eq %tmp.9 %tmp.10;
+        bf %tmp.11 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_175_8_193_8_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_175_27_175_54_true:
+        symbol [ GameState %tmp.13 175 27 36 ];
+        %tmp.13 = getv ? :GameState;
+        symbol [ currentBattle %tmp.14 175 37 50 ];
+        %tmp.14 = getv %tmp.13 :currentBattle;
+        %tmp.15 = null;
+        %tmp.16 = eq %tmp.14 %tmp.15;
+        push %tmp.16;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_175_27_175_54_end:
+        %tmp.17 = phi [%tmp.11 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_175_12_175_54_begin] [%tmp.16 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_175_27_175_54_true] [%tmp.17 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_175_27_175_54_end];
+        bf %tmp.17 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_175_8_193_8_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_175_8_193_8_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_175_60_193_8_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 176 12 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_175_60_193_8_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_175_60_193_8_stop" ]
+        %gymData.3 = local;
+        symbol [ gymData %gymData.3 176 16 23 ];
+        symbol [ BalanceConfig %tmp.19 176 26 39 ];
+        %tmp.19 = getv ? :BalanceConfig;
+        symbol [ GYM_DATA %tmp.20 176 40 48 ];
+        %tmp.20 = getv %tmp.19 :GYM_DATA;
+        %tmp.21 = lgetv %gymIdx.1;
+        symbol [ gymIdx %tmp.21 176 49 55 ];
+        %tmp.22 = agetv %tmp.20 %tmp.21;
+        lputv %gymData.3 %tmp.22;
+        symbol [ gymData %gymData.3 176 16 23 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 177 12 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_175_60_193_8_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_175_60_193_8_stop" ]
+        %rivalId.4 = local;
+        symbol [ rivalId %rivalId.4 177 16 23 ];
+        %tmp.23 = lgetv %gymData.3;
+        symbol [ gymData %tmp.23 177 26 33 ];
+        %tmp.24 = 1;
+        %tmp.25 = agetv %tmp.23 %tmp.24;
+        lputv %rivalId.4 %tmp.25;
+        symbol [ rivalId %rivalId.4 177 16 23 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 178 12 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_175_60_193_8_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_175_60_193_8_stop" ]
+        %rivalLevel.5 = local;
+        symbol [ rivalLevel %rivalLevel.5 178 16 26 ];
+        %tmp.26 = lgetv %gymData.3;
+        symbol [ gymData %tmp.26 178 29 36 ];
+        %tmp.27 = 2;
+        %tmp.28 = agetv %tmp.26 %tmp.27;
+        lputv %rivalLevel.5 %tmp.28;
+        symbol [ rivalLevel %rivalLevel.5 178 16 26 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 179 12 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_175_60_193_8_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_175_60_193_8_stop" ]
+        %baseSteps.6 = local;
+        symbol [ baseSteps %baseSteps.6 179 16 25 ];
+        %tmp.29 = lgetv %gymData.3;
+        symbol [ gymData %tmp.29 179 28 35 ];
+        %tmp.30 = 3;
+        %tmp.31 = agetv %tmp.29 %tmp.30;
+        lputv %baseSteps.6 %tmp.31;
+        symbol [ baseSteps %baseSteps.6 179 16 25 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 180 12 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_175_60_193_8_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_175_60_193_8_stop" ]
+        %timeLimitSec.7 = local;
+        symbol [ timeLimitSec %timeLimitSec.7 180 16 28 ];
+        %tmp.32 = lgetv %gymData.3;
+        symbol [ gymData %tmp.32 180 31 38 ];
+        %tmp.33 = 4;
+        %tmp.34 = agetv %tmp.32 %tmp.33;
+        lputv %timeLimitSec.7 %tmp.34;
+        symbol [ timeLimitSec %timeLimitSec.7 180 16 28 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 181 12 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_175_60_193_8_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_175_60_193_8_stop" ]
+        %xpReward.8 = local;
+        symbol [ xpReward %xpReward.8 181 16 24 ];
+        %tmp.35 = lgetv %gymData.3;
+        symbol [ gymData %tmp.35 181 27 34 ];
+        %tmp.36 = 6;
+        %tmp.37 = agetv %tmp.35 %tmp.36;
+        lputv %xpReward.8 %tmp.37;
+        symbol [ xpReward %xpReward.8 181 16 24 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 183 12 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_175_60_193_8_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_175_60_193_8_stop" ]
+        %avgLevel.9 = local;
+        symbol [ avgLevel %avgLevel.9 183 16 24 ];
+        symbol [ GameState %tmp.39 183 27 36 ];
+        %tmp.39 = getv ? :GameState;
+        symbol [ getTeamAvgLevel %tmp.40 183 37 52 ];
+        %tmp.40 = getv function %tmp.39 :getTeamAvgLevel;
+        %tmp.41 = invoke %tmp.39 %tmp.40();
+        lputv %avgLevel.9 %tmp.41;
+        symbol [ avgLevel %avgLevel.9 183 16 24 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 184 12 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_175_60_193_8_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_175_60_193_8_stop" ]
+        %requiredSteps.10 = local;
+        symbol [ requiredSteps %requiredSteps.10 184 16 29 ];
+        %tmp.42 = lgetv %baseSteps.6;
+        symbol [ baseSteps %tmp.42 184 32 41 ];
+        %tmp.43 = lgetv %rivalLevel.5;
+        symbol [ rivalLevel %tmp.43 184 44 54 ];
+        %tmp.44 = mul %tmp.42 %tmp.43;
+        %tmp.45 = lgetv %avgLevel.9;
+        symbol [ avgLevel %tmp.45 184 57 65 ];
+        %tmp.46 = div %tmp.44 %tmp.45;
+        lputv %requiredSteps.10 %tmp.46;
+        symbol [ requiredSteps %requiredSteps.10 184 16 29 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 185 12 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_185_12_185_60_if_stmt:
+        %tmp.47 = lgetv %requiredSteps.10;
+        symbol [ requiredSteps %tmp.47 185 16 29 ];
+        %tmp.48 = 100;
+        %tmp.49 = lt %tmp.47 %tmp.48;
+        bf %tmp.49 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_185_12_185_60_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_185_12_185_60_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_185_37_185_60_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 185 39 ]
+        %tmp.50 = 100;
+        lputv %requiredSteps.10 %tmp.50;
+        symbol [ requiredSteps %requiredSteps.10 185 39 52 ];
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_185_37_185_60_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_185_12_185_60_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_185_12_185_60_if_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 187 12 ]
+        symbol [ GameState %tmp.52 187 12 21 ];
+        %tmp.52 = getv ? :GameState;
+        symbol [ startBattle %tmp.53 187 22 33 ];
+        %tmp.53 = getv function %tmp.52 :startBattle;
+        %tmp.54 = lgetv %rivalId.4;
+        symbol [ rivalId %tmp.54 187 34 41 ];
+        %tmp.55 = lgetv %rivalLevel.5;
+        symbol [ rivalLevel %tmp.55 187 43 53 ];
+        %tmp.56 = lgetv %requiredSteps.10;
+        symbol [ requiredSteps %tmp.56 187 55 68 ];
+        %tmp.57 = lgetv %timeLimitSec.7;
+        symbol [ timeLimitSec %tmp.57 188 16 28 ];
+        %tmp.58 = lgetv %gymIdx.1;
+        symbol [ gymIdx %tmp.58 188 30 36 ];
+        %tmp.59 = lgetv %xpReward.8;
+        symbol [ xpReward %tmp.59 188 38 46 ];
+        invoke %tmp.52 %tmp.53(%tmp.54, %tmp.55, %tmp.56, %tmp.57, %tmp.58, %tmp.59);
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 190 12 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_175_60_193_8_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_175_60_193_8_stop" ]
+        %v.11 = local;
+        symbol [ v %v.11 190 16 17 ];
+        symbol [ BattleView %tmp.63 190 24 34 ];
+        %tmp.63 = getv ? :BattleView;
+        %tmp.60 = newc %tmp.63 ();
+        lputv %v.11 %tmp.60;
+        symbol [ v %v.11 190 16 17 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 191 12 ]
+        symbol [ WatchUi %tmp.64 191 12 19 ];
+        %tmp.64 = getm $.Toybox.WatchUi;
+        symbol [ pushView %tmp.65 191 20 28 ];
+        %tmp.65 = getv function %tmp.64 :pushView;
+        %tmp.66 = lgetv %v.11;
+        symbol [ v %tmp.66 191 29 30 ];
+        symbol [ BattleDelegate %tmp.70 191 36 50 ];
+        %tmp.70 = getv ? :BattleDelegate;
+        %tmp.71 = lgetv %v.11;
+        symbol [ v %tmp.71 191 51 52 ];
+        %tmp.67 = newc %tmp.70 (%tmp.71);
+        symbol [ WatchUi %tmp.72 191 55 62 ];
+        %tmp.72 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_LEFT %tmp.73 191 63 73 ];
+        %tmp.73 = getv %tmp.72 :SLIDE_LEFT;
+        invoke %tmp.64 %tmp.65(%tmp.66, %tmp.67, %tmp.73);
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 192 12 ]
+        %tmp.74 = true;
+        ret %tmp.74;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_175_60_193_8_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_175_8_193_8_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_175_8_193_8_if_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 194 8 ]
+        %tmp.75 = false;
+        ret %tmp.75;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_172_46_195_4_stop:
+    }
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc"; @line = 197; @symbol_functiondef = [onSwipe,197,13,20]; @symbol_param<0> = [evt,197,21,24]; @symbol_param<0>_type<0> = [WatchUi,197,28,35]; @symbol_param<0>_type<1> = [SwipeEvent,197,36,46]; @symbol_return<0> = [Lang,197,51,55]; @symbol_return<1> = [Boolean,197,56,63]; ]
+    function onSwipe(evt as WatchUi.SwipeEvent) as Lang.Boolean {
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_197_64_203_4_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 198 8 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_197_64_203_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_197_64_203_4_stop" ]
+        %dir.1 = local;
+        symbol [ dir %dir.1 198 12 15 ];
+        %tmp.1 = lgetv %evt;
+        symbol [ evt %tmp.1 198 18 21 ];
+        symbol [ getDirection %tmp.2 198 22 34 ];
+        %tmp.2 = getv function %tmp.1 :getDirection;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        lputv %dir.1 %tmp.3;
+        symbol [ dir %dir.1 198 12 15 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 199 8 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_199_8_201_8_if_stmt:
+        %tmp.4 = lgetv %dir.1;
+        symbol [ dir %tmp.4 199 12 15 ];
+        symbol [ WatchUi %tmp.5 199 19 26 ];
+        %tmp.5 = getm $.Toybox.WatchUi;
+        symbol [ SWIPE_RIGHT %tmp.6 199 27 38 ];
+        %tmp.6 = getv %tmp.5 :SWIPE_RIGHT;
+        %tmp.7 = eq %tmp.4 %tmp.6;
+        bf %tmp.7 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_199_8_201_8_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_199_8_201_8_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_199_40_201_8_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 200 12 ]
+        %tmp.8 = self;
+        symbol [ startGymBattle %tmp.9 200 19 33 ];
+        %tmp.9 = getv function %tmp.8 :startGymBattle;
+        %tmp.10 = invoke %tmp.8 %tmp.9();
+        ret %tmp.10;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_199_40_201_8_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_199_8_201_8_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_199_8_201_8_if_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 202 8 ]
+        %tmp.11 = false;
+        ret %tmp.11;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_197_64_203_4_stop:
+    }
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc"; @line = 205; @symbol_functiondef = [onSelect,205,13,21]; @symbol_return<0> = [Lang,205,27,31]; @symbol_return<1> = [Boolean,205,32,39]; ]
+    function onSelect() as Lang.Boolean {
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_205_40_207_4_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 206 8 ]
+        %tmp.1 = self;
+        symbol [ startGymBattle %tmp.2 206 15 29 ];
+        %tmp.2 = getv function %tmp.1 :startGymBattle;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        ret %tmp.3;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_205_40_207_4_stop:
+    }
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc"; @line = 209; @symbol_functiondef = [onBack,209,13,19]; @symbol_return<0> = [Lang,209,25,29]; @symbol_return<1> = [Boolean,209,30,37]; ]
+    function onBack() as Lang.Boolean {
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_209_38_212_4_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 210 8 ]
+        symbol [ WatchUi %tmp.1 210 8 15 ];
+        %tmp.1 = getm $.Toybox.WatchUi;
+        symbol [ popView %tmp.2 210 16 23 ];
+        %tmp.2 = getv function %tmp.1 :popView;
+        symbol [ WatchUi %tmp.3 210 24 31 ];
+        %tmp.3 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_DOWN %tmp.4 210 32 42 ];
+        %tmp.4 = getv %tmp.3 :SLIDE_DOWN;
+        invoke %tmp.1 %tmp.2(%tmp.4);
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc" 211 8 ]
+        %tmp.5 = true;
+        ret %tmp.5;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_GymListView_mc_209_38_212_4_stop:
+    }
+}
+[ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\GymListView.mc"; @line = 6; ]
+<init> {
+}

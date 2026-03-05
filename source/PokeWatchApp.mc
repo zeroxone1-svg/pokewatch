@@ -36,6 +36,10 @@ class PokeWatchApp extends Application.AppBase {
             GameState.totalStepsLastRef = 0;
             GameState.legendaryStatus = {};
             GameState.currentEncounter = null;
+            GameState.team = [];
+            GameState.rivalWins = 0;
+            GameState.gymBadges = 0;
+            GameState.currentBattle = null;
             try { GameState.save(); } catch (e2) {}
         }
     }

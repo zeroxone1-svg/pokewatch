@@ -13,7 +13,7 @@ import Toybox.Math;
 
 class SpawnEngine {
 
-    // Generar un encuentro nuevo
+    // Generar un encuentro nuevo (wild Pokémon)
     static function generate() as Lang.Dictionary {
         var id = pickId();
         var isShiny = (Math.rand() % BalanceConfig.getShinyOdds() == 0);
@@ -160,5 +160,51 @@ class SpawnEngine {
     static function hpPercent(encounter as Lang.Dictionary) as Lang.Number {
         if (encounter[:hpMax] <= 0) { return 0; }
         return (encounter[:hpCurr] * 100) / encounter[:hpMax];
+    }
+
+    // ── Should this spawn be a trainer? ───────────────────
+    static function shouldSpawnTrainer() as Lang.Boolean {
+        return (Math.rand() % 100) < BalanceConfig.getTrainerSpawnPercent();
+    }
+
+    // ── Generate trainer battle data ──────────────────────
+    // type 0=Trainer, 1=Ace Trainer
+    static function generateTrainer() as Lang.Dictionary {
+        var avgLevel = GameState.getTeamAvgLevel();
+        var isAce = (Math.rand() % 3) == 0;  // 1/3 chance of Ace
+        var baseSteps = isAce ? 800 : 600;
+        var timeLimitSec = 2700; // 45 min
+        var xpReward = isAce ? 500 : 200;
+
+        // Rival level: avg ± 3 for normal, avg +2 to +6 for ace
+        var rivalLevel = avgLevel;
+        if (isAce) {
+            rivalLevel = avgLevel + 2 + (Math.rand() % 5);
+        } else {
+            rivalLevel = avgLevel - 3 + (Math.rand() % 7);
+        }
+        if (rivalLevel < 2) { rivalLevel = 2; }
+        if (rivalLevel > 100) { rivalLevel = 100; }
+
+        // ±15% variation on base steps
+        var variation = (Math.rand() % 31) - 15;
+        var steps = baseSteps + (baseSteps * variation / 100);
+
+        // Required steps scaled by rival/team level
+        var requiredSteps = steps * rivalLevel / avgLevel;
+        if (requiredSteps < 100) { requiredSteps = 100; }
+
+        // Random non-legendary Pokémon for the rival
+        var rivalId = pickId();
+
+        return {
+            :rivalId       => rivalId,
+            :rivalLevel    => rivalLevel,
+            :requiredSteps => requiredSteps,
+            :timeLimitSec  => timeLimitSec,
+            :battleType    => isAce ? -2 : -1,  // negative = trainer (not gym)
+            :xpReward      => xpReward,
+            :isAce         => isAce
+        };
     }
 }

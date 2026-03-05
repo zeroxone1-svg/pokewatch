@@ -30,6 +30,12 @@ class GameState {
     static var totalStepsLastRef as Lang.Number     = 0;   // referencia para tracking
     static var legendaryStatus as Lang.Dictionary   = {};  // {id_str => 0:locked/1:ready/2:caught}
 
+    // ── Team & Battle System ──────────────────────────────
+    static var team            as Lang.Array      = [];  // max 6 pokemon ids
+    static var rivalWins       as Lang.Number     = 0;   // total trainer victories
+    static var gymBadges       as Lang.Number     = 0;   // bitmask of 20 bits
+    static var currentBattle   as Lang.Dictionary? = null; // active battle state
+
     // ── Guardar ───────────────────────────────────────────
     static function save() as Void {
         Storage.setValue("caught",    caughtCounts);
@@ -47,6 +53,25 @@ class GameState {
         Storage.setValue("totalSteps", totalStepsAllTime);
         Storage.setValue("totalStepsRef", totalStepsLastRef);
         Storage.setValue("legendaryStatus", legendaryStatus);
+        Storage.setValue("team", team);
+        Storage.setValue("rivalWins", rivalWins);
+        Storage.setValue("gymBadges", gymBadges);
+        // Persistir batalla activa
+        if (currentBattle != null) {
+            var batStore = {
+                "startTime"     => currentBattle[:startTime],
+                "startSteps"    => currentBattle[:startSteps],
+                "requiredSteps" => currentBattle[:requiredSteps],
+                "timeLimitSec"  => currentBattle[:timeLimitSec],
+                "rivalId"       => currentBattle[:rivalId],
+                "rivalLevel"    => currentBattle[:rivalLevel],
+                "battleType"    => currentBattle[:battleType],
+                "xpReward"      => currentBattle[:xpReward]
+            };
+            Storage.setValue("battle", batStore);
+        } else {
+            Storage.deleteValue("battle");
+        }
         // Persistir encuentro activo (convertir Symbol keys a String keys)
         if (currentEncounter != null) {
             var encStore = {
@@ -119,6 +144,31 @@ class GameState {
         totalStepsLastRef = (tsr != null) ? tsr : 0;
         var lstat = Storage.getValue("legendaryStatus");
         legendaryStatus = (lstat != null) ? lstat : {};
+
+        var tm = Storage.getValue("team");
+        team = (tm != null) ? tm : [];
+        var rw = Storage.getValue("rivalWins");
+        rivalWins = (rw != null) ? rw : 0;
+        var gb = Storage.getValue("gymBadges");
+        gymBadges = (gb != null) ? gb : 0;
+
+        // Restaurar batalla activa
+        var bat = Storage.getValue("battle");
+        if (bat != null) {
+            var batDict = bat as Lang.Dictionary;
+            currentBattle = {
+                :startTime     => batDict["startTime"],
+                :startSteps    => batDict["startSteps"],
+                :requiredSteps => batDict["requiredSteps"],
+                :timeLimitSec  => batDict["timeLimitSec"],
+                :rivalId       => batDict["rivalId"],
+                :rivalLevel    => batDict["rivalLevel"],
+                :battleType    => batDict["battleType"],
+                :xpReward      => batDict["xpReward"]
+            };
+        } else {
+            currentBattle = null;
+        }
 
         // Restaurar encuentro activo (convertir String keys de vuelta a Symbol keys)
         var enc = Storage.getValue("encounter");
@@ -528,4 +578,156 @@ class GameState {
         var pct = (currentLevel * 100) / requiredLevel;
         if (pct > 100) { pct = 100; }
         return pct;
-    }}
+    }
+
+    // ── Team System ───────────────────────────────────────
+    static function addToTeam(id as Lang.Number) as Lang.Boolean {
+        if (team.size() >= 6) { return false; }
+        if (team.indexOf(id) != -1) { return false; }
+        team.add(id);
+        save();
+        return true;
+    }
+
+    static function removeFromTeam(id as Lang.Number) as Void {
+        var idx = team.indexOf(id);
+        if (idx != -1) {
+            team.remove(id);
+            save();
+        }
+    }
+
+    static function isInTeam(id as Lang.Number) as Lang.Boolean {
+        return team.indexOf(id) != -1;
+    }
+
+    static function getTeamAvgLevel() as Lang.Number {
+        // Buddy siempre cuenta como slot 1
+        var ids = [] as Lang.Array;
+        if (buddyId > 0) {
+            ids.add(buddyId);
+        }
+        for (var i = 0; i < team.size(); i++) {
+            if (team[i] != buddyId && ids.size() < 6) {
+                ids.add(team[i]);
+            }
+        }
+        if (ids.size() == 0) { return 1; }
+        var sum = 0;
+        for (var i = 0; i < ids.size(); i++) {
+            sum += getPokemonLevel(ids[i]);
+        }
+        return sum / ids.size();
+    }
+
+    // ── Battle System ─────────────────────────────────────
+    static function startBattle(rivalId as Lang.Number, rivalLevel as Lang.Number,
+                                requiredSteps as Lang.Number, timeLimitSec as Lang.Number,
+                                battleType as Lang.Number, xpReward as Lang.Number) as Void {
+        currentBattle = {
+            :startTime     => Time.now().value(),
+            :startSteps    => getCumulativeSteps(),
+            :requiredSteps => requiredSteps,
+            :timeLimitSec  => timeLimitSec,
+            :rivalId       => rivalId,
+            :rivalLevel    => rivalLevel,
+            :battleType    => battleType,
+            :xpReward      => xpReward
+        };
+        save();
+    }
+
+    static function getBattleStepsWalked() as Lang.Number {
+        if (currentBattle == null) { return 0; }
+        var walked = getCumulativeSteps() - currentBattle[:startSteps];
+        return (walked > 0) ? walked : 0;
+    }
+
+    static function getBattleTimeElapsed() as Lang.Number {
+        if (currentBattle == null) { return 0; }
+        var elapsed = Time.now().value() - currentBattle[:startTime];
+        return (elapsed > 0) ? elapsed : 0;
+    }
+
+    // Returns: 0=in progress, 1=victory, 2=defeat
+    static function checkBattleResult() as Lang.Number {
+        if (currentBattle == null) { return 0; }
+        var stepsWalked = getBattleStepsWalked();
+        var timeElapsed = getBattleTimeElapsed();
+        var required = currentBattle[:requiredSteps];
+        var timeLimit = currentBattle[:timeLimitSec];
+        if (stepsWalked >= required && timeElapsed <= timeLimit) {
+            return 1; // victory
+        }
+        if (timeElapsed > timeLimit) {
+            return 2; // defeat
+        }
+        return 0; // in progress
+    }
+
+    static function finishBattle(victory as Lang.Boolean) as Void {
+        if (currentBattle == null) { return; }
+        if (victory) {
+            var xp = currentBattle[:xpReward];
+            var bType = currentBattle[:battleType];
+            // Distribute XP to team
+            distributeTeamXP(xp);
+            rivalWins += 1;
+            // If gym battle, set badge
+            if (bType >= 0 && bType < BalanceConfig.GYM_COUNT) {
+                gymBadges = gymBadges | (1 << bType);
+            }
+        }
+        currentBattle = null;
+        save();
+    }
+
+    static function distributeTeamXP(totalXP as Lang.Number) as Void {
+        var ids = [] as Lang.Array;
+        if (buddyId > 0) { ids.add(buddyId); }
+        for (var i = 0; i < team.size(); i++) {
+            if (team[i] != buddyId && ids.size() < 6) {
+                ids.add(team[i]);
+            }
+        }
+        if (ids.size() == 0) { return; }
+        var each = totalXP / ids.size();
+        if (each < 1) { each = 1; }
+        for (var i = 0; i < ids.size(); i++) {
+            addPokemonXP(ids[i], each);
+        }
+    }
+
+    // ── Gym System ────────────────────────────────────────
+    static function hasGymBadge(gymIndex as Lang.Number) as Lang.Boolean {
+        return (gymBadges & (1 << gymIndex)) != 0;
+    }
+
+    static function getGymBadgeCount() as Lang.Number {
+        var count = 0;
+        for (var i = 0; i < BalanceConfig.GYM_COUNT; i++) {
+            if (hasGymBadge(i)) { count += 1; }
+        }
+        return count;
+    }
+
+    // 0=locked, 1=available, 2=won
+    static function getGymStatus(gymIndex as Lang.Number) as Lang.Number {
+        if (hasGymBadge(gymIndex)) { return 2; }
+        var gymData = BalanceConfig.GYM_DATA[gymIndex];
+        var unlock = gymData[5];
+        if (unlock == 0) {
+            // No requirement — always available
+            return 1;
+        } else if (unlock > 0) {
+            // Positive: requires N rival wins
+            if (rivalWins >= unlock) { return 1; }
+            return 0;
+        } else {
+            // Negative: requires previous badge
+            var prevIdx = (-unlock) - 1;
+            if (hasGymBadge(prevIdx)) { return 1; }
+            return 0;
+        }
+    }
+}

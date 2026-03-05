@@ -85,6 +85,15 @@ class MainView extends WatchUi.View {
     function checkSpawn() as Void {
         if (GameState.currentEncounter != null) { return; }
 
+        // Check if there's an active battle to resolve
+        if (GameState.currentBattle != null) {
+            var result = GameState.checkBattleResult();
+            if (result != 0) {
+                // Battle resolved while app was closed — will be shown on BattleView
+            }
+            return;  // Don't spawn while battle is active
+        }
+
         // Misiones legendarias tienen prioridad
         var legendaryId = LegendaryQuestManager.checkQuests();
         if (legendaryId > 0) {
@@ -101,12 +110,28 @@ class MainView extends WatchUi.View {
             var blocks = GameState.getActivityBlocksToday();
             var spawnSuccessMax = BalanceConfig.getSpawnRollSuccessMaxForBlocks(blocks);
             if ((Math.rand() % BalanceConfig.getSpawnRollDenominator()) < spawnSuccessMax) {
-                var encounter = SpawnEngine.generate();
-                GameState.registerSeen(encounter[:id]);
-                GameState.currentEncounter = encounter;
-                GameState.markSpawn();
-                vibrateSpawn();
-                WatchUi.requestUpdate();
+                // 15% chance of trainer battle instead of wild Pokémon
+                if (SpawnEngine.shouldSpawnTrainer()) {
+                    var trainerData = SpawnEngine.generateTrainer();
+                    GameState.startBattle(
+                        trainerData[:rivalId],
+                        trainerData[:rivalLevel],
+                        trainerData[:requiredSteps],
+                        trainerData[:timeLimitSec],
+                        trainerData[:battleType],
+                        trainerData[:xpReward]
+                    );
+                    GameState.markSpawn();
+                    vibrateSpawn();
+                    WatchUi.requestUpdate();
+                } else {
+                    var encounter = SpawnEngine.generate();
+                    GameState.registerSeen(encounter[:id]);
+                    GameState.currentEncounter = encounter;
+                    GameState.markSpawn();
+                    vibrateSpawn();
+                    WatchUi.requestUpdate();
+                }
             }
         }
     }
@@ -160,9 +185,12 @@ class MainView extends WatchUi.View {
         var spawnInterval = BalanceConfig.getStepsPerSpawn();
 
         var hasEncounter = (GameState.currentEncounter != null);
+        var hasBattle = (GameState.currentBattle != null);
         var hasBuddy = (GameState.buddyId > 0);
         var displayId = 0;
-        if (hasEncounter) {
+        if (hasBattle) {
+            displayId = GameState.currentBattle[:rivalId];
+        } else if (hasEncounter) {
             displayId = GameState.currentEncounter[:id];
         } else if (hasBuddy) {
             displayId = GameState.buddyId;
@@ -176,18 +204,17 @@ class MainView extends WatchUi.View {
             tierColor = tierColors[displayTier];
         }
 
-        var titleY   = 5;
-        var stepsY   = 50;
-        // Box visual compacto (96x96), bitmap 120px centrado dentro
-        var boxSize  = 96;
-        var boxY     = 80;
-        var bmpOff   = (120 - boxSize) / 2; // 12px para centrar bitmap en box
-        var spriteDrawY = boxY - bmpOff;     // bitmap empieza 12px antes del box
-        var nameY    = boxY + boxSize + 6;   // 182
-        var buddyBarY = nameY + 40;          // 204
-        var buddyTxtY = buddyBarY + 15;      // 237
-        var infoY    = buddyTxtY + 28;       // 265
-        var footY    = 320;
+        var titleY   = Layout.Main.CLOCK_Y;
+        var stepsY   = Layout.Main.STEPS_Y;
+        var boxSize  = Layout.Main.BOX_SIZE;
+        var boxY     = Layout.Main.BOX_Y;
+        var bmpOff   = (120 - boxSize) / 2;
+        var spriteDrawY = boxY - bmpOff;
+        var nameY    = Layout.Main.NAME_Y;
+        var buddyBarY = Layout.Main.BUDDY_BAR_Y;
+        var buddyTxtY = Layout.Main.BUDDY_TXT_Y;
+        var infoY    = Layout.Main.INFO_Y;
+        var footY    = Layout.Main.FOOT_Y;
 
         // ── Spawn progress (0-100) ────────────────────────
         var spawnProgress = 0;
@@ -196,12 +223,12 @@ class MainView extends WatchUi.View {
             if (spawnProgress > 100) { spawnProgress = 100; }
             if (spawnProgress < 0) { spawnProgress = 0; }
         }
-        if (hasEncounter) { spawnProgress = 100; }
+        if (hasEncounter || hasBattle) { spawnProgress = 100; }
 
         // ── ARCO DE SPAWN PROGRESS ───────────────────────
         if (spawnProgress > 0) {
             dc.setPenWidth(3);
-            if (hasEncounter) {
+            if (hasEncounter || hasBattle) {
                 dc.setColor(_alertBlink ? 0xFF4444 : 0xFF8888, Graphics.COLOR_TRANSPARENT);
                 dc.drawCircle(cx, w / 2, cx - 2);
             } else {
@@ -260,10 +287,12 @@ class MainView extends WatchUi.View {
 
             // ── NOMBRE + NIVEL ─────────────────────────────────
             var nameColor = tierColor;
-            if (hasEncounter) { nameColor = 0xFF6666; }
+            if (hasEncounter || hasBattle) { nameColor = 0xFF6666; }
             dc.setColor(nameColor, Graphics.COLOR_TRANSPARENT);
             var displayName = PokemonData.getName(displayId).toUpper();
-            if (!hasEncounter && hasBuddy) {
+            if (hasBattle) {
+                displayName = displayName + " Lv." + GameState.currentBattle[:rivalLevel].toString();
+            } else if (!hasEncounter && hasBuddy) {
                 var buddyLevel = GameState.getPokemonLevel(displayId);
                 displayName = displayName + " Lv." + buddyLevel.toString();
             }
@@ -283,7 +312,7 @@ class MainView extends WatchUi.View {
         // (spawn bar removida — el info text ya muestra progreso)
 
         // ── BUDDY LEVEL BAR + STEPS INFO ──────────────
-        if (!hasEncounter && hasBuddy) {
+        if (!hasEncounter && !hasBattle && hasBuddy) {
             var currentLevel = GameState.getPokemonLevel(displayId);
             var currentXP = GameState.getPokemonXP(displayId);
             var buddyData2 = PokemonData.get(displayId);
@@ -300,17 +329,17 @@ class MainView extends WatchUi.View {
             if (currentLevel >= 100) { progress = 100; stepsToNext = 0; }
 
             // Barra de nivel
-            var barW = 100;
+            var barW = Layout.Main.BUDDY_BAR_W;
             var barX = cx - barW / 2;
             var fillW = (progress * barW) / 100;
             dc.setColor(0x151515, Graphics.COLOR_TRANSPARENT);
-            dc.fillRoundedRectangle(barX, buddyBarY, barW, 5, 2);
+            dc.fillRoundedRectangle(barX, buddyBarY, barW, Layout.Main.BUDDY_BAR_H, 2);
             if (fillW > 0) {
                 var barColor = 0x44CCFF;
                 if (progress > 75) { barColor = 0x44FF44; }
                 if (progress > 90) { barColor = 0xFFCC00; }
                 dc.setColor(barColor, Graphics.COLOR_TRANSPARENT);
-                dc.fillRoundedRectangle(barX, buddyBarY, fillW, 5, 2);
+                dc.fillRoundedRectangle(barX, buddyBarY, fillW, Layout.Main.BUDDY_BAR_H, 2);
             }
 
             // Texto: pasos restantes para subir de nivel
@@ -323,14 +352,26 @@ class MainView extends WatchUi.View {
                     tr(Rez.Strings.LevelUpPrefix) + stepsToNext.toString() + " p.",
                     Graphics.TEXT_JUSTIFY_CENTER);
             }
-        } else if (!hasEncounter && !hasBuddy) {
+        } else if (!hasEncounter && !hasBattle && !hasBuddy) {
             dc.setColor(0x555555, Graphics.COLOR_TRANSPARENT);
             dc.drawText(cx, buddyTxtY, Graphics.FONT_XTINY,
                 tr(Rez.Strings.SelectBuddy), Graphics.TEXT_JUSTIFY_CENTER);
         }
 
-        // ── INFO / ENCOUNTER / EVO NOTIFICATION ──────────
-        if (hasEncounter) {
+        // ── INFO / ENCOUNTER / BATTLE / EVO NOTIFICATION ──────────
+        if (hasBattle) {
+            dc.setColor(0x1A0A2A, Graphics.COLOR_TRANSPARENT);
+            dc.fillRoundedRectangle(cx - 85, infoY - 2, 170, 40, 6);
+            var battleType = GameState.currentBattle[:battleType];
+            var trainerLabel = (battleType == -2) ? "ACE TRAINER" : "TRAINER";
+            dc.setColor(0xBB66FF, Graphics.COLOR_TRANSPARENT);
+            dc.drawText(cx, infoY, Graphics.FONT_XTINY,
+                trainerLabel + " battle!",
+                Graphics.TEXT_JUSTIFY_CENTER);
+            dc.drawText(cx, infoY + 18, Graphics.FONT_XTINY,
+                tr(Rez.Strings.TapToEnter),
+                Graphics.TEXT_JUSTIFY_CENTER);
+        } else if (hasEncounter) {
             var isLegQuest = LegendaryQuestManager.isQuestLegendary(displayId);
             if (isLegQuest) {
                 dc.setColor(0x2A1A00, Graphics.COLOR_TRANSPARENT);
@@ -368,6 +409,63 @@ class MainView extends WatchUi.View {
                     tr(Rez.Strings.NextIn) + " " + nextIn.toString() + " " + tr(Rez.Strings.LabelSteps),
                     Graphics.TEXT_JUSTIFY_CENTER);
             }
+        }
+
+        // ── MEDAL DOTS (3 rows: Kanto, Johto, Elite) ─────
+        var dotY = Layout.Main.DOTS_Y;
+        var dotR = Layout.Main.DOTS_RADIUS;
+        var dotSpacing = Layout.Main.DOTS_SPACING;
+        // Kanto: 8 dots
+        var kantoStartX = cx - (8 * dotSpacing) / 2 + dotSpacing / 2;
+        dc.setColor(0x333333, Graphics.COLOR_TRANSPARENT);
+        dc.drawText(kantoStartX - 16, dotY - 5, Graphics.FONT_XTINY,
+            "K", Graphics.TEXT_JUSTIFY_CENTER);
+        for (var gi = 0; gi < 8; gi++) {
+            var dx = kantoStartX + gi * dotSpacing;
+            if (GameState.hasGymBadge(gi)) {
+                dc.setColor(0x4488FF, Graphics.COLOR_TRANSPARENT);
+                dc.fillCircle(dx, dotY, dotR);
+            } else {
+                dc.setColor(0x222222, Graphics.COLOR_TRANSPARENT);
+                dc.fillCircle(dx, dotY, dotR);
+            }
+        }
+        // Johto: 8 dots
+        dotY += 10;
+        dc.setColor(0x333333, Graphics.COLOR_TRANSPARENT);
+        dc.drawText(kantoStartX - 16, dotY - 5, Graphics.FONT_XTINY,
+            "J", Graphics.TEXT_JUSTIFY_CENTER);
+        for (var gi = 0; gi < 8; gi++) {
+            var dx = kantoStartX + gi * dotSpacing;
+            if (GameState.hasGymBadge(8 + gi)) {
+                dc.setColor(0xFF66FF, Graphics.COLOR_TRANSPARENT);
+                dc.fillCircle(dx, dotY, dotR);
+            } else {
+                dc.setColor(0x222222, Graphics.COLOR_TRANSPARENT);
+                dc.fillCircle(dx, dotY, dotR);
+            }
+        }
+        // Elite Four: 4 dots
+        dotY += 10;
+        var eliteStartX = cx - (4 * dotSpacing) / 2 + dotSpacing / 2;
+        dc.setColor(0x333333, Graphics.COLOR_TRANSPARENT);
+        dc.drawText(eliteStartX - 16, dotY - 5, Graphics.FONT_XTINY,
+            "E", Graphics.TEXT_JUSTIFY_CENTER);
+        for (var gi = 0; gi < 4; gi++) {
+            var dx = eliteStartX + gi * dotSpacing;
+            if (GameState.hasGymBadge(16 + gi)) {
+                dc.setColor(0xFFAA00, Graphics.COLOR_TRANSPARENT);
+                dc.fillCircle(dx, dotY, dotR);
+            } else {
+                dc.setColor(0x222222, Graphics.COLOR_TRANSPARENT);
+                dc.fillCircle(dx, dotY, dotR);
+            }
+        }
+        // Champion star
+        if (GameState.getGymBadgeCount() >= 20) {
+            dc.setColor(0xFFD700, Graphics.COLOR_TRANSPARENT);
+            dc.drawText(eliteStartX + 4 * dotSpacing + 8, dotY - 5, Graphics.FONT_XTINY,
+                "★", Graphics.TEXT_JUSTIFY_CENTER);
         }
 
         // ── PIE: DEX, BATERÍA y RACHA ────────────────────
@@ -425,17 +523,25 @@ class MainDelegate extends WatchUi.BehaviorDelegate {
     }
 
     function onSelect() as Lang.Boolean {
+        if (GameState.currentBattle != null) {
+            var v = new BattleView();
+            WatchUi.pushView(v, new BattleDelegate(v), WatchUi.SLIDE_UP);
+            return true;
+        }
         if (GameState.currentEncounter != null) {
             var v = new EncounterView();
             WatchUi.pushView(v, new EncounterDelegate(v), WatchUi.SLIDE_UP);
             return true;
         }
-        return false;
+        // No active encounter/battle: open pokedex
+        var v = new PokedexView();
+        WatchUi.pushView(v, new PokedexDelegate(v), WatchUi.SLIDE_UP);
+        return true;
     }
 
     function onNextPage() as Lang.Boolean {
-        var v = new PokedexView();
-        WatchUi.pushView(v, new PokedexDelegate(v), WatchUi.SLIDE_UP);
+        var v = new GymListView();
+        WatchUi.pushView(v, new GymListDelegate(v), WatchUi.SLIDE_UP);
         return true;
     }
 

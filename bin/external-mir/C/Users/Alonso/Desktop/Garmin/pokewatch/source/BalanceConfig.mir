@@ -12,6 +12,489 @@ class BalanceConfig {
         symbol [ PRESET_MEDIUM %tmp.2 14 33 46 ];
         %tmp.2 = getv ? :PRESET_MEDIUM;
         putv self :ACTIVE_PRESET %tmp.2;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc" 204 17 ]
+        %tmp.3 = newa 20;
+        %tmp.4 = newa 7;
+        %tmp.5 = "Brock";
+        %tmp.6 = dup %tmp.4;
+        %tmp.7 = aputv %tmp.6 0 %tmp.5;
+        %tmp.8 = 95;
+        %tmp.9 = dup %tmp.7;
+        %tmp.10 = aputv %tmp.9 1 %tmp.8;
+        %tmp.11 = 14;
+        %tmp.12 = dup %tmp.10;
+        %tmp.13 = aputv %tmp.12 2 %tmp.11;
+        %tmp.14 = 2000;
+        %tmp.15 = dup %tmp.13;
+        %tmp.16 = aputv %tmp.15 3 %tmp.14;
+        %tmp.17 = 2700;
+        %tmp.18 = dup %tmp.16;
+        %tmp.19 = aputv %tmp.18 4 %tmp.17;
+        %tmp.20 = 0;
+        %tmp.21 = dup %tmp.19;
+        %tmp.22 = aputv %tmp.21 5 %tmp.20;
+        %tmp.23 = 500;
+        %tmp.24 = dup %tmp.22;
+        %tmp.25 = aputv %tmp.24 6 %tmp.23;
+        %tmp.26 = dup %tmp.3;
+        %tmp.27 = aputv %tmp.26 0 %tmp.25;
+        %tmp.28 = newa 7;
+        %tmp.29 = "Misty";
+        %tmp.30 = dup %tmp.28;
+        %tmp.31 = aputv %tmp.30 0 %tmp.29;
+        %tmp.32 = 121;
+        %tmp.33 = dup %tmp.31;
+        %tmp.34 = aputv %tmp.33 1 %tmp.32;
+        %tmp.35 = 21;
+        %tmp.36 = dup %tmp.34;
+        %tmp.37 = aputv %tmp.36 2 %tmp.35;
+        %tmp.38 = 2500;
+        %tmp.39 = dup %tmp.37;
+        %tmp.40 = aputv %tmp.39 3 %tmp.38;
+        %tmp.41 = 3000;
+        %tmp.42 = dup %tmp.40;
+        %tmp.43 = aputv %tmp.42 4 %tmp.41;
+        %tmp.44 = -1;
+        %tmp.45 = dup %tmp.43;
+        %tmp.46 = aputv %tmp.45 5 %tmp.44;
+        %tmp.47 = 800;
+        %tmp.48 = dup %tmp.46;
+        %tmp.49 = aputv %tmp.48 6 %tmp.47;
+        %tmp.50 = dup %tmp.27;
+        %tmp.51 = aputv %tmp.50 1 %tmp.49;
+        %tmp.52 = newa 7;
+        %tmp.53 = "Surge";
+        %tmp.54 = dup %tmp.52;
+        %tmp.55 = aputv %tmp.54 0 %tmp.53;
+        %tmp.56 = 26;
+        %tmp.57 = dup %tmp.55;
+        %tmp.58 = aputv %tmp.57 1 %tmp.56;
+        %tmp.59 = 28;
+        %tmp.60 = dup %tmp.58;
+        %tmp.61 = aputv %tmp.60 2 %tmp.59;
+        %tmp.62 = 3000;
+        %tmp.63 = dup %tmp.61;
+        %tmp.64 = aputv %tmp.63 3 %tmp.62;
+        %tmp.65 = 3300;
+        %tmp.66 = dup %tmp.64;
+        %tmp.67 = aputv %tmp.66 4 %tmp.65;
+        %tmp.68 = -2;
+        %tmp.69 = dup %tmp.67;
+        %tmp.70 = aputv %tmp.69 5 %tmp.68;
+        %tmp.71 = 1200;
+        %tmp.72 = dup %tmp.70;
+        %tmp.73 = aputv %tmp.72 6 %tmp.71;
+        %tmp.74 = dup %tmp.51;
+        %tmp.75 = aputv %tmp.74 2 %tmp.73;
+        %tmp.76 = newa 7;
+        %tmp.77 = "Erika";
+        %tmp.78 = dup %tmp.76;
+        %tmp.79 = aputv %tmp.78 0 %tmp.77;
+        %tmp.80 = 45;
+        %tmp.81 = dup %tmp.79;
+        %tmp.82 = aputv %tmp.81 1 %tmp.80;
+        %tmp.83 = 32;
+        %tmp.84 = dup %tmp.82;
+        %tmp.85 = aputv %tmp.84 2 %tmp.83;
+        %tmp.86 = 3500;
+        %tmp.87 = dup %tmp.85;
+        %tmp.88 = aputv %tmp.87 3 %tmp.86;
+        %tmp.89 = 3600;
+        %tmp.90 = dup %tmp.88;
+        %tmp.91 = aputv %tmp.90 4 %tmp.89;
+        %tmp.92 = -3;
+        %tmp.93 = dup %tmp.91;
+        %tmp.94 = aputv %tmp.93 5 %tmp.92;
+        %tmp.95 = 1800;
+        %tmp.96 = dup %tmp.94;
+        %tmp.97 = aputv %tmp.96 6 %tmp.95;
+        %tmp.98 = dup %tmp.75;
+        %tmp.99 = aputv %tmp.98 3 %tmp.97;
+        %tmp.100 = newa 7;
+        %tmp.101 = "Koga";
+        %tmp.102 = dup %tmp.100;
+        %tmp.103 = aputv %tmp.102 0 %tmp.101;
+        %tmp.104 = 89;
+        %tmp.105 = dup %tmp.103;
+        %tmp.106 = aputv %tmp.105 1 %tmp.104;
+        %tmp.107 = 37;
+        %tmp.108 = dup %tmp.106;
+        %tmp.109 = aputv %tmp.108 2 %tmp.107;
+        %tmp.110 = 4000;
+        %tmp.111 = dup %tmp.109;
+        %tmp.112 = aputv %tmp.111 3 %tmp.110;
+        %tmp.113 = 3600;
+        %tmp.114 = dup %tmp.112;
+        %tmp.115 = aputv %tmp.114 4 %tmp.113;
+        %tmp.116 = -4;
+        %tmp.117 = dup %tmp.115;
+        %tmp.118 = aputv %tmp.117 5 %tmp.116;
+        %tmp.119 = 2500;
+        %tmp.120 = dup %tmp.118;
+        %tmp.121 = aputv %tmp.120 6 %tmp.119;
+        %tmp.122 = dup %tmp.99;
+        %tmp.123 = aputv %tmp.122 4 %tmp.121;
+        %tmp.124 = newa 7;
+        %tmp.125 = "Sabrina";
+        %tmp.126 = dup %tmp.124;
+        %tmp.127 = aputv %tmp.126 0 %tmp.125;
+        %tmp.128 = 65;
+        %tmp.129 = dup %tmp.127;
+        %tmp.130 = aputv %tmp.129 1 %tmp.128;
+        %tmp.131 = 43;
+        %tmp.132 = dup %tmp.130;
+        %tmp.133 = aputv %tmp.132 2 %tmp.131;
+        %tmp.134 = 5000;
+        %tmp.135 = dup %tmp.133;
+        %tmp.136 = aputv %tmp.135 3 %tmp.134;
+        %tmp.137 = 4200;
+        %tmp.138 = dup %tmp.136;
+        %tmp.139 = aputv %tmp.138 4 %tmp.137;
+        %tmp.140 = -5;
+        %tmp.141 = dup %tmp.139;
+        %tmp.142 = aputv %tmp.141 5 %tmp.140;
+        %tmp.143 = 3500;
+        %tmp.144 = dup %tmp.142;
+        %tmp.145 = aputv %tmp.144 6 %tmp.143;
+        %tmp.146 = dup %tmp.123;
+        %tmp.147 = aputv %tmp.146 5 %tmp.145;
+        %tmp.148 = newa 7;
+        %tmp.149 = "Blaine";
+        %tmp.150 = dup %tmp.148;
+        %tmp.151 = aputv %tmp.150 0 %tmp.149;
+        %tmp.152 = 59;
+        %tmp.153 = dup %tmp.151;
+        %tmp.154 = aputv %tmp.153 1 %tmp.152;
+        %tmp.155 = 47;
+        %tmp.156 = dup %tmp.154;
+        %tmp.157 = aputv %tmp.156 2 %tmp.155;
+        %tmp.158 = 5500;
+        %tmp.159 = dup %tmp.157;
+        %tmp.160 = aputv %tmp.159 3 %tmp.158;
+        %tmp.161 = 4500;
+        %tmp.162 = dup %tmp.160;
+        %tmp.163 = aputv %tmp.162 4 %tmp.161;
+        %tmp.164 = -6;
+        %tmp.165 = dup %tmp.163;
+        %tmp.166 = aputv %tmp.165 5 %tmp.164;
+        %tmp.167 = 5000;
+        %tmp.168 = dup %tmp.166;
+        %tmp.169 = aputv %tmp.168 6 %tmp.167;
+        %tmp.170 = dup %tmp.147;
+        %tmp.171 = aputv %tmp.170 6 %tmp.169;
+        %tmp.172 = newa 7;
+        %tmp.173 = "Giovanni";
+        %tmp.174 = dup %tmp.172;
+        %tmp.175 = aputv %tmp.174 0 %tmp.173;
+        %tmp.176 = 34;
+        %tmp.177 = dup %tmp.175;
+        %tmp.178 = aputv %tmp.177 1 %tmp.176;
+        %tmp.179 = 50;
+        %tmp.180 = dup %tmp.178;
+        %tmp.181 = aputv %tmp.180 2 %tmp.179;
+        %tmp.182 = 6000;
+        %tmp.183 = dup %tmp.181;
+        %tmp.184 = aputv %tmp.183 3 %tmp.182;
+        %tmp.185 = 4800;
+        %tmp.186 = dup %tmp.184;
+        %tmp.187 = aputv %tmp.186 4 %tmp.185;
+        %tmp.188 = -7;
+        %tmp.189 = dup %tmp.187;
+        %tmp.190 = aputv %tmp.189 5 %tmp.188;
+        %tmp.191 = 8000;
+        %tmp.192 = dup %tmp.190;
+        %tmp.193 = aputv %tmp.192 6 %tmp.191;
+        %tmp.194 = dup %tmp.171;
+        %tmp.195 = aputv %tmp.194 7 %tmp.193;
+        %tmp.196 = newa 7;
+        %tmp.197 = "Falkner";
+        %tmp.198 = dup %tmp.196;
+        %tmp.199 = aputv %tmp.198 0 %tmp.197;
+        %tmp.200 = 164;
+        %tmp.201 = dup %tmp.199;
+        %tmp.202 = aputv %tmp.201 1 %tmp.200;
+        %tmp.203 = 52;
+        %tmp.204 = dup %tmp.202;
+        %tmp.205 = aputv %tmp.204 2 %tmp.203;
+        %tmp.206 = 6500;
+        %tmp.207 = dup %tmp.205;
+        %tmp.208 = aputv %tmp.207 3 %tmp.206;
+        %tmp.209 = 4500;
+        %tmp.210 = dup %tmp.208;
+        %tmp.211 = aputv %tmp.210 4 %tmp.209;
+        %tmp.212 = -8;
+        %tmp.213 = dup %tmp.211;
+        %tmp.214 = aputv %tmp.213 5 %tmp.212;
+        %tmp.215 = 3000;
+        %tmp.216 = dup %tmp.214;
+        %tmp.217 = aputv %tmp.216 6 %tmp.215;
+        %tmp.218 = dup %tmp.195;
+        %tmp.219 = aputv %tmp.218 8 %tmp.217;
+        %tmp.220 = newa 7;
+        %tmp.221 = "Bugsy";
+        %tmp.222 = dup %tmp.220;
+        %tmp.223 = aputv %tmp.222 0 %tmp.221;
+        %tmp.224 = 123;
+        %tmp.225 = dup %tmp.223;
+        %tmp.226 = aputv %tmp.225 1 %tmp.224;
+        %tmp.227 = 55;
+        %tmp.228 = dup %tmp.226;
+        %tmp.229 = aputv %tmp.228 2 %tmp.227;
+        %tmp.230 = 7000;
+        %tmp.231 = dup %tmp.229;
+        %tmp.232 = aputv %tmp.231 3 %tmp.230;
+        %tmp.233 = 4500;
+        %tmp.234 = dup %tmp.232;
+        %tmp.235 = aputv %tmp.234 4 %tmp.233;
+        %tmp.236 = -9;
+        %tmp.237 = dup %tmp.235;
+        %tmp.238 = aputv %tmp.237 5 %tmp.236;
+        %tmp.239 = 3500;
+        %tmp.240 = dup %tmp.238;
+        %tmp.241 = aputv %tmp.240 6 %tmp.239;
+        %tmp.242 = dup %tmp.219;
+        %tmp.243 = aputv %tmp.242 9 %tmp.241;
+        %tmp.244 = newa 7;
+        %tmp.245 = "Whitney";
+        %tmp.246 = dup %tmp.244;
+        %tmp.247 = aputv %tmp.246 0 %tmp.245;
+        %tmp.248 = 241;
+        %tmp.249 = dup %tmp.247;
+        %tmp.250 = aputv %tmp.249 1 %tmp.248;
+        %tmp.251 = 58;
+        %tmp.252 = dup %tmp.250;
+        %tmp.253 = aputv %tmp.252 2 %tmp.251;
+        %tmp.254 = 7500;
+        %tmp.255 = dup %tmp.253;
+        %tmp.256 = aputv %tmp.255 3 %tmp.254;
+        %tmp.257 = 4500;
+        %tmp.258 = dup %tmp.256;
+        %tmp.259 = aputv %tmp.258 4 %tmp.257;
+        %tmp.260 = -10;
+        %tmp.261 = dup %tmp.259;
+        %tmp.262 = aputv %tmp.261 5 %tmp.260;
+        %tmp.263 = 4000;
+        %tmp.264 = dup %tmp.262;
+        %tmp.265 = aputv %tmp.264 6 %tmp.263;
+        %tmp.266 = dup %tmp.243;
+        %tmp.267 = aputv %tmp.266 10 %tmp.265;
+        %tmp.268 = newa 7;
+        %tmp.269 = "Morty";
+        %tmp.270 = dup %tmp.268;
+        %tmp.271 = aputv %tmp.270 0 %tmp.269;
+        %tmp.272 = 94;
+        %tmp.273 = dup %tmp.271;
+        %tmp.274 = aputv %tmp.273 1 %tmp.272;
+        %tmp.275 = 62;
+        %tmp.276 = dup %tmp.274;
+        %tmp.277 = aputv %tmp.276 2 %tmp.275;
+        %tmp.278 = 8000;
+        %tmp.279 = dup %tmp.277;
+        %tmp.280 = aputv %tmp.279 3 %tmp.278;
+        %tmp.281 = 4800;
+        %tmp.282 = dup %tmp.280;
+        %tmp.283 = aputv %tmp.282 4 %tmp.281;
+        %tmp.284 = -11;
+        %tmp.285 = dup %tmp.283;
+        %tmp.286 = aputv %tmp.285 5 %tmp.284;
+        %tmp.287 = 5000;
+        %tmp.288 = dup %tmp.286;
+        %tmp.289 = aputv %tmp.288 6 %tmp.287;
+        %tmp.290 = dup %tmp.267;
+        %tmp.291 = aputv %tmp.290 11 %tmp.289;
+        %tmp.292 = newa 7;
+        %tmp.293 = "Chuck";
+        %tmp.294 = dup %tmp.292;
+        %tmp.295 = aputv %tmp.294 0 %tmp.293;
+        %tmp.296 = 62;
+        %tmp.297 = dup %tmp.295;
+        %tmp.298 = aputv %tmp.297 1 %tmp.296;
+        %tmp.299 = 65;
+        %tmp.300 = dup %tmp.298;
+        %tmp.301 = aputv %tmp.300 2 %tmp.299;
+        %tmp.302 = 8500;
+        %tmp.303 = dup %tmp.301;
+        %tmp.304 = aputv %tmp.303 3 %tmp.302;
+        %tmp.305 = 4800;
+        %tmp.306 = dup %tmp.304;
+        %tmp.307 = aputv %tmp.306 4 %tmp.305;
+        %tmp.308 = -12;
+        %tmp.309 = dup %tmp.307;
+        %tmp.310 = aputv %tmp.309 5 %tmp.308;
+        %tmp.311 = 6000;
+        %tmp.312 = dup %tmp.310;
+        %tmp.313 = aputv %tmp.312 6 %tmp.311;
+        %tmp.314 = dup %tmp.291;
+        %tmp.315 = aputv %tmp.314 12 %tmp.313;
+        %tmp.316 = newa 7;
+        %tmp.317 = "Jasmine";
+        %tmp.318 = dup %tmp.316;
+        %tmp.319 = aputv %tmp.318 0 %tmp.317;
+        %tmp.320 = 208;
+        %tmp.321 = dup %tmp.319;
+        %tmp.322 = aputv %tmp.321 1 %tmp.320;
+        %tmp.323 = 68;
+        %tmp.324 = dup %tmp.322;
+        %tmp.325 = aputv %tmp.324 2 %tmp.323;
+        %tmp.326 = 9000;
+        %tmp.327 = dup %tmp.325;
+        %tmp.328 = aputv %tmp.327 3 %tmp.326;
+        %tmp.329 = 4800;
+        %tmp.330 = dup %tmp.328;
+        %tmp.331 = aputv %tmp.330 4 %tmp.329;
+        %tmp.332 = -13;
+        %tmp.333 = dup %tmp.331;
+        %tmp.334 = aputv %tmp.333 5 %tmp.332;
+        %tmp.335 = 7000;
+        %tmp.336 = dup %tmp.334;
+        %tmp.337 = aputv %tmp.336 6 %tmp.335;
+        %tmp.338 = dup %tmp.315;
+        %tmp.339 = aputv %tmp.338 13 %tmp.337;
+        %tmp.340 = newa 7;
+        %tmp.341 = "Pryce";
+        %tmp.342 = dup %tmp.340;
+        %tmp.343 = aputv %tmp.342 0 %tmp.341;
+        %tmp.344 = 221;
+        %tmp.345 = dup %tmp.343;
+        %tmp.346 = aputv %tmp.345 1 %tmp.344;
+        %tmp.347 = 72;
+        %tmp.348 = dup %tmp.346;
+        %tmp.349 = aputv %tmp.348 2 %tmp.347;
+        %tmp.350 = 10000;
+        %tmp.351 = dup %tmp.349;
+        %tmp.352 = aputv %tmp.351 3 %tmp.350;
+        %tmp.353 = 5100;
+        %tmp.354 = dup %tmp.352;
+        %tmp.355 = aputv %tmp.354 4 %tmp.353;
+        %tmp.356 = -14;
+        %tmp.357 = dup %tmp.355;
+        %tmp.358 = aputv %tmp.357 5 %tmp.356;
+        %tmp.359 = 9000;
+        %tmp.360 = dup %tmp.358;
+        %tmp.361 = aputv %tmp.360 6 %tmp.359;
+        %tmp.362 = dup %tmp.339;
+        %tmp.363 = aputv %tmp.362 14 %tmp.361;
+        %tmp.364 = newa 7;
+        %tmp.365 = "Clair";
+        %tmp.366 = dup %tmp.364;
+        %tmp.367 = aputv %tmp.366 0 %tmp.365;
+        %tmp.368 = 230;
+        %tmp.369 = dup %tmp.367;
+        %tmp.370 = aputv %tmp.369 1 %tmp.368;
+        %tmp.371 = 75;
+        %tmp.372 = dup %tmp.370;
+        %tmp.373 = aputv %tmp.372 2 %tmp.371;
+        %tmp.374 = 11000;
+        %tmp.375 = dup %tmp.373;
+        %tmp.376 = aputv %tmp.375 3 %tmp.374;
+        %tmp.377 = 5400;
+        %tmp.378 = dup %tmp.376;
+        %tmp.379 = aputv %tmp.378 4 %tmp.377;
+        %tmp.380 = -15;
+        %tmp.381 = dup %tmp.379;
+        %tmp.382 = aputv %tmp.381 5 %tmp.380;
+        %tmp.383 = 12000;
+        %tmp.384 = dup %tmp.382;
+        %tmp.385 = aputv %tmp.384 6 %tmp.383;
+        %tmp.386 = dup %tmp.363;
+        %tmp.387 = aputv %tmp.386 15 %tmp.385;
+        %tmp.388 = newa 7;
+        %tmp.389 = "Will";
+        %tmp.390 = dup %tmp.388;
+        %tmp.391 = aputv %tmp.390 0 %tmp.389;
+        %tmp.392 = 178;
+        %tmp.393 = dup %tmp.391;
+        %tmp.394 = aputv %tmp.393 1 %tmp.392;
+        %tmp.395 = 80;
+        %tmp.396 = dup %tmp.394;
+        %tmp.397 = aputv %tmp.396 2 %tmp.395;
+        %tmp.398 = 12000;
+        %tmp.399 = dup %tmp.397;
+        %tmp.400 = aputv %tmp.399 3 %tmp.398;
+        %tmp.401 = 5400;
+        %tmp.402 = dup %tmp.400;
+        %tmp.403 = aputv %tmp.402 4 %tmp.401;
+        %tmp.404 = -16;
+        %tmp.405 = dup %tmp.403;
+        %tmp.406 = aputv %tmp.405 5 %tmp.404;
+        %tmp.407 = 10000;
+        %tmp.408 = dup %tmp.406;
+        %tmp.409 = aputv %tmp.408 6 %tmp.407;
+        %tmp.410 = dup %tmp.387;
+        %tmp.411 = aputv %tmp.410 16 %tmp.409;
+        %tmp.412 = newa 7;
+        %tmp.413 = "Koga E4";
+        %tmp.414 = dup %tmp.412;
+        %tmp.415 = aputv %tmp.414 0 %tmp.413;
+        %tmp.416 = 169;
+        %tmp.417 = dup %tmp.415;
+        %tmp.418 = aputv %tmp.417 1 %tmp.416;
+        %tmp.419 = 85;
+        %tmp.420 = dup %tmp.418;
+        %tmp.421 = aputv %tmp.420 2 %tmp.419;
+        %tmp.422 = 13000;
+        %tmp.423 = dup %tmp.421;
+        %tmp.424 = aputv %tmp.423 3 %tmp.422;
+        %tmp.425 = 5400;
+        %tmp.426 = dup %tmp.424;
+        %tmp.427 = aputv %tmp.426 4 %tmp.425;
+        %tmp.428 = -17;
+        %tmp.429 = dup %tmp.427;
+        %tmp.430 = aputv %tmp.429 5 %tmp.428;
+        %tmp.431 = 12000;
+        %tmp.432 = dup %tmp.430;
+        %tmp.433 = aputv %tmp.432 6 %tmp.431;
+        %tmp.434 = dup %tmp.411;
+        %tmp.435 = aputv %tmp.434 17 %tmp.433;
+        %tmp.436 = newa 7;
+        %tmp.437 = "Bruno";
+        %tmp.438 = dup %tmp.436;
+        %tmp.439 = aputv %tmp.438 0 %tmp.437;
+        %tmp.440 = 68;
+        %tmp.441 = dup %tmp.439;
+        %tmp.442 = aputv %tmp.441 1 %tmp.440;
+        %tmp.443 = 90;
+        %tmp.444 = dup %tmp.442;
+        %tmp.445 = aputv %tmp.444 2 %tmp.443;
+        %tmp.446 = 14000;
+        %tmp.447 = dup %tmp.445;
+        %tmp.448 = aputv %tmp.447 3 %tmp.446;
+        %tmp.449 = 6000;
+        %tmp.450 = dup %tmp.448;
+        %tmp.451 = aputv %tmp.450 4 %tmp.449;
+        %tmp.452 = -18;
+        %tmp.453 = dup %tmp.451;
+        %tmp.454 = aputv %tmp.453 5 %tmp.452;
+        %tmp.455 = 15000;
+        %tmp.456 = dup %tmp.454;
+        %tmp.457 = aputv %tmp.456 6 %tmp.455;
+        %tmp.458 = dup %tmp.435;
+        %tmp.459 = aputv %tmp.458 18 %tmp.457;
+        %tmp.460 = newa 7;
+        %tmp.461 = "Lance";
+        %tmp.462 = dup %tmp.460;
+        %tmp.463 = aputv %tmp.462 0 %tmp.461;
+        %tmp.464 = 149;
+        %tmp.465 = dup %tmp.463;
+        %tmp.466 = aputv %tmp.465 1 %tmp.464;
+        %tmp.467 = 95;
+        %tmp.468 = dup %tmp.466;
+        %tmp.469 = aputv %tmp.468 2 %tmp.467;
+        %tmp.470 = 16000;
+        %tmp.471 = dup %tmp.469;
+        %tmp.472 = aputv %tmp.471 3 %tmp.470;
+        %tmp.473 = 7200;
+        %tmp.474 = dup %tmp.472;
+        %tmp.475 = aputv %tmp.474 4 %tmp.473;
+        %tmp.476 = -19;
+        %tmp.477 = dup %tmp.475;
+        %tmp.478 = aputv %tmp.477 5 %tmp.476;
+        %tmp.479 = 20000;
+        %tmp.480 = dup %tmp.478;
+        %tmp.481 = aputv %tmp.480 6 %tmp.479;
+        %tmp.482 = dup %tmp.459;
+        %tmp.483 = aputv %tmp.482 19 %tmp.481;
+        putv self :GYM_DATA %tmp.483;
     }
     [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc"; @line = 9; @position = 17; @symbol_constdef = [PRESET_CASUAL,9,17,30]; ]
     static
@@ -682,49 +1165,351 @@ C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_115_103_117_4_s
         ret %tmp.7;
 C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_115_103_117_4_stop:
     }
-    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc"; @line = 143; @symbol_functiondef = [getXPPerLevel,143,20,33]; @symbol_param<0> = [tier,143,34,38]; @symbol_param<0>_type<0> = [Lang,143,42,46]; @symbol_param<0>_type<1> = [Number,143,47,53]; @symbol_return<0> = [Lang,143,58,62]; @symbol_return<1> = [Number,143,63,69]; ]
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc"; @line = 127; @symbol_functiondef = [getXPBase,127,20,29]; @symbol_param<0> = [tier,127,30,34]; @symbol_param<0>_type<0> = [Lang,127,38,42]; @symbol_param<0>_type<1> = [Number,127,43,49]; @symbol_return<0> = [Lang,127,54,58]; @symbol_return<1> = [Number,127,59,65]; ]
     static
-    function getXPPerLevel(tier as Lang.Number) as Lang.Number {
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_143_70_146_4_start:
-[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc" 144 8 ]
-        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_143_70_146_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_143_70_146_4_stop" ]
-        %xpByTier.1 = local;
-        symbol [ xpByTier %xpByTier.1 144 12 20 ];
+    function getXPBase(tier as Lang.Number) as Lang.Number {
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_127_66_130_4_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc" 128 8 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_127_66_130_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_127_66_130_4_stop" ]
+        %bases.1 = local;
+        symbol [ bases %bases.1 128 12 17 ];
         %tmp.1 = newa 5;
-        %tmp.2 = 100;
+        %tmp.2 = 30;
         %tmp.3 = dup %tmp.1;
         %tmp.4 = aputv %tmp.3 0 %tmp.2;
-        %tmp.5 = 200;
+        %tmp.5 = 55;
         %tmp.6 = dup %tmp.4;
         %tmp.7 = aputv %tmp.6 1 %tmp.5;
-        %tmp.8 = 350;
+        %tmp.8 = 90;
         %tmp.9 = dup %tmp.7;
         %tmp.10 = aputv %tmp.9 2 %tmp.8;
-        %tmp.11 = 550;
+        %tmp.11 = 140;
         %tmp.12 = dup %tmp.10;
         %tmp.13 = aputv %tmp.12 3 %tmp.11;
-        %tmp.14 = 800;
+        %tmp.14 = 200;
         %tmp.15 = dup %tmp.13;
         %tmp.16 = aputv %tmp.15 4 %tmp.14;
-        lputv %xpByTier.1 %tmp.16;
-        symbol [ xpByTier %xpByTier.1 144 12 20 ];
-[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc" 145 8 ]
-        %tmp.17 = lgetv %xpByTier.1;
-        symbol [ xpByTier %tmp.17 145 15 23 ];
+        lputv %bases.1 %tmp.16;
+        symbol [ bases %bases.1 128 12 17 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc" 129 8 ]
+        %tmp.17 = lgetv %bases.1;
+        symbol [ bases %tmp.17 129 15 20 ];
         %tmp.18 = lgetv %tier;
-        symbol [ tier %tmp.18 145 24 28 ];
+        symbol [ tier %tmp.18 129 21 25 ];
         %tmp.19 = agetv %tmp.17 %tmp.18;
         ret %tmp.19;
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_143_70_146_4_stop:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_127_66_130_4_stop:
     }
-    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc"; @line = 149; @symbol_functiondef = [getCatchXP,149,20,30]; @symbol_param<0> = [tier,149,31,35]; @symbol_param<0>_type<0> = [Lang,149,39,43]; @symbol_param<0>_type<1> = [Number,149,44,50]; @symbol_return<0> = [Lang,149,55,59]; @symbol_return<1> = [Number,149,60,66]; ]
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc"; @line = 133; @symbol_functiondef = [intSqrt,133,20,27]; @symbol_param<0> = [n,133,28,29]; @symbol_param<0>_type<0> = [Lang,133,33,37]; @symbol_param<0>_type<1> = [Number,133,38,44]; @symbol_return<0> = [Lang,133,49,53]; @symbol_return<1> = [Number,133,54,60]; ]
+    static
+    function intSqrt(n as Lang.Number) as Lang.Number {
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_133_61_143_4_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc" 134 8 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_134_8_134_32_if_stmt:
+        %tmp.1 = lgetv %n;
+        symbol [ n %tmp.1 134 12 13 ];
+        %tmp.2 = 0;
+        %tmp.3 = lte %tmp.1 %tmp.2;
+        bf %tmp.3 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_134_8_134_32_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_134_8_134_32_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_134_20_134_32_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc" 134 22 ]
+        %tmp.4 = 0;
+        ret %tmp.4;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_134_20_134_32_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_134_8_134_32_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_134_8_134_32_if_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc" 135 8 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_135_8_135_32_if_stmt:
+        %tmp.5 = lgetv %n;
+        symbol [ n %tmp.5 135 12 13 ];
+        %tmp.6 = 1;
+        %tmp.7 = eq %tmp.5 %tmp.6;
+        bf %tmp.7 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_135_8_135_32_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_135_8_135_32_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_135_20_135_32_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc" 135 22 ]
+        %tmp.8 = 1;
+        ret %tmp.8;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_135_20_135_32_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_135_8_135_32_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_135_8_135_32_if_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc" 136 8 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_133_61_143_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_133_61_143_4_stop" ]
+        %x.1 = local;
+        symbol [ x %x.1 136 12 13 ];
+        %tmp.9 = lgetv %n;
+        symbol [ n %tmp.9 136 16 17 ];
+        lputv %x.1 %tmp.9;
+        symbol [ x %x.1 136 12 13 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc" 137 8 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_133_61_143_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_133_61_143_4_stop" ]
+        %y.2 = local;
+        symbol [ y %y.2 137 12 13 ];
+        %tmp.10 = lgetv %x.1;
+        symbol [ x %tmp.10 137 17 18 ];
+        %tmp.11 = 1;
+        %tmp.12 = add %tmp.10 %tmp.11;
+        %tmp.13 = 2;
+        %tmp.14 = div %tmp.12 %tmp.13;
+        lputv %y.2 %tmp.14;
+        symbol [ y %y.2 137 12 13 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc" 138 8 ]
+        while @C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_138_8_141_8_while_test @C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_138_8_141_8_while_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_138_8_141_8_while_test:
+        %tmp.15 = lgetv %y.2;
+        symbol [ y %tmp.15 138 15 16 ];
+        %tmp.16 = lgetv %x.1;
+        symbol [ x %tmp.16 138 19 20 ];
+        %tmp.17 = lt %tmp.15 %tmp.16;
+        bf %tmp.17 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_138_8_141_8_while_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_138_8_141_8_while_begin:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_138_22_141_8_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc" 139 12 ]
+        %tmp.18 = lgetv %y.2;
+        symbol [ y %tmp.18 139 16 17 ];
+        lputv %x.1 %tmp.18;
+        symbol [ x %x.1 139 12 13 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc" 140 12 ]
+        %tmp.19 = lgetv %x.1;
+        symbol [ x %tmp.19 140 17 18 ];
+        %tmp.20 = lgetv %n;
+        symbol [ n %tmp.20 140 21 22 ];
+        %tmp.21 = lgetv %x.1;
+        symbol [ x %tmp.21 140 25 26 ];
+        %tmp.22 = div %tmp.20 %tmp.21;
+        %tmp.23 = add %tmp.19 %tmp.22;
+        %tmp.24 = 2;
+        %tmp.25 = div %tmp.23 %tmp.24;
+        lputv %y.2 %tmp.25;
+        symbol [ y %y.2 140 12 13 ];
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_138_22_141_8_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_138_8_141_8_while_test;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_138_8_141_8_while_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc" 142 8 ]
+        %tmp.26 = lgetv %x.1;
+        symbol [ x %tmp.26 142 15 16 ];
+        ret %tmp.26;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_133_61_143_4_stop:
+    }
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc"; @line = 146; @symbol_functiondef = [getXPForLevel,146,20,33]; @symbol_param<0> = [level,146,34,39]; @symbol_param<0>_type<0> = [Lang,146,43,47]; @symbol_param<0>_type<1> = [Number,146,48,54]; @symbol_param<1> = [tier,146,56,60]; @symbol_param<1>_type<0> = [Lang,146,64,68]; @symbol_param<1>_type<1> = [Number,146,69,75]; @symbol_return<0> = [Lang,146,80,84]; @symbol_return<1> = [Number,146,85,91]; ]
+    static
+    function getXPForLevel(level as Lang.Number, tier as Lang.Number) as Lang.Number {
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_146_92_154_4_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc" 147 8 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_147_8_147_36_if_stmt:
+        %tmp.1 = lgetv %level;
+        symbol [ level %tmp.1 147 12 17 ];
+        %tmp.2 = 1;
+        %tmp.3 = lte %tmp.1 %tmp.2;
+        bf %tmp.3 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_147_8_147_36_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_147_8_147_36_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_147_24_147_36_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc" 147 26 ]
+        %tmp.4 = 0;
+        ret %tmp.4;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_147_24_147_36_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_147_8_147_36_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_147_8_147_36_if_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc" 148 8 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_146_92_154_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_146_92_154_4_stop" ]
+        %base.1 = local;
+        symbol [ base %base.1 148 12 16 ];
+        %tmp.5 = self;
+        symbol [ getXPBase %tmp.6 148 19 28 ];
+        %tmp.6 = getv function %tmp.5 :getXPBase;
+        %tmp.7 = lgetv %tier;
+        symbol [ tier %tmp.7 148 29 33 ];
+        %tmp.8 = invoke %tmp.5 %tmp.6(%tmp.7);
+        lputv %base.1 %tmp.8;
+        symbol [ base %base.1 148 12 16 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc" 149 8 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_146_92_154_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_146_92_154_4_stop" ]
+        %total.2 = local;
+        symbol [ total %total.2 149 12 17 ];
+        %tmp.9 = 0;
+        lputv %total.2 %tmp.9;
+        symbol [ total %total.2 149 12 17 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc" 150 8 ]
+        for @C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_150_8_152_8_for_test @C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_150_8_152_8_for_incr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_150_8_152_8_for_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_150_8_152_8_for_init:
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_150_8_152_8_for_begin" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_150_8_152_8_for_end" ]
+        %n.3 = local;
+        symbol [ n %n.3 150 17 18 ];
+        %tmp.10 = 1;
+        lputv %n.3 %tmp.10;
+        symbol [ n %n.3 150 17 18 ];
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_150_8_152_8_for_test:
+        %tmp.11 = lgetv %n.3;
+        symbol [ n %tmp.11 150 24 25 ];
+        %tmp.12 = lgetv %level;
+        symbol [ level %tmp.12 150 28 33 ];
+        %tmp.13 = lt %tmp.11 %tmp.12;
+        bf %tmp.13 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_150_8_152_8_for_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_150_8_152_8_for_begin:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_150_40_152_8_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc" 151 12 ]
+        %tmp.14 = lgetv %total.2;
+        symbol [ total %tmp.14 151 12 17 ];
+        %tmp.15 = lgetv %base.1;
+        symbol [ base %tmp.15 151 21 25 ];
+        %tmp.16 = lgetv %n.3;
+        symbol [ n %tmp.16 151 28 29 ];
+        %tmp.17 = mul %tmp.15 %tmp.16;
+        %tmp.18 = self;
+        symbol [ intSqrt %tmp.19 151 32 39 ];
+        %tmp.19 = getv function %tmp.18 :intSqrt;
+        %tmp.20 = lgetv %n.3;
+        symbol [ n %tmp.20 151 40 41 ];
+        %tmp.21 = invoke %tmp.18 %tmp.19(%tmp.20);
+        %tmp.22 = mul %tmp.17 %tmp.21;
+        %tmp.23 = 10;
+        %tmp.24 = div %tmp.22 %tmp.23;
+        %tmp.25 = add %tmp.14 %tmp.24;
+        lputv %total.2 %tmp.25;
+        symbol [ total %total.2 151 12 17 ];
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_150_40_152_8_stop:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_150_8_152_8_for_incr:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc" 150 ]
+        %tmp.28 = lgetv %n.3;
+        symbol [ n %tmp.28 150 35 36 ];
+        %tmp.29 = add %tmp.28 1;
+        lputv %n.3 %tmp.29;
+        symbol [ n %n.3 150 35 36 ];
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_150_8_152_8_for_test;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_150_8_152_8_for_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc" 153 8 ]
+        %tmp.30 = lgetv %total.2;
+        symbol [ total %tmp.30 153 15 20 ];
+        ret %tmp.30;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_146_92_154_4_stop:
+    }
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc"; @line = 157; @symbol_functiondef = [getLevelFromXP,157,20,34]; @symbol_param<0> = [xp,157,35,37]; @symbol_param<0>_type<0> = [Lang,157,41,45]; @symbol_param<0>_type<1> = [Number,157,46,52]; @symbol_param<1> = [tier,157,54,58]; @symbol_param<1>_type<0> = [Lang,157,62,66]; @symbol_param<1>_type<1> = [Number,157,67,73]; @symbol_return<0> = [Lang,157,78,82]; @symbol_return<1> = [Number,157,83,89]; ]
+    static
+    function getLevelFromXP(xp as Lang.Number, tier as Lang.Number) as Lang.Number {
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_157_90_171_4_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc" 158 8 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_158_8_158_33_if_stmt:
+        %tmp.1 = lgetv %xp;
+        symbol [ xp %tmp.1 158 12 14 ];
+        %tmp.2 = 0;
+        %tmp.3 = lte %tmp.1 %tmp.2;
+        bf %tmp.3 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_158_8_158_33_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_158_8_158_33_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_158_21_158_33_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc" 158 23 ]
+        %tmp.4 = 1;
+        ret %tmp.4;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_158_21_158_33_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_158_8_158_33_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_158_8_158_33_if_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc" 159 8 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_157_90_171_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_157_90_171_4_stop" ]
+        %lo.1 = local;
+        symbol [ lo %lo.1 159 12 14 ];
+        %tmp.5 = 1;
+        lputv %lo.1 %tmp.5;
+        symbol [ lo %lo.1 159 12 14 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc" 160 8 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_157_90_171_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_157_90_171_4_stop" ]
+        %hi.2 = local;
+        symbol [ hi %hi.2 160 12 14 ];
+        %tmp.6 = 100;
+        lputv %hi.2 %tmp.6;
+        symbol [ hi %hi.2 160 12 14 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc" 161 8 ]
+        while @C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_161_8_168_8_while_test @C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_161_8_168_8_while_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_161_8_168_8_while_test:
+        %tmp.7 = lgetv %lo.1;
+        symbol [ lo %tmp.7 161 15 17 ];
+        %tmp.8 = lgetv %hi.2;
+        symbol [ hi %tmp.8 161 20 22 ];
+        %tmp.9 = lt %tmp.7 %tmp.8;
+        bf %tmp.9 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_161_8_168_8_while_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_161_8_168_8_while_begin:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_161_24_168_8_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc" 162 12 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_161_24_168_8_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_161_24_168_8_stop" ]
+        %mid.3 = local;
+        symbol [ mid %mid.3 162 16 19 ];
+        %tmp.10 = lgetv %lo.1;
+        symbol [ lo %tmp.10 162 23 25 ];
+        %tmp.11 = lgetv %hi.2;
+        symbol [ hi %tmp.11 162 28 30 ];
+        %tmp.12 = add %tmp.10 %tmp.11;
+        %tmp.13 = 1;
+        %tmp.14 = add %tmp.12 %tmp.13;
+        %tmp.15 = 2;
+        %tmp.16 = div %tmp.14 %tmp.15;
+        lputv %mid.3 %tmp.16;
+        symbol [ mid %mid.3 162 16 19 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc" 163 12 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_163_12_167_12_if_stmt:
+        %tmp.17 = self;
+        symbol [ getXPForLevel %tmp.18 163 16 29 ];
+        %tmp.18 = getv function %tmp.17 :getXPForLevel;
+        %tmp.19 = lgetv %mid.3;
+        symbol [ mid %tmp.19 163 30 33 ];
+        %tmp.20 = lgetv %tier;
+        symbol [ tier %tmp.20 163 35 39 ];
+        %tmp.21 = invoke %tmp.17 %tmp.18(%tmp.19, %tmp.20);
+        %tmp.22 = lgetv %xp;
+        symbol [ xp %tmp.22 163 44 46 ];
+        %tmp.23 = lte %tmp.21 %tmp.22;
+        bf %tmp.23 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_163_12_167_12_if_else_false;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_163_12_167_12_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_163_48_165_12_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc" 164 16 ]
+        %tmp.24 = lgetv %mid.3;
+        symbol [ mid %tmp.24 164 21 24 ];
+        lputv %lo.1 %tmp.24;
+        symbol [ lo %lo.1 164 16 18 ];
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_163_48_165_12_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_163_12_167_12_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_163_12_167_12_if_else_false:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_165_19_167_12_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc" 166 16 ]
+        %tmp.25 = lgetv %mid.3;
+        symbol [ mid %tmp.25 166 21 24 ];
+        %tmp.26 = 1;
+        %tmp.27 = sub %tmp.25 %tmp.26;
+        lputv %hi.2 %tmp.27;
+        symbol [ hi %hi.2 166 16 18 ];
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_165_19_167_12_stop:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_163_12_167_12_if_end:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_161_24_168_8_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_161_8_168_8_while_test;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_161_8_168_8_while_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc" 169 8 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_169_8_169_34_if_stmt:
+        %tmp.28 = lgetv %lo.1;
+        symbol [ lo %tmp.28 169 12 14 ];
+        %tmp.29 = 100;
+        %tmp.30 = gt %tmp.28 %tmp.29;
+        bf %tmp.30 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_169_8_169_34_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_169_8_169_34_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_169_22_169_34_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc" 169 24 ]
+        %tmp.31 = 100;
+        lputv %lo.1 %tmp.31;
+        symbol [ lo %lo.1 169 24 26 ];
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_169_22_169_34_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_169_8_169_34_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_169_8_169_34_if_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc" 170 8 ]
+        %tmp.32 = lgetv %lo.1;
+        symbol [ lo %tmp.32 170 15 17 ];
+        ret %tmp.32;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_157_90_171_4_stop:
+    }
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc"; @line = 174; @symbol_functiondef = [getCatchXP,174,20,30]; @symbol_param<0> = [tier,174,31,35]; @symbol_param<0>_type<0> = [Lang,174,39,43]; @symbol_param<0>_type<1> = [Number,174,44,50]; @symbol_return<0> = [Lang,174,55,59]; @symbol_return<1> = [Number,174,60,66]; ]
     static
     function getCatchXP(tier as Lang.Number) as Lang.Number {
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_149_67_152_4_start:
-[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc" 150 8 ]
-        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_149_67_152_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_149_67_152_4_stop" ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_174_67_177_4_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc" 175 8 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_174_67_177_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_174_67_177_4_stop" ]
         %xpByTier.1 = local;
-        symbol [ xpByTier %xpByTier.1 150 12 20 ];
+        symbol [ xpByTier %xpByTier.1 175 12 20 ];
         %tmp.1 = newa 5;
         %tmp.2 = 200;
         %tmp.3 = dup %tmp.1;
@@ -742,24 +1527,24 @@ C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_149_67_152_4_st
         %tmp.15 = dup %tmp.13;
         %tmp.16 = aputv %tmp.15 4 %tmp.14;
         lputv %xpByTier.1 %tmp.16;
-        symbol [ xpByTier %xpByTier.1 150 12 20 ];
-[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc" 151 8 ]
+        symbol [ xpByTier %xpByTier.1 175 12 20 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc" 176 8 ]
         %tmp.17 = lgetv %xpByTier.1;
-        symbol [ xpByTier %tmp.17 151 15 23 ];
+        symbol [ xpByTier %tmp.17 176 15 23 ];
         %tmp.18 = lgetv %tier;
-        symbol [ tier %tmp.18 151 24 28 ];
+        symbol [ tier %tmp.18 176 24 28 ];
         %tmp.19 = agetv %tmp.17 %tmp.18;
         ret %tmp.19;
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_149_67_152_4_stop:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_174_67_177_4_stop:
     }
-    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc"; @line = 155; @symbol_functiondef = [getBuddyBonusXP,155,20,35]; @symbol_param<0> = [tier,155,36,40]; @symbol_param<0>_type<0> = [Lang,155,44,48]; @symbol_param<0>_type<1> = [Number,155,49,55]; @symbol_return<0> = [Lang,155,60,64]; @symbol_return<1> = [Number,155,65,71]; ]
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc"; @line = 180; @symbol_functiondef = [getBuddyBonusXP,180,20,35]; @symbol_param<0> = [tier,180,36,40]; @symbol_param<0>_type<0> = [Lang,180,44,48]; @symbol_param<0>_type<1> = [Number,180,49,55]; @symbol_return<0> = [Lang,180,60,64]; @symbol_return<1> = [Number,180,65,71]; ]
     static
     function getBuddyBonusXP(tier as Lang.Number) as Lang.Number {
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_155_72_158_4_start:
-[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc" 156 8 ]
-        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_155_72_158_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_155_72_158_4_stop" ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_180_72_183_4_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc" 181 8 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_180_72_183_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_180_72_183_4_stop" ]
         %xpByTier.1 = local;
-        symbol [ xpByTier %xpByTier.1 156 12 20 ];
+        symbol [ xpByTier %xpByTier.1 181 12 20 ];
         %tmp.1 = newa 5;
         %tmp.2 = 150;
         %tmp.3 = dup %tmp.1;
@@ -777,178 +1562,115 @@ C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_155_72_158_4_st
         %tmp.15 = dup %tmp.13;
         %tmp.16 = aputv %tmp.15 4 %tmp.14;
         lputv %xpByTier.1 %tmp.16;
-        symbol [ xpByTier %xpByTier.1 156 12 20 ];
-[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc" 157 8 ]
+        symbol [ xpByTier %xpByTier.1 181 12 20 ];
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc" 182 8 ]
         %tmp.17 = lgetv %xpByTier.1;
-        symbol [ xpByTier %tmp.17 157 15 23 ];
+        symbol [ xpByTier %tmp.17 182 15 23 ];
         %tmp.18 = lgetv %tier;
-        symbol [ tier %tmp.18 157 24 28 ];
+        symbol [ tier %tmp.18 182 24 28 ];
         %tmp.19 = agetv %tmp.17 %tmp.18;
         ret %tmp.19;
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_155_72_158_4_stop:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_180_72_183_4_stop:
     }
-    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc"; @line = 161; @symbol_functiondef = [getLevelFromXP,161,20,34]; @symbol_param<0> = [xp,161,35,37]; @symbol_param<0>_type<0> = [Lang,161,41,45]; @symbol_param<0>_type<1> = [Number,161,46,52]; @symbol_param<1> = [tier,161,54,58]; @symbol_param<1>_type<0> = [Lang,161,62,66]; @symbol_param<1>_type<1> = [Number,161,67,73]; @symbol_return<0> = [Lang,161,78,82]; @symbol_return<1> = [Number,161,83,89]; ]
-    static
-    function getLevelFromXP(xp as Lang.Number, tier as Lang.Number) as Lang.Number {
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_161_90_166_4_start:
-[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc" 162 8 ]
-        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_161_90_166_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_161_90_166_4_stop" ]
-        %perLevel.1 = local;
-        symbol [ perLevel %perLevel.1 162 12 20 ];
-        %tmp.1 = self;
-        symbol [ getXPPerLevel %tmp.2 162 23 36 ];
-        %tmp.2 = getv function %tmp.1 :getXPPerLevel;
-        %tmp.3 = lgetv %tier;
-        symbol [ tier %tmp.3 162 37 41 ];
-        %tmp.4 = invoke %tmp.1 %tmp.2(%tmp.3);
-        lputv %perLevel.1 %tmp.4;
-        symbol [ perLevel %perLevel.1 162 12 20 ];
-[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc" 163 8 ]
-        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_161_90_166_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_161_90_166_4_stop" ]
-        %level.2 = local;
-        symbol [ level %level.2 163 12 17 ];
-        %tmp.5 = 1;
-        %tmp.6 = lgetv %xp;
-        symbol [ xp %tmp.6 163 25 27 ];
-        %tmp.7 = lgetv %perLevel.1;
-        symbol [ perLevel %tmp.7 163 30 38 ];
-        %tmp.8 = div %tmp.6 %tmp.7;
-        %tmp.9 = add %tmp.5 %tmp.8;
-        lputv %level.2 %tmp.9;
-        symbol [ level %level.2 163 12 17 ];
-[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc" 164 8 ]
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_164_8_164_40_if_stmt:
-        %tmp.10 = lgetv %level.2;
-        symbol [ level %tmp.10 164 12 17 ];
-        %tmp.11 = 100;
-        %tmp.12 = gt %tmp.10 %tmp.11;
-        bf %tmp.12 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_164_8_164_40_if_end;
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_164_8_164_40_if_true:
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_164_25_164_40_start:
-[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc" 164 27 ]
-        %tmp.13 = 100;
-        lputv %level.2 %tmp.13;
-        symbol [ level %level.2 164 27 32 ];
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_164_25_164_40_stop:
-        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_164_8_164_40_if_end;
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_164_8_164_40_if_end:
-[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc" 165 8 ]
-        %tmp.14 = lgetv %level.2;
-        symbol [ level %tmp.14 165 15 20 ];
-        ret %tmp.14;
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_161_90_166_4_stop:
-    }
-    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc"; @line = 169; @symbol_functiondef = [getXPForLevel,169,20,33]; @symbol_param<0> = [level,169,34,39]; @symbol_param<0>_type<0> = [Lang,169,43,47]; @symbol_param<0>_type<1> = [Number,169,48,54]; @symbol_param<1> = [tier,169,56,60]; @symbol_param<1>_type<0> = [Lang,169,64,68]; @symbol_param<1>_type<1> = [Number,169,69,75]; @symbol_return<0> = [Lang,169,80,84]; @symbol_return<1> = [Number,169,85,91]; ]
-    static
-    function getXPForLevel(level as Lang.Number, tier as Lang.Number) as Lang.Number {
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_169_92_172_4_start:
-[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc" 170 8 ]
-        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_169_92_172_4_start" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_169_92_172_4_stop" ]
-        %perLevel.1 = local;
-        symbol [ perLevel %perLevel.1 170 12 20 ];
-        %tmp.1 = self;
-        symbol [ getXPPerLevel %tmp.2 170 23 36 ];
-        %tmp.2 = getv function %tmp.1 :getXPPerLevel;
-        %tmp.3 = lgetv %tier;
-        symbol [ tier %tmp.3 170 37 41 ];
-        %tmp.4 = invoke %tmp.1 %tmp.2(%tmp.3);
-        lputv %perLevel.1 %tmp.4;
-        symbol [ perLevel %perLevel.1 170 12 20 ];
-[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc" 171 8 ]
-        %tmp.5 = lgetv %level;
-        symbol [ level %tmp.5 171 16 21 ];
-        %tmp.6 = 1;
-        %tmp.7 = sub %tmp.5 %tmp.6;
-        %tmp.8 = lgetv %perLevel.1;
-        symbol [ perLevel %tmp.8 171 29 37 ];
-        %tmp.9 = mul %tmp.7 %tmp.8;
-        ret %tmp.9;
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_169_92_172_4_stop:
-    }
-    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc"; @line = 176; @symbol_functiondef = [getEvolutionLevel,176,20,37]; @symbol_param<0> = [baseCost,176,38,46]; @symbol_param<0>_type<0> = [Lang,176,50,54]; @symbol_param<0>_type<1> = [Number,176,55,61]; @symbol_return<0> = [Lang,176,66,70]; @symbol_return<1> = [Number,176,71,77]; ]
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc"; @line = 186; @symbol_functiondef = [getEvolutionLevel,186,20,37]; @symbol_param<0> = [baseCost,186,38,46]; @symbol_param<0>_type<0> = [Lang,186,50,54]; @symbol_param<0>_type<1> = [Number,186,55,61]; @symbol_return<0> = [Lang,186,66,70]; @symbol_return<1> = [Number,186,71,77]; ]
     static
     function getEvolutionLevel(baseCost as Lang.Number) as Lang.Number {
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_176_78_183_4_start:
-[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc" 177 8 ]
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_177_8_177_39_if_stmt:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_186_78_193_4_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc" 187 8 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_187_8_187_39_if_stmt:
         %tmp.1 = lgetv %baseCost;
-        symbol [ baseCost %tmp.1 177 12 20 ];
+        symbol [ baseCost %tmp.1 187 12 20 ];
         %tmp.2 = 0;
         %tmp.3 = lte %tmp.1 %tmp.2;
-        bf %tmp.3 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_177_8_177_39_if_end;
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_177_8_177_39_if_true:
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_177_27_177_39_start:
-[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc" 177 29 ]
+        bf %tmp.3 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_187_8_187_39_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_187_8_187_39_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_187_27_187_39_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc" 187 29 ]
         %tmp.4 = 0;
         ret %tmp.4;
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_177_27_177_39_stop:
-        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_177_8_177_39_if_end;
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_177_8_177_39_if_end:
-[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc" 178 8 ]
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_178_8_178_40_if_stmt:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_187_27_187_39_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_187_8_187_39_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_187_8_187_39_if_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc" 188 8 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_188_8_188_40_if_stmt:
         %tmp.5 = lgetv %baseCost;
-        symbol [ baseCost %tmp.5 178 12 20 ];
+        symbol [ baseCost %tmp.5 188 12 20 ];
         %tmp.6 = 25;
         %tmp.7 = lte %tmp.5 %tmp.6;
-        bf %tmp.7 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_178_8_178_40_if_end;
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_178_8_178_40_if_true:
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_178_28_178_40_start:
-[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc" 178 30 ]
+        bf %tmp.7 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_188_8_188_40_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_188_8_188_40_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_188_28_188_40_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc" 188 30 ]
         %tmp.8 = 7;
         ret %tmp.8;
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_178_28_178_40_stop:
-        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_178_8_178_40_if_end;
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_178_8_178_40_if_end:
-[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc" 179 8 ]
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_179_8_179_41_if_stmt:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_188_28_188_40_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_188_8_188_40_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_188_8_188_40_if_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc" 189 8 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_189_8_189_41_if_stmt:
         %tmp.9 = lgetv %baseCost;
-        symbol [ baseCost %tmp.9 179 12 20 ];
+        symbol [ baseCost %tmp.9 189 12 20 ];
         %tmp.10 = 50;
         %tmp.11 = lte %tmp.9 %tmp.10;
-        bf %tmp.11 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_179_8_179_41_if_end;
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_179_8_179_41_if_true:
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_179_28_179_41_start:
-[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc" 179 30 ]
+        bf %tmp.11 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_189_8_189_41_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_189_8_189_41_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_189_28_189_41_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc" 189 30 ]
         %tmp.12 = 18;
         ret %tmp.12;
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_179_28_179_41_stop:
-        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_179_8_179_41_if_end;
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_179_8_179_41_if_end:
-[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc" 180 8 ]
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_180_8_180_42_if_stmt:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_189_28_189_41_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_189_8_189_41_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_189_8_189_41_if_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc" 190 8 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_190_8_190_42_if_stmt:
         %tmp.13 = lgetv %baseCost;
-        symbol [ baseCost %tmp.13 180 12 20 ];
+        symbol [ baseCost %tmp.13 190 12 20 ];
         %tmp.14 = 100;
         %tmp.15 = lte %tmp.13 %tmp.14;
-        bf %tmp.15 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_180_8_180_42_if_end;
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_180_8_180_42_if_true:
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_180_29_180_42_start:
-[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc" 180 31 ]
+        bf %tmp.15 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_190_8_190_42_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_190_8_190_42_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_190_29_190_42_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc" 190 31 ]
         %tmp.16 = 25;
         ret %tmp.16;
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_180_29_180_42_stop:
-        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_180_8_180_42_if_end;
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_180_8_180_42_if_end:
-[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc" 181 8 ]
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_181_8_181_42_if_stmt:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_190_29_190_42_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_190_8_190_42_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_190_8_190_42_if_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc" 191 8 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_191_8_191_42_if_stmt:
         %tmp.17 = lgetv %baseCost;
-        symbol [ baseCost %tmp.17 181 12 20 ];
+        symbol [ baseCost %tmp.17 191 12 20 ];
         %tmp.18 = 150;
         %tmp.19 = lte %tmp.17 %tmp.18;
-        bf %tmp.19 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_181_8_181_42_if_end;
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_181_8_181_42_if_true:
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_181_29_181_42_start:
-[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc" 181 31 ]
+        bf %tmp.19 @C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_191_8_191_42_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_191_8_191_42_if_true:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_191_29_191_42_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc" 191 31 ]
         %tmp.20 = 40;
         ret %tmp.20;
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_181_29_181_42_stop:
-        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_181_8_181_42_if_end;
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_181_8_181_42_if_end:
-[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc" 182 8 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_191_29_191_42_stop:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_191_8_191_42_if_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_191_8_191_42_if_end:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc" 192 8 ]
         %tmp.21 = 20;
         ret %tmp.21;
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_176_78_183_4_stop:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_186_78_193_4_stop:
     }
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc"; @line = 198; @symbol_functiondef = [getTrainerSpawnPercent,198,20,42]; @symbol_return<0> = [Lang,198,48,52]; @symbol_return<1> = [Number,198,53,59]; ]
+    static
+    function getTrainerSpawnPercent() as Lang.Number {
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_198_60_200_4_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc" 199 8 ]
+        %tmp.1 = 15;
+        ret %tmp.1;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_BalanceConfig_mc_198_60_200_4_stop:
+    }
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc"; @line = 204; @position = 17; @symbol_constdef = [GYM_DATA,204,17,25]; ]
+    static
+    const GYM_DATA;
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc"; @line = 227; @position = 17; @symbol_constdef = [GYM_COUNT,227,17,26]; ]
+    static
+    const GYM_COUNT = 20;
 }
 [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\BalanceConfig.mc"; @line = 4; ]
 <init> {

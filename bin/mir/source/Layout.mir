@@ -1,0 +1,243 @@
+[ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 11; @symbol_importdef<0> = [Toybox,11,7,13]; @symbol_importdef<1> = [Lang,11,14,18]; ]
+import Toybox.Lang;
+[ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 13; @symbol_moduledef = [Layout,13,7,13]; ]
+module Layout {
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 13; ]
+    <init> {
+    }
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 18; @symbol_moduledef = [Main,18,11,15]; ]
+    module Main {
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 18; ]
+        <init> {
+        }
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 19; @position = 14; @symbol_constdef = [CLOCK_Y,19,14,21]; ]
+        const CLOCK_Y = 5;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 20; @position = 14; @symbol_constdef = [STEPS_Y,20,14,21]; ]
+        const STEPS_Y = 50;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 21; @position = 14; @symbol_constdef = [BOX_SIZE,21,14,22]; ]
+        const BOX_SIZE = 96;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 22; @position = 14; @symbol_constdef = [BOX_Y,22,14,19]; ]
+        const BOX_Y = 80;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 23; @position = 14; @symbol_constdef = [NAME_Y,23,14,20]; ]
+        const NAME_Y = 182;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 24; @position = 14; @symbol_constdef = [BUDDY_BAR_Y,24,14,25]; ]
+        const BUDDY_BAR_Y = 222;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 25; @position = 14; @symbol_constdef = [BUDDY_BAR_W,25,14,25]; ]
+        const BUDDY_BAR_W = 100;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 26; @position = 14; @symbol_constdef = [BUDDY_BAR_H,26,14,25]; ]
+        const BUDDY_BAR_H = 5;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 27; @position = 14; @symbol_constdef = [BUDDY_TXT_Y,27,14,25]; ]
+        const BUDDY_TXT_Y = 237;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 28; @position = 14; @symbol_constdef = [INFO_Y,28,14,20]; ]
+        const INFO_Y = 265;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 29; @position = 14; @symbol_constdef = [INFO_W,29,14,20]; ]
+        const INFO_W = 170;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 30; @position = 14; @symbol_constdef = [INFO_H,30,14,20]; ]
+        const INFO_H = 40;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 31; @position = 14; @symbol_constdef = [DOTS_Y,31,14,20]; ]
+        const DOTS_Y = 296;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 32; @position = 14; @symbol_constdef = [DOTS_SPACING,32,14,26]; ]
+        const DOTS_SPACING = 12;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 33; @position = 14; @symbol_constdef = [DOTS_RADIUS,33,14,25]; ]
+        const DOTS_RADIUS = 3;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 34; @position = 14; @symbol_constdef = [FOOT_Y,34,14,20]; ]
+        const FOOT_Y = 320;
+    }
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 40; @symbol_moduledef = [Encounter,40,11,20]; ]
+    module Encounter {
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 40; ]
+        <init> {
+        }
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 42; @position = 14; @symbol_constdef = [HEADER_Y,42,14,22]; ]
+        const HEADER_Y = 8;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 43; @position = 14; @symbol_constdef = [HEADER_H,43,14,22]; ]
+        const HEADER_H = 54;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 44; @position = 14; @symbol_constdef = [HEADER_RADIUS,44,14,27]; ]
+        const HEADER_RADIUS = 8;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 45; @position = 14; @symbol_constdef = [NAME_Y,45,14,20]; ]
+        const NAME_Y = 12;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 46; @position = 14; @symbol_constdef = [TIER_Y,46,14,20]; ]
+        const TIER_Y = 38;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 49; @position = 14; @symbol_constdef = [SPRITE_Y,49,14,22]; ]
+        const SPRITE_Y = 70;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 50; @position = 14; @symbol_constdef = [SPRITE_SIZE,50,14,25]; ]
+        const SPRITE_SIZE = 100;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 51; @position = 14; @symbol_constdef = [BOX_PAD,51,14,21]; ]
+        const BOX_PAD = 6;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 52; @position = 14; @symbol_constdef = [BOX_RADIUS,52,14,24]; ]
+        const BOX_RADIUS = 10;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 55; @position = 14; @symbol_constdef = [HP_BAR_W,55,14,22]; ]
+        const HP_BAR_W = 140;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 56; @position = 14; @symbol_constdef = [HP_BAR_H,56,14,22]; ]
+        const HP_BAR_H = 10;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 57; @position = 14; @symbol_constdef = [HP_BAR_RADIUS,57,14,27]; ]
+        const HP_BAR_RADIUS = 4;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 60; @position = 14; @symbol_constdef = [FLEE_BTN_W,60,14,24]; ]
+        const FLEE_BTN_W = 140;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 61; @position = 14; @symbol_constdef = [FLEE_BTN_H,61,14,24]; ]
+        const FLEE_BTN_H = 30;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 62; @position = 14; @symbol_constdef = [FLEE_BTN_PAD,62,14,26]; ]
+        const FLEE_BTN_PAD = 78;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 65; @position = 14; @symbol_constdef = [CAPTURE_SPRITE_Y,65,14,30]; ]
+        const CAPTURE_SPRITE_Y = 30;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 66; @position = 14; @symbol_constdef = [CAPTURE_RADIUS,66,14,28]; ]
+        const CAPTURE_RADIUS = 100;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 69; @position = 14; @symbol_constdef = [CLOCK_Y,69,14,21]; ]
+        const CLOCK_Y = 338;
+    }
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 75; @symbol_moduledef = [Battle,75,11,17]; ]
+    module Battle {
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 75; ]
+        <init> {
+        }
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 77; @position = 14; @symbol_constdef = [TRAINER_NAME_Y,77,14,28]; ]
+        const TRAINER_NAME_Y = 16;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 80; @position = 14; @symbol_constdef = [SPRITE_Y,80,14,22]; ]
+        const SPRITE_Y = 38;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 81; @position = 14; @symbol_constdef = [SPRITE_SIZE,81,14,25]; ]
+        const SPRITE_SIZE = 0;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 82; @position = 14; @symbol_constdef = [SPRITE_RADIUS,82,14,27]; ]
+        const SPRITE_RADIUS = 8;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 85; @position = 14; @symbol_constdef = [RIVAL_NAME_Y,85,14,26]; ]
+        const RIVAL_NAME_Y = 140;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 88; @position = 14; @symbol_constdef = [RIVAL_BAR_Y,88,14,25]; ]
+        const RIVAL_BAR_Y = 170;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 89; @position = 14; @symbol_constdef = [BAR_WIDTH,89,14,23]; ]
+        const BAR_WIDTH = 170;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 90; @position = 14; @symbol_constdef = [BAR_HEIGHT,90,14,24]; ]
+        const BAR_HEIGHT = 5;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 91; @position = 14; @symbol_constdef = [BAR_RADIUS,91,14,24]; ]
+        const BAR_RADIUS = 2;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 94; @position = 14; @symbol_constdef = [TEAM_LABEL_Y,94,14,26]; ]
+        const TEAM_LABEL_Y = 225;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 95; @position = 14; @symbol_constdef = [TIME_TEXT_Y,95,14,25]; ]
+        const TIME_TEXT_Y = 202;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 96; @position = 14; @symbol_constdef = [STEPS_TEXT_Y,96,14,26]; ]
+        const STEPS_TEXT_Y = 170;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 99; @position = 14; @symbol_constdef = [TEAM_BAR_Y,99,14,24]; ]
+        const TEAM_BAR_Y = 260;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 102; @position = 14; @symbol_constdef = [BUDDY_Y,102,14,21]; ]
+        const BUDDY_Y = 240;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 103; @position = 14; @symbol_constdef = [BUDDY_OFFSET_X,103,14,28]; ]
+        const BUDDY_OFFSET_X = 120;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 106; @position = 14; @symbol_constdef = [CLOCK_Y,106,14,21]; ]
+        const CLOCK_Y = 340;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 109; @position = 14; @symbol_constdef = [RESULT_RADIUS,109,14,27]; ]
+        const RESULT_RADIUS = 100;
+    }
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 115; @symbol_moduledef = [Pokedex,115,11,18]; ]
+    module Pokedex {
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 115; ]
+        <init> {
+        }
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 116; @position = 14; @symbol_constdef = [HEADER_Y,116,14,22]; ]
+        const HEADER_Y = 4;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 117; @position = 14; @symbol_constdef = [HEADER_H,117,14,22]; ]
+        const HEADER_H = 24;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 118; @position = 14; @symbol_constdef = [TITLE_Y,118,14,21]; ]
+        const TITLE_Y = 6;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 119; @position = 14; @symbol_constdef = [STATS_Y,119,14,21]; ]
+        const STATS_Y = 26;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 120; @position = 14; @symbol_constdef = [LIST_START_Y,120,14,26]; ]
+        const LIST_START_Y = 56;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 121; @position = 14; @symbol_constdef = [LINE_H,121,14,20]; ]
+        const LINE_H = 40;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 122; @position = 14; @symbol_constdef = [VISIBLE_ROWS,122,14,26]; ]
+        const VISIBLE_ROWS = 7;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 123; @position = 14; @symbol_constdef = [NUM_X,123,14,19]; ]
+        const NUM_X = 45;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 124; @position = 14; @symbol_constdef = [NAME_X,124,14,20]; ]
+        const NAME_X = 75;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 125; @position = 14; @symbol_constdef = [COUNT_X_PAD,125,14,25]; ]
+        const COUNT_X_PAD = 28;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 126; @position = 14; @symbol_constdef = [BUDDY_ICON_X,126,14,26]; ]
+        const BUDDY_ICON_X = 16;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 127; @position = 14; @symbol_constdef = [FOOTER_Y,127,14,22]; ]
+        const FOOTER_Y = 340;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 128; @position = 14; @symbol_constdef = [FOOTER_H,128,14,22]; ]
+        const FOOTER_H = 18;
+    }
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 134; @symbol_moduledef = [Team,134,11,15]; ]
+    module Team {
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 134; ]
+        <init> {
+        }
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 135; @position = 14; @symbol_constdef = [HEADER_Y,135,14,22]; ]
+        const HEADER_Y = 4;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 136; @position = 14; @symbol_constdef = [HEADER_H,136,14,22]; ]
+        const HEADER_H = 24;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 137; @position = 14; @symbol_constdef = [TITLE_Y,137,14,21]; ]
+        const TITLE_Y = 6;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 138; @position = 14; @symbol_constdef = [STATS_Y,138,14,21]; ]
+        const STATS_Y = 28;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 139; @position = 14; @symbol_constdef = [LIST_START_Y,139,14,26]; ]
+        const LIST_START_Y = 62;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 140; @position = 14; @symbol_constdef = [SLOT_H,140,14,20]; ]
+        const SLOT_H = 42;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 141; @position = 14; @symbol_constdef = [SLOT_NUM_X,141,14,24]; ]
+        const SLOT_NUM_X = 44;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 142; @position = 14; @symbol_constdef = [NAME_X,142,14,20]; ]
+        const NAME_X = 60;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 143; @position = 14; @symbol_constdef = [LEVEL_X_PAD,143,14,25]; ]
+        const LEVEL_X_PAD = 40;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 144; @position = 14; @symbol_constdef = [FOOTER_Y,144,14,22]; ]
+        const FOOTER_Y = 320;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 145; @position = 14; @symbol_constdef = [FOOTER_H,145,14,22]; ]
+        const FOOTER_H = 22;
+    }
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 151; @symbol_moduledef = [Gym,151,11,14]; ]
+    module Gym {
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 151; ]
+        <init> {
+        }
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 152; @position = 14; @symbol_constdef = [HEADER_BG_Y,152,14,25]; ]
+        const HEADER_BG_Y = 30;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 153; @position = 14; @symbol_constdef = [HEADER_BG_H,153,14,25]; ]
+        const HEADER_BG_H = 24;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 154; @position = 14; @symbol_constdef = [TITLE_Y,154,14,21]; ]
+        const TITLE_Y = 32;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 155; @position = 14; @symbol_constdef = [STATS_Y,155,14,21]; ]
+        const STATS_Y = 65;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 156; @position = 14; @symbol_constdef = [LIST_START_Y,156,14,26]; ]
+        const LIST_START_Y = 120;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 157; @position = 14; @symbol_constdef = [LINE_H,157,14,20]; ]
+        const LINE_H = 50;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 158; @position = 14; @symbol_constdef = [VISIBLE_ROWS,158,14,26]; ]
+        const VISIBLE_ROWS = 4;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 159; @position = 14; @symbol_constdef = [ROW_PAD,159,14,21]; ]
+        const ROW_PAD = 24;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 160; @position = 14; @symbol_constdef = [ARROW_X,160,14,21]; ]
+        const ARROW_X = 30;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 161; @position = 14; @symbol_constdef = [NUM_X,161,14,19]; ]
+        const NUM_X = 50;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 162; @position = 14; @symbol_constdef = [NAME_X,162,14,20]; ]
+        const NAME_X = 68;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 163; @position = 14; @symbol_constdef = [STATUS_X_PAD,163,14,26]; ]
+        const STATUS_X_PAD = 38;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 164; @position = 14; @symbol_constdef = [FOOTER_PAD,164,14,24]; ]
+        const FOOTER_PAD = 68;
+    }
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 170; @symbol_moduledef = [Profile,170,11,18]; ]
+    module Profile {
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 170; ]
+        <init> {
+        }
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 171; @position = 14; @symbol_constdef = [HEADER_Y,171,14,22]; ]
+        const HEADER_Y = 22;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 172; @position = 14; @symbol_constdef = [HEADER_H,172,14,22]; ]
+        const HEADER_H = 26;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 173; @position = 14; @symbol_constdef = [TITLE_Y,173,14,21]; ]
+        const TITLE_Y = 24;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 174; @position = 14; @symbol_constdef = [ROWS_START_Y,174,14,26]; ]
+        const ROWS_START_Y = 70;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 175; @position = 14; @symbol_constdef = [ROW_H,175,14,19]; ]
+        const ROW_H = 34;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 176; @position = 14; @symbol_constdef = [LABEL_X,176,14,21]; ]
+        const LABEL_X = 36;
+        [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 177; @position = 14; @symbol_constdef = [VALUE_X_PAD,177,14,25]; ]
+        const VALUE_X_PAD = 36;
+    }
+}
+[ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\Layout.mc"; @line = 11; ]
+<init> {
+}

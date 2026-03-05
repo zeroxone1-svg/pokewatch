@@ -30,10 +30,10 @@ C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_13_26_15_4_stop:
     }
     [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\PokeWatchApp.mc"; @line = 17; @symbol_functiondef = [onStart,17,13,20]; @symbol_param<0> = [state,17,21,26]; @symbol_param<0>_type<0> = [Lang,17,30,34]; @symbol_param<0>_type<1> = [Dictionary,17,35,45]; ]
     function onStart(state as Lang.Dictionary or Null) as Void {
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_17_56_41_4_start:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_17_56_45_4_start:
 [ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\PokeWatchApp.mc" 18 8 ]
-        try @C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_18_8_40_8_beginTry @C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_18_8_40_8_endTry @C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_18_8_40_8_catch @C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_18_8_40_8_finally;
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_18_8_40_8_beginTry:
+        try @C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_18_8_44_8_beginTry @C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_18_8_44_8_endTry @C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_18_8_44_8_catch @C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_18_8_44_8_finally;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_18_8_44_8_beginTry:
 C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_18_12_20_8_start:
 [ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\PokeWatchApp.mc" 19 12 ]
         symbol [ GameState %tmp.2 19 12 21 ];
@@ -42,20 +42,20 @@ C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_18_12_20_8_start
         %tmp.3 = getv function %tmp.2 :load;
         invoke %tmp.2 %tmp.3();
 C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_18_12_20_8_stop:
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_18_8_40_8_endTry:
-        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_18_8_40_8_finally;
-        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_18_8_40_8_end;
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_18_8_40_8_catch:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_18_8_44_8_endTry:
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_18_8_44_8_finally;
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_18_8_44_8_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_18_8_44_8_catch:
         %tmp.4 = exception;
         push %tmp.4;
 [ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\PokeWatchApp.mc" 20 10 ]
-        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_18_8_40_8_catch" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_20_10_40_8_end" ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_18_8_44_8_catch" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_20_10_44_8_end" ]
         %e.1 = local;
         symbol [ e %e.1 20 17 18 ];
         %tmp.5 = dup %tmp.4;
         lputv %e.1 %tmp.5;
         symbol [ e %e.1 20 17 18 ];
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_20_20_40_8_start:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_20_20_44_8_start:
 [ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\PokeWatchApp.mc" 22 12 ]
         symbol [ GameState %tmp.6 22 12 21 ];
         %tmp.6 = getv self :GameState;
@@ -159,80 +159,104 @@ C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_20_20_40_8_start
         symbol [ currentEncounter ? 38 22 38 ];
         putv %tmp.38 :currentEncounter %tmp.39;
 [ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\PokeWatchApp.mc" 39 12 ]
-        try @C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_39_12_39_50_beginTry @C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_39_12_39_50_endTry @C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_39_12_39_50_catch @C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_39_12_39_50_finally;
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_39_12_39_50_beginTry:
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_39_16_39_36_start:
-[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\PokeWatchApp.mc" 39 18 ]
-        symbol [ GameState %tmp.41 39 18 27 ];
-        %tmp.41 = getv ? :GameState;
-        symbol [ save %tmp.42 39 28 32 ];
-        %tmp.42 = getv function %tmp.41 :save;
-        invoke %tmp.41 %tmp.42();
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_39_16_39_36_stop:
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_39_12_39_50_endTry:
-        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_39_12_39_50_finally;
-        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_39_12_39_50_end;
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_39_12_39_50_catch:
-        %tmp.43 = exception;
-        push %tmp.43;
-[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\PokeWatchApp.mc" 39 38 ]
-        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_39_12_39_50_catch" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_39_38_39_50_end" ]
+        symbol [ GameState %tmp.40 39 12 21 ];
+        %tmp.40 = getv self :GameState;
+        %tmp.41 = newa 0;
+        symbol [ team ? 39 22 26 ];
+        putv %tmp.40 :team %tmp.41;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\PokeWatchApp.mc" 40 12 ]
+        symbol [ GameState %tmp.42 40 12 21 ];
+        %tmp.42 = getv self :GameState;
+        %tmp.43 = 0;
+        symbol [ rivalWins ? 40 22 31 ];
+        putv %tmp.42 :rivalWins %tmp.43;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\PokeWatchApp.mc" 41 12 ]
+        symbol [ GameState %tmp.44 41 12 21 ];
+        %tmp.44 = getv self :GameState;
+        %tmp.45 = 0;
+        symbol [ gymBadges ? 41 22 31 ];
+        putv %tmp.44 :gymBadges %tmp.45;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\PokeWatchApp.mc" 42 12 ]
+        symbol [ GameState %tmp.46 42 12 21 ];
+        %tmp.46 = getv self :GameState;
+        %tmp.47 = null;
+        symbol [ currentBattle ? 42 22 35 ];
+        putv %tmp.46 :currentBattle %tmp.47;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\PokeWatchApp.mc" 43 12 ]
+        try @C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_43_12_43_50_beginTry @C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_43_12_43_50_endTry @C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_43_12_43_50_catch @C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_43_12_43_50_finally;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_43_12_43_50_beginTry:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_43_16_43_36_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\PokeWatchApp.mc" 43 18 ]
+        symbol [ GameState %tmp.49 43 18 27 ];
+        %tmp.49 = getv ? :GameState;
+        symbol [ save %tmp.50 43 28 32 ];
+        %tmp.50 = getv function %tmp.49 :save;
+        invoke %tmp.49 %tmp.50();
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_43_16_43_36_stop:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_43_12_43_50_endTry:
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_43_12_43_50_finally;
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_43_12_43_50_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_43_12_43_50_catch:
+        %tmp.51 = exception;
+        push %tmp.51;
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\PokeWatchApp.mc" 43 38 ]
+        [ "C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_43_12_43_50_catch" "C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_43_38_43_50_end" ]
         %e2.2 = local;
-        symbol [ e2 %e2.2 39 45 47 ];
-        %tmp.44 = dup %tmp.43;
-        lputv %e2.2 %tmp.44;
-        symbol [ e2 %e2.2 39 45 47 ];
-        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_39_12_39_50_finally;
+        symbol [ e2 %e2.2 43 45 47 ];
+        %tmp.52 = dup %tmp.51;
+        lputv %e2.2 %tmp.52;
+        symbol [ e2 %e2.2 43 45 47 ];
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_43_12_43_50_finally;
         pop;
-        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_39_12_39_50_end;
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_39_38_39_50_end:
-        try @C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_39_12_39_50_catch @C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_39_38_39_50_end @C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_39_38_39_50_end @C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_39_12_39_50_finally;
-        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_39_12_39_50_finally;
-        throw %tmp.43;
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_39_12_39_50_finally:
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_43_12_43_50_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_43_38_43_50_end:
+        try @C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_43_12_43_50_catch @C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_43_38_43_50_end @C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_43_38_43_50_end @C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_43_12_43_50_finally;
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_43_12_43_50_finally;
+        throw %tmp.51;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_43_12_43_50_finally:
         jsrret;
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_39_12_39_50_end:
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_20_20_40_8_stop:
-        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_18_8_40_8_finally;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_43_12_43_50_end:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_20_20_44_8_stop:
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_18_8_44_8_finally;
         pop;
-        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_18_8_40_8_end;
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_20_10_40_8_end:
-        try @C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_18_8_40_8_catch @C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_20_10_40_8_end @C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_20_10_40_8_end @C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_18_8_40_8_finally;
-        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_18_8_40_8_finally;
+        goto @C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_18_8_44_8_end;
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_20_10_44_8_end:
+        try @C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_18_8_44_8_catch @C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_20_10_44_8_end @C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_20_10_44_8_end @C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_18_8_44_8_finally;
+        jsr @C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_18_8_44_8_finally;
         throw %tmp.4;
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_18_8_40_8_finally:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_18_8_44_8_finally:
         jsrret;
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_18_8_40_8_end:
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_17_56_41_4_stop:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_18_8_44_8_end:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_17_56_45_4_stop:
     }
-    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\PokeWatchApp.mc"; @line = 43; @symbol_functiondef = [onStop,43,13,19]; @symbol_param<0> = [state,43,20,25]; @symbol_param<0>_type<0> = [Lang,43,29,33]; @symbol_param<0>_type<1> = [Dictionary,43,34,44]; ]
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\PokeWatchApp.mc"; @line = 47; @symbol_functiondef = [onStop,47,13,19]; @symbol_param<0> = [state,47,20,25]; @symbol_param<0>_type<0> = [Lang,47,29,33]; @symbol_param<0>_type<1> = [Dictionary,47,34,44]; ]
     function onStop(state as Lang.Dictionary or Null) as Void {
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_43_55_45_4_start:
-[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\PokeWatchApp.mc" 44 8 ]
-        symbol [ GameState %tmp.2 44 8 17 ];
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_47_55_49_4_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\PokeWatchApp.mc" 48 8 ]
+        symbol [ GameState %tmp.2 48 8 17 ];
         %tmp.2 = getv ? :GameState;
-        symbol [ save %tmp.3 44 18 22 ];
+        symbol [ save %tmp.3 48 18 22 ];
         %tmp.3 = getv function %tmp.2 :save;
         invoke %tmp.2 %tmp.3();
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_43_55_45_4_stop:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_47_55_49_4_stop:
     }
-    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\PokeWatchApp.mc"; @line = 47; @symbol_functiondef = [getInitialView,47,13,27]; @symbol_return<0> = [WatchUi,47,35,42]; @symbol_return<1> = [Views,47,43,48]; @symbol_return<2> = [WatchUi,47,56,63]; @symbol_return<3> = [Views,47,64,69]; @symbol_return<4> = [WatchUi,47,71,78]; @symbol_return<5> = [InputDelegates,47,79,93]; ]
+    [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\PokeWatchApp.mc"; @line = 51; @symbol_functiondef = [getInitialView,51,13,27]; @symbol_return<0> = [WatchUi,51,35,42]; @symbol_return<1> = [Views,51,43,48]; @symbol_return<2> = [WatchUi,51,56,63]; @symbol_return<3> = [Views,51,64,69]; @symbol_return<4> = [WatchUi,51,71,78]; @symbol_return<5> = [InputDelegates,51,79,93]; ]
     function getInitialView() as [WatchUi.Views] or [WatchUi.Views, WatchUi.InputDelegates] {
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_47_96_49_4_start:
-[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\PokeWatchApp.mc" 48 8 ]
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_51_96_53_4_start:
+[ "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\PokeWatchApp.mc" 52 8 ]
         %tmp.1 = newa 2;
-        symbol [ MainView %tmp.5 48 21 29 ];
+        symbol [ MainView %tmp.5 52 21 29 ];
         %tmp.5 = getv ? :MainView;
         %tmp.2 = newc %tmp.5 ();
         %tmp.6 = dup %tmp.1;
         %tmp.7 = aputv %tmp.6 0 %tmp.2;
-        symbol [ MainDelegate %tmp.11 48 37 49 ];
+        symbol [ MainDelegate %tmp.11 52 37 49 ];
         %tmp.11 = getv ? :MainDelegate;
         %tmp.8 = newc %tmp.11 ();
         %tmp.12 = dup %tmp.7;
         %tmp.13 = aputv %tmp.12 1 %tmp.8;
         ret %tmp.13;
-C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_47_96_49_4_stop:
+C__Users_Alonso_Desktop_Garmin_pokewatch_source_PokeWatchApp_mc_51_96_53_4_stop:
     }
 }
 [ @file = "C:\Users\Alonso\Desktop\Garmin\pokewatch\source\PokeWatchApp.mc"; @line = 5; ]
